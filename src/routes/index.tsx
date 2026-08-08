@@ -26,6 +26,19 @@ function trackStoreDownload() {
 function trackCrossLink(target: string) {
   track("cross_link_click", { target });
 }
+function trackAchat(palier: string) {
+  track("achat_click", { palier });
+}
+
+// Liens de checkout Lemon Squeezy (buy_now_url officiel de chaque produit,
+// voir memoire nyctale-lemonsqueezy-identifiants) -- ouverts dans un nouvel
+// onglet, l'utilisateur revient sur nyctale.fr apres paiement.
+const CHECKOUT = {
+  reparation: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/a697285b-7c3b-416a-b7ef-d4929cbc95e9",
+  surveillanceAnnuelle: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/cfe51d12-4ab5-40a9-96ad-75423494d291",
+  surveillanceMensuelle: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/88e3ac93-d948-49cf-9786-2dbd16f99266",
+  pro: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/e8823d08-19d4-4c32-8c99-7bd315f800e7",
+};
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -118,6 +131,10 @@ const T = {
         pts: ["Correction accompagnée des problèmes détectés", "Détail technique complet", "Suivi dans le temps"],
       },
       pro: { titre: "Pro (dépanneurs)", prix: "29,99 €", sous: "par mois", pts: ["Rapport avant/après pour le client", "Export PDF avec en-tête personnalisé", "Sans anti-copie, licence USB"] },
+      acheter: "Choisir ce palier",
+      acheterAnnuel: "ou 19 €/an",
+      acheterMensuel: "2 €/mois",
+      acheterGratuit: "Télécharger",
     },
     telecharger: {
       titre: "Prêt à savoir ce qui se passe ?",
@@ -230,6 +247,10 @@ const T = {
         pts: ["Assisted fix for detected issues", "Full technical detail", "Tracking over time"],
       },
       pro: { titre: "Pro (technicians)", prix: "€29.99", sous: "per month", pts: ["Before/after report for the client", "PDF export with custom letterhead", "No anti-copy, USB license"] },
+      acheter: "Choose this tier",
+      acheterAnnuel: "or €19/year",
+      acheterMensuel: "€2/month",
+      acheterGratuit: "Download",
     },
     telecharger: {
       titre: "Ready to find out what's going on?",
@@ -474,6 +495,11 @@ function Home() {
                   </li>
                 ))}
               </ul>
+              <a href="#telecharger" className="mt-6 block" onClick={trackDownload}>
+                <Button variant="outline" className="w-full">
+                  {t.tarifs.acheterGratuit}
+                </Button>
+              </a>
             </Card>
             <Card className="border-primary p-6 shadow-lg">
               <h3 className="text-lg font-semibold">{t.tarifs.mid.titre}</h3>
@@ -486,6 +512,36 @@ function Home() {
                   </li>
                 ))}
               </ul>
+              <a
+                href={CHECKOUT.reparation}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 block"
+                onClick={() => trackAchat("reparation")}
+              >
+                <Button className="w-full">{t.tarifs.acheter}</Button>
+              </a>
+              <div className="mt-3 flex items-center justify-center gap-3 text-xs text-muted-foreground">
+                <a
+                  href={CHECKOUT.surveillanceAnnuelle}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-foreground"
+                  onClick={() => trackAchat("surveillance_annuelle")}
+                >
+                  {t.tarifs.acheterAnnuel}
+                </a>
+                <span>·</span>
+                <a
+                  href={CHECKOUT.surveillanceMensuelle}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-foreground"
+                  onClick={() => trackAchat("surveillance_mensuelle")}
+                >
+                  {t.tarifs.acheterMensuel}
+                </a>
+              </div>
             </Card>
             <Card className="p-6">
               <div className="flex items-center gap-2">
@@ -501,6 +557,17 @@ function Home() {
                   </li>
                 ))}
               </ul>
+              <a
+                href={CHECKOUT.pro}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 block"
+                onClick={() => trackAchat("pro")}
+              >
+                <Button variant="outline" className="w-full">
+                  {t.tarifs.acheter}
+                </Button>
+              </a>
             </Card>
           </div>
         </div>

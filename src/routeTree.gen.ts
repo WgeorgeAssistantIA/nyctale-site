@@ -14,6 +14,8 @@ import { Route as LegalRouteImport } from './routes/legal'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ApiLicenseRefreshRouteImport } from './routes/api.license.refresh'
+import { Route as ApiLicenseActivateRouteImport } from './routes/api.license.activate'
 
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
@@ -40,6 +42,16 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiLicenseRefreshRoute = ApiLicenseRefreshRouteImport.update({
+  id: '/api/license/refresh',
+  path: '/api/license/refresh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiLicenseActivateRoute = ApiLicenseActivateRouteImport.update({
+  id: '/api/license/activate',
+  path: '/api/license/activate',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +59,8 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/api/license/activate': typeof ApiLicenseActivateRoute
+  '/api/license/refresh': typeof ApiLicenseRefreshRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +68,8 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/api/license/activate': typeof ApiLicenseActivateRoute
+  '/api/license/refresh': typeof ApiLicenseRefreshRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +78,37 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/api/license/activate': typeof ApiLicenseActivateRoute
+  '/api/license/refresh': typeof ApiLicenseRefreshRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/legal' | '/privacy' | '/blog/$slug' | '/blog/'
+  fullPaths:
+    | '/'
+    | '/legal'
+    | '/privacy'
+    | '/blog/$slug'
+    | '/blog/'
+    | '/api/license/activate'
+    | '/api/license/refresh'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/legal' | '/privacy' | '/blog/$slug' | '/blog'
-  id: '__root__' | '/' | '/legal' | '/privacy' | '/blog/$slug' | '/blog/'
+  to:
+    | '/'
+    | '/legal'
+    | '/privacy'
+    | '/blog/$slug'
+    | '/blog'
+    | '/api/license/activate'
+    | '/api/license/refresh'
+  id:
+    | '__root__'
+    | '/'
+    | '/legal'
+    | '/privacy'
+    | '/blog/$slug'
+    | '/blog/'
+    | '/api/license/activate'
+    | '/api/license/refresh'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,6 +117,8 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  ApiLicenseActivateRoute: typeof ApiLicenseActivateRoute
+  ApiLicenseRefreshRoute: typeof ApiLicenseRefreshRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -116,6 +158,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/license/refresh': {
+      id: '/api/license/refresh'
+      path: '/api/license/refresh'
+      fullPath: '/api/license/refresh'
+      preLoaderRoute: typeof ApiLicenseRefreshRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/license/activate': {
+      id: '/api/license/activate'
+      path: '/api/license/activate'
+      fullPath: '/api/license/activate'
+      preLoaderRoute: typeof ApiLicenseActivateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -125,6 +181,8 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  ApiLicenseActivateRoute: ApiLicenseActivateRoute,
+  ApiLicenseRefreshRoute: ApiLicenseRefreshRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -30,13 +30,13 @@ function trackCrossLink(target: string) {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nyctale — Comprenez ce qui ralentit votre PC avant de le remplacer" },
+      { title: "Nyctale — PC Diagnostic | Comprenez ce qui ralentit votre PC" },
       {
         name: "description",
         content:
           "Diagnostic PC gratuit et illimité : Nyctale explique en clair pourquoi votre ordinateur chauffe ou ralentit, et ce qu'il faut faire. Application Windows, 100% locale.",
       },
-      { property: "og:title", content: "Nyctale — Diagnostic PC" },
+      { property: "og:title", content: "Nyctale — PC Diagnostic" },
       {
         property: "og:description",
         content: "Avant de remplacer votre PC, faites le diagnostic. Gratuit et illimité.",

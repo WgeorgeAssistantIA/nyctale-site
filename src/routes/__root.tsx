@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nyctale — Comprenez ce qui ralentit votre PC avant de le remplacer" },
+      { title: "Nyctale — PC Diagnostic | Comprenez ce qui ralentit votre PC" },
       {
         name: "description",
         content:
           "Diagnostic PC gratuit et illimité : Nyctale explique en clair pourquoi votre ordinateur chauffe ou ralentit, et ce qu'il faut faire. Application Windows.",
       },
       { name: "author", content: "La Fabrik Numérique" },
-      { property: "og:title", content: "Nyctale — Diagnostic PC" },
+      { property: "og:title", content: "Nyctale — PC Diagnostic" },
       {
         property: "og:description",
         content:

@@ -332,28 +332,43 @@ function Home() {
       </header>
 
       {/* HERO */}
-      <section className="mx-auto max-w-4xl px-6 pt-20 pb-16 text-center md:pt-28 md:pb-24">
-        <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
-          <ShieldCheck className="h-3.5 w-3.5" /> {t.hero.badge}
+      <section className="relative overflow-hidden">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/video/hero-poster.jpg"
+        >
+          <source src="/video/hero-loop.webm" type="video/webm" />
+          <source src="/video/hero-loop.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-background/75" />
+
+        <div className="relative mx-auto max-w-4xl px-6 pt-20 pb-16 text-center md:pt-28 md:pb-24">
+          <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+            <ShieldCheck className="h-3.5 w-3.5" /> {t.hero.badge}
+          </div>
+          <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
+            {t.hero.titleLine1}
+            <br className="hidden md:block" /> {t.hero.titleLine2}
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">{t.hero.subtitle}</p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a href="#telecharger" onClick={trackDownload}>
+              <Button size="lg" className="gap-2">
+                {t.hero.cta} <ArrowRight className="h-4 w-4" />
+              </Button>
+            </a>
+            <a href="#comment-ca-marche">
+              <Button size="lg" variant="outline">
+                {t.hero.ctaSecondary}
+              </Button>
+            </a>
+          </div>
+          <p className="mt-4 text-sm text-muted-foreground">{t.hero.note}</p>
         </div>
-        <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-          {t.hero.titleLine1}
-          <br className="hidden md:block" /> {t.hero.titleLine2}
-        </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">{t.hero.subtitle}</p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a href="#telecharger" onClick={trackDownload}>
-            <Button size="lg" className="gap-2">
-              {t.hero.cta} <ArrowRight className="h-4 w-4" />
-            </Button>
-          </a>
-          <a href="#comment-ca-marche">
-            <Button size="lg" variant="outline">
-              {t.hero.ctaSecondary}
-            </Button>
-          </a>
-        </div>
-        <p className="mt-4 text-sm text-muted-foreground">{t.hero.note}</p>
       </section>
 
       {/* PROBLEMES */}

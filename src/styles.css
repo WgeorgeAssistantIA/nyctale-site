@@ -1,0 +1,106 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-deep: var(--brand-deep);
+  --color-energy: var(--energy);
+  --color-energy-foreground: var(--energy-foreground);
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --animate-fade-in: fade-in 0.7s ease-out both;
+  --animate-fade-up: fade-up 0.7s ease-out both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Theme sombre — identique a la charte de l'application Nyctale
+     (voir Nyctale/app/theme.py). L'app n'a qu'un theme sombre, jamais
+     de mode clair : le site reste coherent en restant sombre par defaut,
+     pas seulement en "dark mode" optionnel. */
+  --background: #0f1117;            /* FOND de l'app */
+  --foreground: #f1f0f5;            /* TEXTE de l'app */
+
+  --card: #1b2028;                  /* CARTE de l'app */
+  --card-foreground: #f1f0f5;
+
+  --popover: #1b2028;
+  --popover-foreground: #f1f0f5;
+
+  --primary: #7c3fd4;               /* ACCENT_BOUTON — fond plein des CTA */
+  --primary-foreground: #ffffff;
+
+  --secondary: #1b2028;             /* CARTE, reutilisee pour les sections alternees */
+  --secondary-foreground: #f1f0f5;
+
+  --muted: #171b23;                 /* entre FOND et CARTE — sections alternees */
+  --muted-foreground: #94a3b8;      /* TEXTE_DISCRET de l'app, AA verifie sur CARTE */
+
+  --accent: #241b3d;                /* ACCENT_CLAIR — survol discret teinte violet */
+  --accent-foreground: #f1f0f5;
+
+  --destructive: #f87171;           /* ROUGE de l'app */
+  --destructive-foreground: #ffffff;
+
+  --border: #2a3040;                /* leger cran au-dessus de CARTE */
+  --input: #2a3040;
+  --ring: #9d6bf0;
+
+  /* Marque Nyctale */
+  --brand: #9d6bf0;                 /* ACCENT — violet clair, texte/liens sur fond sombre */
+  --brand-foreground: #ffffff;
+  --brand-deep: #8646db;            /* ACCENT_SOMBRE — survol */
+  --energy: #0ba9bd;                /* ACCENT_CYAN — extremite du degrade de la marque */
+  --energy-foreground: #ffffff;
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 70% 45% at 50% -8%, rgba(157, 107, 240, 0.10), transparent),
+      radial-gradient(ellipse 48% 34% at 92% 4%, rgba(11, 169, 189, 0.06), transparent);
+    background-attachment: fixed;
+  }
+}

@@ -29,6 +29,9 @@ function trackCrossLink(target: string) {
 function trackAchat(palier: string) {
   track("achat_click", { palier });
 }
+function trackPortableDownload() {
+  track("portable_download");
+}
 
 // Liens de checkout Lemon Squeezy (buy_now_url officiel de chaque produit,
 // voir memoire nyctale-lemonsqueezy-identifiants) -- ouverts dans un nouvel
@@ -130,7 +133,7 @@ const T = {
         sous: "réparation ponctuelle, ou 19 €/an · 2 €/mois pour la surveillance continue",
         pts: ["Correction accompagnée des problèmes détectés", "Détail technique complet", "Suivi dans le temps"],
       },
-      pro: { titre: "Pro (dépanneurs)", prix: "29,99 €", sous: "par mois", pts: ["Rapport avant/après pour le client", "Export PDF avec en-tête personnalisé", "Sans anti-copie, licence USB"] },
+      pro: { titre: "Pro (dépanneurs)", prix: "29,99 €", sous: "par mois", pts: ["Rapport avant/après pour le client", "Export PDF avec en-tête personnalisé", "Sans anti-copie, licence USB"], portable: "Télécharger la version portable (clé USB)" },
       acheter: "Choisir ce palier",
       acheterAnnuel: "ou 19 €/an",
       acheterMensuel: "2 €/mois",
@@ -175,6 +178,7 @@ const T = {
       privacy: "Confidentialité",
       madeBy: "Un logiciel La Fabrik Numérique",
       voxcut: "Découvrez aussi VoxCut",
+      contact: "Contact",
     },
   },
   en: {
@@ -246,7 +250,7 @@ const T = {
         sous: "one-time repair, or €19/year · €2/month for ongoing monitoring",
         pts: ["Assisted fix for detected issues", "Full technical detail", "Tracking over time"],
       },
-      pro: { titre: "Pro (technicians)", prix: "€29.99", sous: "per month", pts: ["Before/after report for the client", "PDF export with custom letterhead", "No anti-copy, USB license"] },
+      pro: { titre: "Pro (technicians)", prix: "€29.99", sous: "per month", pts: ["Before/after report for the client", "PDF export with custom letterhead", "No anti-copy, USB license"], portable: "Download the portable version (USB drive)" },
       acheter: "Choose this tier",
       acheterAnnuel: "or €19/year",
       acheterMensuel: "€2/month",
@@ -291,6 +295,7 @@ const T = {
       privacy: "Privacy",
       madeBy: "A La Fabrik Numérique software",
       voxcut: "Also check out VoxCut",
+      contact: "Contact",
     },
   },
 } satisfies Record<Lang, unknown>;
@@ -365,7 +370,7 @@ function Home() {
           <source src="/video/hero-loop.webm" type="video/webm" />
           <source src="/video/hero-loop.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-background/75" />
+        <div className="absolute inset-0 bg-background/55" />
 
         <div className="relative mx-auto max-w-4xl px-6 pt-20 pb-16 text-center md:pt-28 md:pb-24">
           <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -568,6 +573,13 @@ function Home() {
                   {t.tarifs.acheter}
                 </Button>
               </a>
+              <a
+                href="/downloads/Nyctale-Portable-1.0.0.zip"
+                className="mt-2 block text-center text-xs text-muted-foreground underline hover:text-foreground"
+                onClick={trackPortableDownload}
+              >
+                {t.tarifs.pro.portable}
+              </a>
             </Card>
           </div>
         </div>
@@ -627,6 +639,9 @@ function Home() {
             <Link to="/privacy" className="hover:text-foreground transition-colors">
               {t.footer.privacy}
             </Link>
+            <a href="mailto:lafabriknumerique@outlook.com" className="hover:text-foreground transition-colors">
+              {t.footer.contact}
+            </a>
           </div>
         </div>
         <div className="mx-auto mt-6 max-w-5xl px-6 text-center text-xs text-muted-foreground">

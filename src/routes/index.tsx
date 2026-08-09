@@ -122,6 +122,7 @@ const T = {
       quote:
         '"Le diagnostic gratuit, c\'est ce que vous montrez au client sur son propre écran pour qu\'il comprenne ce qui cloche. Le palier Pro, c\'est ce qui transforme cette explication en document professionnel que vous lui laissez."',
       quoteAttr: "— Philosophie du palier Pro",
+      qui: "Développé par La Fabrik Numérique, également éditeur de VoxCut et VectorPop.",
     },
     tarifsTitle: "Tarifs",
     tarifsSubtitle: "Le diagnostic complet est toujours gratuit. Les paliers ci-dessous ne concernent que l'accompagnement à la réparation.",
@@ -239,6 +240,7 @@ const T = {
       quote:
         '"The free diagnostic is what you show the client on their own screen so they understand what\'s wrong. The Pro tier is what turns that explanation into a professional document you leave behind."',
       quoteAttr: "— Philosophy of the Pro tier",
+      qui: "Built by La Fabrik Numérique, also behind VoxCut and VectorPop.",
     },
     tarifsTitle: "Pricing",
     tarifsSubtitle: "The full diagnostic is always free. The tiers below only cover assisted repair.",
@@ -473,6 +475,15 @@ function Home() {
               <Button size="lg" className="gap-2">
                 {t.pro.cta} <ArrowRight className="h-4 w-4" />
               </Button>
+            </a>
+            <a
+              href="https://www.lafabriknumerique.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCrossLink("lafabriknumerique_pro")}
+              className="mt-4 block text-xs text-muted-foreground underline hover:text-foreground"
+            >
+              {t.pro.qui}
             </a>
           </div>
           <Card className="border-primary/40 p-8">

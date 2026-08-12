@@ -12,7 +12,7 @@ export const Route = createFileRoute("/legal")({
       },
       { property: "og:title", content: "Mentions légales — Nyctale" },
     ],
-    links: [{ rel: "canonical", href: "https://www.nyctale.fr/legal" }],
+    links: [{ rel: "canonical", href: "https://nyctale.fr/legal" }],
   }),
   component: Legal,
 });

@@ -13,7 +13,7 @@ export const Route = createFileRoute("/privacy")({
       },
       { property: "og:title", content: "Politique de confidentialité — Nyctale" },
     ],
-    links: [{ rel: "canonical", href: "https://www.nyctale.fr/privacy" }],
+    links: [{ rel: "canonical", href: "https://nyctale.fr/privacy" }],
   }),
   component: Privacy,
 });

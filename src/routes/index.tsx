@@ -585,7 +585,7 @@ function Home() {
                 </Button>
               </a>
               <a
-                href="/downloads/Nyctale-Portable-1.0.0.zip"
+                href="/downloads/Nyctale-Portable-1.0.1.zip"
                 className="mt-2 block text-center text-xs text-muted-foreground underline hover:text-foreground"
                 onClick={trackPortableDownload}
               >
@@ -618,7 +618,7 @@ function Home() {
           <h2 className="mt-4 text-3xl font-bold tracking-tight">{t.telecharger.titre}</h2>
           <p className="mt-3 text-muted-foreground">{t.telecharger.sous}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a href="/downloads/Nyctale-Setup-1.0.0.exe" onClick={trackDownload}>
+            <a href="/downloads/Nyctale-Setup-1.0.1.exe" onClick={trackDownload}>
               <Button size="lg" className="gap-2">
                 {t.telecharger.cta} <ArrowRight className="h-4 w-4" />
               </Button>

@@ -8,6 +8,7 @@ import {
   HardDrive,
   Lock,
   MonitorCog,
+  Package,
   ShieldCheck,
   ThermometerSun,
   Wrench,
@@ -36,6 +37,8 @@ function trackPortableDownload() {
 // Liens de checkout Lemon Squeezy (buy_now_url officiel de chaque produit,
 // voir memoire nyctale-lemonsqueezy-identifiants) -- ouverts dans un nouvel
 // onglet, l'utilisateur revient sur nyctale.fr apres paiement.
+const MICROSOFT_STORE_ID = "XPFP6ZVQDT5MSH";
+
 const CHECKOUT = {
   reparation: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/a697285b-7c3b-416a-b7ef-d4929cbc95e9",
   surveillanceAnnuelle: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/cfe51d12-4ab5-40a9-96ad-75423494d291",
@@ -144,7 +147,8 @@ const T = {
       titre: "Prêt à savoir ce qui se passe ?",
       sous: "Windows 10 et 11 · Installation en moins d'une minute",
       cta: "Télécharger pour Windows",
-      store: "Bientôt disponible sur le Microsoft Store.",
+      store: "Aussi disponible sur le Microsoft Store.",
+      linuxTar: "Linux (.tar.gz)",
     },
     faqTitle: "Questions fréquentes",
     faq: [
@@ -262,7 +266,8 @@ const T = {
       titre: "Ready to find out what's going on?",
       sous: "Windows 10 and 11 · Install in under a minute",
       cta: "Download for Windows",
-      store: "Coming soon to the Microsoft Store.",
+      store: "Also available on the Microsoft Store.",
+      linuxTar: "Linux (.tar.gz)",
     },
     faqTitle: "Frequently asked questions",
     faq: [
@@ -623,13 +628,25 @@ function Home() {
                 {t.telecharger.cta} <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
+            <a
+              href="/downloads/Nyctale-1.0.0-linux-x86_64.tar.gz"
+              onClick={trackDownload}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
+            >
+              <Package className="h-4 w-4" /> {t.telecharger.linuxTar}
+            </a>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">
-            {t.telecharger.store}{" "}
-            <span onClick={trackStoreDownload} className="cursor-default">
-              &nbsp;
-            </span>
-          </p>
+          <p className="mt-4 text-xs text-muted-foreground">{t.telecharger.store}</p>
+          <div className="mt-3 flex justify-center" onClick={trackStoreDownload}>
+            {/* @ts-expect-error web component fourni par le script officiel Microsoft (voir __root.tsx) */}
+            <ms-store-badge
+              productid={MICROSOFT_STORE_ID}
+              window-mode="direct"
+              theme="auto"
+              size="large"
+              language={lang === "fr" ? "fr-FR" : "en-US"}
+            />
+          </div>
         </div>
       </section>
 

@@ -394,6 +394,13 @@ function Home() {
                 {t.hero.cta} <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
+            <a
+              href="/downloads/Nyctale-1.0.0-linux-x86_64.tar.gz"
+              onClick={trackDownload}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
+            >
+              <Package className="h-4 w-4" /> {t.telecharger.linuxTar}
+            </a>
             <a href="#comment-ca-marche">
               <Button size="lg" variant="outline">
                 {t.hero.ctaSecondary}

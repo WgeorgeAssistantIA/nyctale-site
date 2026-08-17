@@ -10,6 +10,7 @@ import {
   MonitorCog,
   Package,
   ShieldCheck,
+  Terminal,
   ThermometerSun,
   Wrench,
 } from "lucide-react";
@@ -149,6 +150,7 @@ const T = {
       cta: "Télécharger pour Windows",
       store: "Aussi disponible sur le Microsoft Store.",
       linuxTar: "Linux (.tar.gz)",
+      linuxAppImage: "Linux (AppImage)",
     },
     faqTitle: "Questions fréquentes",
     faq: [
@@ -268,6 +270,7 @@ const T = {
       cta: "Download for Windows",
       store: "Also available on the Microsoft Store.",
       linuxTar: "Linux (.tar.gz)",
+      linuxAppImage: "Linux (AppImage)",
     },
     faqTitle: "Frequently asked questions",
     faq: [
@@ -393,6 +396,13 @@ function Home() {
               <Button size="lg" className="gap-2">
                 {t.hero.cta} <ArrowRight className="h-4 w-4" />
               </Button>
+            </a>
+            <a
+              href="/downloads/Nyctale-x86_64.AppImage"
+              onClick={trackDownload}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
+            >
+              <Terminal className="h-4 w-4" /> {t.telecharger.linuxAppImage}
             </a>
             <a
               href="/downloads/Nyctale-1.0.0-linux-x86_64.tar.gz"
@@ -634,6 +644,13 @@ function Home() {
               <Button size="lg" className="gap-2">
                 {t.telecharger.cta} <ArrowRight className="h-4 w-4" />
               </Button>
+            </a>
+            <a
+              href="/downloads/Nyctale-x86_64.AppImage"
+              onClick={trackDownload}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
+            >
+              <Terminal className="h-4 w-4" /> {t.telecharger.linuxAppImage}
             </a>
             <a
               href="/downloads/Nyctale-1.0.0-linux-x86_64.tar.gz"

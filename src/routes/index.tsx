@@ -16,7 +16,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { useLang, type Lang } from "@/lib/lang";
 
 function trackDownload() {
@@ -41,9 +46,12 @@ function trackPortableDownload() {
 const MICROSOFT_STORE_ID = "XPFP6ZVQDT5MSH";
 
 const CHECKOUT = {
-  reparation: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/a697285b-7c3b-416a-b7ef-d4929cbc95e9",
-  surveillanceAnnuelle: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/cfe51d12-4ab5-40a9-96ad-75423494d291",
-  surveillanceMensuelle: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/88e3ac93-d948-49cf-9786-2dbd16f99266",
+  reparation:
+    "https://voxcut-pro.lemonsqueezy.com/checkout/buy/a697285b-7c3b-416a-b7ef-d4929cbc95e9",
+  surveillanceAnnuelle:
+    "https://voxcut-pro.lemonsqueezy.com/checkout/buy/cfe51d12-4ab5-40a9-96ad-75423494d291",
+  surveillanceMensuelle:
+    "https://voxcut-pro.lemonsqueezy.com/checkout/buy/88e3ac93-d948-49cf-9786-2dbd16f99266",
   pro: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/e8823d08-19d4-4c32-8c99-7bd315f800e7",
 };
 
@@ -69,7 +77,13 @@ export const Route = createFileRoute("/")({
 
 const T = {
   fr: {
-    nav: { download: "Télécharger", blog: "Blog", fonctions: "Fonctions", tarifs: "Prix", faq: "FAQ" },
+    nav: {
+      download: "Télécharger",
+      blog: "Blog",
+      fonctions: "Fonctions",
+      tarifs: "Prix",
+      faq: "FAQ",
+    },
     hero: {
       badge: "100% local — rien n'est envoyé en ligne",
       titleLine1: "Avant de remplacer votre PC,",
@@ -81,29 +95,47 @@ const T = {
       note: "Windows 10 et 11 — aucune inscription requise",
     },
     problemesTitle: "Ce que Nyctale regarde",
-    problemesSubtitle: "Un ordinateur qui rame a toujours une cause. Nyctale la trouve, au lieu de vous laisser deviner.",
+    problemesSubtitle:
+      "Un ordinateur qui rame a toujours une cause. Nyctale la trouve, au lieu de vous laisser deviner.",
     problemes: [
       {
         icon: ThermometerSun,
         titre: "Pourquoi il chauffe",
-        texte: "Un composant tourne en boucle, un programme travaille en arrière-plan sans que vous le voyiez : Nyctale identifie lequel.",
+        texte:
+          "Un composant tourne en boucle, un programme travaille en arrière-plan sans que vous le voyiez : Nyctale identifie lequel.",
       },
       {
         icon: Gauge,
         titre: "Pourquoi il rame",
-        texte: 'Mémoire saturée, navigateur trop gourmand, démarrage encombré : le diagnostic dit precisément ce qui ralentit la machine, pas juste "votre PC est vieux".',
+        texte:
+          'Mémoire saturée, navigateur trop gourmand, démarrage encombré : le diagnostic dit precisément ce qui ralentit la machine, pas juste "votre PC est vieux".',
       },
       {
         icon: HardDrive,
         titre: "Ce qui est vraiment cassé",
-        texte: "Disque en fin de vie, arrêts anormaux répétés : Nyctale distingue un vrai problème matériel d'un simple réglage à corriger.",
+        texte:
+          "Disque en fin de vie, arrêts anormaux répétés : Nyctale distingue un vrai problème matériel d'un simple réglage à corriger.",
       },
     ],
     etapesTitle: "Comment ça marche",
     etapes: [
-      { n: "1", titre: "Lancez l'analyse", texte: "Un clic. Aucune donnée n'est envoyée nulle part — tout reste sur votre ordinateur." },
-      { n: "2", titre: "Lisez le verdict", texte: "Pas de jargon technique : chaque point est expliqué comme à quelqu'un qui n'y connaît rien." },
-      { n: "3", titre: "Agissez, ou pas", texte: "Si tout va bien, vous économisez un achat inutile. Si un point bloque, Nyctale dit quoi faire." },
+      {
+        n: "1",
+        titre: "Lancez l'analyse",
+        texte: "Un clic. Aucune donnée n'est envoyée nulle part — tout reste sur votre ordinateur.",
+      },
+      {
+        n: "2",
+        titre: "Lisez le verdict",
+        texte:
+          "Pas de jargon technique : chaque point est expliqué comme à quelqu'un qui n'y connaît rien.",
+      },
+      {
+        n: "3",
+        titre: "Agissez, ou pas",
+        texte:
+          "Si tout va bien, vous économisez un achat inutile. Si un point bloque, Nyctale dit quoi faire.",
+      },
     ],
     confiance: {
       t1: "Rien ne quitte votre ordinateur",
@@ -124,21 +156,45 @@ const T = {
       ],
       cta: "Voir le tarif Pro",
       quote:
-        '"Le diagnostic gratuit, c\'est ce que vous montrez au client sur son propre écran pour qu\'il comprenne ce qui cloche. Le palier Pro, c\'est ce qui transforme cette explication en document professionnel que vous lui laissez."',
+        "\"Le diagnostic gratuit, c'est ce que vous montrez au client sur son propre écran pour qu'il comprenne ce qui cloche. Le palier Pro, c'est ce qui transforme cette explication en document professionnel que vous lui laissez.\"",
       quoteAttr: "— Philosophie du palier Pro",
       qui: "Développé par La Fabrik Numérique, également éditeur de VoxCut et VectorPop.",
     },
     tarifsTitle: "Tarifs",
-    tarifsSubtitle: "Le diagnostic complet est toujours gratuit. Les paliers ci-dessous ne concernent que l'accompagnement à la réparation.",
+    tarifsSubtitle:
+      "Le diagnostic complet est toujours gratuit. Les paliers ci-dessous ne concernent que l'accompagnement à la réparation.",
     tarifs: {
-      free: { titre: "Diagnostic", prix: "Gratuit", sous: "Illimité, pour toujours", pts: ["Analyse complète du système", "Explications en langage clair", "Une première réparation offerte"] },
+      free: {
+        titre: "Diagnostic",
+        prix: "Gratuit",
+        sous: "Illimité, pour toujours",
+        pts: [
+          "Analyse complète du système",
+          "Explications en langage clair",
+          "Une première réparation offerte",
+        ],
+      },
       mid: {
         titre: "Réparation / surveillance",
         prix: "24,99 €",
         sous: "réparation ponctuelle, ou 19 €/an · 2 €/mois pour la surveillance continue",
-        pts: ["Correction accompagnée des problèmes détectés", "Détail technique complet", "Suivi dans le temps"],
+        pts: [
+          "Correction accompagnée des problèmes détectés",
+          "Détail technique complet",
+          "Suivi dans le temps",
+        ],
       },
-      pro: { titre: "Pro (dépanneurs)", prix: "29,99 €", sous: "par mois", pts: ["Rapport avant/après pour le client", "Export PDF avec en-tête personnalisé", "Sans anti-copie, licence USB"], portable: "Télécharger la version portable (clé USB)" },
+      pro: {
+        titre: "Pro (dépanneurs)",
+        prix: "29,99 €",
+        sous: "par mois",
+        pts: [
+          "Rapport avant/après pour le client",
+          "Export PDF avec en-tête personnalisé",
+          "Sans anti-copie, licence USB",
+        ],
+        portable: "Télécharger la version portable (clé USB)",
+      },
       acheter: "Choisir ce palier",
       acheterAnnuel: "ou 19 €/an",
       acheterMensuel: "2 €/mois",
@@ -189,7 +245,13 @@ const T = {
     },
   },
   en: {
-    nav: { download: "Download", blog: "Blog", fonctions: "Features", tarifs: "Pricing", faq: "FAQ" },
+    nav: {
+      download: "Download",
+      blog: "Blog",
+      fonctions: "Features",
+      tarifs: "Pricing",
+      faq: "FAQ",
+    },
     hero: {
       badge: "100% local — nothing is sent online",
       titleLine1: "Before replacing your PC,",
@@ -201,29 +263,47 @@ const T = {
       note: "Windows 10 and 11 — no sign-up required",
     },
     problemesTitle: "What Nyctale looks at",
-    problemesSubtitle: "A slow computer always has a cause. Nyctale finds it, instead of leaving you to guess.",
+    problemesSubtitle:
+      "A slow computer always has a cause. Nyctale finds it, instead of leaving you to guess.",
     problemes: [
       {
         icon: ThermometerSun,
         titre: "Why it overheats",
-        texte: "A component stuck in a loop, a program working in the background without you seeing it: Nyctale identifies which one.",
+        texte:
+          "A component stuck in a loop, a program working in the background without you seeing it: Nyctale identifies which one.",
       },
       {
         icon: Gauge,
         titre: "Why it's slow",
-        texte: 'Saturated memory, a memory-hungry browser, a cluttered startup: the diagnostic states precisely what\'s slowing the machine down, not just "your PC is old".',
+        texte:
+          'Saturated memory, a memory-hungry browser, a cluttered startup: the diagnostic states precisely what\'s slowing the machine down, not just "your PC is old".',
       },
       {
         icon: HardDrive,
         titre: "What's actually broken",
-        texte: "A drive nearing end of life, repeated abnormal shutdowns: Nyctale tells apart a real hardware issue from a simple setting to fix.",
+        texte:
+          "A drive nearing end of life, repeated abnormal shutdowns: Nyctale tells apart a real hardware issue from a simple setting to fix.",
       },
     ],
     etapesTitle: "How it works",
     etapes: [
-      { n: "1", titre: "Run the scan", texte: "One click. No data is sent anywhere — everything stays on your computer." },
-      { n: "2", titre: "Read the verdict", texte: "No technical jargon: every point is explained as if to someone who knows nothing about computers." },
-      { n: "3", titre: "Act, or don't", texte: "If everything's fine, you just saved yourself an unnecessary purchase. If something's wrong, Nyctale tells you what to do." },
+      {
+        n: "1",
+        titre: "Run the scan",
+        texte: "One click. No data is sent anywhere — everything stays on your computer.",
+      },
+      {
+        n: "2",
+        titre: "Read the verdict",
+        texte:
+          "No technical jargon: every point is explained as if to someone who knows nothing about computers.",
+      },
+      {
+        n: "3",
+        titre: "Act, or don't",
+        texte:
+          "If everything's fine, you just saved yourself an unnecessary purchase. If something's wrong, Nyctale tells you what to do.",
+      },
     ],
     confiance: {
       t1: "Nothing leaves your computer",
@@ -249,16 +329,32 @@ const T = {
       qui: "Built by La Fabrik Numérique, also behind VoxCut and VectorPop.",
     },
     tarifsTitle: "Pricing",
-    tarifsSubtitle: "The full diagnostic is always free. The tiers below only cover assisted repair.",
+    tarifsSubtitle:
+      "The full diagnostic is always free. The tiers below only cover assisted repair.",
     tarifs: {
-      free: { titre: "Diagnostic", prix: "Free", sous: "Unlimited, forever", pts: ["Full system analysis", "Plain-language explanations", "First repair included"] },
+      free: {
+        titre: "Diagnostic",
+        prix: "Free",
+        sous: "Unlimited, forever",
+        pts: ["Full system analysis", "Plain-language explanations", "First repair included"],
+      },
       mid: {
         titre: "Repair / monitoring",
         prix: "€24.99",
         sous: "one-time repair, or €19/year · €2/month for ongoing monitoring",
         pts: ["Assisted fix for detected issues", "Full technical detail", "Tracking over time"],
       },
-      pro: { titre: "Pro (technicians)", prix: "€29.99", sous: "per month", pts: ["Before/after report for the client", "PDF export with custom letterhead", "No anti-copy, USB license"], portable: "Download the portable version (USB drive)" },
+      pro: {
+        titre: "Pro (technicians)",
+        prix: "€29.99",
+        sous: "per month",
+        pts: [
+          "Before/after report for the client",
+          "PDF export with custom letterhead",
+          "No anti-copy, USB license",
+        ],
+        portable: "Download the portable version (USB drive)",
+      },
       acheter: "Choose this tier",
       acheterAnnuel: "or €19/year",
       acheterMensuel: "€2/month",
@@ -318,7 +414,9 @@ function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void 
           key={l}
           onClick={() => setLang(l)}
           className={`cursor-pointer rounded-full px-3 py-1 transition ${
-            lang === l ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+            lang === l
+              ? "bg-primary text-primary-foreground"
+              : "text-muted-foreground hover:text-foreground"
           }`}
         >
           {l.toUpperCase()}
@@ -342,21 +440,36 @@ function Home() {
             <span className="text-lg font-semibold tracking-tight">Nyctale</span>
           </Link>
           <nav className="hidden items-center gap-6 md:flex">
-            <a href="#fonctions" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            <a
+              href="#fonctions"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
               {t.nav.fonctions}
             </a>
-            <a href="#tarifs" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            <a
+              href="#tarifs"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
               {t.nav.tarifs}
             </a>
-            <a href="#faq" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            <a
+              href="#faq"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
               {t.nav.faq}
             </a>
-            <Link to="/blog" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            <Link
+              to="/blog"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
               {t.nav.blog}
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Link to="/blog" className="text-sm text-muted-foreground transition-colors hover:text-foreground md:hidden">
+            <Link
+              to="/blog"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground md:hidden"
+            >
               {t.nav.blog}
             </Link>
             <LangToggle lang={lang} setLang={setLang} />
@@ -390,7 +503,9 @@ function Home() {
             {t.hero.titleLine1}
             <br className="hidden md:block" /> {t.hero.titleLine2}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">{t.hero.subtitle}</p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+            {t.hero.subtitle}
+          </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a href="#telecharger" onClick={trackDownload}>
               <Button size="lg" className="gap-2">
@@ -425,7 +540,9 @@ function Home() {
       <section id="fonctions" className="border-t border-border bg-secondary/30 py-20">
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="text-center text-3xl font-bold tracking-tight">{t.problemesTitle}</h2>
-          <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">{t.problemesSubtitle}</p>
+          <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
+            {t.problemesSubtitle}
+          </p>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {t.problemes.map((p) => (
               <Card key={p.titre} className="p-6">
@@ -520,7 +637,9 @@ function Home() {
       <section id="tarifs" className="py-20">
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="text-center text-3xl font-bold tracking-tight">{t.tarifsTitle}</h2>
-          <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">{t.tarifsSubtitle}</p>
+          <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
+            {t.tarifsSubtitle}
+          </p>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             <Card className="p-6">
               <h3 className="text-lg font-semibold">{t.tarifs.free.titre}</h3>
@@ -626,7 +745,9 @@ function Home() {
             {t.faq.map((item) => (
               <AccordionItem key={item.q} value={item.q}>
                 <AccordionTrigger className="text-left text-base">{item.q}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">{item.r}</AccordionContent>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {item.r}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -691,7 +812,10 @@ function Home() {
             <Link to="/privacy" className="hover:text-foreground transition-colors">
               {t.footer.privacy}
             </Link>
-            <a href="mailto:lafabriknumerique@outlook.com" className="hover:text-foreground transition-colors">
+            <a
+              href="mailto:lafabriknumerique@outlook.com"
+              className="hover:text-foreground transition-colors"
+            >
               {t.footer.contact}
             </a>
           </div>
@@ -735,6 +859,26 @@ function Home() {
             className="underline transition-colors hover:text-foreground"
           >
             VectorPop
+          </a>
+          {" · "}
+          <a
+            href="https://votreassistantia.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackCrossLink("votreassistantia")}
+            className="underline transition-colors hover:text-foreground"
+          >
+            VotreAssistantIA
+          </a>
+          {" · "}
+          <a
+            href="https://www.vidscope.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackCrossLink("vidscope")}
+            className="underline transition-colors hover:text-foreground"
+          >
+            VidScope
           </a>
         </div>
       </footer>

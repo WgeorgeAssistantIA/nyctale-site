@@ -13,6 +13,7 @@ import {
   Terminal,
   ThermometerSun,
   Wrench,
+  Lightbulb,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -83,15 +84,17 @@ const T = {
       fonctions: "Fonctions",
       tarifs: "Prix",
       faq: "FAQ",
+      pro: "Pour les Pros",
     },
     hero: {
       badge: "100% local — rien n'est envoyé en ligne",
       titleLine1: "Avant de remplacer votre PC,",
       titleLine2: "faites le diagnostic",
       subtitle:
-        "Nyctale explique en clair pourquoi votre ordinateur chauffe ou ralentit — et ce qu'il faut réellement faire. Le diagnostic complet est gratuit et illimité.",
+        "Oubliez les usines à gaz : Nyctale est à la portée de tout le monde. L'application explique en clair pourquoi votre ordinateur chauffe ou ralentit, et ce qu'il faut faire. Gratuit et illimité.",
       cta: "Télécharger gratuitement",
       ctaSecondary: "Comment ça marche",
+      proLink: "Vous êtes un professionnel de la maintenance informatique ? Découvrez l'édition Pro conçue pour vous.",
       note: "Windows 10 et 11 — aucune inscription requise",
     },
     problemesTitle: "Ce que Nyctale regarde",
@@ -142,9 +145,11 @@ const T = {
       d1: "Nyctale lit les informations de votre machine et les analyse sur place. Aucune connexion internet n'est nécessaire pour établir un diagnostic.",
       t2: "Lecture seule",
       d2: "Le diagnostic ne modifie rien sur votre système. Il lit, il analyse, il explique — la décision reste toujours la vôtre.",
+      t3: "Résultats faciles à comprendre",
+      d3: "L'application a été pensée pour aller à l'essentiel. Pas de jargon technique ni de graphiques compliqués, juste un diagnostic clair de ce qui ne va pas.",
     },
     pro: {
-      badge: "Pour les professionnels",
+      badge: "Pensé par des techniciens, pour des techniciens",
       titre: "Vous dépannez des PC ? Nyctale devient votre outil de diagnostic client.",
       texte:
         "Un diagnostic que le client comprend sans jargon, un rapport avant/après qui justifie l'intervention, et une licence qui vous suit sur toutes vos machines d'intervention — même depuis une clé USB, sans connexion internet obligatoire.",
@@ -251,15 +256,17 @@ const T = {
       fonctions: "Features",
       tarifs: "Pricing",
       faq: "FAQ",
+      pro: "For Pros",
     },
     hero: {
       badge: "100% local — nothing is sent online",
       titleLine1: "Before replacing your PC,",
       titleLine2: "run the diagnostic",
       subtitle:
-        "Nyctale explains in plain language why your computer overheats or slows down — and what to actually do about it. The full diagnostic is free and unlimited.",
+        "Forget about overly complex tools: Nyctale is accessible to everyone. The app explains in plain language why your computer overheats or slows down, and what to do. Free and unlimited.",
       cta: "Download for free",
       ctaSecondary: "How it works",
+      proLink: "Are you an IT maintenance professional? Discover the Pro edition built for you.",
       note: "Windows 10 and 11 — no sign-up required",
     },
     problemesTitle: "What Nyctale looks at",
@@ -310,9 +317,11 @@ const T = {
       d1: "Nyctale reads your computer's information and analyzes it on the spot. No internet connection is needed to produce a diagnostic.",
       t2: "Read-only",
       d2: "The diagnostic never changes anything on your system. It reads, it analyzes, it explains — the decision is always yours.",
+      t3: "Easy to understand results",
+      d3: "The application gets straight to the point. No technical jargon or complicated graphs, just a clear diagnostic of what's wrong.",
     },
     pro: {
-      badge: "For professionals",
+      badge: "Built by technicians, for technicians",
       titre: "You repair PCs? Nyctale becomes your client diagnostic tool.",
       texte:
         "A diagnostic your client understands without jargon, a before/after report that justifies the intervention, and a license that follows you across every machine you work on — even from a USB drive, no internet connection required.",
@@ -458,6 +467,12 @@ function Home() {
             >
               {t.nav.faq}
             </a>
+            <a
+              href="#pro"
+              className="text-sm font-medium text-primary transition-colors hover:text-primary/80"
+            >
+              {t.nav.pro}
+            </a>
             <Link
               to="/blog"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -533,6 +548,12 @@ function Home() {
             </a>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">{t.hero.note}</p>
+          <a
+            href="#pro"
+            className="mt-6 inline-block text-sm font-medium text-primary underline-offset-4 transition hover:underline"
+          >
+            {t.hero.proLink}
+          </a>
         </div>
       </section>
 
@@ -575,7 +596,7 @@ function Home() {
 
       {/* CONFIANCE */}
       <section className="border-t border-border bg-secondary/30 py-16">
-        <div className="mx-auto grid max-w-4xl gap-8 px-6 sm:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl gap-8 px-6 md:grid-cols-3 sm:grid-cols-2">
           <div className="flex items-start gap-3">
             <Lock className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
             <div>
@@ -588,6 +609,13 @@ function Home() {
             <div>
               <h3 className="font-semibold">{t.confiance.t2}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{t.confiance.d2}</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <Lightbulb className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+            <div>
+              <h3 className="font-semibold">{t.confiance.t3}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{t.confiance.d3}</p>
             </div>
           </div>
         </div>

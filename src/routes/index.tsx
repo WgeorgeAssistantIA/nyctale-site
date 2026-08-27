@@ -890,16 +890,6 @@ function Home() {
           </a>
           {" · "}
           <a
-            href="https://www.vidscope.fr"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackCrossLink("vidscope")}
-            className="underline transition-colors hover:text-foreground"
-          >
-            VidScope
-          </a>
-          {" · "}
-          <a
             href="https://votreassistantia.fr"
             target="_blank"
             rel="noopener noreferrer"
@@ -907,6 +897,16 @@ function Home() {
             className="underline transition-colors hover:text-foreground"
           >
             VotreAssistantIA
+          </a>
+          {" · "}
+          <a
+            href="https://www.vidscope.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackCrossLink("vidscope")}
+            className="underline transition-colors hover:text-foreground"
+          >
+            VidScope
           </a>
         </div>
       </footer>

@@ -93,7 +93,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Diagnostic PC gratuit et illimité : Nyctale explique en clair pourquoi votre ordinateur chauffe ou ralentit, et ce qu'il faut faire.",
       },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: "https://nyctale.fr/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:url", content: "https://nyctale.fr/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://nyctale.fr/og-image.png" },
     ],
     links: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },

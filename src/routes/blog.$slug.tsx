@@ -19,6 +19,32 @@ export const Route = createFileRoute("/blog/$slug")({
         ]
       : [],
     links: loaderData ? [{ rel: "canonical", href: `https://nyctale.fr/blog/${loaderData.slug}` }] : [],
+    scripts: loaderData
+      ? [
+          {
+            type: "application/ld+json",
+            children: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              headline: loaderData.title,
+              description: loaderData.excerpt,
+              datePublished: loaderData.date,
+              dateModified: loaderData.date,
+              author: { "@type": "Organization", name: "La Fabrik Numérique" },
+              publisher: {
+                "@type": "Organization",
+                name: "La Fabrik Numérique",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://nyctale.fr/nyctale_logo.png",
+                },
+              },
+              mainEntityOfPage: `https://nyctale.fr/blog/${loaderData.slug}`,
+              url: `https://nyctale.fr/blog/${loaderData.slug}`,
+            }),
+          },
+        ]
+      : [],
   }),
   component: BlogArticle,
 });

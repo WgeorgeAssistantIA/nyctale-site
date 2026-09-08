@@ -72,6 +72,76 @@ export const Route = createFileRoute("/")({
       },
     ],
     links: [{ rel: "canonical", href: "https://nyctale.fr/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "Nyctale",
+          applicationCategory: "UtilitiesApplication",
+          operatingSystem: "Windows, Linux",
+          description:
+            "Diagnostic PC gratuit et illimité : Nyctale explique en clair pourquoi votre ordinateur chauffe ou ralentit, et ce qu'il faut faire. 100% local et privé.",
+          url: "https://nyctale.fr/",
+          image: "https://nyctale.fr/nyctale_logo.png",
+          offers: {
+            "@type": "AggregateOffer",
+            priceCurrency: "EUR",
+            lowPrice: "0",
+            highPrice: "29.99",
+            offerCount: "3",
+            offers: [
+              { "@type": "Offer", name: "Nyctale Diagnostic", price: "0", priceCurrency: "EUR" },
+              {
+                "@type": "Offer",
+                name: "Nyctale Réparation / surveillance",
+                price: "24.99",
+                priceCurrency: "EUR",
+              },
+              {
+                "@type": "Offer",
+                name: "Nyctale Pro (dépanneurs)",
+                price: "29.99",
+                priceCurrency: "EUR",
+                priceSpecification: {
+                  "@type": "UnitPriceSpecification",
+                  price: "29.99",
+                  priceCurrency: "EUR",
+                  unitCode: "MON",
+                },
+              },
+            ],
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "La Fabrik Numérique",
+          url: "https://nyctale.fr/",
+          logo: "https://nyctale.fr/nyctale_logo.png",
+          sameAs: [`https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}`],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: T.fr.faq.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.r,
+            },
+          })),
+        }),
+      },
+    ],
   }),
   component: Home,
 });

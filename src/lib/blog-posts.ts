@@ -258,10 +258,10 @@ export const articles: Article[] = [
           "Le prix d'un diagnostic indépendant est toujours inférieur au prix d'un PC neuf inutile.",
         ],
       },
-      { type: "h2", text: "Comment obtenir un deuxième avis gratuit en quelques minutes ?" },
+      { type: "h2", text: "Comment obtenir un deuxième avis gratuit en 19 secondes ?" },
       {
         type: "p",
-        text: "Nyctale a été conçu précisément pour ce moment-là : obtenir, chez soi, un diagnostic indépendant et gratuit avant de prendre une décision coûteuse. Le rapport dit ce qui ne va pas, dans quelle mesure c'est grave, et si un remplacement est réellement justifié — ou si un simple réglage suffit.",
+        text: "Nyctale a été conçu précisément pour ce moment-là : un scan complet prend environ 19 secondes et donne, chez soi, un diagnostic indépendant et gratuit avant de prendre une décision coûteuse. Le rapport dit ce qui ne va pas, dans quelle mesure c'est grave, et si un remplacement est réellement justifié — ou si un simple réglage suffit.",
       },
       {
         type: "p",
@@ -303,10 +303,10 @@ export const articles: Article[] = [
           "The cost of an independent diagnostic is always lower than the cost of an unnecessary new PC.",
         ],
       },
-      { type: "h2", text: "How do you get a free second opinion in minutes?" },
+      { type: "h2", text: "How do you get a free second opinion in 19 seconds?" },
       {
         type: "p",
-        text: "Nyctale was built exactly for this moment: getting an independent, free diagnostic at home before making a costly decision. The report says what's wrong, how serious it is, and whether a replacement is actually justified — or whether a simple fix is enough.",
+        text: "Nyctale was built exactly for this moment: a full scan takes about 19 seconds and gives you an independent, free diagnostic at home before making a costly decision. The report says what's wrong, how serious it is, and whether a replacement is actually justified — or whether a simple fix is enough.",
       },
       {
         type: "p",

@@ -1,0 +1,16 @@
+# Nyctale
+
+> Nyctale is a free, unlimited PC diagnostic app for Windows. It analyzes a computer and explains in plain language why it overheats or slows down, helping users avoid an unnecessary replacement. A Pro tier is also available for repair professionals to generate client-facing diagnostic reports.
+
+## Main pages
+- [Home](https://nyctale.fr/): Product overview, features, download.
+- [Blog](https://nyctale.fr/blog): Guides on common PC issues (slowdowns, overheating, fan noise) and when to replace vs repair.
+
+## Key facts
+- Platform: Windows (desktop).
+- Free and unlimited diagnostic for individual users.
+- Pro tier (subscription) for repair shops: generates branded diagnostic reports for clients.
+- Built and maintained by La Fabrik Numérique.
+
+## Contact
+- Website: https://nyctale.fr

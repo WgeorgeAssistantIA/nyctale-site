@@ -93,7 +93,7 @@ const T = {
       subtitle:
         "Oubliez les usines à gaz : Nyctale est à la portée de tout le monde. L'application explique en clair pourquoi votre ordinateur chauffe ou ralentit, et ce qu'il faut faire. Gratuit et illimité.",
       definition:
-        "Nyctale est une application Windows gratuite qui diagnostique en local pourquoi un PC chauffe ou ralentit, sans envoyer de données en ligne.",
+        "Nyctale est une application Windows gratuite qui diagnostique en local, en 19 secondes, pourquoi un PC chauffe ou ralentit, sans envoyer de données en ligne.",
       cta: "Télécharger gratuitement",
       ctaSecondary: "Comment ça marche",
       proLink: "Vous êtes un professionnel de la maintenance informatique ? Découvrez l'édition Pro conçue pour vous.",
@@ -267,7 +267,7 @@ const T = {
       subtitle:
         "Forget about overly complex tools: Nyctale is accessible to everyone. The app explains in plain language why your computer overheats or slows down, and what to do. Free and unlimited.",
       definition:
-        "Nyctale is a free Windows application that diagnoses locally why a PC overheats or slows down, without sending any data online.",
+        "Nyctale is a free Windows application that diagnoses locally, in 19 seconds, why a PC overheats or slows down, without sending any data online.",
       cta: "Download for free",
       ctaSecondary: "How it works",
       proLink: "Are you an IT maintenance professional? Discover the Pro edition built for you.",

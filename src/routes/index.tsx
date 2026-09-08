@@ -92,12 +92,14 @@ const T = {
       titleLine2: "faites le diagnostic",
       subtitle:
         "Oubliez les usines à gaz : Nyctale est à la portée de tout le monde. L'application explique en clair pourquoi votre ordinateur chauffe ou ralentit, et ce qu'il faut faire. Gratuit et illimité.",
+      definition:
+        "Nyctale est une application Windows gratuite qui diagnostique en local pourquoi un PC chauffe ou ralentit, sans envoyer de données en ligne.",
       cta: "Télécharger gratuitement",
       ctaSecondary: "Comment ça marche",
       proLink: "Vous êtes un professionnel de la maintenance informatique ? Découvrez l'édition Pro conçue pour vous.",
       note: "Windows 10 et 11 — aucune inscription requise",
     },
-    problemesTitle: "Ce que Nyctale regarde",
+    problemesTitle: "Que regarde le diagnostic Nyctale ?",
     problemesSubtitle:
       "Un ordinateur qui rame a toujours une cause. Nyctale la trouve, au lieu de vous laisser deviner.",
     problemes: [
@@ -120,7 +122,7 @@ const T = {
           "Disque en fin de vie, arrêts anormaux répétés : Nyctale distingue un vrai problème matériel d'un simple réglage à corriger.",
       },
     ],
-    etapesTitle: "Comment ça marche",
+    etapesTitle: "Comment fonctionne le diagnostic Nyctale ?",
     etapes: [
       {
         n: "1",
@@ -264,12 +266,14 @@ const T = {
       titleLine2: "run the diagnostic",
       subtitle:
         "Forget about overly complex tools: Nyctale is accessible to everyone. The app explains in plain language why your computer overheats or slows down, and what to do. Free and unlimited.",
+      definition:
+        "Nyctale is a free Windows application that diagnoses locally why a PC overheats or slows down, without sending any data online.",
       cta: "Download for free",
       ctaSecondary: "How it works",
       proLink: "Are you an IT maintenance professional? Discover the Pro edition built for you.",
       note: "Windows 10 and 11 — no sign-up required",
     },
-    problemesTitle: "What Nyctale looks at",
+    problemesTitle: "What does the Nyctale diagnostic check?",
     problemesSubtitle:
       "A slow computer always has a cause. Nyctale finds it, instead of leaving you to guess.",
     problemes: [
@@ -292,7 +296,7 @@ const T = {
           "A drive nearing end of life, repeated abnormal shutdowns: Nyctale tells apart a real hardware issue from a simple setting to fix.",
       },
     ],
-    etapesTitle: "How it works",
+    etapesTitle: "How does the Nyctale diagnostic work?",
     etapes: [
       {
         n: "1",
@@ -518,6 +522,9 @@ function Home() {
             {t.hero.titleLine1}
             <br className="hidden md:block" /> {t.hero.titleLine2}
           </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-base font-medium text-foreground/90">
+            {t.hero.definition}
+          </p>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
             {t.hero.subtitle}
           </p>

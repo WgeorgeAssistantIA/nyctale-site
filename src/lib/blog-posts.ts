@@ -27,13 +27,17 @@ export const articles: Article[] = [
     blocks: [
       {
         type: "p",
+        text: "Un PC qui ralentit progressivement a toujours une cause précise, logicielle dans l'immense majorité des cas — ce n'est jamais un phénomène de vieillissement aléatoire.",
+      },
+      {
+        type: "p",
         text: "Le scénario est presque toujours le même. Il y a un an, l'ordinateur démarrait en quelques secondes. Aujourd'hui, ouvrir un simple navigateur prend un temps qui semble absurde. Rien n'a été installé de particulier, rien n'a « cassé » visiblement — et pourtant, tout est plus lent.",
       },
       {
         type: "p",
         text: "C'est une des situations les plus frustrantes en informatique : un problème réel, mesurable, mais invisible. On ne voit pas de message d'erreur. On ne sait pas par où commencer. Et la tentation la plus naturelle — se dire que l'ordinateur est « vieux » et qu'il faut le remplacer — est rarement la bonne réponse.",
       },
-      { type: "h2", text: "Un ordinateur ne ralentit jamais « pour rien »" },
+      { type: "h2", text: "Pourquoi mon PC ralentit-il sans raison apparente ?" },
       {
         type: "p",
         text: "Un PC ne perd pas de vitesse avec le temps comme une pile qui s'use. Chaque ralentissement a une cause identifiable, et dans l'immense majorité des cas, cette cause est logicielle, pas matérielle. Les suspects les plus fréquents :",
@@ -51,10 +55,10 @@ export const articles: Article[] = [
         type: "p",
         text: "Le problème, c'est que ces causes ne se voient pas à l'œil nu. Le Gestionnaire des tâches de Windows donne une photo instantanée, mais ne dit pas ce qui se passe sur la durée, ni pourquoi tel programme consomme autant.",
       },
-      { type: "h2", text: "Pourquoi deviner coûte plus cher que vérifier" },
+      { type: "h2", text: "Pourquoi deviner coûte-t-il plus cher que vérifier ?" },
       {
         type: "p",
-        text: "Beaucoup de gens tentent un premier réflexe — désinstaller un logiciel au hasard, vider la corbeille, redémarrer plusieurs fois — sans savoir si ça touche vraiment la cause. Résultat : le problème revient, et la conclusion devient « il faut un nouveau PC ». C'est souvent une dépense de plusieurs centaines d'euros pour un problème qui aurait pu se corriger en quelques minutes.",
+        text: "Beaucoup de gens tentent un premier réflexe — désinstaller un logiciel au hasard, vider la corbeille, redémarrer plusieurs fois — sans savoir si ça touche vraiment la cause. Résultat : le problème revient, et la conclusion devient « il faut un nouveau PC ». C'est souvent une dépense de 300 à 800 € pour un problème qui aurait pu se corriger en quelques minutes.",
       },
       {
         type: "p",
@@ -77,13 +81,17 @@ export const articles: Article[] = [
     blocks: [
       {
         type: "p",
+        text: "A computer that gradually slows down always has a precise cause, software-related in the vast majority of cases — it's never a random aging effect.",
+      },
+      {
+        type: "p",
         text: "The scenario is almost always the same. A year ago, the computer started up in a few seconds. Today, opening a plain browser window takes an absurd amount of time. Nothing unusual was installed, nothing visibly \"broke\" — and yet everything is slower.",
       },
       {
         type: "p",
         text: "It's one of the most frustrating situations in computing: a real, measurable problem that's completely invisible. No error message. No obvious starting point. And the most natural temptation — assuming the computer is just \"old\" and needs replacing — is rarely the right answer.",
       },
-      { type: "h2", text: "A computer never slows down \"for no reason\"" },
+      { type: "h2", text: "Why does my PC slow down for no apparent reason?" },
       {
         type: "p",
         text: "A PC doesn't lose speed over time the way a battery wears out. Every slowdown has an identifiable cause, and in the vast majority of cases, that cause is software, not hardware. The usual suspects:",
@@ -101,10 +109,10 @@ export const articles: Article[] = [
         type: "p",
         text: "The problem is that none of these causes are visible to the naked eye. Windows Task Manager gives you a snapshot, but it doesn't tell you what's happening over time, or why a given program is consuming so much.",
       },
-      { type: "h2", text: "Why guessing costs more than checking" },
+      { type: "h2", text: "Why does guessing cost more than checking?" },
       {
         type: "p",
-        text: "Many people try a first instinct — uninstalling a random program, emptying the recycle bin, restarting a few times — without knowing whether it actually addresses the cause. The result: the problem comes back, and the conclusion becomes \"I need a new PC.\" That's often a few hundred euros spent on a problem that could have been fixed in minutes.",
+        text: "Many people try a first instinct — uninstalling a random program, emptying the recycle bin, restarting a few times — without knowing whether it actually addresses the cause. The result: the problem comes back, and the conclusion becomes \"I need a new PC.\" That's often €300 to €800 spent on a problem that could have been fixed in minutes.",
       },
       {
         type: "p",
@@ -131,9 +139,13 @@ export const articles: Article[] = [
     blocks: [
       {
         type: "p",
+        text: "Un ventilateur qui tourne en permanence à plein régime signale presque toujours un processeur sollicité en continu par un programme — pas une panne matérielle.",
+      },
+      {
+        type: "p",
         text: "C'est un bruit qu'on finit par ne plus entendre, jusqu'à ce qu'un proche fasse la remarque : « ton PC souffle comme un avion ». Un ventilateur qui tourne à plein régime en permanence, même quand vous ne faites rien de particulier, n'est pas normal. Mais ce n'est pas forcément le signe d'une panne matérielle non plus.",
       },
-      { type: "h2", text: "Ce que le bruit du ventilateur signifie vraiment" },
+      { type: "h2", text: "Que signifie un ventilateur qui tourne en permanence ?" },
       {
         type: "p",
         text: "Un ventilateur accélère pour une seule raison : le processeur chauffe. La question à se poser n'est donc pas « le ventilateur est-il cassé ? » mais « pourquoi le processeur travaille-t-il autant ? ». Dans la grande majorité des cas, la réponse est logicielle :",
@@ -151,10 +163,10 @@ export const articles: Article[] = [
         type: "p",
         text: "Dans ce dernier cas seulement, il s'agit d'un vrai problème physique. Dans tous les autres, le ventilateur ne fait que réagir correctement à une situation logicielle anormale — il n'est pas la cause, il est le symptôme.",
       },
-      { type: "h2", text: "Pourquoi identifier le coupable change tout" },
+      { type: "h2", text: "Pourquoi identifier le coupable change-t-il tout ?" },
       {
         type: "p",
-        text: "La différence est énorme en termes de coût et d'effort. Fermer un programme mal identifié prend dix secondes. Dépoussiérer un boîtier prend vingt minutes. Remplacer un ordinateur parce qu'« il chauffe trop » coûte plusieurs centaines d'euros — pour un problème qui, une fois sur deux, ne venait pas du matériel.",
+        text: "La différence est énorme en termes de coût et d'effort. Fermer un programme mal identifié prend dix secondes. Dépoussiérer un boîtier prend vingt minutes. Remplacer un ordinateur parce qu'« il chauffe trop » coûte 300 à 800 € — pour un problème qui, dans de nombreux cas, ne venait pas du matériel.",
       },
       {
         type: "p",
@@ -173,9 +185,13 @@ export const articles: Article[] = [
     blocks: [
       {
         type: "p",
+        text: "A fan running constantly at full speed almost always signals a processor kept busy nonstop by some program — not a hardware failure.",
+      },
+      {
+        type: "p",
         text: "It's a sound you stop noticing, until someone points out: \"your PC sounds like an airplane.\" A fan running at full speed constantly, even when you're not doing anything demanding, isn't normal. But it isn't necessarily a sign of hardware failure either.",
       },
-      { type: "h2", text: "What fan noise actually means" },
+      { type: "h2", text: "What does a constantly spinning fan actually mean?" },
       {
         type: "p",
         text: "A fan speeds up for one reason: the processor is heating up. So the question isn't \"is the fan broken?\" but \"why is the processor working so hard?\" In the vast majority of cases, the answer is software-related:",
@@ -193,10 +209,10 @@ export const articles: Article[] = [
         type: "p",
         text: "Only in that last case is it a genuine physical problem. In every other case, the fan is simply reacting correctly to an abnormal software situation — it isn't the cause, it's the symptom.",
       },
-      { type: "h2", text: "Why identifying the culprit changes everything" },
+      { type: "h2", text: "Why does identifying the culprit change everything?" },
       {
         type: "p",
-        text: "The difference is huge in terms of cost and effort. Closing a misidentified program takes ten seconds. Dusting out a case takes twenty minutes. Replacing a computer because \"it overheats\" costs several hundred euros — for a problem that, half the time, had nothing to do with the hardware.",
+        text: "The difference is huge in terms of cost and effort. Closing a misidentified program takes ten seconds. Dusting out a case takes twenty minutes. Replacing a computer because \"it overheats\" costs €300 to €800 — for a problem that, in many cases, had nothing to do with the hardware.",
       },
       {
         type: "p",
@@ -219,13 +235,17 @@ export const articles: Article[] = [
     blocks: [
       {
         type: "p",
+        text: "Un diagnostic indépendant et gratuit permet de vérifier, avant tout achat ou réparation coûteuse, si le remplacement d'un PC est réellement justifié.",
+      },
+      {
+        type: "p",
         text: "Un ordinateur qui rame, et une personne en face qui dit : « à ce stade, il vaut mieux en racheter un ». C'est une scène courante en magasin ou en dépannage à domicile, et c'est un conseil qui peut être parfaitement honnête. Le problème, c'est qu'il peut aussi ne pas l'être — et rien, dans l'instant, ne permet de faire la différence.",
       },
       {
         type: "p",
         text: "Ce n'est pas une question de confiance envers les professionnels du dépannage informatique, dont la majorité fait un travail sérieux. C'est une question d'asymétrie : celui qui pose le diagnostic est aussi, souvent, celui qui vend la solution. Ce n'est pas une accusation, c'est juste une situation qui mérite un point de contrôle indépendant.",
       },
-      { type: "h2", text: "Le réflexe simple : vérifier avant de décider" },
+      { type: "h2", text: "Comment vérifier un diagnostic avant de décider ?" },
       {
         type: "p",
         text: "Avant d'accepter un diagnostic — remplacement, réparation payante, ou simple nettoyage — la question à se poser est concrète : quel est le problème précis, et est-ce que ça se voit ailleurs que dans la bouche de la personne qui me le dit ?",
@@ -238,7 +258,7 @@ export const articles: Article[] = [
           "Le prix d'un diagnostic indépendant est toujours inférieur au prix d'un PC neuf inutile.",
         ],
       },
-      { type: "h2", text: "Un deuxième avis, gratuit et en cinq minutes" },
+      { type: "h2", text: "Comment obtenir un deuxième avis gratuit en quelques minutes ?" },
       {
         type: "p",
         text: "Nyctale a été conçu précisément pour ce moment-là : obtenir, chez soi, un diagnostic indépendant et gratuit avant de prendre une décision coûteuse. Le rapport dit ce qui ne va pas, dans quelle mesure c'est grave, et si un remplacement est réellement justifié — ou si un simple réglage suffit.",
@@ -260,13 +280,17 @@ export const articles: Article[] = [
     blocks: [
       {
         type: "p",
+        text: "An independent, free diagnostic lets you check, before any costly purchase or repair, whether replacing a PC is actually justified.",
+      },
+      {
+        type: "p",
         text: "A slow computer, and someone across the counter saying: \"at this point, you're better off buying a new one.\" It's a common scene in a shop or during an at-home repair visit, and it can be perfectly honest advice. The problem is it can also not be — and in the moment, there's no way to tell the difference.",
       },
       {
         type: "p",
         text: "This isn't about distrusting computer repair professionals, most of whom do serious, honest work. It's about an asymmetry: the person making the diagnosis is often also the one selling the solution. That's not an accusation, it's simply a situation that deserves an independent checkpoint.",
       },
-      { type: "h2", text: "The simple habit: check before deciding" },
+      { type: "h2", text: "How do you check a diagnosis before deciding?" },
       {
         type: "p",
         text: "Before accepting a diagnosis — a replacement, a paid repair, or a simple cleaning — the question worth asking is concrete: what exactly is the problem, and can it be seen anywhere other than in the words of the person telling you about it?",
@@ -279,7 +303,7 @@ export const articles: Article[] = [
           "The cost of an independent diagnostic is always lower than the cost of an unnecessary new PC.",
         ],
       },
-      { type: "h2", text: "A second opinion, free and in five minutes" },
+      { type: "h2", text: "How do you get a free second opinion in minutes?" },
       {
         type: "p",
         text: "Nyctale was built exactly for this moment: getting an independent, free diagnostic at home before making a costly decision. The report says what's wrong, how serious it is, and whether a replacement is actually justified — or whether a simple fix is enough.",

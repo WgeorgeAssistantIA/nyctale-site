@@ -281,6 +281,8 @@ const T = {
       titre: "Prêt à savoir ce qui se passe ?",
       sous: "Windows 10 et 11 · Installation en moins d'une minute",
       cta: "Télécharger pour Windows",
+      smartscreenNote:
+        "Windows peut afficher un avertissement SmartScreen car l'appli est encore peu téléchargée. Cliquez sur « Informations complémentaires » puis « Exécuter quand même » pour continuer — l'installeur est sûr.",
       store: "Aussi disponible sur le Microsoft Store.",
       linuxTar: "Linux (.tar.gz)",
       linuxAppImage: "Linux (AppImage)",
@@ -447,6 +449,8 @@ const T = {
       titre: "Ready to find out what's going on?",
       sous: "Windows 10 and 11 · Install in under a minute",
       cta: "Download for Windows",
+      smartscreenNote:
+        "Windows may show a SmartScreen warning since the app is still new. Click “More info” then “Run anyway” to continue — the installer is safe.",
       store: "Also available on the Microsoft Store.",
       linuxTar: "Linux (.tar.gz)",
       linuxAppImage: "Linux (AppImage)",
@@ -866,11 +870,16 @@ function Home() {
           <h2 className="mt-4 text-3xl font-bold tracking-tight">{t.telecharger.titre}</h2>
           <p className="mt-3 text-muted-foreground">{t.telecharger.sous}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a href="/downloads/Nyctale-Setup-1.0.2.exe" onClick={trackDownload}>
-              <Button size="lg" className="gap-2">
-                {t.telecharger.cta} <ArrowRight className="h-4 w-4" />
-              </Button>
-            </a>
+            <div className="group/win relative inline-flex">
+              <a href="/downloads/Nyctale-Setup-1.0.2.exe" onClick={trackDownload}>
+                <Button size="lg" className="gap-2">
+                  {t.telecharger.cta} <ArrowRight className="h-4 w-4" />
+                </Button>
+              </a>
+              <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-2 hidden w-72 -translate-x-1/2 rounded-lg border border-border bg-popover px-3 py-2 text-xs leading-relaxed text-popover-foreground opacity-0 shadow-lg transition-opacity duration-150 sm:block sm:group-hover/win:opacity-100">
+                {t.telecharger.smartscreenNote}
+              </div>
+            </div>
             <a
               href="/downloads/Nyctale-x86_64.AppImage"
               onClick={trackDownload}

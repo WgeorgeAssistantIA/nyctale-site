@@ -28,7 +28,7 @@ const CONTACT = "contact@nyctale.fr";
 const pp: Record<Lang, { title: string; updated: string; back: string; intro: string; sections: Section[] }> = {
   fr: {
     title: "Politique de confidentialité",
-    updated: "Dernière mise à jour : 8 août 2026",
+    updated: "Dernière mise à jour : 24 septembre 2026",
     back: "Retour à l'accueil",
     intro:
       "Nyctale est un logiciel de diagnostic PC conçu pour fonctionner intégralement en local sur votre ordinateur. Le respect de votre vie privée est au cœur de sa conception. Cette politique explique quelles données sont — ou ne sont pas — traitées lorsque vous utilisez l'application Nyctale et le site nyctale.fr.",
@@ -93,6 +93,10 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
           },
           {
             type: "p",
+            text: "Pour savoir quels boutons sont utiles, nous utilisons aussi PostHog (hébergement dans l'Union européenne) en mode anonyme : il enregistre les pages vues et les clics sur les boutons d'installation, de téléchargement et d'achat, sans cookie ni stockage sur votre appareil, sans enregistrement de session et sans profil individuel. Ces données transitent par nyctale.fr, qui ne transmet pas votre adresse IP à PostHog.",
+          },
+          {
+            type: "p",
             text: "Le site est hébergé par Vercel Inc. et le nom de domaine est géré par OVH. Comme tout hébergeur, Vercel peut consigner dans ses journaux techniques des données de connexion standard (par exemple l'adresse IP) à des fins de sécurité et de bon fonctionnement du service.",
           },
         ],
@@ -102,7 +106,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
         blocks: [
           {
             type: "p",
-            text: "Le site n'utilise aucun cookie de suivi, publicitaire ou de mesure d'audience : notre outil de statistiques (Vercel Web Analytics) fonctionne sans cookie. Aucun consentement aux cookies n'est donc requis pour le consulter.",
+            text: "Le site n'utilise aucun cookie de suivi, publicitaire ou de mesure d'audience : nos outils de statistiques (Vercel Web Analytics et PostHog en mode anonyme) fonctionnent sans cookie. Aucun consentement aux cookies n'est donc requis pour le consulter.",
           },
         ],
       },
@@ -159,7 +163,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
   },
   en: {
     title: "Privacy Policy",
-    updated: "Last updated: August 8, 2026",
+    updated: "Last updated: September 24, 2026",
     back: "Back to home",
     intro:
       "Nyctale is a PDF mail merge tool designed to run entirely locally on your computer. Respect for your privacy is built into its design. This policy explains what data is — and is not — processed when you use the Nyctale application and the nyctale.fr website.",
@@ -224,6 +228,10 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
           },
           {
             type: "p",
+            text: "To learn which buttons are useful, we also use PostHog (hosted in the European Union) in anonymous mode: it records page views and clicks on the install, download and purchase buttons, with no cookie or storage on your device, no session recording and no individual profile. This data goes through nyctale.fr, which does not pass your IP address on to PostHog.",
+          },
+          {
+            type: "p",
             text: "The website is hosted by Vercel Inc. and the domain name is managed by OVH. Like any host, Vercel may record standard connection data (such as the IP address) in its technical logs, for security and proper operation of the service.",
           },
         ],
@@ -233,7 +241,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
         blocks: [
           {
             type: "p",
-            text: "The website uses no tracking, advertising, or audience-measurement cookies: our analytics tool (Vercel Web Analytics) is cookieless. No cookie consent is therefore required to browse it.",
+            text: "The website uses no tracking, advertising, or audience-measurement cookies: our analytics tools (Vercel Web Analytics and PostHog in anonymous mode) are cookieless. No cookie consent is therefore required to browse it.",
           },
         ],
       },

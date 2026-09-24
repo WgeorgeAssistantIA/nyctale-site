@@ -14,6 +14,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as NypSplatRouteImport } from './routes/nyp.$'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ApiLicenseRefreshRouteImport } from './routes/api.license.refresh'
 import { Route as ApiLicenseActivateRouteImport } from './routes/api.license.activate'
@@ -43,6 +44,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NypSplatRoute = NypSplatRouteImport.update({
+  id: '/nyp/$',
+  path: '/nyp/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/nyp/$': typeof NypSplatRoute
   '/blog/': typeof BlogIndexRoute
   '/api/license/activate': typeof ApiLicenseActivateRoute
   '/api/license/refresh': typeof ApiLicenseRefreshRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/nyp/$': typeof NypSplatRoute
   '/blog': typeof BlogIndexRoute
   '/api/license/activate': typeof ApiLicenseActivateRoute
   '/api/license/refresh': typeof ApiLicenseRefreshRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/nyp/$': typeof NypSplatRoute
   '/blog/': typeof BlogIndexRoute
   '/api/license/activate': typeof ApiLicenseActivateRoute
   '/api/license/refresh': typeof ApiLicenseRefreshRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/blog/$slug'
+    | '/nyp/$'
     | '/blog/'
     | '/api/license/activate'
     | '/api/license/refresh'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/blog/$slug'
+    | '/nyp/$'
     | '/blog'
     | '/api/license/activate'
     | '/api/license/refresh'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/terms'
     | '/blog/$slug'
+    | '/nyp/$'
     | '/blog/'
     | '/api/license/activate'
     | '/api/license/refresh'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  NypSplatRoute: typeof NypSplatRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ApiLicenseActivateRoute: typeof ApiLicenseActivateRoute
   ApiLicenseRefreshRoute: typeof ApiLicenseRefreshRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/nyp/$': {
+      id: '/nyp/$'
+      path: '/nyp/$'
+      fullPath: '/nyp/$'
+      preLoaderRoute: typeof NypSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/blog/$slug'
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
   BlogSlugRoute: BlogSlugRoute,
+  NypSplatRoute: NypSplatRoute,
   BlogIndexRoute: BlogIndexRoute,
   ApiLicenseActivateRoute: ApiLicenseActivateRoute,
   ApiLicenseRefreshRoute: ApiLicenseRefreshRoute,

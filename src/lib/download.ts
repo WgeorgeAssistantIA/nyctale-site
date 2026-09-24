@@ -1,4 +1,4 @@
-import { track } from "@vercel/analytics";
+import { suivre } from "./analytics";
 
 // Le Microsoft Store est le canal principal : il installe sans l'avertissement
 // SmartScreen que declenche l'installeur .exe non signe. `mode=direct` ouvre
@@ -9,8 +9,8 @@ export const STORE_URL = `https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID
 export const EXE_URL = "/downloads/Nyctale-Setup-1.0.2.exe";
 
 export function trackStoreDownload(origine: string) {
-  track("store_download", { origine });
+  suivre("store_download", { origine });
 }
 export function trackDownload(origine: string) {
-  track("download", { origine });
+  suivre("download", { origine });
 }

@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { track } from "@vercel/analytics";
 import {
   Activity,
   ArrowRight,
@@ -31,15 +30,16 @@ import {
   trackDownload,
   trackStoreDownload,
 } from "@/lib/download";
+import { suivre } from "@/lib/analytics";
 
 function trackCrossLink(target: string) {
-  track("cross_link_click", { target });
+  suivre("cross_link_click", { target });
 }
 function trackAchat(palier: string) {
-  track("achat_click", { palier });
+  suivre("achat_click", { palier });
 }
 function trackPortableDownload() {
-  track("portable_download");
+  suivre("portable_download");
 }
 
 // Liens de checkout Lemon Squeezy (buy_now_url officiel de chaque produit,

@@ -556,10 +556,10 @@ function Home() {
     <main className="min-h-screen bg-background text-foreground">
       {/* NAV */}
       <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4">
+        <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-4 sm:gap-4 sm:px-6">
           <Link to="/" className="flex items-center gap-2">
             <img src="/nyctale_logo.png" alt="Nyctale" className="h-9 w-9 rounded-lg" />
-            <span className="text-lg font-semibold tracking-tight">Nyctale</span>
+            <span className="text-lg font-semibold tracking-tight max-[359px]:hidden">Nyctale</span>
           </Link>
           <nav className="hidden items-center gap-6 md:flex">
             <a
@@ -593,10 +593,12 @@ function Home() {
               {t.nav.blog}
             </Link>
           </nav>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
+            {/* Masque sous 640 px : logo + langue + Telecharger remplissent deja
+                un ecran de telephone, le Blog reste dans le pied de page. */}
             <Link
               to="/blog"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground md:hidden"
+              className="hidden text-sm text-muted-foreground transition-colors hover:text-foreground sm:inline md:hidden"
             >
               {t.nav.blog}
             </Link>

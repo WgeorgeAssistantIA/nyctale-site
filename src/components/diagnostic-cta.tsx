@@ -30,9 +30,9 @@ const TEXTES = {
   },
 } satisfies Record<Lang, unknown>;
 
-type Props = { lang: Lang; variante: "milieu" | "fin"; slug: string };
+type Props = { lang: Lang; variante: "milieu" | "fin"; slug: string; avecCapture?: boolean };
 
-export function DiagnosticCta({ lang, variante, slug }: Props) {
+export function DiagnosticCta({ lang, variante, slug, avecCapture = true }: Props) {
   const t = TEXTES[lang];
   const origine = `blog_${variante}_${slug}`;
   const fin = variante === "fin";
@@ -47,7 +47,7 @@ export function DiagnosticCta({ lang, variante, slug }: Props) {
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
         {fin ? t.finTexte : t.milieuTexte}
       </p>
-      {fin && (
+      {fin && avecCapture && (
         <img
           src={`/verdict-${lang}.webp`}
           alt={t.alt}

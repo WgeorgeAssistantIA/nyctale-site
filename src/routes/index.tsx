@@ -58,16 +58,23 @@ const CHECKOUT = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nyctale — PC Diagnostic | Comprenez ce qui ralentit votre PC" },
+      // Titre cale sur les requetes reelles de la Search Console (« ordinateur
+      // qui rame », « pourquoi mon ordi rame », « pc ralenti ») : personne ne
+      // cherche « PC Diagnostic ».
+      { title: "Ordinateur qui rame ou chauffe ? Diagnostic gratuit – Nyctale" },
       {
         name: "description",
         content:
-          "Diagnostic PC gratuit et illimité : Nyctale explique en clair pourquoi votre ordinateur chauffe ou ralentit, et ce qu'il faut faire. Application Windows, 100% locale.",
+          "Votre ordinateur rame ou chauffe ? Nyctale trouve la cause en 19 secondes et l'explique sans jargon, avant que vous ne rachetiez un PC. Gratuit, Windows 10 et 11.",
       },
-      { property: "og:title", content: "Nyctale — PC Diagnostic" },
+      {
+        property: "og:title",
+        content: "Ordinateur qui rame ? Faites le diagnostic avant de le remplacer",
+      },
       {
         property: "og:description",
-        content: "Avant de remplacer votre PC, faites le diagnostic. Gratuit et illimité.",
+        content:
+          "Nyctale trouve en 19 secondes pourquoi votre PC rame ou chauffe, et vous le dit franchement. Gratuit, 100 % local.",
       },
     ],
     links: [{ rel: "canonical", href: "https://nyctale.fr/" }],
@@ -193,7 +200,7 @@ const T = {
         icon: Gauge,
         titre: "Pourquoi il rame",
         texte:
-          'Mémoire saturée, navigateur trop gourmand, démarrage encombré : le diagnostic dit precisément ce qui ralentit la machine, pas juste "votre PC est vieux".',
+          'Mémoire saturée, navigateur trop gourmand, démarrage encombré : le diagnostic dit précisément ce qui ralentit la machine, pas juste "votre PC est vieux".',
       },
       {
         icon: HardDrive,

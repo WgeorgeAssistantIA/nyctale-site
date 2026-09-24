@@ -1,15 +1,27 @@
 import type { Lang } from "./lang";
 
-export type Bloc = { type: "p"; text: string } | { type: "h2"; text: string } | { type: "ul"; items: string[] };
+export type Bloc =
+  | { type: "p"; text: string }
+  | { type: "h2"; text: string }
+  | { type: "h3"; text: string }
+  | { type: "ul"; items: string[] }
+  | { type: "ol"; items: string[] }
+  | { type: "img"; src: string; alt: string; caption?: string };
 
 export type Article = {
   slug: string;
   lang: Lang;
   title: string;
+  // Balise <title> : calee sur les requetes reelles de la Search Console
+  // (« ordinateur qui rame », « ventilateur pc a fond »...) quand le titre
+  // affiche dans la page est plus editorial.
+  seoTitle?: string;
   excerpt: string;
   date: string;
+  updated?: string;
   readMin: number;
   blocks: Bloc[];
+  faq?: { q: string; r: string }[];
 };
 
 export const articles: Article[] = [
@@ -20,6 +32,7 @@ export const articles: Article[] = [
     slug: "pc-qui-rame-sans-raison",
     lang: "fr",
     title: "Mon ordinateur rame et je ne comprends pas pourquoi",
+    seoTitle: "Ordinateur qui rame : pourquoi, et comment trouver la cause",
     excerpt:
       "Un PC qui devient lent sans raison apparente, ça n'existe pas. Il y a toujours une cause — voici comment la trouver avant de penser à changer de machine.",
     date: "2026-08-08",
@@ -74,6 +87,7 @@ export const articles: Article[] = [
     slug: "slow-computer-no-obvious-reason",
     lang: "en",
     title: "My computer is slow and I don't understand why",
+    seoTitle: "Slow computer for no reason? How to find the real cause",
     excerpt:
       "A PC that slows down for no apparent reason doesn't exist. There's always a cause — here's how to find it before you start thinking about a new machine.",
     date: "2026-08-08",
@@ -131,92 +145,326 @@ export const articles: Article[] = [
   {
     slug: "ventilateur-qui-ne-sarrete-plus",
     lang: "fr",
-    title: "Le ventilateur qui tourne sans arrêt : faut-il s'inquiéter ?",
+    title: "Ventilateur de PC qui tourne à fond en permanence : causes et solutions",
+    seoTitle: "Ventilateur PC qui tourne à fond : causes et solutions",
     excerpt:
-      "Un ventilateur bruyant en permanence n'est pas normal, mais ce n'est pas forcément grave non plus. Voici comment savoir si c'est un vrai problème ou juste une tâche mal identifiée.",
+      "Un ventilateur qui souffle en permanence n'est pas normal, mais c'est rarement grave. Les 7 causes les plus fréquentes, comment trouver la vôtre en 5 minutes, et quand il faut vraiment s'inquiéter.",
     date: "2026-08-08",
-    readMin: 4,
+    updated: "2026-09-24",
+    readMin: 9,
     blocks: [
       {
         type: "p",
-        text: "Un ventilateur qui tourne en permanence à plein régime signale presque toujours un processeur sollicité en continu par un programme — pas une panne matérielle.",
+        text: "Un ventilateur de PC qui tourne à fond en permanence signale presque toujours un processeur sollicité en continu : par un programme dans la majorité des cas, par de la poussière ou une aération bouchée sinon. Dans les deux cas, la solution coûte beaucoup moins cher qu'un ordinateur neuf.",
       },
       {
         type: "p",
-        text: "C'est un bruit qu'on finit par ne plus entendre, jusqu'à ce qu'un proche fasse la remarque : « ton PC souffle comme un avion ». Un ventilateur qui tourne à plein régime en permanence, même quand vous ne faites rien de particulier, n'est pas normal. Mais ce n'est pas forcément le signe d'une panne matérielle non plus.",
+        text: "C'est un bruit qu'on finit par ne plus entendre, jusqu'à ce qu'un proche fasse la remarque : « ton PC souffle comme un avion ». Un ventilateur qui tourne à plein régime même quand vous ne faites rien de particulier n'est pas normal. Mais ce n'est pas forcément le signe d'une panne non plus.",
       },
-      { type: "h2", text: "Que signifie un ventilateur qui tourne en permanence ?" },
+      { type: "h2", text: "En bref : les 3 questions à se poser" },
+      {
+        type: "ol",
+        items: [
+          "Le bruit a-t-il commencé juste après l'allumage ou une mise à jour ? Si oui, patientez 20 à 40 minutes : c'est souvent Windows qui travaille en arrière-plan.",
+          "Un programme occupe-t-il beaucoup le processeur ? Le Gestionnaire des tâches répond en dix secondes (méthode détaillée plus bas).",
+          "Le ventilateur souffle-t-il même quand rien ne tourne ? Alors la cause est physique : poussière, aération bouchée ou pâte thermique usée.",
+        ],
+      },
+      { type: "h2", text: "Pourquoi un ventilateur de PC se met-il à tourner à fond ?" },
       {
         type: "p",
-        text: "Un ventilateur accélère pour une seule raison : le processeur chauffe. La question à se poser n'est donc pas « le ventilateur est-il cassé ? » mais « pourquoi le processeur travaille-t-il autant ? ». Dans la grande majorité des cas, la réponse est logicielle :",
+        text: "Un ventilateur n'accélère que pour une raison : la température monte. Le vrai sujet n'est donc pas le ventilateur, mais ce qui fait chauffer le processeur. Il n'existe que deux familles de causes : un composant qui travaille trop (cause logicielle), ou une chaleur qui s'évacue mal (cause physique). Voici les sept situations qu'on rencontre le plus souvent.",
+      },
+      { type: "h3", text: "1. Un programme qui tourne en boucle" },
+      {
+        type: "p",
+        text: "C'est la cause la plus fréquente. Un programme ou un composant de Windows se bloque et occupe un cœur du processeur en permanence, sans rien faire d'utile. Exemple réel, courant sous Windows 11 : le composant « Clavier tactile et saisie » (TextInputHost) qui grimpe à 80 % d'un cœur alors qu'aucun clavier tactile n'est utilisé. Fermer le programme en cause suffit : le ventilateur ralentit en une à deux minutes.",
+      },
+      {
+        type: "p",
+        text: "Un programme inconnu, que vous n'avez jamais installé et qui consomme beaucoup de processeur en continu, mérite en revanche une analyse antivirus : certains logiciels malveillants utilisent la puissance de votre ordinateur à votre insu.",
+      },
+      { type: "h3", text: "2. Windows qui travaille en arrière-plan" },
+      {
+        type: "p",
+        text: "Après l'allumage, et surtout après quelques jours sans utilisation, Windows rattrape son retard. Ces tâches sont normales et temporaires ; si le bruit s'arrête de lui-même au bout de 20 à 40 minutes, il n'y a rien à faire. Les noms à reconnaître dans le Gestionnaire des tâches :",
       },
       {
         type: "ul",
         items: [
-          "Un composant Windows bloqué dans une boucle, qui consomme du processeur sans rien faire d'utile.",
-          "Un programme oublié en arrière-plan, sans fenêtre ouverte, dont vous ignorez l'existence.",
-          "Une mise à jour ou une analyse programmée qui tourne au mauvais moment.",
-          "De la poussière accumulée dans le boîtier, qui empêche la chaleur de s'évacuer normalement — un vrai problème matériel, mais qui se résout avec un nettoyage, pas un nouvel achat.",
+          "TiWorker ou TrustedInstaller : installation d'une mise à jour Windows.",
+          "MsMpEng : analyse antivirus de Microsoft Defender.",
+          "SearchIndexer : indexation de vos fichiers pour la recherche.",
+          "OneDrive ou Dropbox : synchronisation de vos fichiers.",
+        ],
+      },
+      { type: "h3", text: "3. Le navigateur et ses onglets" },
+      {
+        type: "p",
+        text: "Des dizaines d'onglets ouverts, une vidéo oubliée en arrière-plan, une page chargée de publicités animées ou une extension mal écrite suffisent à faire travailler le processeur sans arrêt. Le navigateur est d'ailleurs la cause la plus fréquente d'un ordinateur qui devient lent et bruyant au fil de la journée.",
+      },
+      { type: "h3", text: "4. La poussière dans les grilles et le radiateur" },
+      {
+        type: "p",
+        text: "Avec les années, la poussière s'accumule dans les grilles d'aération et entre les ailettes du radiateur. L'air circule moins bien, la chaleur s'évacue mal, et le ventilateur compense en tournant plus vite. C'est la cause numéro un des PC de plus de trois ou quatre ans qui soufflent même au repos.",
+      },
+      { type: "h3", text: "5. Une aération bouchée" },
+      {
+        type: "p",
+        text: "Un ordinateur portable posé sur un lit, un canapé, un coussin ou sur les genoux aspire souvent son air par-dessous : le tissu bouche les entrées d'air. Le même portable posé sur une table redevient fréquemment silencieux en quelques minutes.",
+      },
+      { type: "h3", text: "6. Une pâte thermique usée" },
+      {
+        type: "p",
+        text: "Entre le processeur et son radiateur, une fine couche de pâte thermique assure le passage de la chaleur. Elle sèche avec le temps, en général après quatre à six ans. Le processeur chauffe alors plus vite, même avec peu de travail. Aucun logiciel ne peut corriger ce point, mais un réparateur remplace la pâte lors d'un nettoyage.",
+      },
+      { type: "h3", text: "7. Un mode d'alimentation trop agressif" },
+      {
+        type: "p",
+        text: "Le mode « Meilleures performances » garde le processeur à haute fréquence plus souvent, donc plus chaud. Sur un ordinateur de bureau ou un portable branché, repasser sur « Équilibré » calme souvent le ventilateur sans différence de rapidité visible au quotidien.",
+      },
+      { type: "h2", text: "Comment trouver la cause vous-même en 5 minutes ?" },
+      {
+        type: "ol",
+        items: [
+          "Attendez cinq minutes après l'allumage, puis ouvrez le Gestionnaire des tâches avec Ctrl + Maj + Échap.",
+          "Dans l'onglet « Processus », cliquez sur la colonne « Processeur » pour trier les programmes du plus gourmand au moins gourmand.",
+          "Si un programme dépasse durablement 20 à 30 %, c'est très probablement lui. S'il fait partie de la liste des tâches Windows ci-dessus, patientez ; sinon, faites un clic droit sur sa ligne puis « Fin de tâche ».",
+          "Écoutez le ventilateur pendant une ou deux minutes. S'il ralentit, vous tenez le coupable.",
+          "Si aucun programme ne dépasse quelques pour cent et que le ventilateur souffle quand même, la cause est physique : poussière, aération ou pâte thermique.",
         ],
       },
       {
         type: "p",
-        text: "Dans ce dernier cas seulement, il s'agit d'un vrai problème physique. Dans tous les autres, le ventilateur ne fait que réagir correctement à une situation logicielle anormale — il n'est pas la cause, il est le symptôme.",
+        text: "Un indice supplémentaire se trouve dans l'Observateur d'événements de Windows : chaque fois que le processeur a dû ralentir pour se protéger de la chaleur, Windows l'enregistre dans le journal Système (événement 37, source Kernel-Processor-Power). Plusieurs de ces événements alors que la machine ne faisait presque rien signent un problème de refroidissement.",
       },
-      { type: "h2", text: "Pourquoi identifier le coupable change-t-il tout ?" },
+      { type: "h2", text: "Ce que Nyctale vérifie en 19 secondes" },
       {
         type: "p",
-        text: "La différence est énorme en termes de coût et d'effort. Fermer un programme mal identifié prend dix secondes. Dépoussiérer un boîtier prend vingt minutes. Remplacer un ordinateur parce qu'« il chauffe trop » coûte 300 à 800 € — pour un problème qui, dans de nombreux cas, ne venait pas du matériel.",
+        text: "Nyctale fait ce raisonnement à votre place. Il mesure quels programmes occupent le processeur, lit dans le journal de Windows combien de fois le processeur a dû se brider, puis croise les deux. Quand l'ordinateur chauffe alors qu'il ne fait presque rien, il le dit clairement, y compris qu'aucun logiciel ne pourra régler ce problème-là.",
+      },
+      {
+        type: "img",
+        src: "/verdict-fr.webp",
+        alt: "Verdict Nyctale : le problème ne vient pas d'un logiciel, mais du refroidissement",
+        caption:
+          "Un vrai verdict : 10 ralentissements de protection avec seulement 3,5 % de charge, sur un portable de 4,7 ans.",
+      },
+      { type: "h2", text: "Que faire selon la cause ?" },
+      {
+        type: "ul",
+        items: [
+          "Programme bloqué : fermez-le depuis le Gestionnaire des tâches (« Fin de tâche »), ou redémarrez l'ordinateur. Choisissez bien « Redémarrer » et non « Arrêter » : avec le démarrage rapide de Windows, un arrêt ne remet pas tout à zéro.",
+          "Mise à jour ou analyse antivirus : laissez l'ordinateur allumé et branché 20 à 40 minutes, sans le mettre en veille.",
+          "Navigateur : fermez les onglets inutiles et activez l'économiseur de mémoire (Chrome, Edge) ou la mise en veille des onglets inactifs.",
+          "Poussière : ordinateur éteint et débranché, soufflez les grilles avec une bombe à air sec, par petites pressions et de préférence à l'extérieur. Maintenez les pales immobiles (avec un coton-tige, par exemple) pour qu'elles ne s'emballent pas sous le jet d'air.",
+          "Aération bouchée : posez le portable sur une surface dure et plate ; un support ventilé aide en été.",
+          "Pâte thermique et nettoyage complet : un réparateur démonte l'ordinateur, nettoie le radiateur et remplace la pâte, généralement pour 50 à 80 €. C'est souvent ce qui rend un portable de cinq ans de nouveau silencieux.",
+          "Mode d'alimentation : Paramètres > Système > Alimentation (ou « Alimentation et batterie »), puis « Mode d'alimentation » sur « Équilibré ».",
+        ],
+      },
+      { type: "h2", text: "Quand faut-il vraiment s'inquiéter ?" },
+      {
+        type: "ul",
+        items: [
+          "Un bruit de frottement, de grincement ou de claquement : le roulement du ventilateur s'use. La pièce se remplace et coûte peu, mais mieux vaut ne pas attendre qu'elle lâche.",
+          "Le ventilateur ne tourne plus du tout alors que l'ordinateur chauffe : évitez les tâches lourdes et faites-le vérifier rapidement.",
+          "L'ordinateur s'éteint tout seul, sans prévenir : c'est souvent une protection contre la surchauffe. Faites vérifier le refroidissement avant d'envisager un remplacement.",
+        ],
       },
       {
         type: "p",
-        text: "Nyctale identifie précisément quel programme fait tourner le ventilateur, et fait la distinction entre un vrai signe de surchauffe matérielle et un simple processus mal comportant. Le rapport nomme le coupable — pas juste « votre PC chauffe ».",
+        text: "Dans aucun de ces cas l'ordinateur n'est « bon à jeter » : un ventilateur neuf ou un nettoyage coûte une fraction du prix d'un PC neuf (300 à 800 €).",
+      },
+      { type: "h2", text: "Faut-il un logiciel pour contrôler le ventilateur ?" },
+      {
+        type: "p",
+        text: "Rarement. Des logiciels permettent de régler la vitesse des ventilateurs, mais forcer un ventilateur à ralentir alors que le processeur chauffe revient à couper l'alarme sans éteindre le feu. Et aucun « nettoyeur » ni « optimiseur » ne retire de la poussière : méfiez-vous de tout programme qui promet de rendre un PC silencieux en un clic.",
+      },
+    ],
+    faq: [
+      {
+        q: "Est-ce grave si le ventilateur de mon PC tourne tout le temps ?",
+        r: "Rarement. C'est un symptôme, pas une panne : le processeur chauffe parce qu'un programme le sollicite ou parce que la chaleur s'évacue mal. Il faut trouver la cause, mais dans la grande majorité des cas elle se règle sans racheter d'ordinateur.",
+      },
+      {
+        q: "Pourquoi le ventilateur de mon portable tourne à fond alors que je ne fais rien ?",
+        r: "Soit un programme travaille en arrière-plan sans fenêtre visible (mise à jour, antivirus, programme bloqué), soit la chaleur s'évacue mal (poussière, portable posé sur un tissu). Le Gestionnaire des tâches, ouvert avec Ctrl + Maj + Échap, permet de trancher en quelques secondes.",
+      },
+      {
+        q: "Combien coûte un nettoyage de PC chez un réparateur ?",
+        r: "En général 50 à 80 € pour un nettoyage complet avec remplacement de la pâte thermique. C'est souvent la bonne solution pour un portable de plus de quatre ans qui souffle même au repos.",
+      },
+      {
+        q: "Un ventilateur bruyant peut-il abîmer mon ordinateur ?",
+        r: "Le bruit lui-même, non. En revanche, une surchauffe prolongée oblige le processeur à ralentir et peut, à la longue, provoquer des arrêts brutaux. Mieux vaut traiter la cause rapidement.",
+      },
+      {
+        q: "Nyctale peut-il réduire le bruit du ventilateur ?",
+        r: "Nyctale trouve la cause et aide à la corriger quand elle est logicielle : fermer un programme bloqué, régler le navigateur, repasser en mode Équilibré. Quand la cause est physique, il vous le dit franchement : aucun logiciel ne remplace un dépoussiérage.",
       },
     ],
   },
   {
     slug: "fan-that-never-stops-spinning",
     lang: "en",
-    title: "The fan that never stops spinning: should you worry?",
+    title: "PC fan always running at full speed: causes and fixes",
+    seoTitle: "PC fan always running at full speed: causes and fixes",
     excerpt:
-      "A fan that's constantly loud isn't normal, but it isn't necessarily serious either. Here's how to tell if it's a real problem or just a misidentified process.",
+      "A fan that roars nonstop isn't normal, but it's rarely serious. The 7 most common causes, how to find yours in 5 minutes, and when you should actually worry.",
     date: "2026-08-08",
-    readMin: 4,
+    updated: "2026-09-24",
+    readMin: 9,
     blocks: [
       {
         type: "p",
-        text: "A fan running constantly at full speed almost always signals a processor kept busy nonstop by some program — not a hardware failure.",
+        text: "A PC fan running at full speed all the time almost always means the processor is being kept busy nonstop: by a program in most cases, otherwise by dust or a blocked air vent. Either way, the fix costs far less than a new computer.",
       },
       {
         type: "p",
-        text: "It's a sound you stop noticing, until someone points out: \"your PC sounds like an airplane.\" A fan running at full speed constantly, even when you're not doing anything demanding, isn't normal. But it isn't necessarily a sign of hardware failure either.",
+        text: "It's a sound you stop noticing, until someone points out: \"your PC sounds like an airplane.\" A fan running flat out even when you're not doing anything demanding isn't normal. But it isn't necessarily a sign of failure either.",
       },
-      { type: "h2", text: "What does a constantly spinning fan actually mean?" },
+      { type: "h2", text: "In short: 3 questions to ask yourself" },
+      {
+        type: "ol",
+        items: [
+          "Did the noise start right after switching on or after an update? If so, wait 20 to 40 minutes: Windows is often catching up in the background.",
+          "Is one program keeping the processor busy? Task Manager tells you in ten seconds (method below).",
+          "Does the fan roar even when nothing is running? Then the cause is physical: dust, a blocked vent or worn thermal paste.",
+        ],
+      },
+      { type: "h2", text: "Why does a PC fan spin up to full speed?" },
       {
         type: "p",
-        text: "A fan speeds up for one reason: the processor is heating up. So the question isn't \"is the fan broken?\" but \"why is the processor working so hard?\" In the vast majority of cases, the answer is software-related:",
+        text: "A fan speeds up for one reason only: the temperature is rising. So the real question isn't the fan, it's what is heating up the processor. There are just two families of causes: a component working too hard (software), or heat that can't escape (physical). Here are the seven situations you'll run into most often.",
+      },
+      { type: "h3", text: "1. A program stuck in a loop" },
+      {
+        type: "p",
+        text: "This is the most common cause. A program or a Windows component gets stuck and keeps one processor core busy permanently, without doing anything useful. A real example, common on Windows 11: the \"touch keyboard and text input\" component (TextInputHost) climbing to 80% of a core while no touch keyboard is in use. Closing the culprit is enough: the fan slows down within a minute or two.",
+      },
+      {
+        type: "p",
+        text: "An unknown program you never installed, using a lot of processor power nonstop, deserves an antivirus scan though: some malware uses your computer's power without you knowing.",
+      },
+      { type: "h3", text: "2. Windows working in the background" },
+      {
+        type: "p",
+        text: "After you switch on, and especially after a few days without use, Windows catches up. These tasks are normal and temporary; if the noise stops on its own after 20 to 40 minutes, there's nothing to do. The names to recognise in Task Manager:",
       },
       {
         type: "ul",
         items: [
-          "A Windows component stuck in a loop, consuming processor power without doing anything useful.",
-          "A program forgotten in the background, with no open window, that you don't even know is running.",
-          "An update or scheduled scan running at the wrong time.",
-          "Dust built up inside the case, preventing heat from escaping normally — a real hardware issue, but one that's fixed with a cleaning, not a new purchase.",
+          "TiWorker or TrustedInstaller: a Windows update being installed.",
+          "MsMpEng: a Microsoft Defender antivirus scan.",
+          "SearchIndexer: your files being indexed for search.",
+          "OneDrive or Dropbox: your files being synced.",
+        ],
+      },
+      { type: "h3", text: "3. The browser and its tabs" },
+      {
+        type: "p",
+        text: "Dozens of open tabs, a video forgotten in the background, a page full of animated ads or a badly written extension are enough to keep the processor busy nonstop. The browser is also the most common reason a computer gets slower and louder as the day goes on.",
+      },
+      { type: "h3", text: "4. Dust in the vents and the heatsink" },
+      {
+        type: "p",
+        text: "Over the years, dust builds up in the air vents and between the fins of the heatsink. Air flows less freely, heat escapes poorly, and the fan compensates by spinning faster. It's the number one cause for PCs older than three or four years that roar even at rest.",
+      },
+      { type: "h3", text: "5. A blocked air vent" },
+      {
+        type: "p",
+        text: "A laptop resting on a bed, a sofa, a cushion or your lap often draws air from underneath: the fabric blocks the air intakes. The same laptop placed on a table often goes quiet again within minutes.",
+      },
+      { type: "h3", text: "6. Worn thermal paste" },
+      {
+        type: "p",
+        text: "Between the processor and its heatsink, a thin layer of thermal paste carries the heat away. It dries out over time, usually after four to six years. The processor then heats up faster, even under light load. No software can fix this, but a repair shop replaces the paste during a cleaning.",
+      },
+      { type: "h3", text: "7. An aggressive power mode" },
+      {
+        type: "p",
+        text: "The \"Best performance\" power mode keeps the processor at high frequency more often, so it runs hotter. On a desktop or a plugged-in laptop, switching back to \"Balanced\" often calms the fan with no noticeable difference in everyday speed.",
+      },
+      { type: "h2", text: "How to find the cause yourself in 5 minutes" },
+      {
+        type: "ol",
+        items: [
+          "Wait five minutes after switching on, then open Task Manager with Ctrl + Shift + Esc.",
+          "In the \"Processes\" tab, click the \"CPU\" column to sort programs from the most to the least demanding.",
+          "If one program stays above 20 to 30%, it's very likely the culprit. If it's one of the Windows tasks listed above, wait; otherwise, right-click its line and choose \"End task\".",
+          "Listen to the fan for a minute or two. If it slows down, you've found the culprit.",
+          "If no program goes above a few percent and the fan still roars, the cause is physical: dust, ventilation or thermal paste.",
         ],
       },
       {
         type: "p",
-        text: "Only in that last case is it a genuine physical problem. In every other case, the fan is simply reacting correctly to an abnormal software situation — it isn't the cause, it's the symptom.",
+        text: "One more clue lives in the Windows Event Viewer: every time the processor had to slow down to protect itself from heat, Windows logs it in the System log (event 37, source Kernel-Processor-Power). Several of these events while the machine was doing almost nothing point to a cooling problem.",
       },
-      { type: "h2", text: "Why does identifying the culprit change everything?" },
+      { type: "h2", text: "What Nyctale checks in 19 seconds" },
       {
         type: "p",
-        text: "The difference is huge in terms of cost and effort. Closing a misidentified program takes ten seconds. Dusting out a case takes twenty minutes. Replacing a computer because \"it overheats\" costs €300 to €800 — for a problem that, in many cases, had nothing to do with the hardware.",
+        text: "Nyctale does this reasoning for you. It measures which programs keep the processor busy, reads from the Windows log how many times the processor had to throttle itself, then cross-checks the two. When the computer heats up while doing almost nothing, it says so plainly, including that no software can fix that particular problem.",
+      },
+      {
+        type: "img",
+        src: "/verdict-en.webp",
+        alt: "Nyctale verdict: the problem is not software, it is the cooling",
+        caption:
+          "A real verdict: 10 protective slowdowns at only 3.5% load, on a 4.7-year-old laptop.",
+      },
+      { type: "h2", text: "What to do, depending on the cause" },
+      {
+        type: "ul",
+        items: [
+          "Stuck program: close it from Task Manager (\"End task\"), or restart the computer. Choose \"Restart\", not \"Shut down\": with Windows fast startup, shutting down doesn't reset everything.",
+          "Update or antivirus scan: leave the computer on and plugged in for 20 to 40 minutes, without putting it to sleep.",
+          "Browser: close unused tabs and turn on the memory saver (Chrome, Edge) or sleeping tabs.",
+          "Dust: with the computer switched off and unplugged, blow out the vents with a can of compressed air, in short bursts and preferably outdoors. Hold the fan blades still (with a cotton swab, for example) so they don't overspin in the airflow.",
+          "Blocked vent: put the laptop on a hard, flat surface; a cooling stand helps in summer.",
+          "Thermal paste and full cleaning: a repair shop opens the computer, cleans the heatsink and replaces the paste, usually for 50 to 80 euros. It's often what makes a five-year-old laptop quiet again.",
+          "Power mode: Settings > System > Power (or \"Power & battery\"), then set \"Power mode\" to \"Balanced\".",
+        ],
+      },
+      { type: "h2", text: "When should you actually worry?" },
+      {
+        type: "ul",
+        items: [
+          "A rubbing, grinding or clicking noise: the fan bearing is wearing out. The part is cheap to replace, but better not to wait until it fails.",
+          "The fan doesn't spin at all while the computer heats up: avoid heavy tasks and get it checked quickly.",
+          "The computer shuts down on its own without warning: this is often an overheating protection. Get the cooling checked before considering a replacement.",
+        ],
       },
       {
         type: "p",
-        text: "Nyctale identifies precisely which program is spinning up the fan, and distinguishes a genuine hardware overheating signal from a simple misbehaving process. The report names the culprit — not just \"your PC is hot.\"",
+        text: "In none of these cases is the computer ready for the bin: a new fan or a cleaning costs a fraction of a new PC (€300 to €800).",
+      },
+      { type: "h2", text: "Do you need software to control the fan?" },
+      {
+        type: "p",
+        text: "Rarely. Some tools let you set fan speeds, but forcing a fan to slow down while the processor is hot is like switching off the alarm without putting out the fire. And no \"cleaner\" or \"optimiser\" removes dust: be wary of any program that promises to make a PC quiet in one click.",
+      },
+    ],
+    faq: [
+      {
+        q: "Is it bad if my PC fan runs all the time?",
+        r: "Rarely. It's a symptom, not a failure: the processor is hot because a program keeps it busy or because heat can't escape. You need to find the cause, but in the vast majority of cases it can be fixed without buying a new computer.",
+      },
+      {
+        q: "Why is my laptop fan running at full speed when I'm not doing anything?",
+        r: "Either a program is working in the background with no visible window (update, antivirus, stuck program), or heat can't escape (dust, laptop resting on fabric). Task Manager, opened with Ctrl + Shift + Esc, settles it in seconds.",
+      },
+      {
+        q: "How much does a PC cleaning cost at a repair shop?",
+        r: "Usually 50 to 80 euros for a full cleaning with fresh thermal paste. It's often the right fix for a laptop over four years old that roars even at rest.",
+      },
+      {
+        q: "Can a loud fan damage my computer?",
+        r: "The noise itself, no. But prolonged overheating forces the processor to slow down and can eventually cause sudden shutdowns. It's best to deal with the cause quickly.",
+      },
+      {
+        q: "Can Nyctale reduce fan noise?",
+        r: "Nyctale finds the cause and helps fix it when it's software: closing a stuck program, adjusting the browser, switching back to Balanced mode. When the cause is physical, it tells you plainly: no software replaces a good dusting.",
       },
     ],
   },
@@ -228,6 +476,7 @@ export const articles: Article[] = [
     slug: "avant-dacheter-un-pc-neuf",
     lang: "fr",
     title: "Avant d'acheter un PC neuf, une question à se poser",
+    seoTitle: "PC lent : faut-il vraiment acheter un ordinateur neuf ?",
     excerpt:
       "\"Il faut changer votre ordinateur\" est parfois vrai — et parfois une phrase qui arrange surtout celui qui la prononce. Voici comment savoir de quel côté vous êtes.",
     date: "2026-08-08",
@@ -273,6 +522,7 @@ export const articles: Article[] = [
     slug: "before-buying-a-new-pc",
     lang: "en",
     title: "Before buying a new PC, one question worth asking",
+    seoTitle: "Slow PC: do you really need to buy a new computer?",
     excerpt:
       '"You need to replace your computer" is sometimes true — and sometimes a line that mostly benefits the person saying it. Here\'s how to tell which side you\'re on.',
     date: "2026-08-08",

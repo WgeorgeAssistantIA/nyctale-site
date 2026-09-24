@@ -55,6 +55,42 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://nyctale.fr/blog/disque-a-100-pourcent-windows</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nyctale.fr/blog/disk-100-percent-windows</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nyctale.fr/blog/pc-lent-au-demarrage</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nyctale.fr/blog/slow-pc-startup</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nyctale.fr/blog/windows-11-lent-apres-mise-a-jour</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nyctale.fr/blog/windows-11-slow-after-update</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://nyctale.fr/privacy</loc>
     <lastmod>2026-08-08</lastmod>
     <changefreq>yearly</changefreq>

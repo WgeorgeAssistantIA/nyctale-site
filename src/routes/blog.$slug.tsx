@@ -19,7 +19,25 @@ export const Route = createFileRoute("/blog/$slug")({
           { property: "og:description", content: loaderData.excerpt },
         ]
       : [],
-    links: loaderData ? [{ rel: "canonical", href: `https://nyctale.fr/blog/${loaderData.slug}` }] : [],
+    links: loaderData
+      ? [
+          { rel: "canonical", href: `https://nyctale.fr/blog/${loaderData.slug}` },
+          // hreflang : relie les versions FR et EN d'un meme article (le FR
+          // sert de version par defaut).
+          ...(loaderData.traduction
+            ? (() => {
+                const url = (slug: string) => `https://nyctale.fr/blog/${slug}`;
+                const fr = loaderData.lang === "fr" ? loaderData.slug : loaderData.traduction;
+                const en = loaderData.lang === "en" ? loaderData.slug : loaderData.traduction;
+                return [
+                  { rel: "alternate", hrefLang: "fr", href: url(fr) },
+                  { rel: "alternate", hrefLang: "en", href: url(en) },
+                  { rel: "alternate", hrefLang: "x-default", href: url(fr) },
+                ];
+              })()
+            : []),
+        ]
+      : [],
     scripts: loaderData
       ? [
           ...(loaderData.faq

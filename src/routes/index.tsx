@@ -13,6 +13,9 @@ import {
   ThermometerSun,
   Wrench,
   Lightbulb,
+  ListChecks,
+  Handshake,
+  UserRound,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -233,6 +236,34 @@ const T = {
       t3: "Résultats faciles à comprendre",
       d3: "L'application a été pensée pour aller à l'essentiel. Pas de jargon technique ni de graphiques compliqués, juste un diagnostic clair de ce qui ne va pas.",
     },
+    transparence: {
+      titre: "Ce que Nyctale vérifie, en toute transparence",
+      sous: "Pas de score mystère ni de « 1 247 problèmes détectés » : voici les 13 points contrôlés à chaque analyse, et rien d'autre.",
+      controles: [
+        "Programmes qui s'emballent",
+        "Mémoire vive",
+        "Navigateur Internet",
+        "Économie de mémoire du navigateur",
+        "Redémarrages réels",
+        "Surchauffe et ralentissements",
+        "Arrêts et plantages",
+        "Espace libre sur le disque",
+        "Santé du disque",
+        "Batterie",
+        "Programmes lancés au démarrage",
+        "Fichiers système de Windows",
+        "Charge globale de la machine",
+      ],
+      engagementsTitre: "Nos engagements",
+      engagements: [
+        "Nyctale ne vous vendra jamais un PC : son rôle est de vous dire quand un remplacement n'est pas nécessaire.",
+        "Il ne modifie rien sans votre accord, et vous dit franchement quand aucun logiciel ne peut régler le problème.",
+        "Aucune donnée de votre ordinateur n'est envoyée en ligne : le diagnostic se fait entièrement sur votre machine.",
+      ],
+      quiTitre: "Qui fait Nyctale ?",
+      qui: "Nyctale est développé en France par un développeur indépendant, sous la bannière La Fabrik Numérique (également éditeur de VoxCut, VectorPop et InOneShot). Il est publié sur le Microsoft Store, qui contrôle chaque application avant sa mise en ligne.",
+      contact: "Une question, un doute sur un résultat ? Écrivez-nous :",
+    },
     pro: {
       badge: "Pensé par des techniciens, pour des techniciens",
       titre: "Vous dépannez des PC ? Nyctale devient votre outil de diagnostic client.",
@@ -414,6 +445,34 @@ const T = {
       d2: "The diagnostic never changes anything on your system. It reads, it analyzes, it explains — the decision is always yours.",
       t3: "Easy to understand results",
       d3: "The application gets straight to the point. No technical jargon or complicated graphs, just a clear diagnostic of what's wrong.",
+    },
+    transparence: {
+      titre: "What Nyctale checks, in full transparency",
+      sous: "No mystery score, no \"1,247 problems found\": here are the 13 points checked in every scan, and nothing else.",
+      controles: [
+        "Runaway programs",
+        "Working memory (RAM)",
+        "Web browser",
+        "Browser memory saving",
+        "Real restarts",
+        "Overheating and slowdowns",
+        "Crashes and shutdowns",
+        "Free disk space",
+        "Drive health",
+        "Battery",
+        "Programs launched at startup",
+        "Windows system files",
+        "Overall machine load",
+      ],
+      engagementsTitre: "Our commitments",
+      engagements: [
+        "Nyctale will never sell you a PC: its job is to tell you when a replacement isn't needed.",
+        "It changes nothing without your consent, and tells you plainly when no software can fix the problem.",
+        "No data from your computer is sent online: the diagnostic runs entirely on your machine.",
+      ],
+      quiTitre: "Who makes Nyctale?",
+      qui: "Nyctale is developed in France by an independent developer, under the La Fabrik Numérique banner (also behind VoxCut, VectorPop and InOneShot). It is published on the Microsoft Store, which reviews every app before it goes live.",
+      contact: "A question, or a doubt about a result? Write to us:",
     },
     pro: {
       badge: "Built by technicians, for technicians",
@@ -760,6 +819,54 @@ function Home() {
               <h3 className="font-semibold">{t.confiance.t3}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{t.confiance.d3}</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRANSPARENCE : preuves de confiance verifiables, pas de faux avis */}
+      <section id="transparence" className="py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <h2 className="text-center text-3xl font-bold tracking-tight">{t.transparence.titre}</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
+            {t.transparence.sous}
+          </p>
+          <ul className="mx-auto mt-10 grid max-w-4xl gap-x-6 gap-y-3 text-sm sm:grid-cols-2 md:grid-cols-3">
+            {t.transparence.controles.map((c) => (
+              <li key={c} className="flex items-center gap-2">
+                <ListChecks className="h-4 w-4 shrink-0 text-primary" /> {c}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            <Card className="p-6">
+              <div className="flex items-center gap-2">
+                <Handshake className="h-5 w-5 text-primary" />
+                <h3 className="font-semibold">{t.transparence.engagementsTitre}</h3>
+              </div>
+              <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                {t.transparence.engagements.map((e) => (
+                  <li key={e} className="flex items-start gap-2">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" /> {e}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+            <Card className="p-6">
+              <div className="flex items-center gap-2">
+                <UserRound className="h-5 w-5 text-primary" />
+                <h3 className="font-semibold">{t.transparence.quiTitre}</h3>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t.transparence.qui}</p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                {t.transparence.contact}{" "}
+                <a
+                  href="mailto:lafabriknumerique@outlook.com"
+                  className="text-primary underline underline-offset-4"
+                >
+                  lafabriknumerique@outlook.com
+                </a>
+              </p>
+            </Card>
           </div>
         </div>
       </section>

@@ -48,10 +48,6 @@ function trackPortableDownload() {
 const CHECKOUT = {
   reparation:
     "https://voxcut-pro.lemonsqueezy.com/checkout/buy/a697285b-7c3b-416a-b7ef-d4929cbc95e9",
-  surveillanceAnnuelle:
-    "https://voxcut-pro.lemonsqueezy.com/checkout/buy/cfe51d12-4ab5-40a9-96ad-75423494d291",
-  surveillanceMensuelle:
-    "https://voxcut-pro.lemonsqueezy.com/checkout/buy/88e3ac93-d948-49cf-9786-2dbd16f99266",
   pro: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/e8823d08-19d4-4c32-8c99-7bd315f800e7",
 };
 
@@ -101,7 +97,7 @@ export const Route = createFileRoute("/")({
               { "@type": "Offer", name: "Nyctale Diagnostic", price: "0", priceCurrency: "EUR" },
               {
                 "@type": "Offer",
-                name: "Nyctale Réparation / surveillance",
+                name: "Nyctale Version complète",
                 price: "24.99",
                 priceCurrency: "EUR",
               },
@@ -263,26 +259,29 @@ const T = {
         prix: "Gratuit",
         sous: "Illimité, pour toujours",
         pts: [
-          "Analyse complète du système",
+          "Diagnostic complet, sans limite",
           "Explications en langage clair",
-          "Une première réparation offerte",
+          "Une réparation accompagnée offerte",
         ],
       },
       mid: {
-        titre: "Réparation / surveillance",
+        titre: "Version complète",
         prix: "24,99 €",
-        sous: "réparation ponctuelle, ou 19 €/an · 2 €/mois pour la surveillance continue",
+        sous: "paiement unique, sans abonnement",
         pts: [
-          "Correction accompagnée des problèmes détectés",
-          "Détail technique complet",
-          "Suivi dans le temps",
+          "Réparations accompagnées illimitées",
+          "Surveillance continue : Nyctale vous prévient dès qu'un problème apparaît",
+          "Sans compte à créer, tout reste sur votre ordinateur",
         ],
+        ancrage:
+          "Moins qu'un passage chez un dépanneur (50 à 80 €), bien moins qu'un PC neuf (300 à 800 €).",
       },
       pro: {
         titre: "Pro (dépanneurs)",
         prix: "29,99 €",
         sous: "par mois",
         pts: [
+          "Détail technique complet (processus, disque, valeurs brutes)",
           "Rapport avant/après pour le client",
           "Export PDF avec en-tête personnalisé",
           "Sans anti-copie, licence USB",
@@ -290,8 +289,7 @@ const T = {
         portable: "Télécharger la version portable (clé USB)",
       },
       acheter: "Choisir ce palier",
-      acheterAnnuel: "ou 19 €/an",
-      acheterMensuel: "2 €/mois",
+      acheterComplete: "Passer à la version complète",
       acheterGratuit: "Télécharger",
     },
     telecharger: {
@@ -310,7 +308,7 @@ const T = {
     faq: [
       {
         q: "Le diagnostic est-il vraiment gratuit ?",
-        r: "Oui, sans limite de temps ni d'usage. L'analyse complète, les explications et une première réparation sont gratuites. Seules les réparations suivantes ou la surveillance continue sont payantes.",
+        r: "Oui, sans limite de temps ni d'usage. L'analyse complète, les explications et une première réparation sont gratuites. Pour les réparations suivantes et la surveillance continue, la version complète coûte 24,99 € en une seule fois, sans abonnement.",
       },
       {
         q: "Nyctale fonctionne-t-il sur un vieux PC ?",
@@ -451,19 +449,25 @@ const T = {
         titre: "Diagnostic",
         prix: "Free",
         sous: "Unlimited, forever",
-        pts: ["Full system analysis", "Plain-language explanations", "First repair included"],
+        pts: ["Full diagnostic, no limit", "Plain-language explanations", "One guided repair included"],
       },
       mid: {
-        titre: "Repair / monitoring",
+        titre: "Full version",
         prix: "€24.99",
-        sous: "one-time repair, or €19/year · €2/month for ongoing monitoring",
-        pts: ["Assisted fix for detected issues", "Full technical detail", "Tracking over time"],
+        sous: "one-time payment, no subscription",
+        pts: [
+          "Unlimited guided repairs",
+          "Ongoing monitoring: Nyctale warns you as soon as a problem appears",
+          "No account needed, everything stays on your computer",
+        ],
+        ancrage: "Less than a visit to a repair shop (€50 to €80), far less than a new PC (€300 to €800).",
       },
       pro: {
         titre: "Pro (technicians)",
         prix: "€29.99",
         sous: "per month",
         pts: [
+          "Full technical detail (processes, drive, raw values)",
           "Before/after report for the client",
           "PDF export with custom letterhead",
           "No anti-copy, USB license",
@@ -471,8 +475,7 @@ const T = {
         portable: "Download the portable version (USB drive)",
       },
       acheter: "Choose this tier",
-      acheterAnnuel: "or €19/year",
-      acheterMensuel: "€2/month",
+      acheterComplete: "Get the full version",
       acheterGratuit: "Download",
     },
     telecharger: {
@@ -491,7 +494,7 @@ const T = {
     faq: [
       {
         q: "Is the diagnostic really free?",
-        r: "Yes, with no time or usage limit. The full analysis, explanations, and a first repair are free. Only further repairs or ongoing monitoring are paid.",
+        r: "Yes, with no time or usage limit. The full analysis, explanations, and a first repair are free. For further repairs and ongoing monitoring, the full version costs €24.99 once, with no subscription.",
       },
       {
         q: "Does Nyctale work on an old PC?",
@@ -860,29 +863,11 @@ function Home() {
                 className="mt-6 block"
                 onClick={() => trackAchat("reparation")}
               >
-                <Button className="w-full">{t.tarifs.acheter}</Button>
+                <Button className="w-full">{t.tarifs.acheterComplete}</Button>
               </a>
-              <div className="mt-3 flex items-center justify-center gap-3 text-xs text-muted-foreground">
-                <a
-                  href={CHECKOUT.surveillanceAnnuelle}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-foreground"
-                  onClick={() => trackAchat("surveillance_annuelle")}
-                >
-                  {t.tarifs.acheterAnnuel}
-                </a>
-                <span>·</span>
-                <a
-                  href={CHECKOUT.surveillanceMensuelle}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-foreground"
-                  onClick={() => trackAchat("surveillance_mensuelle")}
-                >
-                  {t.tarifs.acheterMensuel}
-                </a>
-              </div>
+              <p className="mt-3 text-center text-xs leading-relaxed text-muted-foreground">
+                {t.tarifs.mid.ancrage}
+              </p>
             </Card>
             <Card className="p-6">
               <div className="flex items-center gap-2">

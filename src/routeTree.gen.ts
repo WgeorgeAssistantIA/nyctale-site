@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ProRouteImport } from './routes/pro'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as IndexRouteImport } from './routes/index'
@@ -22,6 +23,11 @@ import { Route as ApiLicenseActivateRouteImport } from './routes/api.license.act
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProRoute = ProRouteImport.update({
+  id: '/pro',
+  path: '/pro',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
+  '/pro': typeof ProRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/nyp/$': typeof NypSplatRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
+  '/pro': typeof ProRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/nyp/$': typeof NypSplatRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
+  '/pro': typeof ProRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/nyp/$': typeof NypSplatRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/legal'
     | '/privacy'
+    | '/pro'
     | '/terms'
     | '/blog/$slug'
     | '/nyp/$'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/legal'
     | '/privacy'
+    | '/pro'
     | '/terms'
     | '/blog/$slug'
     | '/nyp/$'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/legal'
     | '/privacy'
+    | '/pro'
     | '/terms'
     | '/blog/$slug'
     | '/nyp/$'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LegalRoute: typeof LegalRoute
   PrivacyRoute: typeof PrivacyRoute
+  ProRoute: typeof ProRoute
   TermsRoute: typeof TermsRoute
   BlogSlugRoute: typeof BlogSlugRoute
   NypSplatRoute: typeof NypSplatRoute
@@ -154,6 +167,13 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pro': {
+      id: '/pro'
+      path: '/pro'
+      fullPath: '/pro'
+      preLoaderRoute: typeof ProRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -219,6 +239,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LegalRoute: LegalRoute,
   PrivacyRoute: PrivacyRoute,
+  ProRoute: ProRoute,
   TermsRoute: TermsRoute,
   BlogSlugRoute: BlogSlugRoute,
   NypSplatRoute: NypSplatRoute,

@@ -238,17 +238,7 @@ const T = {
       titre: "Vous dépannez des PC ? Nyctale devient votre outil de diagnostic client.",
       texte:
         "Un diagnostic que le client comprend sans jargon, un rapport avant/après qui justifie l'intervention, et une licence qui vous suit sur toutes vos machines d'intervention — même depuis une clé USB, sans connexion internet obligatoire.",
-      points: [
-        "Rapport avant/après à remettre au client, en votre nom",
-        "Export PDF avec votre en-tête et votre logo d'entreprise",
-        "Détail technique complet, pas juste le verdict grand public",
-        "Licence dépanneur : lancez Nyctale depuis une clé USB sur le PC du client, sans rien installer",
-      ],
-      cta: "Voir le tarif Pro",
-      quote:
-        "\"Le diagnostic gratuit, c'est ce que vous montrez au client sur son propre écran pour qu'il comprenne ce qui cloche. Le palier Pro, c'est ce qui transforme cette explication en document professionnel que vous lui laissez.\"",
-      quoteAttr: "— Philosophie du palier Pro",
-      qui: "Développé par La Fabrik Numérique, également éditeur de VoxCut et VectorPop.",
+      cta: "Découvrir Nyctale Pro",
     },
     tarifsTitle: "Tarifs",
     tarifsSubtitle:
@@ -287,6 +277,7 @@ const T = {
           "Sans anti-copie, licence USB",
         ],
         portable: "Télécharger la version portable (clé USB)",
+        enSavoirPlus: "Tout savoir sur Nyctale Pro",
       },
       acheter: "Choisir ce palier",
       acheterComplete: "Passer à la version complète",
@@ -429,17 +420,7 @@ const T = {
       titre: "You repair PCs? Nyctale becomes your client diagnostic tool.",
       texte:
         "A diagnostic your client understands without jargon, a before/after report that justifies the intervention, and a license that follows you across every machine you work on — even from a USB drive, no internet connection required.",
-      points: [
-        "Before/after report to hand to your client, under your name",
-        "PDF export with your own letterhead and company logo",
-        "Full technical detail, not just the consumer-facing verdict",
-        "Technician license: run Nyctale from a USB drive on the client's PC, nothing to install",
-      ],
-      cta: "See Pro pricing",
-      quote:
-        '"The free diagnostic is what you show the client on their own screen so they understand what\'s wrong. The Pro tier is what turns that explanation into a professional document you leave behind."',
-      quoteAttr: "— Philosophy of the Pro tier",
-      qui: "Built by La Fabrik Numérique, also behind VoxCut and VectorPop.",
+      cta: "Discover Nyctale Pro",
     },
     tarifsTitle: "Pricing",
     tarifsSubtitle:
@@ -473,6 +454,7 @@ const T = {
           "No anti-copy, USB license",
         ],
         portable: "Download the portable version (USB drive)",
+        enSavoirPlus: "Everything about Nyctale Pro",
       },
       acheter: "Choose this tier",
       acheterComplete: "Get the full version",
@@ -580,12 +562,12 @@ function Home() {
             >
               {t.nav.faq}
             </a>
-            <a
-              href="#pro"
+            <Link
+              to="/pro"
               className="text-sm font-medium text-primary transition-colors hover:text-primary/80"
             >
               {t.nav.pro}
-            </a>
+            </Link>
             <Link
               to="/blog"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -683,12 +665,12 @@ function Home() {
             </div>
           </div>
           <p className="mt-3 text-sm text-muted-foreground">{t.hero.note}</p>
-          <a
-            href="#pro"
+          <Link
+            to="/pro"
             className="mt-6 inline-block text-sm font-medium text-primary underline-offset-4 transition hover:underline"
           >
             {t.hero.proLink}
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -782,43 +764,19 @@ function Home() {
         </div>
       </section>
 
-      {/* PRO / DEPANNEURS */}
-      <section id="pro" className="py-20">
-        <div className="mx-auto grid max-w-5xl items-center gap-12 px-6 md:grid-cols-2">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
-              <Wrench className="h-3.5 w-3.5" /> {t.pro.badge}
-            </div>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight">{t.pro.titre}</h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">{t.pro.texte}</p>
-            <ul className="mt-6 space-y-3 text-sm">
-              {t.pro.points.map((pt) => (
-                <li key={pt} className="flex items-start gap-2">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  {pt}
-                </li>
-              ))}
-            </ul>
-            <a href="#tarifs" className="mt-8 inline-block">
-              <Button size="lg" className="gap-2">
-                {t.pro.cta} <ArrowRight className="h-4 w-4" />
-              </Button>
-            </a>
-            <a
-              href="https://www.lafabriknumerique.fr"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackCrossLink("lafabriknumerique_pro")}
-              className="mt-4 block text-xs text-muted-foreground underline hover:text-foreground"
-            >
-              {t.pro.qui}
-            </a>
+      {/* PRO / DEPANNEURS : le detail est sur /pro, l'accueil reste pour les particuliers */}
+      <section id="pro" className="py-16">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+            <Wrench className="h-3.5 w-3.5" /> {t.pro.badge}
           </div>
-          <Card className="border-primary/40 p-8">
-            <Wrench className="h-8 w-8 text-primary" />
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{t.pro.quote}</p>
-            <p className="mt-4 text-xs font-medium text-muted-foreground">{t.pro.quoteAttr}</p>
-          </Card>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight">{t.pro.titre}</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground leading-relaxed">{t.pro.texte}</p>
+          <Link to="/pro" className="mt-8 inline-block">
+            <Button size="lg" className="gap-2">
+              {t.pro.cta} <ArrowRight className="h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -903,6 +861,12 @@ function Home() {
               >
                 {t.tarifs.pro.portable}
               </a>
+              <Link
+                to="/pro"
+                className="mt-1 block text-center text-xs text-muted-foreground underline hover:text-foreground"
+              >
+                {t.tarifs.pro.enSavoirPlus}
+              </Link>
             </Card>
           </div>
         </div>

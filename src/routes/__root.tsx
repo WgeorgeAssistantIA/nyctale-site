@@ -113,12 +113,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
-    scripts: [
-      {
-        type: "module",
-        src: "https://get.microsoft.com/badge/ms-store-badge.bundled.js",
-      },
-    ],
     // Pas de Google Analytics pour l'instant -- l'ID GA d'InOneShot ne doit
     // pas se retrouver ici (aurait melange le trafic des deux sites).
     // Vercel Analytics (sans cookie) suffit au demarrage ; GA4 dedie a

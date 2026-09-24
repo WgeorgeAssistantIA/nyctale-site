@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { articleBySlug } from "@/lib/blog-posts";
+import { DiagnosticCta } from "@/components/diagnostic-cta";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -58,6 +59,8 @@ function BlogArticle() {
   const article = Route.useLoaderData();
   const [lang, setLang] = useLang();
   const t = TEXTES[article.lang];
+  const intertitres = article.blocks.flatMap((b, i) => (b.type === "h2" ? [i] : []));
+  const indexMilieu = intertitres[1] ?? -1;
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -103,10 +106,18 @@ function BlogArticle() {
         <div className="space-y-5">
           {article.blocks.map((b, i) => {
             if (b.type === "h2") {
+              // Encart d'appel au milieu : juste avant le 2e intertitre, quand
+              // le lecteur a compris la cause mais pas encore comment la trouver.
+              const milieu = i === indexMilieu;
               return (
-                <h2 key={i} className="pt-4 text-xl font-semibold tracking-tight">
-                  {b.text}
-                </h2>
+                <div key={i} className="space-y-5">
+                  {milieu && (
+                    <div className="py-4">
+                      <DiagnosticCta lang={article.lang} variante="milieu" slug={article.slug} />
+                    </div>
+                  )}
+                  <h2 className="pt-4 text-xl font-semibold tracking-tight">{b.text}</h2>
+                </div>
               );
             }
             if (b.type === "ul") {
@@ -124,6 +135,10 @@ function BlogArticle() {
               </p>
             );
           })}
+        </div>
+
+        <div className="mt-12">
+          <DiagnosticCta lang={article.lang} variante="fin" slug={article.slug} />
         </div>
 
         <div className="mt-14 border-t border-border pt-8">

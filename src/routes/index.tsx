@@ -24,13 +24,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useLang, type Lang } from "@/lib/lang";
+import {
+  EXE_URL,
+  MICROSOFT_STORE_ID,
+  STORE_URL,
+  trackDownload,
+  trackStoreDownload,
+} from "@/lib/download";
 
-function trackDownload() {
-  track("download");
-}
-function trackStoreDownload() {
-  track("store_download");
-}
 function trackCrossLink(target: string) {
   track("cross_link_click", { target });
 }
@@ -44,8 +45,6 @@ function trackPortableDownload() {
 // Liens de checkout Lemon Squeezy (buy_now_url officiel de chaque produit,
 // voir memoire nyctale-lemonsqueezy-identifiants) -- ouverts dans un nouvel
 // onglet, l'utilisateur revient sur nyctale.fr apres paiement.
-const MICROSOFT_STORE_ID = "XPFP6ZVQDT5MSH";
-
 const CHECKOUT = {
   reparation:
     "https://voxcut-pro.lemonsqueezy.com/checkout/buy/a697285b-7c3b-416a-b7ef-d4929cbc95e9",
@@ -164,10 +163,21 @@ const T = {
         "Oubliez les usines à gaz : Nyctale est à la portée de tout le monde. L'application explique en clair pourquoi votre ordinateur chauffe ou ralentit, et ce qu'il faut faire. Gratuit et illimité.",
       definition:
         "Nyctale est une application Windows gratuite qui diagnostique en local, en 19 secondes, pourquoi un PC chauffe ou ralentit, sans envoyer de données en ligne.",
-      cta: "Télécharger gratuitement",
+      cta: "Installer gratuitement",
+      ctaExe: "ou télécharger l'installeur Windows (.exe)",
       ctaSecondary: "Comment ça marche",
       proLink: "Vous êtes un professionnel de la maintenance informatique ? Découvrez l'édition Pro conçue pour vous.",
-      note: "Windows 10 et 11 — aucune inscription requise",
+      note: "Windows 10 et 11 — via le Microsoft Store, aucune inscription requise",
+    },
+    apercu: {
+      titre: "Voici ce que Nyctale vous dit",
+      texte:
+        "Un verdict en français courant, pas un tableau de chiffres : ce qui ne va pas, pourquoi, et quoi faire.",
+      franchise:
+        "Et quand aucun logiciel ne peut régler le problème, Nyctale vous le dit franchement — plutôt que de vous vendre un nettoyeur ou un PC neuf.",
+      legende:
+        "Extrait d'un vrai diagnostic : un portable de 4,7 ans qui chauffait sans raison apparente.",
+      alt: "Écran de verdict Nyctale : 1 point à surveiller — le problème ne vient pas d'un logiciel, mais du refroidissement",
     },
     problemesTitle: "Que regarde le diagnostic Nyctale ?",
     problemesSubtitle:
@@ -280,10 +290,12 @@ const T = {
     telecharger: {
       titre: "Prêt à savoir ce qui se passe ?",
       sous: "Windows 10 et 11 · Installation en moins d'une minute",
-      cta: "Télécharger pour Windows",
+      cta: "Installer depuis le Microsoft Store",
+      exe: "Télécharger l'installeur (.exe)",
       smartscreenNote:
         "Windows peut afficher un avertissement SmartScreen car l'appli est encore peu téléchargée. Cliquez sur « Informations complémentaires » puis « Exécuter quand même » pour continuer — l'installeur est sûr.",
-      store: "Aussi disponible sur le Microsoft Store.",
+      store:
+        "Le Microsoft Store installe Nyctale sans avertissement de sécurité de Windows. L'installeur .exe reste disponible si vous préférez.",
       linuxTar: "Linux (.tar.gz)",
       linuxAppImage: "Linux (AppImage)",
     },
@@ -340,10 +352,21 @@ const T = {
         "Forget about overly complex tools: Nyctale is accessible to everyone. The app explains in plain language why your computer overheats or slows down, and what to do. Free and unlimited.",
       definition:
         "Nyctale is a free Windows application that diagnoses locally, in 19 seconds, why a PC overheats or slows down, without sending any data online.",
-      cta: "Download for free",
+      cta: "Install for free",
+      ctaExe: "or download the Windows installer (.exe)",
       ctaSecondary: "How it works",
       proLink: "Are you an IT maintenance professional? Discover the Pro edition built for you.",
-      note: "Windows 10 and 11 — no sign-up required",
+      note: "Windows 10 and 11 — via the Microsoft Store, no sign-up required",
+    },
+    apercu: {
+      titre: "Here's what Nyctale tells you",
+      texte:
+        "A verdict in plain words, not a wall of numbers: what's wrong, why, and what to do about it.",
+      franchise:
+        "And when no software can fix the problem, Nyctale says so honestly — instead of selling you a cleaner or a new PC.",
+      legende:
+        "Taken from a real diagnostic: a 4.7-year-old laptop overheating for no obvious reason.",
+      alt: "Nyctale verdict screen: 1 thing to watch — the problem is not software, it is the cooling",
     },
     problemesTitle: "What does the Nyctale diagnostic check?",
     problemesSubtitle:
@@ -448,10 +471,12 @@ const T = {
     telecharger: {
       titre: "Ready to find out what's going on?",
       sous: "Windows 10 and 11 · Install in under a minute",
-      cta: "Download for Windows",
+      cta: "Get it from the Microsoft Store",
+      exe: "Download the installer (.exe)",
       smartscreenNote:
         "Windows may show a SmartScreen warning since the app is still new. Click “More info” then “Run anyway” to continue — the installer is safe.",
-      store: "Also available on the Microsoft Store.",
+      store:
+        "The Microsoft Store installs Nyctale with no Windows security warning. The .exe installer is still available if you prefer.",
       linuxTar: "Linux (.tar.gz)",
       linuxAppImage: "Linux (AppImage)",
     },
@@ -603,21 +628,26 @@ function Home() {
             {t.hero.subtitle}
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a href="#telecharger" onClick={trackDownload}>
+            <a
+              href={STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackStoreDownload("hero")}
+            >
               <Button size="lg" className="gap-2">
                 {t.hero.cta} <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
             <a
               href="/downloads/Nyctale-x86_64.AppImage"
-              onClick={trackDownload}
+              onClick={() => trackDownload("hero_linux_appimage")}
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
             >
               <Terminal className="h-4 w-4" /> {t.telecharger.linuxAppImage}
             </a>
             <a
               href="/downloads/Nyctale-1.0.2-linux-x86_64.tar.gz"
-              onClick={trackDownload}
+              onClick={() => trackDownload("hero_linux_tar")}
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
             >
               <Package className="h-4 w-4" /> {t.telecharger.linuxTar}
@@ -628,13 +658,51 @@ function Home() {
               </Button>
             </a>
           </div>
-          <p className="mt-4 text-sm text-muted-foreground">{t.hero.note}</p>
+          <div className="group/win relative mt-4 inline-flex">
+            <a
+              href={EXE_URL}
+              onClick={() => trackDownload("hero_exe")}
+              className="text-sm text-muted-foreground underline underline-offset-4 transition hover:text-foreground"
+            >
+              {t.hero.ctaExe}
+            </a>
+            <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-2 hidden w-72 -translate-x-1/2 rounded-lg border border-border bg-popover px-3 py-2 text-left text-xs leading-relaxed text-popover-foreground opacity-0 shadow-lg transition-opacity duration-150 sm:block sm:group-hover/win:opacity-100">
+              {t.telecharger.smartscreenNote}
+            </div>
+          </div>
+          <p className="mt-3 text-sm text-muted-foreground">{t.hero.note}</p>
           <a
             href="#pro"
             className="mt-6 inline-block text-sm font-medium text-primary underline-offset-4 transition hover:underline"
           >
             {t.hero.proLink}
           </a>
+        </div>
+      </section>
+
+      {/* APERCU DU VERDICT */}
+      <section id="apercu" className="border-t border-border py-20">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 px-6 md:grid-cols-5">
+          <div className="md:col-span-2">
+            <h2 className="text-3xl font-bold tracking-tight">{t.apercu.titre}</h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">{t.apercu.texte}</p>
+            <p className="mt-4 font-medium leading-relaxed text-foreground/90">
+              {t.apercu.franchise}
+            </p>
+          </div>
+          <figure className="md:col-span-3">
+            <img
+              src={`/verdict-${lang}.webp`}
+              alt={t.apercu.alt}
+              width={lang === "fr" ? 1236 : 1140}
+              height={1050}
+              loading="lazy"
+              className="w-full rounded-xl border border-border shadow-2xl shadow-primary/20"
+            />
+            <figcaption className="mt-3 text-center text-xs text-muted-foreground">
+              {t.apercu.legende}
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -761,7 +829,7 @@ function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="#telecharger" className="mt-6 block" onClick={trackDownload}>
+              <a href="#telecharger" className="mt-6 block">
                 <Button variant="outline" className="w-full">
                   {t.tarifs.acheterGratuit}
                 </Button>
@@ -870,41 +938,45 @@ function Home() {
           <h2 className="mt-4 text-3xl font-bold tracking-tight">{t.telecharger.titre}</h2>
           <p className="mt-3 text-muted-foreground">{t.telecharger.sous}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackStoreDownload("section_telecharger")}
+            >
+              <Button size="lg" className="gap-2">
+                {t.telecharger.cta} <ArrowRight className="h-4 w-4" />
+              </Button>
+            </a>
             <div className="group/win relative inline-flex">
-              <a href="/downloads/Nyctale-Setup-1.0.2.exe" onClick={trackDownload}>
-                <Button size="lg" className="gap-2">
-                  {t.telecharger.cta} <ArrowRight className="h-4 w-4" />
+              <a href={EXE_URL} onClick={() => trackDownload("section_telecharger_exe")}>
+                <Button size="lg" variant="outline">
+                  {t.telecharger.exe}
                 </Button>
               </a>
               <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-2 hidden w-72 -translate-x-1/2 rounded-lg border border-border bg-popover px-3 py-2 text-xs leading-relaxed text-popover-foreground opacity-0 shadow-lg transition-opacity duration-150 sm:block sm:group-hover/win:opacity-100">
                 {t.telecharger.smartscreenNote}
               </div>
             </div>
+          </div>
+          <p className="mx-auto mt-4 max-w-md text-xs text-muted-foreground">
+            {t.telecharger.store}
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a
               href="/downloads/Nyctale-x86_64.AppImage"
-              onClick={trackDownload}
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
+              onClick={() => trackDownload("section_telecharger_linux_appimage")}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-5 py-2.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
             >
               <Terminal className="h-4 w-4" /> {t.telecharger.linuxAppImage}
             </a>
             <a
               href="/downloads/Nyctale-1.0.2-linux-x86_64.tar.gz"
-              onClick={trackDownload}
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
+              onClick={() => trackDownload("section_telecharger_linux_tar")}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-5 py-2.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
             >
               <Package className="h-4 w-4" /> {t.telecharger.linuxTar}
             </a>
-          </div>
-          <p className="mt-4 text-xs text-muted-foreground">{t.telecharger.store}</p>
-          <div className="mt-3 flex justify-center" onClick={trackStoreDownload}>
-            {/* @ts-expect-error web component fourni par le script officiel Microsoft (voir __root.tsx) */}
-            <ms-store-badge
-              productid={MICROSOFT_STORE_ID}
-              window-mode="direct"
-              theme="auto"
-              size="large"
-              language={lang === "fr" ? "fr-FR" : "en-US"}
-            />
           </div>
         </div>
       </section>

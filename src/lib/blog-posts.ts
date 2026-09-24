@@ -66,7 +66,7 @@ export const articles: Article[] = [
       },
       {
         type: "p",
-        text: "Avant de vous résigner à racheter un PC, prenez huit secondes pour savoir ce qui se passe réellement sur le vôtre.",
+        text: "Avant de vous résigner à racheter un PC, prenez 19 secondes pour savoir ce qui se passe réellement sur le vôtre.",
       },
     ],
   },
@@ -120,7 +120,7 @@ export const articles: Article[] = [
       },
       {
         type: "p",
-        text: "Before you resign yourself to buying a new PC, take eight seconds to find out what's really going on with yours.",
+        text: "Before you resign yourself to buying a new PC, take 19 seconds to find out what's really going on with yours.",
       },
     ],
   },

@@ -85,8 +85,8 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 const TEXTES = {
-  fr: { back: "Retour au blog", majLe: "mis à jour le", faq: "Questions fréquentes" },
-  en: { back: "Back to blog", majLe: "updated", faq: "Frequently asked questions" },
+  fr: { back: "Retour au blog", majLe: "mis à jour le", faq: "Questions fréquentes", aLire: "À lire aussi" },
+  en: { back: "Back to blog", majLe: "updated", faq: "Frequently asked questions", aLire: "Read next" },
 };
 
 function dateLisible(iso: string, lang: "fr" | "en") {
@@ -217,6 +217,28 @@ function BlogArticle() {
                 </div>
               ))}
             </div>
+          </section>
+        )}
+
+        {article.liens && article.liens.length > 0 && (
+          <section className="mt-12">
+            <h2 className="text-xl font-semibold tracking-tight">{t.aLire}</h2>
+            <ul className="mt-4 space-y-2">
+              {article.liens
+                .map((s) => articleBySlug(s))
+                .filter((a) => a !== undefined)
+                .map((a) => (
+                  <li key={a.slug}>
+                    <Link
+                      to="/blog/$slug"
+                      params={{ slug: a.slug }}
+                      className="text-primary underline-offset-4 hover:underline"
+                    >
+                      {a.title}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
           </section>
         )}
 

@@ -24,6 +24,8 @@ export type Article = {
   readMin: number;
   blocks: Bloc[];
   faq?: { q: string; r: string }[];
+  // Slugs d'articles de la meme langue, affiches en « A lire aussi ».
+  liens?: string[];
 };
 
 export const articles: Article[] = [
@@ -34,112 +36,294 @@ export const articles: Article[] = [
     slug: "pc-qui-rame-sans-raison",
     lang: "fr",
     traduction: "slow-computer-no-obvious-reason",
-    title: "Mon ordinateur rame et je ne comprends pas pourquoi",
-    seoTitle: "Ordinateur qui rame : pourquoi, et comment trouver la cause",
+    title: "Ordinateur qui rame : 9 causes fréquentes et comment trouver la vôtre",
+    seoTitle: "Ordinateur qui rame : causes et solutions (Windows 10 et 11)",
     excerpt:
-      "Un PC qui devient lent sans raison apparente, ça n'existe pas. Il y a toujours une cause — voici comment la trouver avant de penser à changer de machine.",
+      "Un PC qui rame a toujours une cause précise, logicielle dans la plupart des cas. Les 9 causes les plus fréquentes, la méthode pour trouver la vôtre en 10 minutes, et les solutions.",
     date: "2026-08-08",
-    readMin: 5,
+    updated: "2026-09-25",
+    readMin: 10,
     blocks: [
       {
         type: "p",
-        text: "Un PC qui ralentit progressivement a toujours une cause précise, logicielle dans l'immense majorité des cas — ce n'est jamais un phénomène de vieillissement aléatoire.",
+        text: "Un ordinateur qui rame n'est pas « usé » : il a toujours une cause précise. Dans la grande majorité des cas, elle est logicielle (programmes au démarrage, navigateur, mémoire saturée, Windows qui travaille en arrière-plan) et se corrige gratuitement, sans racheter de machine.",
       },
       {
         type: "p",
-        text: "Le scénario est presque toujours le même. Il y a un an, l'ordinateur démarrait en quelques secondes. Aujourd'hui, ouvrir un simple navigateur prend un temps qui semble absurde. Rien n'a été installé de particulier, rien n'a « cassé » visiblement — et pourtant, tout est plus lent.",
+        text: "Le scénario est presque toujours le même. Il y a un an, l'ordinateur démarrait en quelques secondes. Aujourd'hui, ouvrir un simple navigateur prend un temps absurde. Rien n'a été installé de particulier, rien n'a visiblement « cassé », et pourtant tout est plus lent. Ce guide passe en revue les causes les plus fréquentes, du plus probable au plus rare, puis donne une méthode simple pour trouver la vôtre.",
       },
+      { type: "h2", text: "En bref : par où commencer ?" },
+      {
+        type: "ol",
+        items: [
+          "Redémarrez vraiment l'ordinateur (« Redémarrer », pas « Arrêter ») : c'est gratuit et ça règle plus de cas qu'on ne le croit.",
+          "Ouvrez le Gestionnaire des tâches (Ctrl + Maj + Échap) et regardez ce qui occupe le processeur, la mémoire et le disque.",
+          "Vérifiez qu'il reste au moins 15 % d'espace libre sur le disque C:.",
+          "Si rien ne ressort, regardez le type de disque (SSD ou disque dur) et son état : un vieux disque dur est souvent le vrai frein.",
+        ],
+      },
+      { type: "h2", text: "Pourquoi un ordinateur se met-il à ramer ?" },
       {
         type: "p",
-        text: "C'est une des situations les plus frustrantes en informatique : un problème réel, mesurable, mais invisible. On ne voit pas de message d'erreur. On ne sait pas par où commencer. Et la tentation la plus naturelle — se dire que l'ordinateur est « vieux » et qu'il faut le remplacer — est rarement la bonne réponse.",
+        text: "Un PC ne perd pas de vitesse comme une pile qui s'use. Il ralentit parce qu'une ressource est saturée : le processeur, la mémoire vive ou le disque. Trouver laquelle, c'est déjà trouver la moitié de la solution. Voici les neuf causes qu'on rencontre le plus souvent.",
       },
-      { type: "h2", text: "Pourquoi mon PC ralentit-il sans raison apparente ?" },
+      { type: "h3", text: "1. Trop de programmes lancés au démarrage" },
       {
         type: "p",
-        text: "Un PC ne perd pas de vitesse avec le temps comme une pile qui s'use. Chaque ralentissement a une cause identifiable, et dans l'immense majorité des cas, cette cause est logicielle, pas matérielle. Les suspects les plus fréquents :",
+        text: "Chaque logiciel installé veut « démarrer avec Windows » : messagerie, lanceur de jeux, utilitaire d'imprimante, outil de synchronisation... Chacun prend un peu de mémoire et de processeur en permanence. Au bout de quelques années, une dizaine de programmes tournent en arrière-plan sans que vous les ayez jamais ouverts. C'est la cause la plus fréquente d'un PC lent dès l'allumage.",
       },
+      { type: "h3", text: "2. Le navigateur et ses onglets" },
+      {
+        type: "p",
+        text: "Un navigateur moderne consomme énormément de mémoire : chaque onglet est presque un petit programme. Trente onglets ouverts, une vidéo oubliée ou une extension mal écrite suffisent à ralentir tout l'ordinateur. Sur un PC de 8 Go de mémoire, c'est souvent la première cause de lenteur au fil de la journée.",
+      },
+      { type: "h3", text: "3. La mémoire vive saturée" },
+      {
+        type: "p",
+        text: "Quand la mémoire vive est pleine, Windows déplace une partie de son contenu sur le disque, beaucoup plus lent. Tout devient poussif : changer de fenêtre, ouvrir un fichier, taper un texte. En 2026, 8 Go suffisent pour un usage bureautique léger ; avec un navigateur chargé et quelques applications ouvertes, 16 Go deviennent confortables.",
+      },
+      { type: "h3", text: "4. Un disque presque plein" },
+      {
+        type: "p",
+        text: "Windows a besoin d'espace libre pour ses fichiers temporaires, ses mises à jour et sa mémoire d'appoint. En dessous d'environ 10 à 15 % d'espace libre sur le disque C:, les ralentissements et les mises à jour qui échouent deviennent fréquents.",
+      },
+      { type: "h3", text: "5. Un disque dur mécanique, ou en fin de vie" },
+      {
+        type: "p",
+        text: "Beaucoup de PC vendus avant 2019 ont encore un disque dur mécanique (HDD), des dizaines de fois plus lent qu'un SSD pour les petites lectures dont Windows a besoin en permanence. Un disque dur qui vieillit ralentit aussi avant de tomber en panne. C'est la seule cause de cette liste qui soit vraiment matérielle, et la bonne nouvelle, c'est qu'un SSD coûte aujourd'hui peu cher.",
+      },
+      { type: "h3", text: "6. Windows qui travaille en arrière-plan" },
+      {
+        type: "p",
+        text: "Mises à jour, analyse antivirus, indexation des fichiers pour la recherche, synchronisation OneDrive : après l'allumage, et surtout après plusieurs jours sans utilisation, Windows rattrape son retard. Ces lenteurs sont temporaires et disparaissent en 20 à 40 minutes. Si elles reviennent à chaque démarrage, une mise à jour est probablement bloquée.",
+      },
+      { type: "h3", text: "7. Un ordinateur qui n'a jamais vraiment redémarré" },
+      {
+        type: "p",
+        text: "Avec le « démarrage rapide », activé par défaut, « Arrêter » ne remet pas Windows à zéro : il met une partie du système en veille prolongée. Un programme bloqué ou une fuite de mémoire peuvent donc survivre à des semaines d'arrêts. Seul « Redémarrer » repart vraiment de zéro.",
+      },
+      { type: "h3", text: "8. Un processeur qui chauffe et se bride" },
+      {
+        type: "p",
+        text: "Quand le processeur chauffe trop (poussière, aération bouchée, pâte thermique usée), il réduit volontairement sa vitesse pour se protéger. L'ordinateur devient lent, souvent accompagné d'un ventilateur bruyant. Notre guide sur le ventilateur qui tourne à fond détaille ce cas.",
+      },
+      { type: "h3", text: "9. Des fichiers système abîmés ou des logiciels indésirables" },
+      {
+        type: "p",
+        text: "Une mise à jour interrompue ou une coupure de courant peuvent abîmer des fichiers de Windows et provoquer lenteurs et plantages. Les « optimiseurs », « nettoyeurs » et barres d'outils installés au passage font souvent plus de mal que de bien, tout comme deux antivirus actifs en même temps.",
+      },
+      { type: "h2", text: "Comment trouver la cause vous-même en 10 minutes ?" },
+      {
+        type: "ol",
+        items: [
+          "Redémarrez avec « Redémarrer », attendez cinq minutes, puis ouvrez le Gestionnaire des tâches avec Ctrl + Maj + Échap (cliquez sur « Plus de détails » si la fenêtre est réduite).",
+          "Dans l'onglet « Processus », triez par « Processeur », puis par « Mémoire », puis par « Disque ». Un programme qui reste durablement en tête de l'une de ces colonnes est votre premier suspect.",
+          "Regardez l'onglet « Performances » : si la mémoire est utilisée à plus de 85-90 % en usage normal, la mémoire est le goulot. Si le disque est à 100 % en permanence, consultez notre guide sur le disque à 100 %.",
+          "Toujours dans « Performances » > « Disque », la ligne « Type » indique SSD ou HDD. HDD signifie disque dur mécanique.",
+          "Ouvrez l'onglet « Applications de démarrage » et repérez les programmes marqués d'un impact « Élevé » dont vous n'avez pas besoin à l'allumage.",
+          "Ouvrez l'Explorateur de fichiers > « Ce PC » : si la barre du disque C: est rouge, l'espace libre manque.",
+        ],
+      },
+      { type: "h2", text: "Que faire selon la cause ?" },
       {
         type: "ul",
         items: [
-          "Un programme démarré automatiquement avec Windows, qui tourne en arrière-plan sans jamais s'arrêter.",
-          "Un navigateur avec des dizaines d'onglets ouverts qui saturent la mémoire vive.",
-          "Le « démarrage rapide » de Windows, qui empêche certains blocages de se résoudre même après un redémarrage.",
-          "Un disque dur (pas un SSD) proche de la fin de sa durée de vie, qui ralentit avant de lâcher complètement.",
+          "Programmes au démarrage : dans Gestionnaire des tâches > « Applications de démarrage », faites un clic droit puis « Désactiver ». Le programme reste installé, il ne se lance simplement plus tout seul.",
+          "Navigateur : fermez les onglets inutiles, supprimez les extensions que vous n'utilisez pas et activez l'économiseur de mémoire (Chrome, Edge).",
+          "Mémoire saturée : si la mémoire est pleine même avec peu de choses ouvertes, ajouter une barrette (de 8 à 16 Go) coûte environ 30 à 60 € selon le modèle, et c'est souvent l'amélioration la plus visible.",
+          "Disque plein : Paramètres > Système > Stockage, puis « Recommandations de nettoyage ». Désinstallez les programmes inutiles et déplacez photos et vidéos sur un disque externe.",
+          "Disque dur mécanique : le remplacer par un SSD (environ 40 à 70 € pour 500 Go, plus la main-d'œuvre si vous le faites faire) rend un vieux PC méconnaissable. C'est souvent le meilleur rapport gain/prix.",
+          "Windows en arrière-plan : laissez l'ordinateur allumé et branché 30 à 40 minutes, puis redémarrez. Si une mise à jour échoue en boucle, consultez notre guide sur Windows 11 lent après une mise à jour.",
+          "Démarrage rapide : prenez l'habitude de « Redémarrer » au moins une fois par semaine, ou désactivez le démarrage rapide (Panneau de configuration > Options d'alimentation > « Choisir l'action des boutons d'alimentation »).",
+          "Surchauffe : dépoussiérez les grilles, posez le portable sur une surface dure, ou faites faire un nettoyage complet (environ 50 à 80 €).",
+          "Fichiers système : dans une invite de commandes lancée en administrateur, exécutez DISM /Online /Cleanup-Image /RestoreHealth, puis sfc /scannow. Désinstallez aussi les « optimiseurs » et gardez un seul antivirus.",
         ],
       },
+      { type: "h2", text: "Quand faut-il envisager de changer d'ordinateur ?" },
       {
         type: "p",
-        text: "Le problème, c'est que ces causes ne se voient pas à l'œil nu. Le Gestionnaire des tâches de Windows donne une photo instantanée, mais ne dit pas ce qui se passe sur la durée, ni pourquoi tel programme consomme autant.",
+        text: "Rarement pour une simple lenteur. Un changement devient raisonnable quand plusieurs signaux se cumulent : un processeur qui ne peut pas passer à Windows 11, une réparation qui coûterait plus du tiers du prix d'un PC équivalent, ou un appareil qui ne correspond plus du tout à votre usage. Notre article « Changer de PC ou le réparer ? » propose une grille de décision complète.",
       },
-      { type: "h2", text: "Pourquoi deviner coûte-t-il plus cher que vérifier ?" },
+      { type: "h2", text: "Ce que Nyctale vérifie en 19 secondes" },
       {
         type: "p",
-        text: "Beaucoup de gens tentent un premier réflexe — désinstaller un logiciel au hasard, vider la corbeille, redémarrer plusieurs fois — sans savoir si ça touche vraiment la cause. Résultat : le problème revient, et la conclusion devient « il faut un nouveau PC ». C'est souvent une dépense de 300 à 800 € pour un problème qui aurait pu se corriger en quelques minutes.",
+        text: "Nyctale fait ce tour d'horizon à votre place : programmes qui occupent le processeur et la mémoire, état et type du disque, espace libre, chauffe et bridage du processeur, arrêts brutaux, fichiers système. Il explique en langage clair ce qui ralentit réellement votre PC, sans rien modifier sans votre accord. Le diagnostic est gratuit et illimité.",
+      },
+    ],
+    faq: [
+      {
+        q: "Pourquoi mon ordinateur rame alors qu'il est récent ?",
+        r: "Sur un PC récent, la cause est presque toujours logicielle : programmes au démarrage, navigateur chargé, mise à jour en cours ou programme bloqué. Le Gestionnaire des tâches (Ctrl + Maj + Échap) montre en quelques secondes ce qui occupe le processeur, la mémoire ou le disque.",
       },
       {
-        type: "p",
-        text: "C'est exactement le rôle d'un diagnostic : remplacer la supposition par une réponse précise. Nyctale a été conçu pour ça — analyser un ordinateur, et dire en langage clair ce qui le ralentit vraiment, sans jargon technique et sans rien modifier sans accord.",
+        q: "Est-ce que réinstaller Windows accélère un PC ?",
+        r: "Souvent oui, mais c'est la solution la plus lourde : il faut sauvegarder ses fichiers et réinstaller tous ses logiciels. Mieux vaut d'abord trouver la cause. Si elle est matérielle (disque dur mécanique, mémoire insuffisante), une réinstallation n'y changera rien.",
       },
       {
-        type: "p",
-        text: "Avant de vous résigner à racheter un PC, prenez 19 secondes pour savoir ce qui se passe réellement sur le vôtre.",
+        q: "Les logiciels « nettoyeurs de PC » sont-ils utiles ?",
+        r: "Rarement. Windows intègre déjà le nettoyage du disque et la gestion du démarrage. Beaucoup de ces logiciels tournent eux-mêmes en permanence en arrière-plan et poussent à acheter une version payante. Un diagnostic qui nomme la cause est plus utile qu'un nettoyage à l'aveugle.",
       },
+      {
+        q: "Combien de mémoire vive faut-il en 2026 ?",
+        r: "8 Go suffisent pour la bureautique et la navigation légère. Avec un navigateur aux nombreux onglets, la visioconférence ou la retouche photo, 16 Go sont nettement plus confortables.",
+      },
+      {
+        q: "Remplacer un disque dur par un SSD vaut-il le coup ?",
+        r: "Oui, c'est souvent la meilleure amélioration possible sur un PC de plus de cinq ans : démarrage et ouverture des programmes plusieurs fois plus rapides, pour environ 40 à 70 € de pièce.",
+      },
+    ],
+    liens: [
+      "pc-lent-au-demarrage",
+      "disque-a-100-pourcent-windows",
+      "windows-11-lent-apres-mise-a-jour",
+      "avant-dacheter-un-pc-neuf",
     ],
   },
   {
     slug: "slow-computer-no-obvious-reason",
     lang: "en",
     traduction: "pc-qui-rame-sans-raison",
-    title: "My computer is slow and I don't understand why",
-    seoTitle: "Slow computer for no reason? How to find the real cause",
+    title: "Slow computer: 9 common causes and how to find yours",
+    seoTitle: "Slow computer? Causes and fixes for Windows 10 and 11",
     excerpt:
-      "A PC that slows down for no apparent reason doesn't exist. There's always a cause — here's how to find it before you start thinking about a new machine.",
+      "A slow PC always has a precise cause, usually software. The 9 most common causes, a 10-minute method to find yours, and how to fix each one.",
     date: "2026-08-08",
-    readMin: 5,
+    updated: "2026-09-25",
+    readMin: 10,
     blocks: [
       {
         type: "p",
-        text: "A computer that gradually slows down always has a precise cause, software-related in the vast majority of cases — it's never a random aging effect.",
+        text: "A slow computer isn't 'worn out': there is always a specific cause. In the vast majority of cases it's software (startup programs, the browser, full memory, Windows working in the background) and can be fixed for free, without buying a new machine.",
       },
       {
         type: "p",
-        text: "The scenario is almost always the same. A year ago, the computer started up in a few seconds. Today, opening a plain browser window takes an absurd amount of time. Nothing unusual was installed, nothing visibly \"broke\" — and yet everything is slower.",
+        text: "The scenario is almost always the same. A year ago, the computer started in a few seconds. Today, opening a browser takes an absurd amount of time. Nothing special was installed, nothing visibly broke, and yet everything is slower. This guide goes through the most common causes, from most to least likely, then gives a simple method to find yours.",
       },
+      { type: "h2", text: "In short: where should you start?" },
+      {
+        type: "ol",
+        items: [
+          "Do a real restart ('Restart', not 'Shut down'): it's free and solves more cases than you'd think.",
+          "Open Task Manager (Ctrl + Shift + Esc) and look at what's using the processor, memory and disk.",
+          "Check that at least 15% of your C: drive is free.",
+          "If nothing stands out, check the drive type (SSD or hard drive) and its health: an old hard drive is often the real bottleneck.",
+        ],
+      },
+      { type: "h2", text: "Why does a computer become slow?" },
       {
         type: "p",
-        text: "It's one of the most frustrating situations in computing: a real, measurable problem that's completely invisible. No error message. No obvious starting point. And the most natural temptation — assuming the computer is just \"old\" and needs replacing — is rarely the right answer.",
+        text: "A PC doesn't lose speed like a battery wearing out. It slows down because one resource is saturated: the processor, the memory or the disk. Finding which one is half of the solution. Here are the nine causes we see most often.",
       },
-      { type: "h2", text: "Why does my PC slow down for no apparent reason?" },
+      { type: "h3", text: "1. Too many programs launching at startup" },
       {
         type: "p",
-        text: "A PC doesn't lose speed over time the way a battery wears out. Every slowdown has an identifiable cause, and in the vast majority of cases, that cause is software, not hardware. The usual suspects:",
+        text: "Every installed program wants to 'start with Windows': chat apps, game launchers, printer utilities, sync tools... Each one permanently takes a bit of memory and processor. After a few years, a dozen programs run in the background that you never actually open. It's the most common cause of a PC that's slow right from startup.",
       },
+      { type: "h3", text: "2. The browser and its tabs" },
+      {
+        type: "p",
+        text: "A modern browser uses a huge amount of memory: each tab is almost a small program. Thirty open tabs, a forgotten video or a badly written extension is enough to slow down the whole computer. On a PC with 8 GB of memory, it's often the main cause of a PC that gets slower through the day.",
+      },
+      { type: "h3", text: "3. Memory (RAM) is full" },
+      {
+        type: "p",
+        text: "When memory is full, Windows moves part of its content to the disk, which is far slower. Everything becomes sluggish: switching windows, opening a file, typing. In 2026, 8 GB is enough for light office work; with a busy browser and a few apps open, 16 GB becomes comfortable.",
+      },
+      { type: "h3", text: "4. An almost full drive" },
+      {
+        type: "p",
+        text: "Windows needs free space for temporary files, updates and virtual memory. Below roughly 10 to 15% free space on the C: drive, slowdowns and failed updates become common.",
+      },
+      { type: "h3", text: "5. A mechanical hard drive, or one near the end of its life" },
+      {
+        type: "p",
+        text: "Many PCs sold before 2019 still use a mechanical hard drive (HDD), dozens of times slower than an SSD for the small reads Windows constantly needs. An aging hard drive also slows down before it fails. It's the only truly hardware cause on this list, and the good news is that SSDs are now cheap.",
+      },
+      { type: "h3", text: "6. Windows working in the background" },
+      {
+        type: "p",
+        text: "Updates, antivirus scans, file indexing for search, OneDrive sync: after startup, and especially after several days unused, Windows catches up. These slowdowns are temporary and disappear within 20 to 40 minutes. If they come back at every startup, an update is probably stuck.",
+      },
+      { type: "h3", text: "7. A computer that never truly restarts" },
+      {
+        type: "p",
+        text: "With 'fast startup', enabled by default, 'Shut down' doesn't reset Windows: it hibernates part of the system. A stuck program or a memory leak can survive weeks of shutdowns. Only 'Restart' truly starts from scratch.",
+      },
+      { type: "h3", text: "8. An overheating processor that throttles itself" },
+      {
+        type: "p",
+        text: "When the processor gets too hot (dust, blocked vents, dried thermal paste), it deliberately reduces its speed to protect itself. The computer becomes slow, often with a noisy fan. Our guide on the fan that always runs at full speed covers this case.",
+      },
+      { type: "h3", text: "9. Damaged system files or unwanted software" },
+      {
+        type: "p",
+        text: "An interrupted update or a power cut can damage Windows files and cause slowdowns and crashes. 'Optimizers', 'cleaners' and toolbars installed along the way often do more harm than good, as do two antivirus programs running at the same time.",
+      },
+      { type: "h2", text: "How can you find the cause yourself in 10 minutes?" },
+      {
+        type: "ol",
+        items: [
+          "Use 'Restart', wait five minutes, then open Task Manager with Ctrl + Shift + Esc (click 'More details' if the window is compact).",
+          "In the 'Processes' tab, sort by 'CPU', then 'Memory', then 'Disk'. A program that stays at the top of one of these columns is your first suspect.",
+          "Look at the 'Performance' tab: if memory is over 85-90% used during normal use, memory is the bottleneck. If the disk sits at 100%, see our guide on disk at 100%.",
+          "Still in 'Performance' > 'Disk', the 'Type' line says SSD or HDD. HDD means a mechanical hard drive.",
+          "Open the 'Startup apps' tab and spot programs with a 'High' impact that you don't need at startup.",
+          "Open File Explorer > 'This PC': if the C: drive bar is red, you're short on free space.",
+        ],
+      },
+      { type: "h2", text: "What to do depending on the cause" },
       {
         type: "ul",
         items: [
-          "A program set to launch automatically with Windows that keeps running in the background forever.",
-          "A browser with dozens of open tabs saturating memory.",
-          "Windows' \"fast startup\", which can prevent certain stuck states from resolving even after a restart.",
-          "A hard drive (not an SSD) nearing the end of its life, slowing down before failing completely.",
+          "Startup programs: in Task Manager > 'Startup apps', right-click and choose 'Disable'. The program stays installed; it just no longer launches by itself.",
+          "Browser: close unneeded tabs, remove extensions you don't use and turn on memory saver (Chrome, Edge).",
+          "Full memory: if memory is full even with little open, adding a module (8 to 16 GB) costs roughly €30 to €60 depending on the model, and it's often the most noticeable upgrade.",
+          "Full drive: Settings > System > Storage, then 'Cleanup recommendations'. Uninstall unused programs and move photos and videos to an external drive.",
+          "Mechanical hard drive: replacing it with an SSD (about €40 to €70 for 500 GB, plus labour if a shop does it) transforms an old PC. It's often the best value upgrade.",
+          "Windows in the background: leave the computer on and plugged in for 30 to 40 minutes, then restart. If an update keeps failing, see our guide on Windows 11 slow after an update.",
+          "Fast startup: get into the habit of using 'Restart' at least once a week, or turn off fast startup (Control Panel > Power Options > 'Choose what the power buttons do').",
+          "Overheating: dust the vents, put the laptop on a hard surface, or have it professionally cleaned (about €50 to €80).",
+          "System files: in a command prompt run as administrator, run DISM /Online /Cleanup-Image /RestoreHealth, then sfc /scannow. Also uninstall 'optimizers' and keep a single antivirus.",
         ],
       },
+      { type: "h2", text: "When should you consider replacing your computer?" },
       {
         type: "p",
-        text: "The problem is that none of these causes are visible to the naked eye. Windows Task Manager gives you a snapshot, but it doesn't tell you what's happening over time, or why a given program is consuming so much.",
+        text: "Rarely for slowness alone. Replacing makes sense when several signals add up: a processor that can't run Windows 11, a repair that would cost more than a third of an equivalent PC, or a device that no longer fits your needs at all. Our article 'Replace or repair your PC?' gives a full decision checklist.",
       },
-      { type: "h2", text: "Why does guessing cost more than checking?" },
+      { type: "h2", text: "What Nyctale checks in 19 seconds" },
       {
         type: "p",
-        text: "Many people try a first instinct — uninstalling a random program, emptying the recycle bin, restarting a few times — without knowing whether it actually addresses the cause. The result: the problem comes back, and the conclusion becomes \"I need a new PC.\" That's often €300 to €800 spent on a problem that could have been fixed in minutes.",
+        text: "Nyctale does this whole check for you: programs using the processor and memory, drive type and health, free space, processor heat and throttling, sudden shutdowns, system files. It explains in plain language what is really slowing your PC down, and never changes anything without your consent. The diagnosis is free and unlimited.",
+      },
+    ],
+    faq: [
+      {
+        q: "Why is my computer slow even though it's new?",
+        r: "On a recent PC, the cause is almost always software: startup programs, a heavy browser, an update in progress or a stuck program. Task Manager (Ctrl + Shift + Esc) shows within seconds what's using the processor, memory or disk.",
       },
       {
-        type: "p",
-        text: "That's exactly what a diagnostic is for: replacing guesswork with a precise answer. Nyctale was built for this — it analyzes a computer and explains, in plain language, what's actually slowing it down, no technical jargon, and it never changes anything without your consent.",
+        q: "Does reinstalling Windows speed up a PC?",
+        r: "Often yes, but it's the heaviest option: you have to back up your files and reinstall all your software. It's better to find the cause first. If it's hardware (a mechanical hard drive, not enough memory), reinstalling won't change anything.",
       },
       {
-        type: "p",
-        text: "Before you resign yourself to buying a new PC, take 19 seconds to find out what's really going on with yours.",
+        q: "Are 'PC cleaner' programs useful?",
+        r: "Rarely. Windows already includes disk cleanup and startup management. Many of these programs run permanently in the background themselves and push you towards a paid version. A diagnosis that names the cause is more useful than blind cleaning.",
       },
+      {
+        q: "How much RAM do you need in 2026?",
+        r: "8 GB is enough for office work and light browsing. With many browser tabs, video calls or photo editing, 16 GB is much more comfortable.",
+      },
+      {
+        q: "Is replacing a hard drive with an SSD worth it?",
+        r: "Yes, it's often the single best upgrade for a PC older than five years: startup and program launches several times faster, for about €40 to €70 in parts.",
+      },
+    ],
+    liens: [
+      "slow-pc-startup",
+      "disk-100-percent-windows",
+      "windows-11-slow-after-update",
+      "before-buying-a-new-pc",
     ],
   },
 
@@ -482,95 +666,231 @@ export const articles: Article[] = [
     slug: "avant-dacheter-un-pc-neuf",
     lang: "fr",
     traduction: "before-buying-a-new-pc",
-    title: "Avant d'acheter un PC neuf, une question à se poser",
-    seoTitle: "PC lent : faut-il vraiment acheter un ordinateur neuf ?",
+    title: "Changer de PC ou le réparer ? 6 questions à se poser avant d'acheter",
+    seoTitle: "Faut-il changer son PC ? La grille pour décider avant d'acheter",
     excerpt:
-      "\"Il faut changer votre ordinateur\" est parfois vrai — et parfois une phrase qui arrange surtout celui qui la prononce. Voici comment savoir de quel côté vous êtes.",
+      "Un PC lent se répare souvent pour une fraction du prix d'un neuf. 6 questions concrètes (Windows 11, SSD, mémoire, batterie, coût) pour décider sans se tromper.",
     date: "2026-08-08",
-    readMin: 5,
+    updated: "2026-09-25",
+    readMin: 9,
     blocks: [
       {
         type: "p",
-        text: "Un diagnostic indépendant et gratuit permet de vérifier, avant tout achat ou réparation coûteuse, si le remplacement d'un PC est réellement justifié.",
+        text: "Un ordinateur lent n'a pas forcément besoin d'être remplacé : dans la majorité des cas, un réglage, un SSD ou de la mémoire en plus coûtent entre 0 et 150 €, contre 500 à 800 € pour un PC neuf équivalent. Le remplacement se justifie surtout quand le PC ne peut pas passer à Windows 11 ou quand la réparation dépasse environ un tiers du prix du neuf.",
       },
       {
         type: "p",
-        text: "Un ordinateur qui rame, et une personne en face qui dit : « à ce stade, il vaut mieux en racheter un ». C'est une scène courante en magasin ou en dépannage à domicile, et c'est un conseil qui peut être parfaitement honnête. Le problème, c'est qu'il peut aussi ne pas l'être — et rien, dans l'instant, ne permet de faire la différence.",
+        text: "« À ce stade, il vaut mieux en racheter un. » C'est une phrase qu'on entend souvent en magasin ou lors d'un dépannage, et elle peut être parfaitement honnête. Mais celui qui pose le diagnostic est aussi, souvent, celui qui vend la solution. Ce n'est pas une accusation : c'est une raison de vérifier soi-même avant de dépenser. Voici les six questions qui permettent de trancher.",
+      },
+      { type: "h2", text: "En bref : la grille de décision" },
+      {
+        type: "ul",
+        items: [
+          "Cause logicielle identifiée (programmes, navigateur, mise à jour) : on règle, 0 €.",
+          "Disque dur mécanique ou mémoire insuffisante, PC compatible Windows 11 : on améliore, environ 40 à 150 €.",
+          "Batterie usée ou ventilateur bruyant sur un PC par ailleurs sain : on répare, environ 50 à 120 €.",
+          "PC incompatible avec Windows 11, ou réparation supérieure à un tiers du prix d'un équivalent neuf : le remplacement devient raisonnable.",
+        ],
+      },
+      { type: "h2", text: "1. Quel est le problème, précisément ?" },
+      {
+        type: "p",
+        text: "C'est la question qui compte le plus. Un diagnostic sérieux nomme une cause précise : un programme, un composant, une pièce. « Il est vieux » ou « il est saturé » ne sont pas des diagnostics, ce sont des impressions. Tant que la cause n'est pas nommée, impossible de savoir si un PC neuf réglerait le problème, ou si le même problème vous suivrait sur la nouvelle machine (un navigateur surchargé ou trop de programmes au démarrage ralentiront aussi un PC neuf).",
       },
       {
         type: "p",
-        text: "Ce n'est pas une question de confiance envers les professionnels du dépannage informatique, dont la majorité fait un travail sérieux. C'est une question d'asymétrie : celui qui pose le diagnostic est aussi, souvent, celui qui vend la solution. Ce n'est pas une accusation, c'est juste une situation qui mérite un point de contrôle indépendant.",
+        text: "Notre guide « Ordinateur qui rame » détaille les neuf causes les plus fréquentes et une méthode pour trouver la vôtre en dix minutes.",
+      },
+      { type: "h2", text: "2. Mon PC peut-il passer à Windows 11 ?" },
+      {
+        type: "p",
+        text: "C'est devenu le critère décisif. Le support de Windows 10 a pris fin le 14 octobre 2025, et le programme de mises à jour de sécurité étendues (ESU) pour les particuliers s'arrête le 13 octobre 2026. Après cette date, un PC sous Windows 10 ne reçoit plus aucun correctif de sécurité.",
+      },
+      {
+        type: "p",
+        text: "Pour vérifier, installez l'application gratuite « Contrôle d'intégrité du PC » de Microsoft. Les exigences principales : un processeur assez récent (en général Intel de 8e génération ou AMD Ryzen 2000 et plus récents), une puce TPM 2.0, le démarrage sécurisé, 4 Go de mémoire et 64 Go de stockage. Un PC compatible mérite presque toujours d'être amélioré plutôt que remplacé. Un PC incompatible peut encore servir sous Linux, mais pour un usage courant sous Windows, son remplacement devient logique.",
+      },
+      { type: "h2", text: "3. Mon PC a-t-il un SSD ou un disque dur ?" },
+      {
+        type: "p",
+        text: "Ouvrez le Gestionnaire des tâches (Ctrl + Maj + Échap), onglet « Performances », puis « Disque » : la ligne « Type » indique SSD ou HDD. Un HDD, c'est un disque dur mécanique, la cause matérielle de lenteur la plus fréquente sur les PC de plus de cinq ans. Le remplacer par un SSD (environ 40 à 70 € pour 500 Go, plus 40 à 80 € de main-d'œuvre si vous le faites faire) rend souvent un vieux PC plus rapide qu'au premier jour.",
+      },
+      { type: "h2", text: "4. A-t-il assez de mémoire vive ?" },
+      {
+        type: "p",
+        text: "Toujours dans « Performances », regardez « Mémoire ». Si elle dépasse régulièrement 85-90 % en usage normal, ajouter de la mémoire (passer de 8 à 16 Go) coûte environ 30 à 60 €. Attention : sur certains portables fins, la mémoire est soudée et ne peut pas être augmentée. Un réparateur ou la fiche technique du modèle vous le dira.",
+      },
+      { type: "h2", text: "5. La batterie tient-elle encore ?" },
+      {
+        type: "p",
+        text: "Sur un portable, une autonomie qui s'effondre pousse souvent à racheter alors qu'une batterie neuve coûte en général 50 à 120 €. Pour connaître son état, ouvrez une invite de commandes et tapez powercfg /batteryreport : le rapport compare la capacité d'origine (« Design capacity ») à la capacité actuelle (« Full charge capacity »). En dessous d'environ 60 %, le remplacement de la batterie se justifie.",
+      },
+      { type: "h2", text: "6. Combien coûterait la réparation, comparée au neuf ?" },
+      {
+        type: "p",
+        text: "Une règle simple : si la réparation ou l'amélioration coûte moins d'un tiers du prix d'un PC neuf équivalent, et que le PC est compatible Windows 11, réparez. Au-delà, ou si plusieurs pannes se cumulent (écran, clavier, charnières, batterie), le remplacement devient raisonnable. Pensez aussi à l'impact : prolonger un ordinateur de deux ou trois ans est de loin le geste le plus efficace pour réduire son empreinte numérique.",
+      },
+      { type: "h2", text: "Quand faut-il vraiment changer de PC ?" },
+      {
+        type: "ul",
+        items: [
+          "Le processeur est incompatible avec Windows 11 et vous voulez rester sous Windows avec des mises à jour de sécurité.",
+          "Plusieurs composants lâchent en même temps, pour un total supérieur au tiers du prix du neuf.",
+          "L'usage a changé : montage vidéo, jeux récents ou logiciels professionnels que la machine ne peut objectivement pas faire tourner.",
+          "La carte mère ou le processeur sont en panne : sur un portable, la réparation coûte alors souvent presque le prix d'un neuf.",
+        ],
       },
       { type: "h2", text: "Comment vérifier un diagnostic avant de décider ?" },
       {
         type: "p",
-        text: "Avant d'accepter un diagnostic — remplacement, réparation payante, ou simple nettoyage — la question à se poser est concrète : quel est le problème précis, et est-ce que ça se voit ailleurs que dans la bouche de la personne qui me le dit ?",
+        text: "Si un professionnel vous conseille de remplacer votre ordinateur, demandez-lui la cause précise et comment elle a été mesurée. Un vrai problème matériel se vérifie objectivement : l'état d'un disque se lit dans ses données SMART, une surchauffe se voit dans le journal de Windows, une batterie usée dans son rapport de capacité. Un deuxième avis coûte toujours moins cher qu'un PC neuf inutile.",
       },
-      {
-        type: "ul",
-        items: [
-          "Un diagnostic sérieux nomme une cause précise (un programme, un composant, une pièce), pas une impression générale (« il est vieux », « il est saturé »).",
-          "Un vrai problème matériel (disque en fin de vie, par exemple) se vérifie objectivement, pas seulement à l'oreille ou au ressenti.",
-          "Le prix d'un diagnostic indépendant est toujours inférieur au prix d'un PC neuf inutile.",
-        ],
-      },
-      { type: "h2", text: "Comment obtenir un deuxième avis gratuit en 19 secondes ?" },
+      { type: "h2", text: "Un deuxième avis gratuit en 19 secondes" },
       {
         type: "p",
-        text: "Nyctale a été conçu précisément pour ce moment-là : un scan complet prend environ 19 secondes et donne, chez soi, un diagnostic indépendant et gratuit avant de prendre une décision coûteuse. Le rapport dit ce qui ne va pas, dans quelle mesure c'est grave, et si un remplacement est réellement justifié — ou si un simple réglage suffit.",
+        text: "Nyctale a été conçu pour ce moment-là. En 19 secondes, il analyse votre PC chez vous et dit en langage clair ce qui ne va pas, à quel point c'est grave, et si le problème se règle par un simple réglage ou demande une intervention matérielle. Il ne remplace pas un professionnel pour une panne physique, mais il vous donne une base solide pour juger ce qu'on vous propose, au lieu de faire confiance les yeux fermés.",
+      },
+    ],
+    faq: [
+      {
+        q: "À partir de quel âge faut-il changer un ordinateur ?",
+        r: "Il n'y a pas d'âge fixe. Un PC de six ou sept ans compatible Windows 11, équipé d'un SSD et de 16 Go de mémoire, reste parfaitement utilisable pour la bureautique et Internet. C'est la compatibilité Windows 11 et le coût des réparations qui décident, pas l'âge.",
       },
       {
-        type: "p",
-        text: "Ça ne remplace pas un professionnel pour les cas qui dépassent le logiciel. Mais ça vous donne, avant toute décision, une base sur laquelle juger ce qu'on vous propose — au lieu de devoir faire confiance les yeux fermés.",
+        q: "Que faire d'un PC incompatible avec Windows 11 ?",
+        r: "Après le 13 octobre 2026, il ne reçoit plus de correctifs de sécurité sous Windows 10. Vous pouvez installer une distribution Linux légère, qui le gardera sûr et rapide pour Internet et la bureautique, ou le remplacer si vous tenez à rester sous Windows.",
       },
+      {
+        q: "Combien coûte le passage à un SSD ?",
+        r: "Environ 40 à 70 € pour un SSD de 500 Go, auxquels s'ajoutent 40 à 80 € de main-d'œuvre si un réparateur fait le transfert. C'est souvent l'amélioration la plus rentable sur un PC de plus de cinq ans.",
+      },
+      {
+        q: "Un PC reconditionné est-il une bonne alternative ?",
+        r: "Oui, à condition de choisir un modèle compatible Windows 11, avec SSD, et vendu avec une garantie d'au moins un an. C'est souvent 30 à 50 % moins cher qu'un neuf pour un usage équivalent.",
+      },
+      {
+        q: "Comment savoir si un dépanneur me conseille bien ?",
+        r: "Un bon diagnostic nomme une cause précise et vérifiable (disque, batterie, surchauffe, programme), pas une impression générale. Demandez comment elle a été mesurée, et n'hésitez pas à obtenir un deuxième avis avant une dépense importante.",
+      },
+    ],
+    liens: [
+      "pc-qui-rame-sans-raison",
+      "disque-a-100-pourcent-windows",
+      "ventilateur-qui-ne-sarrete-plus",
     ],
   },
   {
     slug: "before-buying-a-new-pc",
     lang: "en",
     traduction: "avant-dacheter-un-pc-neuf",
-    title: "Before buying a new PC, one question worth asking",
-    seoTitle: "Slow PC: do you really need to buy a new computer?",
+    title: "Replace or repair your PC? 6 questions to ask before buying",
+    seoTitle: "Should you replace your PC? A checklist before buying",
     excerpt:
-      '"You need to replace your computer" is sometimes true — and sometimes a line that mostly benefits the person saying it. Here\'s how to tell which side you\'re on.',
+      "A slow PC can often be fixed for a fraction of the price of a new one. 6 concrete questions (Windows 11, SSD, RAM, battery, cost) to decide without regret.",
     date: "2026-08-08",
-    readMin: 5,
+    updated: "2026-09-25",
+    readMin: 9,
     blocks: [
       {
         type: "p",
-        text: "An independent, free diagnostic lets you check, before any costly purchase or repair, whether replacing a PC is actually justified.",
+        text: "A slow computer doesn't necessarily need replacing: in most cases, a settings fix, an SSD or more memory costs between €0 and €150, versus €500 to €800 for an equivalent new PC. Replacement is mainly justified when the PC can't run Windows 11, or when the repair would cost more than about a third of a new one.",
       },
       {
         type: "p",
-        text: "A slow computer, and someone across the counter saying: \"at this point, you're better off buying a new one.\" It's a common scene in a shop or during an at-home repair visit, and it can be perfectly honest advice. The problem is it can also not be — and in the moment, there's no way to tell the difference.",
+        text: "'At this point, you're better off buying a new one.' It's a line you often hear in a shop or during a repair visit, and it can be perfectly honest. But the person making the diagnosis is often also the one selling the solution. That's not an accusation: it's a reason to check for yourself before spending. Here are the six questions that settle it.",
+      },
+      { type: "h2", text: "In short: the decision checklist" },
+      {
+        type: "ul",
+        items: [
+          "Software cause identified (programs, browser, update): fix it, €0.",
+          "Mechanical hard drive or not enough memory, Windows 11 compatible PC: upgrade it, roughly €40 to €150.",
+          "Worn battery or noisy fan on an otherwise healthy PC: repair it, roughly €50 to €120.",
+          "PC incompatible with Windows 11, or repair above a third of the price of an equivalent new PC: replacing becomes reasonable.",
+        ],
+      },
+      { type: "h2", text: "1. What exactly is the problem?" },
+      {
+        type: "p",
+        text: "This is the question that matters most. A serious diagnosis names a precise cause: a program, a component, a part. 'It's old' or 'it's clogged up' aren't diagnoses, they're impressions. Until the cause is named, you can't know whether a new PC would fix the problem, or whether the same problem would follow you to the new machine (an overloaded browser or too many startup programs will slow down a new PC too).",
       },
       {
         type: "p",
-        text: "This isn't about distrusting computer repair professionals, most of whom do serious, honest work. It's about an asymmetry: the person making the diagnosis is often also the one selling the solution. That's not an accusation, it's simply a situation that deserves an independent checkpoint.",
+        text: "Our 'Slow computer' guide covers the nine most common causes and a method to find yours in ten minutes.",
+      },
+      { type: "h2", text: "2. Can my PC run Windows 11?" },
+      {
+        type: "p",
+        text: "This has become the deciding factor. Windows 10 support ended on October 14, 2025, and the Extended Security Updates (ESU) programme for consumers ends on October 13, 2026. After that date, a Windows 10 PC no longer receives any security fixes.",
+      },
+      {
+        type: "p",
+        text: "To check, install Microsoft's free 'PC Health Check' app. The main requirements: a recent enough processor (generally Intel 8th generation or AMD Ryzen 2000 and newer), a TPM 2.0 chip, Secure Boot, 4 GB of memory and 64 GB of storage. A compatible PC is almost always worth upgrading rather than replacing. An incompatible one can still serve under Linux, but for everyday use on Windows, replacing it becomes logical.",
+      },
+      { type: "h2", text: "3. Does my PC have an SSD or a hard drive?" },
+      {
+        type: "p",
+        text: "Open Task Manager (Ctrl + Shift + Esc), 'Performance' tab, then 'Disk': the 'Type' line says SSD or HDD. HDD means a mechanical hard drive, the most common hardware cause of slowness on PCs older than five years. Replacing it with an SSD (about €40 to €70 for 500 GB, plus €40 to €80 of labour if a shop does it) often makes an old PC faster than it was on day one.",
+      },
+      { type: "h2", text: "4. Does it have enough memory?" },
+      {
+        type: "p",
+        text: "Still in 'Performance', look at 'Memory'. If it regularly goes above 85-90% during normal use, adding memory (from 8 to 16 GB) costs about €30 to €60. Note that on some thin laptops, memory is soldered and can't be upgraded. A repair shop or the model's spec sheet will tell you.",
+      },
+      { type: "h2", text: "5. Does the battery still hold up?" },
+      {
+        type: "p",
+        text: "On a laptop, collapsing battery life often pushes people to buy a new one, when a new battery generally costs €50 to €120. To check its health, open a command prompt and type powercfg /batteryreport: the report compares the original capacity ('Design capacity') with the current one ('Full charge capacity'). Below about 60%, replacing the battery is justified.",
+      },
+      { type: "h2", text: "6. How much would the repair cost compared with a new PC?" },
+      {
+        type: "p",
+        text: "A simple rule: if the repair or upgrade costs less than a third of an equivalent new PC, and the PC is Windows 11 compatible, repair it. Beyond that, or if several faults add up (screen, keyboard, hinges, battery), replacing becomes reasonable. Consider the impact too: keeping a computer two or three years longer is by far the most effective way to reduce its footprint.",
+      },
+      { type: "h2", text: "When should you really replace your PC?" },
+      {
+        type: "ul",
+        items: [
+          "The processor is incompatible with Windows 11 and you want to stay on Windows with security updates.",
+          "Several components fail at once, for a total above a third of the price of a new PC.",
+          "Your needs have changed: video editing, recent games or professional software the machine objectively can't run.",
+          "The motherboard or processor has failed: on a laptop, the repair then often costs almost as much as a new one.",
+        ],
       },
       { type: "h2", text: "How do you check a diagnosis before deciding?" },
       {
         type: "p",
-        text: "Before accepting a diagnosis — a replacement, a paid repair, or a simple cleaning — the question worth asking is concrete: what exactly is the problem, and can it be seen anywhere other than in the words of the person telling you about it?",
+        text: "If a professional advises you to replace your computer, ask for the precise cause and how it was measured. A real hardware problem can be verified objectively: a drive's health is read from its SMART data, overheating shows up in the Windows log, a worn battery in its capacity report. A second opinion always costs less than an unnecessary new PC.",
       },
-      {
-        type: "ul",
-        items: [
-          "A serious diagnosis names a precise cause (a program, a component, a part), not a general impression (\"it's old\", \"it's clogged up\").",
-          "A genuine hardware issue (a drive nearing end of life, for example) can be verified objectively, not just by ear or by feel.",
-          "The cost of an independent diagnostic is always lower than the cost of an unnecessary new PC.",
-        ],
-      },
-      { type: "h2", text: "How do you get a free second opinion in 19 seconds?" },
+      { type: "h2", text: "A free second opinion in 19 seconds" },
       {
         type: "p",
-        text: "Nyctale was built exactly for this moment: a full scan takes about 19 seconds and gives you an independent, free diagnostic at home before making a costly decision. The report says what's wrong, how serious it is, and whether a replacement is actually justified — or whether a simple fix is enough.",
-      },
-      {
-        type: "p",
-        text: "It doesn't replace a professional for cases that go beyond software. But it gives you, before any decision, a basis to judge what you're being told — instead of having to trust blindly.",
+        text: "Nyctale was built for exactly this moment. In 19 seconds, it analyses your PC at home and explains in plain language what's wrong, how serious it is, and whether the problem can be fixed with a simple setting or needs a hardware repair. It doesn't replace a professional for a physical fault, but it gives you a solid basis to judge what you're being offered, instead of trusting blindly.",
       },
     ],
+    faq: [
+      {
+        q: "At what age should you replace a computer?",
+        r: "There is no fixed age. A six or seven year old PC that is Windows 11 compatible, with an SSD and 16 GB of memory, is perfectly usable for office work and the internet. Windows 11 compatibility and repair costs decide, not age.",
+      },
+      {
+        q: "What can you do with a PC that can't run Windows 11?",
+        r: "After October 13, 2026, it no longer receives security fixes on Windows 10. You can install a lightweight Linux distribution, which will keep it safe and fast for browsing and office work, or replace it if you want to stay on Windows.",
+      },
+      {
+        q: "How much does switching to an SSD cost?",
+        r: "About €40 to €70 for a 500 GB SSD, plus €40 to €80 of labour if a repair shop does the transfer. It's often the most cost-effective upgrade for a PC older than five years.",
+      },
+      {
+        q: "Is a refurbished PC a good alternative?",
+        r: "Yes, as long as you choose a Windows 11 compatible model with an SSD, sold with at least a one-year warranty. It's often 30 to 50% cheaper than new for the same use.",
+      },
+      {
+        q: "How can I tell if a repair technician is advising me well?",
+        r: "A good diagnosis names a precise, verifiable cause (drive, battery, overheating, program), not a general impression. Ask how it was measured, and don't hesitate to get a second opinion before a significant expense.",
+      },
+    ],
+    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "fan-that-never-stops-spinning"],
   },
 
   // -------------------------------------------------------------------
@@ -686,11 +1006,12 @@ export const articles: Article[] = [
     lang: "fr",
     traduction: "slow-pc-startup",
     title: "PC lent au démarrage : les vraies causes et comment les corriger",
-    seoTitle: "PC lent au démarrage : causes et solutions",
+    seoTitle: "PC lent au démarrage : causes et solutions (Windows 10 et 11)",
     excerpt:
-      "Votre ordinateur met plusieurs minutes à devenir utilisable ? Programmes au démarrage, démarrage rapide, disque : voici comment trouver ce qui le ralentit, sans rien casser.",
+      "Votre ordinateur met plusieurs minutes à devenir utilisable ? Les 7 causes d'un démarrage lent, comment mesurer le vôtre, et comment le corriger sans rien casser.",
     date: "2026-09-24",
-    readMin: 7,
+    updated: "2026-09-25",
+    readMin: 9,
     blocks: [
       {
         type: "p",
@@ -699,6 +1020,25 @@ export const articles: Article[] = [
       {
         type: "p",
         text: "Le bureau apparaît, mais l'ordinateur reste inutilisable pendant plusieurs minutes : le curseur tourne, les fenêtres s'ouvrent au ralenti. C'est souvent là que se joue l'impression d'un PC « fatigué ». En réalité, Windows est simplement en train de lancer beaucoup de choses en même temps.",
+      },
+      { type: "h2", text: "En bref : les 4 réflexes" },
+      {
+        type: "ol",
+        items: [
+          "Faites un vrai « Redémarrer » (pas « Arrêter ») pour terminer les mises à jour en attente.",
+          "Désactivez les programmes de démarrage inutiles dans le Gestionnaire des tâches (Ctrl + Maj + Échap).",
+          "Vérifiez qu'il reste au moins 15 % d'espace libre sur le disque C:.",
+          "Si l'ordinateur a encore un disque dur mécanique, un SSD divise le temps de démarrage par trois ou plus.",
+        ],
+      },
+      { type: "h2", text: "Quel temps de démarrage est normal ?" },
+      {
+        type: "p",
+        text: "Sur un PC équipé d'un SSD, le bureau doit apparaître en 10 à 30 secondes, et l'ordinateur doit être utilisable moins d'une minute après. Avec un disque dur mécanique, compter 1 à 3 minutes n'a rien d'anormal. Au-delà de 3 à 5 minutes avant de pouvoir travailler, il y a clairement une cause à chercher.",
+      },
+      {
+        type: "p",
+        text: "Attention à la différence entre les deux étapes : si l'écran reste noir ou affiche le logo du fabricant longtemps, c'est le démarrage matériel (le BIOS) qui traîne ; si c'est après l'apparition du bureau, ce sont les programmes et Windows lui-même.",
       },
       { type: "h2", text: "Pourquoi un PC devient-il lent au démarrage ?" },
       { type: "h3", text: "1. Trop de programmes au démarrage" },
@@ -714,26 +1054,57 @@ export const articles: Article[] = [
       { type: "h3", text: "3. Un disque dur mécanique ou presque plein" },
       {
         type: "p",
-        text: "Le démarrage consiste surtout à lire des milliers de petits fichiers. Un disque dur à plateaux le fait lentement, et un disque presque plein laisse moins de place à Windows pour travailler. Sous 10 % d'espace libre, tout ralentit, démarrage compris.",
+        text: "Le démarrage consiste surtout à lire des milliers de petits fichiers. Un disque dur à plateaux le fait lentement, et un disque presque plein laisse moins de place à Windows pour travailler. Sous 10 % d'espace libre, tout ralentit, démarrage compris. Un disque dur qui commence à faiblir rallonge aussi le démarrage, parfois bien avant de tomber en panne.",
       },
       { type: "h3", text: "4. Des mises à jour qui attendent" },
       {
         type: "p",
         text: "Une mise à jour installée mais pas encore finalisée peut reprendre son travail à chaque allumage, tant que l'ordinateur n'a pas été vraiment redémarré. Le démarrage paraît alors lent, jour après jour.",
       },
+      { type: "h3", text: "5. Les programmes de mise à jour en arrière-plan" },
+      {
+        type: "p",
+        text: "Beaucoup de logiciels installent leur propre service de mise à jour (navigateurs, suites bureautiques, lecteurs PDF, logiciels du fabricant). Ils ne figurent pas toujours dans la liste des applications de démarrage, car ils passent par des services ou des tâches planifiées, et se réveillent tous à l'allumage pour vérifier s'il existe une nouvelle version.",
+      },
+      { type: "h3", text: "6. Un antivirus lourd, ou deux antivirus" },
+      {
+        type: "p",
+        text: "Un antivirus analyse les fichiers au moment où ils sont ouverts, donc massivement au démarrage. Certains antivirus tiers sont nettement plus lourds que Microsoft Defender, intégré et suffisant pour un usage courant. Deux antivirus actifs en même temps se gênent mutuellement et ralentissent fortement l'allumage.",
+      },
+      { type: "h3", text: "7. Un périphérique ou une connexion qui se fait attendre" },
+      {
+        type: "p",
+        text: "Un disque externe, une clé USB oubliée, une imprimante réseau ou un lecteur réseau à reconnecter peuvent faire attendre Windows plusieurs secondes, voire plus, pendant l'ouverture de session. Débrancher les périphériques non indispensables permet de le vérifier en un redémarrage.",
+      },
       { type: "h2", text: "Comment trouver ce qui ralentit votre démarrage ?" },
       {
         type: "ol",
         items: [
           "Ouvrez le Gestionnaire des tâches (Ctrl + Maj + Échap), puis l'onglet « Applications de démarrage » (« Démarrage » sur Windows 10).",
+          "En haut à droite, « Dernier temps BIOS » indique la durée de la phase matérielle. Au-delà de 15 à 20 secondes, regardez du côté du BIOS ou des périphériques branchés plutôt que de Windows.",
           "La colonne « Impact du démarrage » classe chaque programme de « Faible » à « Élevé ». Commencez par ceux à impact élevé que vous n'utilisez pas tous les jours.",
           "Faites un clic droit puis « Désactiver ». Le programme reste installé et fonctionne normalement quand vous l'ouvrez vous-même : il ne se lance simplement plus tout seul.",
+          "Dans l'onglet « Performances » > « Disque », vérifiez le type (SSD ou HDD) et, dans l'Explorateur de fichiers, l'espace libre sur le disque C:.",
           "Redémarrez (« Redémarrer », pas « Arrêter ») et comparez.",
         ],
       },
       {
         type: "p",
-        text: "Pour mesurer précisément, Windows note la durée de chaque démarrage dans l'Observateur d'événements : journal « Applications et services > Microsoft > Windows > Diagnostics-Performance > Opérationnel », événement 100.",
+        text: "Pour mesurer précisément, Windows note la durée de chaque démarrage dans l'Observateur d'événements : journal « Applications et services > Microsoft > Windows > Diagnostics-Performance > Opérationnel », événement 100. Les événements 101 à 110 du même journal nomment les programmes et pilotes qui ont ralenti le démarrage.",
+      },
+      { type: "h2", text: "Que faire selon la cause ?" },
+      {
+        type: "ul",
+        items: [
+          "Programmes au démarrage : désactivez-les dans le Gestionnaire des tâches, ou dans Paramètres > Applications > Démarrage.",
+          "Démarrage rapide : choisissez « Redémarrer » au moins une fois par semaine. Si les blocages reviennent souvent, désactivez-le : Panneau de configuration > Options d'alimentation > « Choisir l'action des boutons d'alimentation ».",
+          "Disque plein : Paramètres > Système > Stockage, puis « Recommandations de nettoyage ». Gardez au moins 15 % d'espace libre.",
+          "Disque dur mécanique : un SSD de 500 Go coûte environ 40 à 70 €, plus 40 à 80 € de main-d'œuvre si vous le faites installer. C'est la meilleure amélioration possible pour un démarrage lent.",
+          "Mises à jour en attente : Paramètres > Windows Update, installez tout ce qui reste, puis « Redémarrer ».",
+          "Services de mise à jour tiers : désinstallez les logiciels que vous n'utilisez plus, c'est le moyen le plus sûr de supprimer leur service de mise à jour.",
+          "Antivirus : n'en gardez qu'un seul. Microsoft Defender suffit pour la plupart des usages domestiques.",
+          "Périphériques : débranchez disques externes et clés USB avant d'allumer, et supprimez les lecteurs réseau qui n'existent plus.",
+        ],
       },
       { type: "h2", text: "Ce qu'il ne faut pas désactiver" },
       {
@@ -746,7 +1117,16 @@ export const articles: Article[] = [
       },
       {
         type: "p",
-        text: "En cas de doute, désactivez un programme à la fois : c'est réversible en un clic dans la même liste.",
+        text: "En cas de doute, désactivez un programme à la fois : c'est réversible en un clic dans la même liste. Méfiez-vous des logiciels « d'accélération du démarrage » : Windows fournit déjà tout ce qu'il faut, gratuitement.",
+      },
+      { type: "h2", text: "Quand faut-il s'inquiéter ?" },
+      {
+        type: "ul",
+        items: [
+          "Le démarrage s'allonge de semaine en semaine sans raison, avec des bruits de cliquetis : un disque dur qui faiblit. Sauvegardez vos fichiers sans attendre.",
+          "Windows affiche « Préparation de la réparation automatique » à chaque allumage : des fichiers système sont probablement abîmés.",
+          "L'écran reste noir ou bloqué sur le logo du fabricant plusieurs minutes : le problème se situe avant Windows (matériel ou BIOS), un avis professionnel est utile.",
+        ],
       },
       { type: "h2", text: "Ce que Nyctale vérifie en 19 secondes" },
       {
@@ -755,6 +1135,10 @@ export const articles: Article[] = [
       },
     ],
     faq: [
+      {
+        q: "Combien de temps doit durer le démarrage d'un PC ?",
+        r: "Avec un SSD, le bureau apparaît en 10 à 30 secondes et l'ordinateur est utilisable en moins d'une minute. Avec un disque dur mécanique, 1 à 3 minutes restent normales. Au-delà, il y a une cause à chercher.",
+      },
       {
         q: "Combien de programmes au démarrage, c'est trop ?",
         r: "Il n'y a pas de seuil absolu, mais au-delà d'une dizaine de programmes qui se lancent avec Windows, l'effet sur un ordinateur modeste devient sensible. L'important est de garder ceux dont vous avez besoin dès l'allumage et de désactiver les autres.",
@@ -771,7 +1155,12 @@ export const articles: Article[] = [
         q: "Un SSD accélère-t-il le démarrage ?",
         r: "Oui, nettement, si l'ordinateur a encore un disque dur mécanique. C'est souvent la différence entre plusieurs minutes et quelques secondes.",
       },
+      {
+        q: "Que signifie « Dernier temps BIOS » dans le Gestionnaire des tâches ?",
+        r: "C'est la durée de la phase matérielle du démarrage, avant que Windows ne prenne la main. Quelques secondes sont normales ; au-delà de 15 à 20 secondes, un périphérique branché ou un réglage du BIOS est en cause, pas Windows.",
+      },
     ],
+    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour"],
   },
 
   // -------------------------------------------------------------------
@@ -782,21 +1171,37 @@ export const articles: Article[] = [
     lang: "fr",
     traduction: "windows-11-slow-after-update",
     title: "Windows 11 lent après une mise à jour : que faire ?",
-    seoTitle: "Windows 11 lent après une mise à jour : que faire ?",
+    seoTitle: "Windows 11 lent après une mise à jour : causes et solutions",
     excerpt:
-      "Tout allait bien, puis une mise à jour et plus rien ne répond ? Dans la plupart des cas, Windows termine simplement son travail. Voici comment savoir si c'est temporaire ou s'il faut agir.",
+      "Tout allait bien, puis une mise à jour et plus rien ne répond ? Le plus souvent, Windows termine son travail. Comment savoir si c'est temporaire, et les solutions dans l'ordre.",
     date: "2026-09-24",
-    readMin: 7,
+    updated: "2026-09-25",
+    readMin: 9,
     blocks: [
       {
         type: "p",
         text: "Un Windows 11 lent juste après une mise à jour est le plus souvent un ralentissement temporaire : Windows termine en arrière-plan le travail commencé par la mise à jour. Il faut s'en inquiéter si la lenteur dure plusieurs jours, et dans ce cas les causes se vérifient une par une.",
       },
+      { type: "h2", text: "En bref : que faire tout de suite ?" },
+      {
+        type: "ol",
+        items: [
+          "Laissez l'ordinateur allumé et branché 30 à 60 minutes, sans le mettre en veille.",
+          "Choisissez « Redémarrer », pas « Arrêter ».",
+          "Installez les mises à jour restantes dans Windows Update : un correctif suit souvent une mise à jour problématique.",
+          "Si la lenteur dure plus de quelques jours, suivez la méthode pas à pas plus bas.",
+        ],
+      },
+      { type: "h2", text: "Mise à jour mensuelle ou mise à jour annuelle : quelle différence ?" },
+      {
+        type: "p",
+        text: "Windows 11 reçoit deux types de mises à jour. Les mises à jour cumulatives, publiées chaque mois (le deuxième mardi), corrigent des failles et des bugs : elles sont rapides à installer et ralentissent rarement l'ordinateur plus de quelques heures. Les mises à jour de fonctionnalités, une fois par an (par exemple 24H2 puis 25H2), réinstallent une grande partie du système : c'est après elles que les lenteurs sont les plus fréquentes et les plus longues. Pour savoir laquelle vous avez reçue, ouvrez Paramètres > Windows Update > Historique des mises à jour.",
+      },
       { type: "h2", text: "Pourquoi Windows est-il lent après une mise à jour ?" },
       { type: "h3", text: "1. Le travail d'après mise à jour" },
       {
         type: "p",
-        text: "Une fois la mise à jour installée, Windows a encore de quoi faire : finaliser des composants (TiWorker, TrustedInstaller), optimiser des bibliothèques de programmes, réindexer vos fichiers pour la recherche (SearchIndexer) et relancer une analyse antivirus (MsMpEng). Pendant 30 minutes à quelques heures, le processeur et le disque sont très occupés.",
+        text: "Une fois la mise à jour installée, Windows a encore de quoi faire : finaliser des composants (TiWorker, TrustedInstaller), optimiser des bibliothèques de programmes, réindexer vos fichiers pour la recherche (SearchIndexer) et relancer une analyse antivirus (MsMpEng). Pendant 30 minutes à quelques heures, le processeur et le disque sont très occupés. Sur un PC équipé d'un disque dur mécanique, cette phase peut durer toute une journée.",
       },
       { type: "h3", text: "2. Un redémarrage qui n'a pas vraiment eu lieu" },
       {
@@ -813,10 +1218,25 @@ export const articles: Article[] = [
         type: "p",
         text: "Les mises à jour de Windows ou d'autres logiciels ajoutent parfois des éléments qui se lancent au démarrage. Ils alourdissent l'allumage sans que vous ayez rien installé.",
       },
-      { type: "h3", text: "5. Des fichiers système abîmés" },
+      { type: "h3", text: "5. Un disque soudain presque plein" },
+      {
+        type: "p",
+        text: "Après une mise à jour de fonctionnalités, Windows conserve l'ancienne version dans un dossier « Windows.old », qui occupe souvent 15 à 30 Go, pour permettre un retour en arrière. Sur un petit disque, cela suffit à passer sous la barre des 10 % d'espace libre, et tout ralentit.",
+      },
+      { type: "h3", text: "6. Des réglages remis à zéro" },
+      {
+        type: "p",
+        text: "Une grosse mise à jour peut réactiver des fonctions que vous aviez coupées (applications au démarrage, synchronisation, effets visuels) ou modifier le mode d'alimentation. Un ordinateur passé en mode économie d'énergie paraît nettement plus lent.",
+      },
+      { type: "h3", text: "7. Des fichiers système abîmés" },
       {
         type: "p",
         text: "Plus rarement, une mise à jour interrompue (coupure de courant, ordinateur éteint en plein milieu) laisse des fichiers de Windows endommagés. Les symptômes sont alors déroutants : lenteurs, fenêtres qui ne s'ouvrent plus, mises à jour qui échouent en boucle.",
+      },
+      { type: "h2", text: "Comment savoir si c'est temporaire ?" },
+      {
+        type: "p",
+        text: "Ouvrez le Gestionnaire des tâches (Ctrl + Maj + Échap) et triez les processus par « Processeur » puis par « Disque ». Si vous voyez en tête TiWorker, TrustedInstaller, SearchIndexer, MsMpEng ou « Service Windows Update », Windows termine son travail : patientez. Si ces noms ont disparu et que l'ordinateur reste lent, la cause est ailleurs.",
       },
       { type: "h2", text: "Que faire, dans l'ordre ?" },
       {
@@ -825,25 +1245,47 @@ export const articles: Article[] = [
           "Laissez l'ordinateur allumé et branché 30 à 60 minutes, sans le mettre en veille, pour que Windows termine son travail.",
           "Choisissez « Redémarrer » (et non « Arrêter ») dans le menu Démarrer.",
           "Dans Paramètres > Windows Update, installez les éventuelles mises à jour restantes : un correctif suit souvent une mise à jour problématique.",
+          "Vérifiez le mode d'alimentation : Paramètres > Système > Alimentation (ou « Alimentation et batterie »), réglé sur « Équilibré » ou « Meilleures performances ».",
+          "Vérifiez l'espace libre : Paramètres > Système > Stockage > Fichiers temporaires. Une fois sûr que tout fonctionne, « Installations précédentes de Windows » libère l'espace de Windows.old.",
           "Dans Paramètres > Windows Update > Historique des mises à jour, vérifiez si un pilote a été mis à jour. Si oui, installez la version du site du fabricant de votre ordinateur ou de la carte graphique.",
           "Si la lenteur est apparue avec une mise à jour précise et dure depuis plusieurs jours, la même page propose « Désinstaller des mises à jour ».",
-          "En dernier recours, la réparation intégrée de Windows remet d'aplomb les fichiers système abîmés : dans un terminal ouvert en tant qu'administrateur, tapez DISM /Online /Cleanup-Image /RestoreHealth, puis sfc /scannow.",
+          "Après une mise à jour de fonctionnalités, Paramètres > Système > Récupération > « Revenir en arrière » ramène à la version précédente pendant 10 jours.",
+          "En dernier recours, la réparation intégrée de Windows remet d'aplomb les fichiers système abîmés : dans un terminal ouvert en tant qu'administrateur, tapez DISM /Online /Cleanup-Image /RestoreHealth, puis sfc /scannow. Sur Windows 11 récent, Paramètres > Système > Récupération propose aussi « Résoudre les problèmes à l'aide de Windows Update », qui réinstalle Windows en gardant vos fichiers et applications.",
         ],
       },
       {
         type: "p",
         text: "Une mise à jour lente n'est pas une raison de changer d'ordinateur : dans l'immense majorité des cas, tout rentre dans l'ordre en quelques heures ou après un vrai redémarrage.",
       },
+      { type: "h2", text: "Peut-on éviter le problème la prochaine fois ?" },
+      {
+        type: "ul",
+        items: [
+          "Lancez les mises à jour quand vous n'avez pas besoin de l'ordinateur, par exemple le soir, branché sur secteur.",
+          "Ne l'éteignez jamais pendant l'installation, même si elle semble bloquée : c'est ainsi que les fichiers système s'abîment.",
+          "Gardez au moins 20 à 30 Go d'espace libre avant une mise à jour de fonctionnalités.",
+          "Windows Update permet de suspendre les mises à jour une semaine à la fois, jusqu'à cinq semaines : pratique avant une période chargée. Ne les bloquez pas plus longtemps, elles corrigent des failles de sécurité.",
+        ],
+      },
+      { type: "h2", text: "Quand faut-il s'inquiéter ?" },
+      {
+        type: "ul",
+        items: [
+          "La même mise à jour échoue et se réinstalle à chaque démarrage.",
+          "Windows affiche « Préparation de la réparation automatique » en boucle, ou un écran noir après la connexion.",
+          "La lenteur dure plus d'une semaine malgré les étapes ci-dessus : la cause n'est probablement pas la mise à jour elle-même, mais un problème qu'elle a révélé (disque fatigué, mémoire insuffisante).",
+        ],
+      },
       { type: "h2", text: "Ce que Nyctale vérifie en 19 secondes" },
       {
         type: "p",
-        text: "Nyctale reconnaît les tâches Windows qui travaillent en arrière-plan (installation de mise à jour, analyse antivirus, indexation) et vous dit simplement de patienter quand c'est le cas. Il vérifie aussi si l'ordinateur a vraiment redémarré, compte les programmes au démarrage et, lancé en administrateur, contrôle l'intégrité des fichiers de Windows.",
+        text: "Nyctale reconnaît les tâches Windows qui travaillent en arrière-plan (installation de mise à jour, analyse antivirus, indexation) et vous dit simplement de patienter quand c'est le cas. Il vérifie aussi si l'ordinateur a vraiment redémarré, compte les programmes au démarrage, contrôle l'espace libre et, lancé en administrateur, l'intégrité des fichiers de Windows.",
       },
     ],
     faq: [
       {
         q: "Combien de temps Windows reste-t-il lent après une mise à jour ?",
-        r: "En général de 30 minutes à quelques heures, le temps de terminer l'installation, l'optimisation et la réindexation. Au-delà de quelques jours, il y a une autre cause à chercher.",
+        r: "En général de 30 minutes à quelques heures, le temps de terminer l'installation, l'optimisation et la réindexation. Sur un disque dur mécanique, jusqu'à une journée après une mise à jour de fonctionnalités. Au-delà de quelques jours, il y a une autre cause à chercher.",
       },
       {
         q: "Faut-il désinstaller la dernière mise à jour ?",
@@ -853,7 +1295,16 @@ export const articles: Article[] = [
         q: "Pourquoi « Arrêter » ne suffit pas après une mise à jour ?",
         r: "Avec le démarrage rapide, activé par défaut, « Arrêter » met Windows en veille prolongée partielle au lieu de le fermer complètement. Certaines mises à jour ont besoin d'un redémarrage complet : choisissez « Redémarrer ».",
       },
+      {
+        q: "Peut-on supprimer le dossier Windows.old ?",
+        r: "Oui, une fois que vous êtes sûr que la nouvelle version fonctionne bien, via Paramètres > Système > Stockage > Fichiers temporaires > « Installations précédentes de Windows ». Vous perdez alors la possibilité de revenir en arrière. Windows le supprime de toute façon automatiquement après quelques semaines.",
+      },
+      {
+        q: "Peut-on revenir à la version précédente de Windows 11 ?",
+        r: "Oui, pendant 10 jours après une mise à jour de fonctionnalités : Paramètres > Système > Récupération > « Revenir en arrière ». Pour une mise à jour mensuelle, utilisez « Désinstaller des mises à jour » dans Windows Update.",
+      },
     ],
+    liens: ["pc-lent-au-demarrage", "pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows"],
   },
   {
     slug: "disk-100-percent-windows",
@@ -961,170 +1412,301 @@ export const articles: Article[] = [
     lang: "en",
     traduction: "pc-lent-au-demarrage",
     title: "Slow PC startup: the real causes and how to fix them",
-    seoTitle: "Slow PC startup: causes and fixes",
+    seoTitle: "Slow PC startup: causes and fixes (Windows 10 and 11)",
     excerpt:
-      "Your computer takes minutes to become usable? Startup programs, fast startup, the disk: here's how to find what's slowing it down, without breaking anything.",
+      "Your computer takes several minutes to become usable? The 7 causes of a slow startup, how to measure yours, and how to fix it without breaking anything.",
     date: "2026-09-24",
-    readMin: 7,
+    updated: "2026-09-25",
+    readMin: 9,
     blocks: [
       {
         type: "p",
-        text: "A slow PC startup is almost always caused by programs that launch on their own with Windows. Next come a mechanical or nearly full hard drive, and updates waiting for a real restart. These causes can be checked in a few minutes, and most can be fixed without uninstalling anything.",
+        text: "A slow PC startup is almost always caused by programs that launch automatically with Windows. Next come a mechanical or nearly full hard drive, and updates waiting for a real restart. These causes can be checked in a few minutes, and most can be fixed without uninstalling anything.",
       },
       {
         type: "p",
-        text: "The desktop appears, but the computer stays unusable for several minutes: the cursor spins, windows open in slow motion. That's often where a PC starts to feel \"tired\". In reality, Windows is simply launching a lot of things at once.",
+        text: "The desktop appears, but the computer stays unusable for several minutes: the cursor spins, windows open in slow motion. That's often where the feeling of a 'tired' PC comes from. In reality, Windows is simply launching a lot of things at the same time.",
+      },
+      { type: "h2", text: "In short: the 4 first steps" },
+      {
+        type: "ol",
+        items: [
+          "Do a real 'Restart' (not 'Shut down') to finish pending updates.",
+          "Disable unneeded startup programs in Task Manager (Ctrl + Shift + Esc).",
+          "Check that at least 15% of the C: drive is free.",
+          "If the computer still has a mechanical hard drive, an SSD cuts startup time by three or more.",
+        ],
+      },
+      { type: "h2", text: "What startup time is normal?" },
+      {
+        type: "p",
+        text: "On a PC with an SSD, the desktop should appear within 10 to 30 seconds, and the computer should be usable less than a minute later. With a mechanical hard drive, 1 to 3 minutes is nothing unusual. Beyond 3 to 5 minutes before you can work, there's clearly a cause to find.",
+      },
+      {
+        type: "p",
+        text: "Note the difference between the two stages: if the screen stays black or shows the manufacturer's logo for a long time, the hardware stage (the BIOS) is dragging; if it's after the desktop appears, it's the programs and Windows itself.",
       },
       { type: "h2", text: "Why does a PC become slow to start?" },
       { type: "h3", text: "1. Too many startup programs" },
       {
         type: "p",
-        text: "Every piece of software wants to \"start with Windows\": messaging apps, game launchers, printer tools, update helpers, cloud storage. One by one they're light; all together they fight over the disk and memory exactly when the computer needs them most. Beyond a dozen or so, you really feel it.",
+        text: "Every installed program wants to 'start with Windows': chat apps, game launchers, printer tools, update assistants, cloud storage. One by one they're light; together, they fight over the disk and memory at the very moment the computer needs them most. Beyond about ten, the effect is clearly noticeable.",
       },
-      { type: "h3", text: "2. A \"fast startup\" that isn't quite what it seems" },
+      { type: "h3", text: "2. A 'fast startup' that isn't really one" },
       {
         type: "p",
-        text: "With Windows fast startup, on by default, \"Shut down\" doesn't fully close the system: Windows goes into a partial hibernation to start faster. It works, but small glitches pile up from day to day since nothing is ever truly reset. Only \"Restart\" starts from a clean slate.",
+        text: "With Windows fast startup, enabled by default, 'Shut down' doesn't fully close the system: Windows goes into partial hibernation to start faster next time. It works, but small glitches accumulate from day to day, since nothing is ever truly reset. Only 'Restart' starts from a clean slate.",
       },
       { type: "h3", text: "3. A mechanical or nearly full hard drive" },
       {
         type: "p",
-        text: "Starting up is mostly reading thousands of small files. A spinning hard drive does this slowly, and a nearly full disk leaves Windows less room to work. Below 10% free space, everything slows down, start-up included.",
+        text: "Starting up mostly means reading thousands of small files. A spinning hard drive does this slowly, and a nearly full drive leaves Windows less room to work. Below 10% free space, everything slows down, startup included. A hard drive that is starting to fail also lengthens startup, sometimes long before it breaks down.",
       },
-      { type: "h3", text: "4. Pending updates" },
+      { type: "h3", text: "4. Updates waiting to finish" },
       {
         type: "p",
-        text: "An update that's installed but not yet finalised can resume its work at every start-up, until the computer is really restarted. Start-up then feels slow, day after day.",
+        text: "An update that's installed but not yet finalised can resume its work at every power-on, as long as the computer hasn't been truly restarted. Startup then feels slow, day after day.",
       },
-      { type: "h2", text: "How to find what slows down your startup" },
+      { type: "h3", text: "5. Background update programs" },
+      {
+        type: "p",
+        text: "Many programs install their own update service (browsers, office suites, PDF readers, manufacturer software). They don't always appear in the startup apps list, because they run as services or scheduled tasks, and they all wake up at startup to check for a new version.",
+      },
+      { type: "h3", text: "6. A heavy antivirus, or two antiviruses" },
+      {
+        type: "p",
+        text: "An antivirus scans files as they're opened, so massively at startup. Some third-party antiviruses are much heavier than Microsoft Defender, which is built in and sufficient for everyday use. Two antiviruses running at the same time get in each other's way and slow startup down considerably.",
+      },
+      { type: "h3", text: "7. A device or connection that keeps Windows waiting" },
+      {
+        type: "p",
+        text: "An external drive, a forgotten USB stick, a network printer or a network drive to reconnect can make Windows wait several seconds or more while you sign in. Unplugging non-essential devices lets you check this in a single restart.",
+      },
+      { type: "h2", text: "How do you find what's slowing your startup?" },
       {
         type: "ol",
         items: [
-          "Open Task Manager (Ctrl + Shift + Esc), then the \"Startup apps\" tab (\"Startup\" on Windows 10).",
-          "The \"Startup impact\" column rates each program from \"Low\" to \"High\". Start with the high-impact ones you don't use every day.",
-          "Right-click, then \"Disable\". The program stays installed and works normally when you open it yourself: it just no longer launches on its own.",
-          "Restart (\"Restart\", not \"Shut down\") and compare.",
+          "Open Task Manager (Ctrl + Shift + Esc), then the 'Startup apps' tab ('Startup' on Windows 10).",
+          "At the top right, 'Last BIOS time' shows how long the hardware stage took. Beyond 15 to 20 seconds, look at the BIOS or connected devices rather than Windows.",
+          "The 'Startup impact' column ranks each program from 'Low' to 'High'. Start with high-impact programs you don't use every day.",
+          "Right-click and choose 'Disable'. The program stays installed and works normally when you open it yourself: it just no longer launches on its own.",
+          "In the 'Performance' tab > 'Disk', check the type (SSD or HDD) and, in File Explorer, the free space on the C: drive.",
+          "Restart ('Restart', not 'Shut down') and compare.",
         ],
       },
       {
         type: "p",
-        text: "To measure precisely, Windows records the duration of each start-up in Event Viewer: \"Applications and Services Logs > Microsoft > Windows > Diagnostics-Performance > Operational\", event 100.",
+        text: "For a precise measurement, Windows records the duration of every startup in Event Viewer: log 'Applications and Services > Microsoft > Windows > Diagnostics-Performance > Operational', event 100. Events 101 to 110 in the same log name the programs and drivers that slowed startup down.",
       },
-      { type: "h2", text: "What not to disable" },
+      { type: "h2", text: "What to do depending on the cause" },
+      {
+        type: "ul",
+        items: [
+          "Startup programs: disable them in Task Manager, or in Settings > Apps > Startup.",
+          "Fast startup: choose 'Restart' at least once a week. If glitches keep coming back, turn it off: Control Panel > Power Options > 'Choose what the power buttons do'.",
+          "Full drive: Settings > System > Storage, then 'Cleanup recommendations'. Keep at least 15% free.",
+          "Mechanical hard drive: a 500 GB SSD costs about €40 to €70, plus €40 to €80 of labour if you have it installed. It's the best possible upgrade for a slow startup.",
+          "Pending updates: Settings > Windows Update, install everything left, then 'Restart'.",
+          "Third-party update services: uninstall software you no longer use; it's the safest way to remove its update service.",
+          "Antivirus: keep only one. Microsoft Defender is enough for most home use.",
+          "Devices: unplug external drives and USB sticks before powering on, and remove network drives that no longer exist.",
+        ],
+      },
+      { type: "h2", text: "What you shouldn't disable" },
       {
         type: "ul",
         items: [
           "Your antivirus, including Microsoft Defender.",
           "Manufacturer drivers and utilities for the keyboard, touchpad or sound, if you don't know what they do.",
-          "Programs you genuinely need right after switching on (a work messaging app, for example).",
+          "Programs you genuinely need right after startup (a work messaging app, for example).",
         ],
       },
       {
         type: "p",
-        text: "When in doubt, disable one program at a time: it can be undone in one click in the same list.",
+        text: "When in doubt, disable one program at a time: it's reversible in one click in the same list. Be wary of 'startup booster' software: Windows already provides everything you need, for free.",
+      },
+      { type: "h2", text: "When should you worry?" },
+      {
+        type: "ul",
+        items: [
+          "Startup gets longer week after week for no reason, with clicking noises: a failing hard drive. Back up your files without waiting.",
+          "Windows shows 'Preparing Automatic Repair' at every power-on: system files are probably damaged.",
+          "The screen stays black or stuck on the manufacturer's logo for several minutes: the problem is before Windows (hardware or BIOS), and a professional opinion is useful.",
+        ],
       },
       { type: "h2", text: "What Nyctale checks in 19 seconds" },
       {
         type: "p",
-        text: "Nyctale counts the programs launched at startup, checks whether the computer was really restarted recently or only \"shut down\" with fast startup, and checks the free space and health of the drive. It tells you which of these is slowing down your startup, and opens the right list so you can act.",
+        text: "Nyctale counts the programs launched at startup, checks whether the computer has truly restarted recently or only been 'shut down' with fast startup, and checks free space and drive health. It tells you which of these is slowing your startup, and opens the right list directly so you can act.",
       },
     ],
     faq: [
       {
+        q: "How long should a PC take to start?",
+        r: "With an SSD, the desktop appears in 10 to 30 seconds and the computer is usable in under a minute. With a mechanical hard drive, 1 to 3 minutes is still normal. Beyond that, there's a cause to find.",
+      },
+      {
         q: "How many startup programs is too many?",
-        r: "There's no hard limit, but beyond a dozen programs launching with Windows, the effect on a modest computer becomes noticeable. Keep the ones you need right away and disable the rest.",
+        r: "There's no absolute threshold, but beyond about ten programs launching with Windows, the effect on a modest computer becomes noticeable. The key is to keep the ones you need right after startup and disable the rest.",
       },
       {
         q: "Does disabling a startup program delete it?",
-        r: "No. It stays installed and works normally when you open it. It just no longer launches automatically, and you can turn it back on at any time.",
+        r: "No. It stays installed and works normally when you open it. It simply no longer launches automatically, and you can re-enable it at any time.",
       },
       {
-        q: "Should I turn off Windows fast startup?",
-        r: "Not necessarily. It genuinely speeds up start-up. Just choose \"Restart\" now and then, for example once a week, to start from a clean system. If the computer keeps accumulating glitches, turning it off is an option.",
+        q: "Should you turn off Windows fast startup?",
+        r: "Not necessarily. It really does speed up power-on. Just choose 'Restart' from time to time, for example once a week, to start from a clean system. If the computer keeps accumulating glitches, turning it off is an option.",
       },
       {
         q: "Does an SSD speed up startup?",
         r: "Yes, dramatically, if the computer still has a mechanical hard drive. It's often the difference between several minutes and a few seconds.",
       },
+      {
+        q: "What does 'Last BIOS time' mean in Task Manager?",
+        r: "It's the duration of the hardware stage of startup, before Windows takes over. A few seconds is normal; beyond 15 to 20 seconds, a connected device or a BIOS setting is to blame, not Windows.",
+      },
     ],
+    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-slow-after-update"],
   },
   {
     slug: "windows-11-slow-after-update",
     lang: "en",
     traduction: "windows-11-lent-apres-mise-a-jour",
     title: "Windows 11 slow after an update: what to do",
-    seoTitle: "Windows 11 slow after an update: what to do",
+    seoTitle: "Windows 11 slow after an update: causes and fixes",
     excerpt:
-      "Everything was fine, then an update and nothing responds? In most cases Windows is just finishing its work. Here's how to tell whether it's temporary or whether you need to act.",
+      "Everything was fine, then an update and nothing responds? Most of the time, Windows is just finishing its work. How to tell if it's temporary, and the fixes in order.",
     date: "2026-09-24",
-    readMin: 7,
+    updated: "2026-09-25",
+    readMin: 9,
     blocks: [
       {
         type: "p",
-        text: "Windows 11 being slow right after an update is most often a temporary slowdown: Windows is finishing, in the background, the work the update started. It's worth worrying about if the slowness lasts several days, and in that case the causes can be checked one by one.",
+        text: "Windows 11 running slowly right after an update is usually a temporary slowdown: Windows is finishing, in the background, the work started by the update. It's worth worrying about if the slowness lasts several days, and in that case the causes can be checked one by one.",
+      },
+      { type: "h2", text: "In short: what to do right now" },
+      {
+        type: "ol",
+        items: [
+          "Leave the computer on and plugged in for 30 to 60 minutes, without putting it to sleep.",
+          "Choose 'Restart', not 'Shut down'.",
+          "Install any remaining updates in Windows Update: a fix often follows a problematic update.",
+          "If the slowness lasts more than a few days, follow the step-by-step method below.",
+        ],
+      },
+      { type: "h2", text: "Monthly update or annual update: what's the difference?" },
+      {
+        type: "p",
+        text: "Windows 11 gets two kinds of updates. Cumulative updates, released every month (on the second Tuesday), fix security holes and bugs: they install quickly and rarely slow the computer for more than a few hours. Feature updates, once a year (for example 24H2 then 25H2), reinstall a large part of the system: slowdowns after them are the most common and the longest. To see which one you received, open Settings > Windows Update > Update history.",
       },
       { type: "h2", text: "Why is Windows slow after an update?" },
       { type: "h3", text: "1. Post-update work" },
       {
         type: "p",
-        text: "Once the update is installed, Windows still has work to do: finalising components (TiWorker, TrustedInstaller), optimising program libraries, re-indexing your files for search (SearchIndexer) and running a new antivirus scan (MsMpEng). For 30 minutes to a few hours, the processor and disk are very busy.",
+        text: "Once the update is installed, Windows still has work to do: finalising components (TiWorker, TrustedInstaller), optimising program libraries, re-indexing your files for search (SearchIndexer) and running a new antivirus scan (MsMpEng). For 30 minutes to a few hours, the processor and disk are very busy. On a PC with a mechanical hard drive, this phase can last a whole day.",
       },
       { type: "h3", text: "2. A restart that didn't really happen" },
       {
         type: "p",
-        text: "Some updates are only complete after a real restart. But with Windows fast startup, \"Shut down\" and switching back on is not a full restart. The update stays half-applied, and the computer can remain slow until you choose \"Restart\".",
+        text: "Some updates are only complete after a real restart. But with Windows fast startup, 'Shut down' then powering on again is not a full restart. The update stays half-applied, and the computer can remain slow until you choose 'Restart'.",
       },
       { type: "h3", text: "3. A replaced driver" },
       {
         type: "p",
-        text: "An update can replace the graphics, Wi-Fi or storage driver with a generic version. The result: choppy display, slow network, or a computer that lags in a new way. The update history shows whether a driver was changed.",
+        text: "An update can replace the graphics, Wi-Fi or disk driver with a generic version. The result: choppy display, slow network, or a computer that lags in a new way. Update history shows whether a driver was changed.",
       },
       { type: "h3", text: "4. New startup programs" },
       {
         type: "p",
-        text: "Updates to Windows or other software sometimes add items that launch at startup. They weigh down start-up without you installing anything.",
+        text: "Updates to Windows or other software sometimes add items that launch at startup. They weigh down power-on without you installing anything.",
       },
-      { type: "h3", text: "5. Damaged system files" },
+      { type: "h3", text: "5. A suddenly nearly full drive" },
       {
         type: "p",
-        text: "More rarely, an interrupted update (power cut, computer switched off halfway) leaves damaged Windows files behind. The symptoms are then confusing: slowdowns, windows that won't open, updates failing over and over.",
+        text: "After a feature update, Windows keeps the previous version in a 'Windows.old' folder, often 15 to 30 GB, so you can roll back. On a small drive, that's enough to drop below 10% free space, and everything slows down.",
+      },
+      { type: "h3", text: "6. Settings reset" },
+      {
+        type: "p",
+        text: "A big update can re-enable features you had turned off (startup apps, sync, visual effects) or change the power mode. A computer switched to an energy-saving mode feels noticeably slower.",
+      },
+      { type: "h3", text: "7. Damaged system files" },
+      {
+        type: "p",
+        text: "More rarely, an interrupted update (power cut, computer switched off mid-install) leaves Windows files damaged. The symptoms are then confusing: slowness, windows that no longer open, updates failing in a loop.",
+      },
+      { type: "h2", text: "How can you tell if it's temporary?" },
+      {
+        type: "p",
+        text: "Open Task Manager (Ctrl + Shift + Esc) and sort processes by 'CPU' then by 'Disk'. If you see TiWorker, TrustedInstaller, SearchIndexer, MsMpEng or 'Windows Update service' at the top, Windows is finishing its work: be patient. If those names are gone and the computer is still slow, the cause lies elsewhere.",
       },
       { type: "h2", text: "What to do, in order" },
       {
         type: "ol",
         items: [
           "Leave the computer on and plugged in for 30 to 60 minutes, without putting it to sleep, so Windows can finish its work.",
-          "Choose \"Restart\" (not \"Shut down\") from the Start menu.",
+          "Choose 'Restart' (not 'Shut down') from the Start menu.",
           "In Settings > Windows Update, install any remaining updates: a fix often follows a problematic update.",
+          "Check the power mode: Settings > System > Power (or 'Power & battery'), set to 'Balanced' or 'Best performance'.",
+          "Check free space: Settings > System > Storage > Temporary files. Once you're sure everything works, 'Previous Windows installation(s)' frees the space used by Windows.old.",
           "In Settings > Windows Update > Update history, check whether a driver was updated. If so, install the version from your computer or graphics card manufacturer's website.",
-          "If the slowness came with a specific update and has lasted several days, the same page offers \"Uninstall updates\".",
-          "As a last resort, Windows' built-in repair fixes damaged system files: in a terminal opened as administrator, type DISM /Online /Cleanup-Image /RestoreHealth, then sfc /scannow.",
+          "If the slowness started with a specific update and has lasted several days, the same page offers 'Uninstall updates'.",
+          "After a feature update, Settings > System > Recovery > 'Go back' returns to the previous version for 10 days.",
+          "As a last resort, Windows' built-in repair fixes damaged system files: in a terminal opened as administrator, type DISM /Online /Cleanup-Image /RestoreHealth, then sfc /scannow. On recent Windows 11, Settings > System > Recovery also offers 'Fix problems using Windows Update', which reinstalls Windows while keeping your files and apps.",
         ],
       },
       {
         type: "p",
-        text: "A slow update is not a reason to replace your computer: in the vast majority of cases, everything is back to normal within a few hours or after a real restart.",
+        text: "A slow update is not a reason to replace your computer: in the vast majority of cases, everything goes back to normal within a few hours or after a real restart.",
+      },
+      { type: "h2", text: "Can you avoid the problem next time?" },
+      {
+        type: "ul",
+        items: [
+          "Run updates when you don't need the computer, for example in the evening, plugged into mains power.",
+          "Never switch it off during installation, even if it seems stuck: that's how system files get damaged.",
+          "Keep at least 20 to 30 GB free before a feature update.",
+          "Windows Update lets you pause updates one week at a time, up to five weeks: handy before a busy period. Don't block them longer, they fix security holes.",
+        ],
+      },
+      { type: "h2", text: "When should you worry?" },
+      {
+        type: "ul",
+        items: [
+          "The same update fails and reinstalls at every startup.",
+          "Windows shows 'Preparing Automatic Repair' in a loop, or a black screen after signing in.",
+          "The slowness lasts more than a week despite the steps above: the cause is probably not the update itself, but a problem it revealed (a tired drive, not enough memory).",
+        ],
       },
       { type: "h2", text: "What Nyctale checks in 19 seconds" },
       {
         type: "p",
-        text: "Nyctale recognises Windows tasks working in the background (update installation, antivirus scan, indexing) and simply tells you to wait when that's the case. It also checks whether the computer was really restarted, counts startup programs and, when run as administrator, checks the integrity of Windows files.",
+        text: "Nyctale recognises Windows tasks working in the background (update installation, antivirus scan, indexing) and simply tells you to wait when that's the case. It also checks whether the computer has truly restarted, counts startup programs, checks free space and, when run as administrator, the integrity of Windows files.",
       },
     ],
     faq: [
       {
         q: "How long does Windows stay slow after an update?",
-        r: "Usually from 30 minutes to a few hours, the time needed to finish installing, optimising and re-indexing. Beyond a few days, there's another cause to look for.",
+        r: "Usually from 30 minutes to a few hours, the time needed to finish installation, optimisation and re-indexing. On a mechanical hard drive, up to a day after a feature update. Beyond a few days, there's another cause to find.",
       },
       {
-        q: "Should I uninstall the latest update?",
-        r: "Only if the slowness came with it, has lasted several days and survives a real restart. Windows will reinstall it later, often in a fixed version.",
+        q: "Should you uninstall the latest update?",
+        r: "Only if the slowness started with it, has lasted several days and survives a real restart. Windows will reinstall it later, often in a fixed version.",
       },
       {
-        q: "Why isn't \"Shut down\" enough after an update?",
-        r: "With fast startup, on by default, \"Shut down\" puts Windows into partial hibernation instead of fully closing it. Some updates need a full restart: choose \"Restart\".",
+        q: "Why isn't 'Shut down' enough after an update?",
+        r: "With fast startup, enabled by default, 'Shut down' puts Windows into partial hibernation instead of closing it completely. Some updates need a full restart: choose 'Restart'.",
+      },
+      {
+        q: "Can you delete the Windows.old folder?",
+        r: "Yes, once you're sure the new version works well, via Settings > System > Storage > Temporary files > 'Previous Windows installation(s)'. You then lose the ability to roll back. Windows deletes it automatically after a few weeks anyway.",
+      },
+      {
+        q: "Can you go back to the previous version of Windows 11?",
+        r: "Yes, for 10 days after a feature update: Settings > System > Recovery > 'Go back'. For a monthly update, use 'Uninstall updates' in Windows Update.",
       },
     ],
+    liens: ["slow-pc-startup", "slow-computer-no-obvious-reason", "disk-100-percent-windows"],
   },
 ];
 

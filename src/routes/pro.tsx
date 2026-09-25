@@ -24,7 +24,7 @@ import { suivre } from "@/lib/analytics";
 // l'accueil, voir index.tsx).
 const CHECKOUT_PRO =
   "https://voxcut-pro.lemonsqueezy.com/checkout/buy/e8823d08-19d4-4c32-8c99-7bd315f800e7";
-const PORTABLE_URL = "/downloads/Nyctale-Portable-1.0.2.zip";
+const PORTABLE_URL = "/downloads/Nyctale-Portable-1.0.3.zip";
 
 // Chaque promesse de cette page correspond a une fonction reelle du palier
 // Pro dans l'app (licence.est_pro, export_rapport.exporter_pdf,

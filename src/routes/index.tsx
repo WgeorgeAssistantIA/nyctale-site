@@ -962,7 +962,7 @@ function Home() {
                 </Button>
               </a>
               <a
-                href="/downloads/Nyctale-Portable-1.0.2.zip"
+                href="/downloads/Nyctale-Portable-1.0.3.zip"
                 className="mt-2 block text-center text-xs text-muted-foreground underline hover:text-foreground"
                 onClick={trackPortableDownload}
               >

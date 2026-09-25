@@ -6,7 +6,7 @@ import { suivre } from "./analytics";
 // officiel en window-mode="direct").
 export const MICROSOFT_STORE_ID = "XPFP6ZVQDT5MSH";
 export const STORE_URL = `https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}?mode=direct`;
-export const EXE_URL = "/downloads/Nyctale-Setup-1.0.2.exe";
+export const EXE_URL = "/downloads/Nyctale-Setup-1.0.3.exe";
 
 export function trackStoreDownload(origine: string) {
   suivre("store_download", { origine });

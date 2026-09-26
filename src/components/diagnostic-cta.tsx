@@ -7,25 +7,25 @@ const TEXTES = {
   fr: {
     milieuTitre: "Vous voulez connaître la cause sur votre PC ?",
     milieuTexte:
-      "Nyctale fait ce diagnostic à votre place en 19 secondes, et vous l'explique sans jargon. Gratuit, en lecture seule, rien n'est envoyé en ligne.",
+      "Nyctale fait ce diagnostic à votre place en 19 secondes, et vous l'explique sans jargon. En lecture seule, rien n'est envoyé en ligne.",
     finTitre: "Arrêtez de deviner : faites le diagnostic",
     finTexte:
       "Nyctale analyse votre ordinateur en 19 secondes et dit en clair ce qui le ralentit ou le fait chauffer — y compris quand aucun logiciel ne peut le réparer.",
     store: "Installer depuis le Microsoft Store",
     exe: "ou télécharger l'installeur Windows (.exe)",
-    note: "Gratuit · Windows 10 et 11 · aucune inscription",
+    note: "Diagnostic offert · Windows 10 et 11 · aucune inscription",
     alt: "Verdict réel de Nyctale : le problème ne vient pas d'un logiciel, mais du refroidissement",
   },
   en: {
     milieuTitre: "Want to know the cause on your own PC?",
     milieuTexte:
-      "Nyctale runs this diagnostic for you in 19 seconds and explains it without jargon. Free, read-only, nothing is sent online.",
+      "Nyctale runs this diagnostic for you in 19 seconds and explains it without jargon. Read-only, nothing is sent online.",
     finTitre: "Stop guessing: run the diagnostic",
     finTexte:
       "Nyctale scans your computer in 19 seconds and tells you in plain words what is slowing it down or heating it up — even when no software can fix it.",
     store: "Get it from the Microsoft Store",
     exe: "or download the Windows installer (.exe)",
-    note: "Free · Windows 10 and 11 · no sign-up",
+    note: "Diagnostic included · Windows 10 and 11 · no sign-up",
     alt: "Real Nyctale verdict: the problem is not software, it is the cooling",
   },
 } satisfies Record<Lang, unknown>;

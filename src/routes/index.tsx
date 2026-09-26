@@ -60,11 +60,11 @@ export const Route = createFileRoute("/")({
       // Titre cale sur les requetes reelles de la Search Console (« ordinateur
       // qui rame », « pourquoi mon ordi rame », « pc ralenti ») : personne ne
       // cherche « PC Diagnostic ».
-      { title: "Ordinateur qui rame ou chauffe ? Diagnostic gratuit – Nyctale" },
+      { title: "Ordinateur qui rame ou chauffe ? Trouvez la cause et corrigez-la – Nyctale" },
       {
         name: "description",
         content:
-          "Votre ordinateur rame ou chauffe ? Nyctale trouve la cause en 19 secondes et l'explique sans jargon, avant que vous ne rachetiez un PC. Gratuit, Windows 10 et 11.",
+          "Nyctale trouve en 19 secondes pourquoi votre PC rame ou chauffe, et vous aide à le corriger. Diagnostic offert, version complète 24,99 € une fois. Windows 10 et 11.",
       },
       {
         property: "og:title",
@@ -73,7 +73,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Nyctale trouve en 19 secondes pourquoi votre PC rame ou chauffe, et vous le dit franchement. Gratuit, 100 % local.",
+          "Nyctale trouve en 19 secondes pourquoi votre PC rame ou chauffe, et vous aide à le corriger. 100 % local, sans abonnement.",
       },
     ],
     links: [{ rel: "canonical", href: "https://nyctale.fr/" }],
@@ -87,7 +87,7 @@ export const Route = createFileRoute("/")({
           applicationCategory: "UtilitiesApplication",
           operatingSystem: "Windows, Linux",
           description:
-            "Diagnostic PC gratuit et illimité : Nyctale explique en clair pourquoi votre ordinateur chauffe ou ralentit, et ce qu'il faut faire. 100% local et privé.",
+            "Diagnostic et réparation de PC : Nyctale explique en clair pourquoi votre ordinateur chauffe ou ralentit, et vous aide à le corriger. 100% local et privé.",
           url: "https://nyctale.fr/",
           image: "https://nyctale.fr/nyctale_logo.png",
           offers: {
@@ -166,13 +166,14 @@ const T = {
       titleLine1: "Avant de remplacer votre PC,",
       titleLine2: "faites le diagnostic",
       subtitle:
-        "Oubliez les usines à gaz : Nyctale est à la portée de tout le monde. L'application explique en clair pourquoi votre ordinateur chauffe ou ralentit, et ce qu'il faut faire. Gratuit et illimité.",
+        "Nyctale explique en clair pourquoi votre ordinateur chauffe ou ralentit, puis vous aide à le réparer en quelques clics. Pas d'usine à gaz : il est fait pour tout le monde.",
       definition:
-        "Nyctale est une application Windows gratuite qui diagnostique en local, en 19 secondes, pourquoi un PC chauffe ou ralentit, sans envoyer de données en ligne.",
-      cta: "Installer gratuitement",
+        "Nyctale est une application Windows qui diagnostique en local, en 19 secondes, pourquoi un PC chauffe ou ralentit, et aide à corriger la cause, sans envoyer de données en ligne.",
+      cta: "Analyser mon PC",
       ctaExe: "ou télécharger l'installeur Windows (.exe)",
       ctaSecondary: "Comment ça marche",
       proLink: "Vous êtes un professionnel de la maintenance informatique ? Découvrez l'édition Pro conçue pour vous.",
+      priceNote: "Diagnostic offert · Version complète 24,99 € une fois, sans abonnement",
       note: "Windows 10 et 11 — via le Microsoft Store, aucune inscription requise",
     },
     apercu: {
@@ -272,13 +273,12 @@ const T = {
       cta: "Découvrir Nyctale Pro",
     },
     tarifsTitle: "Tarifs",
-    tarifsSubtitle:
-      "Le diagnostic complet est toujours gratuit. Les paliers ci-dessous ne concernent que l'accompagnement à la réparation.",
+    tarifsSubtitle: "Voyez d'abord ce qui ne va pas, payez seulement si vous voulez aller plus loin.",
     tarifs: {
       free: {
         titre: "Diagnostic",
         prix: "Gratuit",
-        sous: "Illimité, pour toujours",
+        sous: "Pour voir avant de payer",
         pts: [
           "Diagnostic complet, sans limite",
           "Explications en langage clair",
@@ -312,7 +312,7 @@ const T = {
       },
       acheter: "Choisir ce palier",
       acheterComplete: "Passer à la version complète",
-      acheterGratuit: "Télécharger",
+      acheterGratuit: "Essayer le diagnostic",
     },
     telecharger: {
       titre: "Prêt à savoir ce qui se passe ?",
@@ -329,8 +329,8 @@ const T = {
     faqTitle: "Questions fréquentes",
     faq: [
       {
-        q: "Le diagnostic est-il vraiment gratuit ?",
-        r: "Oui, sans limite de temps ni d'usage. L'analyse complète, les explications et une première réparation sont gratuites. Pour les réparations suivantes et la surveillance continue, la version complète coûte 24,99 € en une seule fois, sans abonnement.",
+        q: "Combien coûte Nyctale ?",
+        r: "La version complète coûte 24,99 € en une seule fois, sans abonnement : réparations illimitées et surveillance continue. Le diagnostic et une première réparation sont offerts, sans limite de temps, pour essayer avant de décider.",
       },
       {
         q: "Nyctale fonctionne-t-il sur un vieux PC ?",
@@ -376,13 +376,14 @@ const T = {
       titleLine1: "Before replacing your PC,",
       titleLine2: "run the diagnostic",
       subtitle:
-        "Forget about overly complex tools: Nyctale is accessible to everyone. The app explains in plain language why your computer overheats or slows down, and what to do. Free and unlimited.",
+        "Nyctale explains in plain language why your computer overheats or slows down, then helps you fix it in a few clicks. No overly complex tools: it's built for everyone.",
       definition:
-        "Nyctale is a free Windows application that diagnoses locally, in 19 seconds, why a PC overheats or slows down, without sending any data online.",
-      cta: "Install for free",
+        "Nyctale is a Windows application that diagnoses locally, in 19 seconds, why a PC overheats or slows down, and helps fix the cause, without sending any data online.",
+      cta: "Analyze my PC",
       ctaExe: "or download the Windows installer (.exe)",
       ctaSecondary: "How it works",
       proLink: "Are you an IT maintenance professional? Discover the Pro edition built for you.",
+      priceNote: "Diagnostic included · Full version €24.99 one-time, no subscription",
       note: "Windows 10 and 11 — via the Microsoft Store, no sign-up required",
     },
     apercu: {
@@ -482,13 +483,12 @@ const T = {
       cta: "Discover Nyctale Pro",
     },
     tarifsTitle: "Pricing",
-    tarifsSubtitle:
-      "The full diagnostic is always free. The tiers below only cover assisted repair.",
+    tarifsSubtitle: "See what's wrong first, pay only if you want to go further.",
     tarifs: {
       free: {
         titre: "Diagnostic",
         prix: "Free",
-        sous: "Unlimited, forever",
+        sous: "See before you pay",
         pts: ["Full diagnostic, no limit", "Plain-language explanations", "One guided repair included"],
       },
       mid: {
@@ -517,7 +517,7 @@ const T = {
       },
       acheter: "Choose this tier",
       acheterComplete: "Get the full version",
-      acheterGratuit: "Download",
+      acheterGratuit: "Try the diagnostic",
     },
     telecharger: {
       titre: "Ready to find out what's going on?",
@@ -534,8 +534,8 @@ const T = {
     faqTitle: "Frequently asked questions",
     faq: [
       {
-        q: "Is the diagnostic really free?",
-        r: "Yes, with no time or usage limit. The full analysis, explanations, and a first repair are free. For further repairs and ongoing monitoring, the full version costs €24.99 once, with no subscription.",
+        q: "How much does Nyctale cost?",
+        r: "The full version costs €24.99 once, with no subscription: unlimited repairs and ongoing monitoring. The diagnostic and a first repair are included, with no time limit, so you can try it before deciding.",
       },
       {
         q: "Does Nyctale work on an old PC?",
@@ -691,6 +691,9 @@ function Home() {
                 {t.hero.cta} <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
+          </div>
+          <p className="mt-3 text-sm font-medium text-foreground">{t.hero.priceNote}</p>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
             <a
               href="/downloads/Nyctale-x86_64.AppImage"
               onClick={() => trackDownload("hero_linux_appimage")}

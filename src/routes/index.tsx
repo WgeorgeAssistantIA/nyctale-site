@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Activity,
@@ -19,6 +20,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SmartScreenDialog } from "@/components/smartscreen-dialog";
 import {
   Accordion,
   AccordionContent,
@@ -50,8 +52,8 @@ function trackPortableDownload() {
 // onglet, l'utilisateur revient sur nyctale.fr apres paiement.
 const CHECKOUT = {
   reparation:
-    "https://voxcut-pro.lemonsqueezy.com/checkout/buy/a697285b-7c3b-416a-b7ef-d4929cbc95e9",
-  pro: "https://voxcut-pro.lemonsqueezy.com/checkout/buy/e8823d08-19d4-4c32-8c99-7bd315f800e7",
+    "https://checkout.lafabriknumerique.fr/checkout/buy/a697285b-7c3b-416a-b7ef-d4929cbc95e9",
+  pro: "https://checkout.lafabriknumerique.fr/checkout/buy/e8823d08-19d4-4c32-8c99-7bd315f800e7",
 };
 
 export const Route = createFileRoute("/")({
@@ -76,7 +78,12 @@ export const Route = createFileRoute("/")({
           "Nyctale trouve en 19 secondes pourquoi votre PC rame ou chauffe, et vous aide à le corriger. 100 % local, sans abonnement.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://nyctale.fr/" }],
+    links: [
+      { rel: "canonical", href: "https://nyctale.fr/" },
+      { rel: "alternate", hrefLang: "fr", href: "https://nyctale.fr/" },
+      { rel: "alternate", hrefLang: "en", href: "https://nyctale.fr/en" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://nyctale.fr/" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
@@ -151,7 +158,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const T = {
+export const T = {
   fr: {
     nav: {
       download: "Télécharger",
@@ -169,12 +176,18 @@ const T = {
         "Nyctale explique en clair pourquoi votre ordinateur chauffe ou ralentit, puis vous aide à le réparer en quelques clics. Pas d'usine à gaz : il est fait pour tout le monde.",
       definition:
         "Nyctale est une application Windows qui diagnostique en local, en 19 secondes, pourquoi un PC chauffe ou ralentit, et aide à corriger la cause, sans envoyer de données en ligne.",
-      cta: "Analyser mon PC",
+      cta: "Analyser mon PC gratuitement",
       ctaExe: "ou télécharger l'installeur Windows (.exe)",
       ctaSecondary: "Comment ça marche",
       proLink: "Vous êtes un professionnel de la maintenance informatique ? Découvrez l'édition Pro conçue pour vous.",
       priceNote: "Diagnostic offert · Version complète 24,99 € une fois, sans abonnement",
       note: "Windows 10 et 11 — via le Microsoft Store, aucune inscription requise",
+      reassurance: [
+        "19 secondes",
+        "100 % local (lecture seule)",
+        "Diagnostic gratuit",
+        "Windows 10 & 11",
+      ],
     },
     apercu: {
       titre: "Voici ce que Nyctale vous dit",
@@ -379,12 +392,18 @@ const T = {
         "Nyctale explains in plain language why your computer overheats or slows down, then helps you fix it in a few clicks. No overly complex tools: it's built for everyone.",
       definition:
         "Nyctale is a Windows application that diagnoses locally, in 19 seconds, why a PC overheats or slows down, and helps fix the cause, without sending any data online.",
-      cta: "Analyze my PC",
+      cta: "Analyze my PC for free",
       ctaExe: "or download the Windows installer (.exe)",
       ctaSecondary: "How it works",
       proLink: "Are you an IT maintenance professional? Discover the Pro edition built for you.",
       priceNote: "Diagnostic included · Full version €24.99 one-time, no subscription",
       note: "Windows 10 and 11 — via the Microsoft Store, no sign-up required",
+      reassurance: [
+        "19 seconds",
+        "100% local (read-only)",
+        "Free diagnostic",
+        "Windows 10 & 11",
+      ],
     },
     apercu: {
       titre: "Here's what Nyctale tells you",
@@ -569,12 +588,13 @@ const T = {
   },
 } satisfies Record<Lang, unknown>;
 
-function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
+export function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void }) {
   return (
     <div className="inline-flex items-center rounded-full border border-border bg-secondary p-0.5 text-xs font-medium">
       {(["fr", "en"] as const).map((l) => (
-        <button
+        <Link
           key={l}
+          to={l === "en" ? "/en" : "/"}
           onClick={() => setLang(l)}
           className={`cursor-pointer rounded-full px-3 py-1 transition ${
             lang === l
@@ -583,15 +603,22 @@ function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void 
           }`}
         >
           {l.toUpperCase()}
-        </button>
+        </Link>
       ))}
     </div>
   );
 }
 
-function Home() {
-  const [lang, setLang] = useLang();
+export function Home({ forceLang }: { forceLang?: Lang } = {}) {
+  const [currentLang, setLang] = useLang();
+  const [showSmartScreen, setShowSmartScreen] = useState(false);
+  const lang = forceLang ?? currentLang;
   const t = T[lang];
+
+  const handleExeDownload = (source: string) => {
+    trackDownload(source);
+    setShowSmartScreen(true);
+  };
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -668,71 +695,52 @@ function Home() {
 
         <div className="relative mx-auto max-w-4xl px-6 pt-20 pb-16 text-center md:pt-28 md:pb-24">
           <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
-            <ShieldCheck className="h-3.5 w-3.5" /> {t.hero.badge}
+            <ShieldCheck className="h-3.5 w-3.5 text-primary" /> {t.hero.badge}
           </div>
           <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
             {t.hero.titleLine1}
             <br className="hidden md:block" /> {t.hero.titleLine2}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base font-medium text-foreground/90">
-            {t.hero.definition}
-          </p>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
             {t.hero.subtitle}
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <a
               href={STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackStoreDownload("hero")}
             >
-              <Button size="lg" className="gap-2">
+              <Button size="lg" className="h-12 px-8 text-base font-semibold shadow-lg shadow-primary/20 gap-2">
                 {t.hero.cta} <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
-          </div>
-          <p className="mt-3 text-sm font-medium text-foreground">{t.hero.priceNote}</p>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="/downloads/Nyctale-x86_64.AppImage"
-              onClick={() => trackDownload("hero_linux_appimage")}
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
-            >
-              <Terminal className="h-4 w-4" /> {t.telecharger.linuxAppImage}
-            </a>
-            <a
-              href="/downloads/Nyctale-1.0.2-linux-x86_64.tar.gz"
-              onClick={() => trackDownload("hero_linux_tar")}
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
-            >
-              <Package className="h-4 w-4" /> {t.telecharger.linuxTar}
-            </a>
-            <a href="#comment-ca-marche">
-              <Button size="lg" variant="outline">
+            <a href="#apercu">
+              <Button size="lg" variant="outline" className="h-12 px-6 text-base">
                 {t.hero.ctaSecondary}
               </Button>
             </a>
           </div>
-          <div className="group/win relative mt-4 inline-flex">
+
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs font-medium text-muted-foreground">
+            {t.hero.reassurance.map((item) => (
+              <span key={item} className="flex items-center gap-1.5">
+                <Check className="h-3.5 w-3.5 text-primary" /> {item}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-4">
             <a
               href={EXE_URL}
-              onClick={() => trackDownload("hero_exe")}
-              className="text-sm text-muted-foreground underline underline-offset-4 transition hover:text-foreground"
+              onClick={() => handleExeDownload("hero_exe")}
+              className="text-xs text-muted-foreground underline underline-offset-4 transition hover:text-foreground"
             >
               {t.hero.ctaExe}
             </a>
-            <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-2 hidden w-72 -translate-x-1/2 rounded-lg border border-border bg-popover px-3 py-2 text-left text-xs leading-relaxed text-popover-foreground opacity-0 shadow-lg transition-opacity duration-150 sm:block sm:group-hover/win:opacity-100">
-              {t.telecharger.smartscreenNote}
-            </div>
           </div>
-          <p className="mt-3 text-sm text-muted-foreground">{t.hero.note}</p>
-          <Link
-            to="/pro"
-            className="mt-6 inline-block text-sm font-medium text-primary underline-offset-4 transition hover:underline"
-          >
-            {t.hero.proLink}
-          </Link>
+          <p className="mt-2 text-xs text-muted-foreground/80">{t.hero.note}</p>
         </div>
       </section>
 
@@ -863,10 +871,10 @@ function Home() {
               <p className="mt-3 text-sm text-muted-foreground">
                 {t.transparence.contact}{" "}
                 <a
-                  href="mailto:lafabriknumerique@outlook.com"
+                  href="mailto:contact@nyctale.fr"
                   className="text-primary underline underline-offset-4"
                 >
-                  lafabriknumerique@outlook.com
+                  contact@nyctale.fr
                 </a>
               </p>
             </Card>
@@ -915,7 +923,10 @@ function Home() {
                 </Button>
               </a>
             </Card>
-            <Card className="border-primary p-6 shadow-lg">
+            <Card className="relative border-primary p-6 shadow-lg shadow-primary/5">
+              <div className="mb-2 inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
+                {lang === "fr" ? "Recommandé" : "Recommended"}
+              </div>
               <h3 className="text-lg font-semibold">{t.tarifs.mid.titre}</h3>
               <p className="mt-1 text-3xl font-bold">{t.tarifs.mid.prix}</p>
               <p className="mt-1 text-sm text-muted-foreground">{t.tarifs.mid.sous}</p>
@@ -1016,15 +1027,12 @@ function Home() {
                 {t.telecharger.cta} <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
-            <div className="group/win relative inline-flex">
-              <a href={EXE_URL} onClick={() => trackDownload("section_telecharger_exe")}>
+            <div className="inline-flex">
+              <a href={EXE_URL} onClick={() => handleExeDownload("section_telecharger_exe")}>
                 <Button size="lg" variant="outline">
                   {t.telecharger.exe}
                 </Button>
               </a>
-              <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-2 hidden w-72 -translate-x-1/2 rounded-lg border border-border bg-popover px-3 py-2 text-xs leading-relaxed text-popover-foreground opacity-0 shadow-lg transition-opacity duration-150 sm:block sm:group-hover/win:opacity-100">
-                {t.telecharger.smartscreenNote}
-              </div>
             </div>
           </div>
           <p className="mx-auto mt-4 max-w-md text-xs text-muted-foreground">
@@ -1067,7 +1075,7 @@ function Home() {
               {t.footer.privacy}
             </Link>
             <a
-              href="mailto:lafabriknumerique@outlook.com"
+              href="mailto:contact@nyctale.fr"
               className="hover:text-foreground transition-colors"
             >
               {t.footer.contact}
@@ -1149,6 +1157,7 @@ function Home() {
           />
         </a>
       </footer>
+      <SmartScreenDialog open={showSmartScreen} onOpenChange={setShowSmartScreen} lang={lang} />
     </main>
   );
 }

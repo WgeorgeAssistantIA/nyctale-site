@@ -23,7 +23,7 @@ import { suivre } from "@/lib/analytics";
 // Lien de checkout Lemon Squeezy du palier Pro (meme lien que la carte Pro de
 // l'accueil, voir index.tsx).
 const CHECKOUT_PRO =
-  "https://voxcut-pro.lemonsqueezy.com/checkout/buy/e8823d08-19d4-4c32-8c99-7bd315f800e7";
+  "https://checkout.lafabriknumerique.fr/checkout/buy/e8823d08-19d4-4c32-8c99-7bd315f800e7";
 const PORTABLE_URL = "/downloads/Nyctale-Portable-1.0.3.zip";
 
 // Chaque promesse de cette page correspond a une fonction reelle du palier

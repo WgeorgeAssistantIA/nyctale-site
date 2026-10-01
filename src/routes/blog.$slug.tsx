@@ -3,6 +3,20 @@ import { ArrowLeft } from "lucide-react";
 import { useLang } from "@/lib/lang";
 import { articleBySlug } from "@/lib/blog-posts";
 import { DiagnosticCta } from "@/components/diagnostic-cta";
+import type { ReactNode } from "react";
+
+// Liens internes : [ancre](/blog/slug) dans les paragraphes -> <a>.
+function renderInline(text: string): ReactNode[] {
+  return text.split(/(\[[^\]]+\]\(\/[^)]*\))/g).map((part, i) => {
+    const m = part.match(/^\[([^\]]+)\]\((\/[^)]*)\)$/);
+    if (!m) return part;
+    return (
+      <a key={i} href={m[2]} className="text-primary underline underline-offset-4 hover:no-underline">
+        {m[1]}
+      </a>
+    );
+  });
+}
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -200,7 +214,7 @@ function BlogArticle() {
             }
             return (
               <p key={i} className="text-muted-foreground leading-relaxed">
-                {b.text}
+                {renderInline(b.text)}
               </p>
             );
           })}

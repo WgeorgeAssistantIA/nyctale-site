@@ -151,6 +151,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Nyctale fait ce tour d'horizon à votre place : programmes qui occupent le processeur et la mémoire, état et type du disque, espace libre, chauffe et bridage du processeur, arrêts brutaux, fichiers système. Il explique en langage clair ce qui ralentit réellement votre PC, sans rien modifier sans votre accord. Le diagnostic est gratuit et illimité.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "Si le ralentissement s'accompagne de blocages ou de fichiers qui ne s'ouvrent plus, vérifiez aussi [l'état de votre disque dur](/blog/disque-dur-va-lacher-signes). Pour comparer plusieurs outils de mesure, consultez les [meilleurs logiciels gratuits de diagnostic PC](/blog/meilleurs-logiciels-gratuits-diagnostic-pc), et si des plantages s'ajoutent aux lenteurs, [l'écran bleu sous Windows 11](/blog/ecran-bleu-windows-11).",
+      },
     ],
     faq: [
       {
@@ -174,12 +179,7 @@ export const articles: Article[] = [
         r: "Oui, c'est souvent la meilleure amélioration possible sur un PC de plus de cinq ans : démarrage et ouverture des programmes plusieurs fois plus rapides, pour environ 40 à 70 € de pièce.",
       },
     ],
-    liens: ["meilleurs-logiciels-gratuits-diagnostic-pc", 
-      "pc-lent-au-demarrage",
-      "disque-a-100-pourcent-windows",
-      "windows-11-lent-apres-mise-a-jour",
-      "avant-dacheter-un-pc-neuf",
-    ],
+    liens: ["meilleurs-logiciels-gratuits-diagnostic-pc", "pc-lent-au-demarrage", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "avant-dacheter-un-pc-neuf", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11"],
   },
   {
     slug: "slow-computer-no-obvious-reason",
@@ -298,6 +298,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Nyctale does this whole check for you: programs using the processor and memory, drive type and health, free space, processor heat and throttling, sudden shutdowns, system files. It explains in plain language what is really slowing your PC down, and never changes anything without your consent. The diagnosis is free and unlimited.",
       },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "If the slowdown comes with freezes or files that no longer open, also check [your drive's health](/blog/failing-hard-drive-signs). To compare measurement tools, see the [best free PC diagnostic tools](/blog/best-free-pc-diagnostic-tools), and if crashes join the slowness, read about the [Windows 11 blue screen](/blog/windows-11-blue-screen-fix).",
+      },
     ],
     faq: [
       {
@@ -321,12 +326,7 @@ export const articles: Article[] = [
         r: "Yes, it's often the single best upgrade for a PC older than five years: startup and program launches several times faster, for about €40 to €70 in parts.",
       },
     ],
-    liens: ["best-free-pc-diagnostic-tools", 
-      "slow-pc-startup",
-      "disk-100-percent-windows",
-      "windows-11-slow-after-update",
-      "before-buying-a-new-pc",
-    ],
+    liens: ["best-free-pc-diagnostic-tools", "slow-pc-startup", "disk-100-percent-windows", "windows-11-slow-after-update", "before-buying-a-new-pc", "failing-hard-drive-signs", "windows-11-blue-screen-fix"],
   },
 
   // -------------------------------------------------------------------
@@ -472,6 +472,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Rarement. Des logiciels permettent de régler la vitesse des ventilateurs, mais forcer un ventilateur à ralentir alors que le processeur chauffe revient à couper l'alarme sans éteindre le feu. Et aucun « nettoyeur » ni « optimiseur » ne retire de la poussière : méfiez-vous de tout programme qui promet de rendre un PC silencieux en un clic.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "Une surchauffe répétée peut provoquer des plantages. Si votre ordinateur s'éteint ou affiche un écran bleu, lisez notre guide sur [l'écran bleu sous Windows 11](/blog/ecran-bleu-windows-11). Pour contrôler vos températures, voyez aussi notre sélection de [logiciels gratuits de diagnostic PC](/blog/meilleurs-logiciels-gratuits-diagnostic-pc).",
+      },
     ],
     faq: [
       {
@@ -495,6 +500,7 @@ export const articles: Article[] = [
         r: "Nyctale trouve la cause et aide à la corriger quand elle est logicielle : fermer un programme bloqué, régler le navigateur, repasser en mode Équilibré. Quand la cause est physique, il vous le dit franchement : aucun logiciel ne remplace un dépoussiérage.",
       },
     ],
+    liens: ["ecran-bleu-windows-11", "pc-qui-rame-sans-raison", "meilleurs-logiciels-gratuits-diagnostic-pc", "avant-dacheter-un-pc-neuf"],
   },
   {
     slug: "fan-that-never-stops-spinning",
@@ -636,6 +642,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Rarely. Some tools let you set fan speeds, but forcing a fan to slow down while the processor is hot is like switching off the alarm without putting out the fire. And no \"cleaner\" or \"optimiser\" removes dust: be wary of any program that promises to make a PC quiet in one click.",
       },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "Repeated overheating can cause crashes. If your computer shuts down or shows a blue screen, read our guide to the [Windows 11 blue screen](/blog/windows-11-blue-screen-fix). To keep an eye on temperatures, see our selection of [free PC diagnostic tools](/blog/best-free-pc-diagnostic-tools).",
+      },
     ],
     faq: [
       {
@@ -659,6 +670,7 @@ export const articles: Article[] = [
         r: "Nyctale finds the cause and helps fix it when it's software: closing a stuck program, adjusting the browser, switching back to Balanced mode. When the cause is physical, it tells you plainly: no software replaces a good dusting.",
       },
     ],
+    liens: ["windows-11-blue-screen-fix", "slow-computer-no-obvious-reason", "best-free-pc-diagnostic-tools", "before-buying-a-new-pc"],
   },
 
   // -------------------------------------------------------------------
@@ -752,6 +764,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Nyctale a été conçu pour ce moment-là. En 19 secondes, il analyse votre PC chez vous et dit en langage clair ce qui ne va pas, à quel point c'est grave, et si le problème se règle par un simple réglage ou demande une intervention matérielle. Il ne remplace pas un professionnel pour une panne physique, mais il vous donne une base solide pour juger ce qu'on vous propose, au lieu de faire confiance les yeux fermés.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "Avant de remplacer votre ordinateur, vérifiez que le disque n'est pas en cause : connaître [les signes d'un disque dur qui va lâcher](/blog/disque-dur-va-lacher-signes) peut éviter un achat inutile. Un [écran bleu récurrent](/blog/ecran-bleu-windows-11) a lui aussi souvent une cause réparable.",
+      },
     ],
     faq: [
       {
@@ -775,11 +792,7 @@ export const articles: Article[] = [
         r: "Un bon diagnostic nomme une cause précise et vérifiable (disque, batterie, surchauffe, programme), pas une impression générale. Demandez comment elle a été mesurée, et n'hésitez pas à obtenir un deuxième avis avant une dépense importante.",
       },
     ],
-    liens: [
-      "pc-qui-rame-sans-raison",
-      "disque-a-100-pourcent-windows",
-      "ventilateur-qui-ne-sarrete-plus",
-    ],
+    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11"],
   },
   {
     slug: "before-buying-a-new-pc",
@@ -869,6 +882,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Nyctale was built for exactly this moment. In 19 seconds, it analyses your PC at home and explains in plain language what's wrong, how serious it is, and whether the problem can be fixed with a simple setting or needs a hardware repair. It doesn't replace a professional for a physical fault, but it gives you a solid basis to judge what you're being offered, instead of trusting blindly.",
       },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "Before replacing your computer, check the drive is not the culprit: knowing the [signs of a failing hard drive](/blog/failing-hard-drive-signs) can spare you a needless purchase. A [recurring blue screen](/blog/windows-11-blue-screen-fix) also often has a repairable cause.",
+      },
     ],
     faq: [
       {
@@ -892,7 +910,7 @@ export const articles: Article[] = [
         r: "A good diagnosis names a precise, verifiable cause (drive, battery, overheating, program), not a general impression. Ask how it was measured, and don't hesitate to get a second opinion before a significant expense.",
       },
     ],
-    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "fan-that-never-stops-spinning"],
+    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "windows-11-blue-screen-fix"],
   },
 
   // -------------------------------------------------------------------
@@ -979,6 +997,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Nyctale ne mesure pas le pourcentage d'activité du disque. Il vérifie en revanche les causes qui l'expliquent le plus souvent : une mémoire vive qui déborde sur le disque, l'état de santé du disque tel que Windows le signale, et la place libre restante. Il vous dit laquelle est en cause, et si c'est un simple réglage ou un vrai problème matériel.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "Un disque saturé n'est pas toujours un disque sain. Consultez [comment savoir si votre disque dur va lâcher](/blog/disque-dur-va-lacher-signes) et, si des plantages s'ajoutent aux lenteurs, notre guide sur [l'écran bleu sous Windows 11](/blog/ecran-bleu-windows-11). Les [logiciels gratuits de diagnostic](/blog/meilleurs-logiciels-gratuits-diagnostic-pc) permettent aussi de lire l'état du disque.",
+      },
     ],
     faq: [
       {
@@ -998,6 +1021,7 @@ export const articles: Article[] = [
         r: "Ce n'est à tenter qu'en dernier recours, sur un disque dur mécanique, et en observant l'effet. SysMain accélère le lancement des programmes habituels ; le désactiver n'a d'intérêt que s'il sature réellement le disque de façon durable.",
       },
     ],
+    liens: ["disque-dur-va-lacher-signes", "pc-lent-au-demarrage", "ecran-bleu-windows-11", "meilleurs-logiciels-gratuits-diagnostic-pc"],
   },
 
   // -------------------------------------------------------------------
@@ -1135,6 +1159,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Nyctale compte les programmes lancés au démarrage, vérifie si l'ordinateur a vraiment redémarré récemment ou seulement été « arrêté » avec le démarrage rapide, et contrôle la place libre et la santé du disque. Il vous dit lequel de ces points ralentit votre démarrage, et ouvre directement la bonne liste pour agir.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "Pour mesurer ce qui ralentit réellement le démarrage, les [outils gratuits de diagnostic](/blog/meilleurs-logiciels-gratuits-diagnostic-pc), Autoruns en particulier, vont plus loin que le Gestionnaire des tâches. Et si le démarrage échoue avec un écran bleu, voyez [notre guide dédié](/blog/ecran-bleu-windows-11).",
+      },
     ],
     faq: [
       {
@@ -1162,7 +1191,7 @@ export const articles: Article[] = [
         r: "C'est la durée de la phase matérielle du démarrage, avant que Windows ne prenne la main. Quelques secondes sont normales ; au-delà de 15 à 20 secondes, un périphérique branché ou un réglage du BIOS est en cause, pas Windows.",
       },
     ],
-    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "disque-dur-va-lacher-signes"],
+    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "disque-dur-va-lacher-signes", "meilleurs-logiciels-gratuits-diagnostic-pc", "ecran-bleu-windows-11"],
   },
 
   // -------------------------------------------------------------------
@@ -1283,6 +1312,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Nyctale reconnaît les tâches Windows qui travaillent en arrière-plan (installation de mise à jour, analyse antivirus, indexation) et vous dit simplement de patienter quand c'est le cas. Il vérifie aussi si l'ordinateur a vraiment redémarré, compte les programmes au démarrage, contrôle l'espace libre et, lancé en administrateur, l'intégrité des fichiers de Windows.",
       },
+      { type: "h2", text: "Pour aller plus loin" },
+      {
+        type: "p",
+        text: "Si, après une mise à jour, vous obtenez des plantages plutôt que des lenteurs, voyez notre guide sur [l'écran bleu sous Windows 11](/blog/ecran-bleu-windows-11). Pour mesurer précisément ce qui ralentit la machine, consultez les [logiciels gratuits de diagnostic PC](/blog/meilleurs-logiciels-gratuits-diagnostic-pc).",
+      },
     ],
     faq: [
       {
@@ -1306,7 +1340,7 @@ export const articles: Article[] = [
         r: "Oui, pendant 10 jours après une mise à jour de fonctionnalités : Paramètres > Système > Récupération > « Revenir en arrière ». Pour une mise à jour mensuelle, utilisez « Désinstaller des mises à jour » dans Windows Update.",
       },
     ],
-    liens: ["pc-lent-au-demarrage", "pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows"],
+    liens: ["pc-lent-au-demarrage", "pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ecran-bleu-windows-11", "meilleurs-logiciels-gratuits-diagnostic-pc"],
   },
   {
     slug: "disk-100-percent-windows",
@@ -1389,6 +1423,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Nyctale doesn't measure the disk activity percentage. It does check the causes that most often explain it: memory spilling over onto the disk, the drive's health as reported by Windows, and the free space left. It tells you which one is at fault, and whether it's a simple setting or a real hardware problem.",
       },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "A saturated disk is not always a healthy one. See [how to tell if your hard drive is failing](/blog/failing-hard-drive-signs) and, if crashes join the slowdowns, our guide to the [Windows 11 blue screen](/blog/windows-11-blue-screen-fix). [Free diagnostic tools](/blog/best-free-pc-diagnostic-tools) can also read the drive's health.",
+      },
     ],
     faq: [
       {
@@ -1408,6 +1447,7 @@ export const articles: Article[] = [
         r: "Only as a last resort, on a mechanical hard drive, and while watching the effect. SysMain speeds up launching your usual programs; disabling it only helps if it really saturates the disk for long periods.",
       },
     ],
+    liens: ["failing-hard-drive-signs", "slow-pc-startup", "windows-11-blue-screen-fix", "best-free-pc-diagnostic-tools"],
   },
   {
     slug: "slow-pc-startup",
@@ -1541,6 +1581,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Nyctale counts the programs launched at startup, checks whether the computer has truly restarted recently or only been 'shut down' with fast startup, and checks free space and drive health. It tells you which of these is slowing your startup, and opens the right list directly so you can act.",
       },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "To measure what really slows startup, the [free diagnostic tools](/blog/best-free-pc-diagnostic-tools), Autoruns in particular, go further than Task Manager. And if startup fails with a blue screen, see [our dedicated guide](/blog/windows-11-blue-screen-fix).",
+      },
     ],
     faq: [
       {
@@ -1568,7 +1613,7 @@ export const articles: Article[] = [
         r: "It's the duration of the hardware stage of startup, before Windows takes over. A few seconds is normal; beyond 15 to 20 seconds, a connected device or a BIOS setting is to blame, not Windows.",
       },
     ],
-    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-slow-after-update", "failing-hard-drive-signs"],
+    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-slow-after-update", "failing-hard-drive-signs", "best-free-pc-diagnostic-tools", "windows-11-blue-screen-fix"],
   },
   {
     slug: "windows-11-slow-after-update",
@@ -1685,6 +1730,11 @@ export const articles: Article[] = [
         type: "p",
         text: "Nyctale recognises Windows tasks working in the background (update installation, antivirus scan, indexing) and simply tells you to wait when that's the case. It also checks whether the computer has truly restarted, counts startup programs, checks free space and, when run as administrator, the integrity of Windows files.",
       },
+      { type: "h2", text: "Going further" },
+      {
+        type: "p",
+        text: "If, after an update, you get crashes rather than slowness, see our guide to the [Windows 11 blue screen](/blog/windows-11-blue-screen-fix). To measure precisely what slows the machine, see the [free PC diagnostic tools](/blog/best-free-pc-diagnostic-tools).",
+      },
     ],
     faq: [
       {
@@ -1708,7 +1758,7 @@ export const articles: Article[] = [
         r: "Yes, for 10 days after a feature update: Settings > System > Recovery > 'Go back'. For a monthly update, use 'Uninstall updates' in Windows Update.",
       },
     ],
-    liens: ["slow-pc-startup", "slow-computer-no-obvious-reason", "disk-100-percent-windows"],
+    liens: ["slow-pc-startup", "slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-blue-screen-fix", "best-free-pc-diagnostic-tools"],
   },
   ...seoFrArticles,
   ...seoEnArticles,

@@ -1,4 +1,6 @@
 import type { Lang } from "./lang";
+import { seoFrArticles } from "./blog-posts-seo-fr";
+import { seoEnArticles } from "./blog-posts-seo-en";
 
 export type Bloc =
   | { type: "p"; text: string }
@@ -172,7 +174,7 @@ export const articles: Article[] = [
         r: "Oui, c'est souvent la meilleure amélioration possible sur un PC de plus de cinq ans : démarrage et ouverture des programmes plusieurs fois plus rapides, pour environ 40 à 70 € de pièce.",
       },
     ],
-    liens: [
+    liens: ["meilleurs-logiciels-gratuits-diagnostic-pc", 
       "pc-lent-au-demarrage",
       "disque-a-100-pourcent-windows",
       "windows-11-lent-apres-mise-a-jour",
@@ -319,7 +321,7 @@ export const articles: Article[] = [
         r: "Yes, it's often the single best upgrade for a PC older than five years: startup and program launches several times faster, for about €40 to €70 in parts.",
       },
     ],
-    liens: [
+    liens: ["best-free-pc-diagnostic-tools", 
       "slow-pc-startup",
       "disk-100-percent-windows",
       "windows-11-slow-after-update",
@@ -1160,7 +1162,7 @@ export const articles: Article[] = [
         r: "C'est la durée de la phase matérielle du démarrage, avant que Windows ne prenne la main. Quelques secondes sont normales ; au-delà de 15 à 20 secondes, un périphérique branché ou un réglage du BIOS est en cause, pas Windows.",
       },
     ],
-    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour"],
+    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "disque-dur-va-lacher-signes"],
   },
 
   // -------------------------------------------------------------------
@@ -1566,7 +1568,7 @@ export const articles: Article[] = [
         r: "It's the duration of the hardware stage of startup, before Windows takes over. A few seconds is normal; beyond 15 to 20 seconds, a connected device or a BIOS setting is to blame, not Windows.",
       },
     ],
-    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-slow-after-update"],
+    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-slow-after-update", "failing-hard-drive-signs"],
   },
   {
     slug: "windows-11-slow-after-update",
@@ -1708,6 +1710,8 @@ export const articles: Article[] = [
     ],
     liens: ["slow-pc-startup", "slow-computer-no-obvious-reason", "disk-100-percent-windows"],
   },
+  ...seoFrArticles,
+  ...seoEnArticles,
 ];
 
 export function articlesForLang(lang: Lang): Article[] {

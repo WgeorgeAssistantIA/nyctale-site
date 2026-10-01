@@ -17,10 +17,12 @@ import {
   ListChecks,
   Handshake,
   UserRound,
+  Play,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { SmartScreenDialog } from "@/components/smartscreen-dialog";
+import { VideoDialog } from "@/components/video-dialog";
 import {
   Accordion,
   AccordionContent,
@@ -179,6 +181,7 @@ export const T = {
       cta: "Analyser mon PC gratuitement",
       ctaExe: "ou télécharger l'installeur Windows (.exe)",
       ctaSecondary: "Comment ça marche",
+      ctaVideo: "Voir la démo (1 min 26)",
       proLink: "Vous êtes un professionnel de la maintenance informatique ? Découvrez l'édition Pro conçue pour vous.",
       priceNote: "Diagnostic offert · Version complète 24,99 € une fois, sans abonnement",
       note: "Windows 10 et 11 — via le Microsoft Store, aucune inscription requise",
@@ -188,6 +191,11 @@ export const T = {
         "Diagnostic gratuit",
         "Windows 10 & 11",
       ],
+    },
+    videoModal: {
+      title: "Démonstration de Nyctale (1 min 26)",
+      subtitle:
+        "Diagnostic automatique, verdict clair et nettoyage sécurisé sans jargon.",
     },
     apercu: {
       titre: "Voici ce que Nyctale vous dit",
@@ -395,6 +403,7 @@ export const T = {
       cta: "Analyze my PC for free",
       ctaExe: "or download the Windows installer (.exe)",
       ctaSecondary: "How it works",
+      ctaVideo: "Watch demo (1:26 min)",
       proLink: "Are you an IT maintenance professional? Discover the Pro edition built for you.",
       priceNote: "Diagnostic included · Full version €24.99 one-time, no subscription",
       note: "Windows 10 and 11 — via the Microsoft Store, no sign-up required",
@@ -404,6 +413,11 @@ export const T = {
         "Free diagnostic",
         "Windows 10 & 11",
       ],
+    },
+    videoModal: {
+      title: "Nyctale Live Demo (1:26 min)",
+      subtitle:
+        "Automated deep scan, plain-language diagnosis, and safe 1-click cleanup.",
     },
     apercu: {
       titre: "Here's what Nyctale tells you",
@@ -612,6 +626,7 @@ export function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) =
 export function Home({ forceLang }: { forceLang?: Lang } = {}) {
   const [currentLang, setLang] = useLang();
   const [showSmartScreen, setShowSmartScreen] = useState(false);
+  const [showVideoDemo, setShowVideoDemo] = useState(false);
   const lang = forceLang ?? currentLang;
   const t = T[lang];
 
@@ -716,11 +731,18 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
                 {t.hero.cta} <ArrowRight className="h-4 w-4" />
               </Button>
             </a>
-            <a href="#apercu">
-              <Button size="lg" variant="outline" className="h-12 px-6 text-base">
-                {t.hero.ctaSecondary}
-              </Button>
-            </a>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => {
+                suivre("video_play_click", { video: "presentation", origine: "hero_btn", lang });
+                setShowVideoDemo(true);
+              }}
+              className="h-12 px-6 text-base gap-2 bg-background/80 hover:bg-secondary border-border cursor-pointer"
+            >
+              <Play className="h-4 w-4 fill-primary text-primary" />
+              {t.hero.ctaVideo}
+            </Button>
           </div>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs font-medium text-muted-foreground">
@@ -755,14 +777,30 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
             </p>
           </div>
           <figure className="md:col-span-3">
-            <img
-              src={`/verdict-${lang}.webp`}
-              alt={t.apercu.alt}
-              width={lang === "fr" ? 1236 : 1140}
-              height={1050}
-              loading="lazy"
-              className="w-full rounded-xl border border-border shadow-2xl shadow-primary/20"
-            />
+            <div className="group relative overflow-hidden rounded-xl border border-border shadow-2xl shadow-primary/20">
+              <img
+                src={`/verdict-${lang}.webp`}
+                alt={t.apercu.alt}
+                width={lang === "fr" ? 1236 : 1140}
+                height={1050}
+                loading="lazy"
+                className="w-full transition-transform duration-300 group-hover:scale-[1.01]"
+              />
+              <button
+                type="button"
+                onClick={() => {
+                  suivre("video_play_click", { video: "presentation", origine: "apercu_badge", lang });
+                  setShowVideoDemo(true);
+                }}
+                className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 flex items-center gap-2 rounded-full bg-background/95 px-3.5 py-2 text-xs font-semibold text-foreground shadow-lg backdrop-blur-md transition-all hover:scale-105 hover:bg-background border border-border/80 cursor-pointer"
+                aria-label={t.hero.ctaVideo}
+              >
+                <div className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-primary text-primary-foreground shadow">
+                  <Play className="ml-0.5 h-2.5 w-2.5 sm:h-3 sm:w-3 fill-current" />
+                </div>
+                <span>{t.hero.ctaVideo}</span>
+              </button>
+            </div>
             <figcaption className="mt-3 text-center text-xs text-muted-foreground">
               {t.apercu.legende}
             </figcaption>
@@ -1158,6 +1196,16 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
         </a>
       </footer>
       <SmartScreenDialog open={showSmartScreen} onOpenChange={setShowSmartScreen} lang={lang} />
+      <VideoDialog
+        open={showVideoDemo}
+        onOpenChange={setShowVideoDemo}
+        videoSrc={`/video/nyctale-presentation-${lang}.mp4`}
+        subtitleSrc={`/video/nyctale-presentation-${lang}.vtt`}
+        poster="/video/poster-presentation.webp"
+        title={t.videoModal.title}
+        subtitle={t.videoModal.subtitle}
+        lang={lang}
+      />
     </main>
   );
 }

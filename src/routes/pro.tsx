@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -8,9 +9,11 @@ import {
   Usb,
   Wrench,
   BadgeCheck,
+  Play,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { VideoDialog } from "@/components/video-dialog";
 import {
   Accordion,
   AccordionContent,
@@ -39,6 +42,14 @@ const T = {
     cta: "Passer à Nyctale Pro",
     prixCourt: "29,99 € / mois",
     portable: "Télécharger la version portable (clé USB)",
+    ctaVideo: "Voir la démo atelier (1 min 24)",
+    videoSectionBadge: "Démonstration en atelier",
+    videoSectionTitre: "L'audit client en 15 secondes chrono",
+    videoSectionSous:
+      "Découvrez le pré-diagnostic au comptoir, l'analyse immédiate de la télémétrie Windows (Kernel Event 37), le nettoyage sécurisé et l'export du rapport d'inspection.",
+    videoModalTitre: "Nyctale Pro — Démonstration Atelier (1 min 24)",
+    videoModalSous:
+      "Audit au comptoir, inspection matérielle, télémétrie Windows et rapport d'intervention.",
     beneficesTitre: "Pourquoi les dépanneurs l'utilisent",
     benefices: [
       {
@@ -137,6 +148,14 @@ const T = {
     cta: "Get Nyctale Pro",
     prixCourt: "€29.99 / month",
     portable: "Download the portable version (USB drive)",
+    ctaVideo: "Watch workshop demo (1:24 min)",
+    videoSectionBadge: "Workshop demo",
+    videoSectionTitre: "15-second customer intake audit",
+    videoSectionSous:
+      "See the instant counter audit, deep Windows telemetry inspection (Kernel Event 37), safe repair cleanup, and client-ready inspection report.",
+    videoModalTitre: "Nyctale Pro — Workshop Demo (1:24 min)",
+    videoModalSous:
+      "Intake diagnostics, hardware profiling, Windows telemetry, and client report.",
     beneficesTitre: "Why repair technicians use it",
     benefices: [
       {
@@ -312,7 +331,15 @@ function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) => void 
   );
 }
 
-function BoutonsAchat({ t, origine }: { t: (typeof T)[Lang]; origine: string }) {
+function BoutonsAchat({
+  t,
+  origine,
+  onOpenVideo,
+}: {
+  t: (typeof T)[Lang];
+  origine: string;
+  onOpenVideo?: () => void;
+}) {
   return (
     <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
       <a
@@ -325,6 +352,17 @@ function BoutonsAchat({ t, origine }: { t: (typeof T)[Lang]; origine: string }) 
           {t.cta} · {t.prixCourt} <ArrowRight className="h-4 w-4" />
         </Button>
       </a>
+      {onOpenVideo && (
+        <Button
+          size="lg"
+          variant="outline"
+          onClick={onOpenVideo}
+          className="gap-2 bg-background/80 hover:bg-secondary border-border cursor-pointer"
+        >
+          <Play className="h-4 w-4 fill-primary text-primary" />
+          {t.ctaVideo}
+        </Button>
+      )}
       <a
         href={PORTABLE_URL}
         onClick={() => suivre("portable_download", { origine })}
@@ -338,6 +376,7 @@ function BoutonsAchat({ t, origine }: { t: (typeof T)[Lang]; origine: string }) 
 
 function PagePro() {
   const [lang, setLang] = useLang();
+  const [showVideo, setShowVideo] = useState(false);
   const t = T[lang];
 
   return (
@@ -364,7 +403,14 @@ function PagePro() {
           {t.sous}
         </p>
         <div className="mt-8">
-          <BoutonsAchat t={t} origine="pro_hero" />
+          <BoutonsAchat
+            t={t}
+            origine="pro_hero"
+            onOpenVideo={() => {
+              suivre("video_play_click", { video: "pro", origine: "hero_btn", lang });
+              setShowVideo(true);
+            }}
+          />
         </div>
       </section>
 
@@ -380,6 +426,41 @@ function PagePro() {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.texte}</p>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DEMO VIDEO PRO */}
+      <section className="border-t border-border bg-gradient-to-b from-secondary/40 to-background py-16">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            <Play className="h-3.5 w-3.5 fill-current" /> {t.videoSectionBadge}
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">{t.videoSectionTitre}</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground leading-relaxed">
+            {t.videoSectionSous}
+          </p>
+
+          <div
+            onClick={() => {
+              suivre("video_play_click", { video: "pro", origine: "section_preview", lang });
+              setShowVideo(true);
+            }}
+            className="group relative mx-auto mt-8 aspect-video max-w-3xl cursor-pointer overflow-hidden rounded-2xl border border-border bg-black shadow-2xl transition-all hover:border-primary/50"
+          >
+            <img
+              src="/video/poster-pro.webp"
+              alt="Nyctale Pro Démonstration Vidéo"
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 transition-colors group-hover:bg-black/30">
+              <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-2xl transition-transform group-hover:scale-110">
+                <Play className="ml-1 h-7 w-7 sm:h-9 sm:w-9 fill-current" />
+              </div>
+              <span className="mt-4 rounded-full bg-background/95 px-4 py-1.5 text-xs sm:text-sm font-semibold text-foreground shadow-md backdrop-blur">
+                {t.ctaVideo}
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -493,6 +574,16 @@ function PagePro() {
           ← {t.retour}
         </Link>
       </footer>
+      <VideoDialog
+        open={showVideo}
+        onOpenChange={setShowVideo}
+        videoSrc={`/video/nyctale-pro-${lang}.mp4`}
+        subtitleSrc={`/video/nyctale-pro-${lang}.vtt`}
+        poster="/video/poster-pro.webp"
+        title={t.videoModalTitre}
+        subtitle={t.videoModalSous}
+        lang={lang}
+      />
     </main>
   );
 }

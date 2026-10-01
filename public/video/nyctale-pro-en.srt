@@ -1,0 +1,40 @@
+1
+00:00:00,500 --> 00:00:08,924
+Are you an IT technician or computer repair shop?
+Spending too much time diagnosing why a customer's PC is running slow?
+
+2
+00:00:09,000 --> 00:00:17,280
+With Nyctale, run a full system audit right at check-in in under 15 seconds:
+CPU, RAM, drive health, and system integrity.
+
+3
+00:00:23,500 --> 00:00:31,108
+Instantly view the machine specifications:
+exact model, BIOS age, system uptime, and administrator privileges.
+
+4
+00:00:33,000 --> 00:00:40,680
+Unlock raw Windows telemetry with one click:
+inspect Kernel Event 37 thermal throttling logs and abnormal shutdowns.
+
+5
+00:00:48,500 --> 00:00:55,940
+Export a complete technical inspection report:
+clear, professional proof to attach to your invoice and justify your work.
+
+6
+00:00:56,500 --> 00:01:04,420
+For routine maintenance, the assisted cleanup tool frees up gigabytes safely,
+while strictly protecting your customer's personal data.
+
+7
+00:01:11,000 --> 00:01:16,688
+Result: 18 gigabytes freed with zero risk,
+and instant verified completion.
+
+8
+00:01:17,000 --> 00:01:25,280
+Add Nyctale Pro to your workshop toolkit on any USB drive.
+Discover our Pro edition today on nyctale.fr.
+

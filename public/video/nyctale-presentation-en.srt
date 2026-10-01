@@ -1,0 +1,49 @@
+1
+00:00:00,500 --> 00:00:05,516
+Does your computer keep overheating, freezing,
+or taking forever to boot up?
+
+2
+00:00:05,800 --> 00:00:11,440
+Meet Nyctale: a clean diagnostic tool with zero ads
+and zero scareware tactics.
+
+3
+00:00:12,000 --> 00:00:20,904
+With a single click, it checks 11 vital system areas in under 15 seconds.
+Best of all: nothing ever leaves your PC.
+
+4
+00:00:25,500 --> 00:00:31,236
+The verdict is plain and simple: no cryptic error codes,
+you know exactly what is going on.
+
+5
+00:00:32,500 --> 00:00:38,284
+At a glance, you can see the health of your disk space,
+system memory, and startup apps.
+
+6
+00:00:40,000 --> 00:00:46,432
+And if your PC gets hot, Nyctale checks real thermal throttling
+and crash history instead of fake warnings.
+
+7
+00:00:51,000 --> 00:00:56,040
+Ready to fix it? One click is all it takes to take action.
+
+8
+00:00:57,000 --> 00:01:04,272
+It pinpoints large forgotten files.
+Everything goes safely to the Recycle Bin, with zero risk.
+
+9
+00:01:07,500 --> 00:01:12,876
+Result: over 18 gigabytes freed up in seconds,
+and your problem is solved!
+
+10
+00:01:12,000 --> 00:01:20,256
+Diagnosis is 100% free with no limits.
+Visit nyctale.fr or get it on the Microsoft Store today.
+

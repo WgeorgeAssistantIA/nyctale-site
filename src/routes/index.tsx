@@ -135,9 +135,22 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "La Fabrik Numérique",
-          url: "https://nyctale.fr/",
+          url: "https://www.lafabriknumerique.fr",
+          founder: { "@type": "Person", name: "William GEORGE", jobTitle: "Founder", url: "https://www.lafabriknumerique.fr" },
           logo: "https://nyctale.fr/nyctale_logo.png",
           sameAs: [`https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}`],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Nyctale",
+          url: "https://nyctale.fr/",
+          inLanguage: "fr",
+          description: "Diagnostic de PC : Nyctale explique pourquoi votre ordinateur chauffe ou ralentit et aide à le corriger.",
+          publisher: { "@type": "Organization", name: "La Fabrik Numérique", url: "https://www.lafabriknumerique.fr" },
         }),
       },
       {

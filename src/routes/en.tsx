@@ -76,9 +76,22 @@ export const Route = createFileRoute("/en")({
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "La Fabrik Numérique",
-          url: "https://nyctale.fr/",
+          url: "https://www.lafabriknumerique.fr",
+          founder: { "@type": "Person", name: "William GEORGE", jobTitle: "Founder", url: "https://www.lafabriknumerique.fr" },
           logo: "https://nyctale.fr/nyctale_logo.png",
           sameAs: [`https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}`],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Nyctale",
+          url: "https://nyctale.fr/en",
+          inLanguage: "en",
+          description: "PC diagnostic: Nyctale explains why your computer is slow or overheating and helps you fix it.",
+          publisher: { "@type": "Organization", name: "La Fabrik Numérique", url: "https://www.lafabriknumerique.fr" },
         }),
       },
       {

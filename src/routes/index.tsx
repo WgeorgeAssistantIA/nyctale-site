@@ -98,6 +98,10 @@ export const Route = createFileRoute("/")({
           description:
             "Diagnostic et réparation de PC : Nyctale explique en clair pourquoi votre ordinateur chauffe ou ralentit, et vous aide à le corriger. 100% local et privé.",
           url: "https://nyctale.fr/",
+          sameAs: [
+            "https://www.wikidata.org/wiki/Q141656931",
+            `https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}`,
+          ],
           image: "https://nyctale.fr/nyctale_logo.png",
           offers: {
             "@type": "AggregateOffer",

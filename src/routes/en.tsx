@@ -39,6 +39,10 @@ export const Route = createFileRoute("/en")({
           description:
             "PC Diagnostic and repair: Nyctale explains in plain language why your computer overheats or slows down, and helps you fix it. 100% local and private.",
           url: "https://nyctale.fr/en",
+          sameAs: [
+            "https://www.wikidata.org/wiki/Q141656931",
+            `https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}`,
+          ],
           image: "https://nyctale.fr/nyctale_logo.png",
           offers: {
             "@type": "AggregateOffer",

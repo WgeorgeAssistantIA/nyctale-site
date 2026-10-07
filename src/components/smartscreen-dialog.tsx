@@ -6,6 +6,8 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
+import { suivre } from "@/lib/analytics";
 import { STORE_URL, trackStoreDownload } from "@/lib/download";
 import { ArrowRight, CheckCircle2, Store } from "lucide-react";
 import type { Lang } from "@/lib/lang";
@@ -49,6 +51,10 @@ const T = {
 
 export function SmartScreenDialog({ open, onOpenChange, lang }: SmartScreenDialogProps) {
   const t = T[lang];
+
+  useEffect(() => {
+    if (open) suivre("smartscreen_dialog_vue", { lang });
+  }, [open, lang]);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

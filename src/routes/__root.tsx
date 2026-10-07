@@ -13,7 +13,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { initAnalytics } from "../lib/analytics";
+import { initAnalytics, initEngagement } from "../lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -144,6 +144,7 @@ function RootComponent() {
 
   useEffect(() => {
     initAnalytics();
+    initEngagement();
   }, []);
 
   return (

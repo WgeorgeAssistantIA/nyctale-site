@@ -546,7 +546,12 @@ function PagePro() {
       <section className="border-t border-border py-16">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="text-center text-3xl font-bold tracking-tight">{t.faqTitre}</h2>
-          <Accordion type="single" collapsible className="mt-10">
+          <Accordion
+            type="single"
+            collapsible
+            className="mt-10"
+            onValueChange={(v) => v && suivre("faq_ouverte", { page: "/pro", question: v, lang })}
+          >
             {t.faq.map((item) => (
               <AccordionItem key={item.q} value={item.q}>
                 <AccordionTrigger className="text-left text-base">{item.q}</AccordionTrigger>

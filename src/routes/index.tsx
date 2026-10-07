@@ -626,7 +626,10 @@ export function LangToggle({ lang, setLang }: { lang: Lang; setLang: (l: Lang) =
         <Link
           key={l}
           to={l === "en" ? "/en" : "/"}
-          onClick={() => setLang(l)}
+          onClick={() => {
+            suivre("langue_changee", { de: lang, vers: l });
+            setLang(l);
+          }}
           className={`cursor-pointer rounded-full px-3 py-1 transition ${
             lang === l
               ? "bg-primary text-primary-foreground"
@@ -1052,7 +1055,12 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
       <section id="faq" className="py-20">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="text-center text-3xl font-bold tracking-tight">{t.faqTitle}</h2>
-          <Accordion type="single" collapsible className="mt-10">
+          <Accordion
+            type="single"
+            collapsible
+            className="mt-10"
+            onValueChange={(v) => v && suivre("faq_ouverte", { page: "/", question: v, lang })}
+          >
             {t.faq.map((item) => (
               <AccordionItem key={item.q} value={item.q}>
                 <AccordionTrigger className="text-left text-base">{item.q}</AccordionTrigger>

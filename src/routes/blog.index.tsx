@@ -6,11 +6,12 @@ import { articlesForLang } from "@/lib/blog-posts";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "PC lent, ventilateur bruyant, surchauffe : nos guides | Nyctale" },
+      { title: "PC lent, surchauffe, ventilateur : nos guides – Nyctale" },
       {
         name: "description",
         content: "Conseils pour comprendre et résoudre les problèmes les plus fréquents d'un ordinateur qui rame, chauffe ou inquiète.",
       },
+      { property: "og:url", content: "https://nyctale.fr/blog" },
     ],
     links: [{ rel: "canonical", href: "https://nyctale.fr/blog" }],
   }),

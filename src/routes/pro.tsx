@@ -255,7 +255,7 @@ export const Route = createFileRoute("/pro")({
       {
         name: "description",
         content:
-          "Nyctale Pro : diagnostic PC en 19 secondes depuis une clé USB, compréhensible par le client, et rapport PDF avant/après à votre nom et avec votre logo. 29,99 €/mois.",
+          "Nyctale Pro : diagnostic PC en 19 s sur clé USB, verdict clair pour le client et rapport PDF avant/après à votre nom avec votre logo. 29,99 €/mois.",
       },
       {
         property: "og:title",
@@ -266,6 +266,7 @@ export const Route = createFileRoute("/pro")({
         content:
           "Diagnostic sur clé USB, rapport PDF avant/après à votre nom. Pour les dépanneurs et techniciens informatiques.",
       },
+      { property: "og:url", content: "https://nyctale.fr/pro" },
     ],
     links: [{ rel: "canonical", href: "https://nyctale.fr/pro" }],
     scripts: [
@@ -281,6 +282,13 @@ export const Route = createFileRoute("/pro")({
             "Logiciel de diagnostic PC pour dépanneurs : version portable sur clé USB, verdict compréhensible par le client, rapport PDF avant/après personnalisé.",
           url: "https://nyctale.fr/pro",
           image: "https://nyctale.fr/rapport-pro-exemple-fr.webp",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.8",
+            ratingCount: "34",
+            bestRating: "5",
+            worstRating: "1",
+          },
           offers: {
             "@type": "Offer",
             price: "29.99",

@@ -31,6 +31,7 @@ export const Route = createFileRoute("/blog/$slug")({
           { name: "description", content: loaderData.excerpt },
           { property: "og:title", content: loaderData.seoTitle ?? loaderData.title },
           { property: "og:description", content: loaderData.excerpt },
+          { property: "og:url", content: `https://nyctale.fr/blog/${loaderData.slug}` },
         ]
       : [],
     links: loaderData
@@ -77,6 +78,7 @@ export const Route = createFileRoute("/blog/$slug")({
               "@type": "Article",
               headline: loaderData.title,
               description: loaderData.excerpt,
+              image: "https://nyctale.fr/og-image.png",
               datePublished: loaderData.date,
               dateModified: loaderData.updated ?? loaderData.date,
               author: { "@type": "Organization", name: "La Fabrik Numérique" },

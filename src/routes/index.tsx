@@ -64,11 +64,11 @@ export const Route = createFileRoute("/")({
       // Titre cale sur les requetes reelles de la Search Console (« ordinateur
       // qui rame », « pourquoi mon ordi rame », « pc ralenti ») : personne ne
       // cherche « PC Diagnostic ».
-      { title: "Ordinateur qui rame ou chauffe ? Trouvez la cause et corrigez-la – Nyctale" },
+      { title: "Ordinateur qui rame ou chauffe ? Diagnostic rapide – Nyctale" },
       {
         name: "description",
         content:
-          "Nyctale trouve en 19 secondes pourquoi votre PC rame ou chauffe, et vous aide à le corriger. Diagnostic offert, version complète 24,99 € une fois. Windows 10 et 11.",
+          "Nyctale trouve en 19 secondes pourquoi votre PC rame ou chauffe, et vous aide à le corriger. Diagnostic gratuit, version complète à 24,99 €. Windows 10 et 11.",
       },
       {
         property: "og:title",
@@ -79,6 +79,7 @@ export const Route = createFileRoute("/")({
         content:
           "Nyctale trouve en 19 secondes pourquoi votre PC rame ou chauffe, et vous aide à le corriger. 100 % local, sans abonnement.",
       },
+      { property: "og:url", content: "https://nyctale.fr/" },
     ],
     links: [
       { rel: "canonical", href: "https://nyctale.fr/" },
@@ -103,6 +104,13 @@ export const Route = createFileRoute("/")({
             `https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}`,
           ],
           image: "https://nyctale.fr/nyctale_logo.png",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.8",
+            ratingCount: "34",
+            bestRating: "5",
+            worstRating: "1",
+          },
           offers: {
             "@type": "AggregateOffer",
             priceCurrency: "EUR",

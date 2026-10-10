@@ -8,9 +8,11 @@ export const Route = createFileRoute("/terms")({
       { title: "Conditions Générales d'Utilisation et de Vente — Nyctale" },
       {
         name: "description",
-        content: "CGU/CGV de Nyctale : diagnostic gratuit, réparation ponctuelle, surveillance, licence Pro.",
+        content:
+          "Conditions Générales d'Utilisation et de Vente de Nyctale : diagnostic PC gratuit, version complète, licence Pro et modalités d'utilisation.",
       },
       { property: "og:title", content: "Conditions Générales d'Utilisation et de Vente — Nyctale" },
+      { property: "og:url", content: "https://nyctale.fr/terms" },
     ],
     links: [{ rel: "canonical", href: "https://nyctale.fr/terms" }],
   }),

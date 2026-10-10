@@ -8,9 +8,11 @@ export const Route = createFileRoute("/legal")({
       { title: "Mentions légales — Nyctale" },
       {
         name: "description",
-        content: "Mentions légales du site nyctale.fr : éditeur, hébergeur et propriété intellectuelle.",
+        content:
+          "Consultez les mentions légales de Nyctale : éditeur du site, hébergement, informations légales de La Fabrik Numérique et propriété intellectuelle.",
       },
       { property: "og:title", content: "Mentions légales — Nyctale" },
+      { property: "og:url", content: "https://nyctale.fr/legal" },
     ],
     links: [{ rel: "canonical", href: "https://nyctale.fr/legal" }],
   }),

@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -14,6 +15,7 @@ import { Analytics } from "@vercel/analytics/react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { initAnalytics, initEngagement } from "../lib/analytics";
+import { articleBySlug } from "../lib/blog-posts";
 
 function NotFoundComponent() {
   return (
@@ -97,7 +99,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: "https://nyctale.fr/og-image.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:url", content: "https://nyctale.fr/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "https://nyctale.fr/og-image.png" },
     ],
@@ -126,8 +127,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  let lang = "fr";
+  if (pathname === "/en" || pathname.startsWith("/en/")) {
+    lang = "en";
+  } else if (pathname.startsWith("/blog/")) {
+    const slug = pathname.slice(6).replace(/\/$/, "");
+    const article = articleBySlug(slug);
+    if (article?.lang === "en") lang = "en";
+  }
+
   return (
-    <html lang="fr">
+    <html lang={lang}>
       <head>
         <HeadContent />
       </head>

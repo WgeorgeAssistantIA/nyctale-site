@@ -9,7 +9,7 @@ export const seoFrArticles: Article[] = [
     title: "Écran bleu sous Windows 11 : comprendre le code d'erreur et corriger la cause",
     seoTitle: "Écran bleu Windows 11 : causes, code d'erreur et solutions",
     excerpt:
-      "Un écran bleu fait peur, mais c'est une protection de Windows, pas un verdict de fin de vie. Comment lire le code d'erreur, les 6 causes les plus fréquentes et la méthode pour trouver la vôtre.",
+      "Écran bleu sous Windows 11 : comment lire le code d'erreur, comprendre les 6 causes fréquentes et appliquer la bonne méthode pour dépanner votre PC.",
     date: "2026-10-01",
     readMin: 9,
     blocks: [
@@ -166,7 +166,7 @@ export const seoFrArticles: Article[] = [
     title: "Comment savoir si votre disque dur va lâcher : les signes et le test SMART",
     seoTitle: "Disque dur qui va lâcher : signes, test SMART et que faire",
     excerpt:
-      "Un disque dur prévient rarement avant de lâcher, mais il laisse des indices. Les signes qui doivent alerter, comment lire l'état SMART gratuitement et quoi faire en priorité : sauvegarder.",
+      "Un disque dur prévient rarement avant de lâcher. Découvrez les signes d'alerte, comment tester l'état SMART gratuitement et quoi faire pour vos données.",
     date: "2026-10-01",
     readMin: 9,
     blocks: [
@@ -320,9 +320,9 @@ export const seoFrArticles: Article[] = [
     lang: "fr",
     traduction: "best-free-pc-diagnostic-tools",
     title: "Les meilleurs logiciels gratuits pour diagnostiquer un PC (et quoi en attendre)",
-    seoTitle: "Meilleurs logiciels gratuits de diagnostic PC : notre sélection",
+    seoTitle: "Top logiciels gratuits de diagnostic PC : notre sélection",
     excerpt:
-      "Windows intègre déjà de bons outils, et quelques utilitaires gratuits complètent la boîte. La sélection utile pour le processeur, la mémoire, le disque et la chauffe, et les limites de chacun.",
+      "Les meilleurs logiciels gratuits de diagnostic PC : sélection pour tester processeur, mémoire, disque et surchauffe, avec les limites de chaque outil.",
     date: "2026-10-01",
     readMin: 9,
     blocks: [

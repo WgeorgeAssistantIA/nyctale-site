@@ -12,6 +12,7 @@ export const Route = createFileRoute("/privacy")({
           "Comment Nyctale traite vos données. Le diagnostic fonctionne 100% en local — les informations sur votre ordinateur ne quittent jamais votre machine.",
       },
       { property: "og:title", content: "Politique de confidentialité — Nyctale" },
+      { property: "og:url", content: "https://nyctale.fr/privacy" },
     ],
     links: [{ rel: "canonical", href: "https://nyctale.fr/privacy" }],
   }),

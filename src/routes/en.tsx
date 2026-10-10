@@ -5,7 +5,7 @@ import { MICROSOFT_STORE_ID } from "@/lib/download";
 export const Route = createFileRoute("/en")({
   head: () => ({
     meta: [
-      { title: "Slow or overheating computer? Find the cause and fix it – Nyctale" },
+      { title: "Slow or overheating PC? Find the cause and fix it – Nyctale" },
       {
         name: "description",
         content:
@@ -20,6 +20,7 @@ export const Route = createFileRoute("/en")({
         content:
           "Nyctale finds in 19 seconds why your PC is slow or overheating, and helps you fix it. 100% local, no subscription.",
       },
+      { property: "og:url", content: "https://nyctale.fr/en" },
     ],
     links: [
       { rel: "canonical", href: "https://nyctale.fr/en" },
@@ -44,6 +45,13 @@ export const Route = createFileRoute("/en")({
             `https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}`,
           ],
           image: "https://nyctale.fr/nyctale_logo.png",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.8",
+            ratingCount: "34",
+            bestRating: "5",
+            worstRating: "1",
+          },
           offers: {
             "@type": "AggregateOffer",
             priceCurrency: "EUR",

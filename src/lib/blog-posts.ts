@@ -41,7 +41,7 @@ export const articles: Article[] = [
     title: "Ordinateur qui rame : 9 causes fréquentes et comment trouver la vôtre",
     seoTitle: "Ordinateur qui rame : causes et solutions (Windows 10 et 11)",
     excerpt:
-      "Un PC qui rame a toujours une cause précise, logicielle dans la plupart des cas. Les 9 causes les plus fréquentes, la méthode pour trouver la vôtre en 10 minutes, et les solutions.",
+      "Un PC qui rame a une cause précise, le plus souvent logicielle. Les 9 causes fréquentes, la méthode pour trouver la vôtre en 10 min et les solutions.",
     date: "2026-08-08",
     updated: "2026-09-25",
     readMin: 10,
@@ -339,7 +339,7 @@ export const articles: Article[] = [
     title: "Ventilateur de PC qui tourne à fond en permanence : causes et solutions",
     seoTitle: "Ventilateur PC qui tourne à fond : causes et solutions",
     excerpt:
-      "Un ventilateur qui souffle en permanence n'est pas normal, mais c'est rarement grave. Les 7 causes les plus fréquentes, comment trouver la vôtre en 5 minutes, et quand il faut vraiment s'inquiéter.",
+      "Un ventilateur qui souffle en continu n'est pas normal, mais rarement grave. Les 7 causes fréquentes, comment trouver la vôtre en 5 min et que faire.",
     date: "2026-08-08",
     updated: "2026-09-24",
     readMin: 9,
@@ -681,9 +681,9 @@ export const articles: Article[] = [
     lang: "fr",
     traduction: "before-buying-a-new-pc",
     title: "Changer de PC ou le réparer ? 6 questions à se poser avant d'acheter",
-    seoTitle: "Faut-il changer son PC ? La grille pour décider avant d'acheter",
+    seoTitle: "Faut-il changer son PC ? La grille pour décider avant achat",
     excerpt:
-      "Un PC lent se répare souvent pour une fraction du prix d'un neuf. 6 questions concrètes (Windows 11, SSD, mémoire, batterie, coût) pour décider sans se tromper.",
+      "Un PC lent se répare souvent pour une fraction du prix d'un neuf. 6 questions concrètes (Windows 11, SSD, RAM, coût) pour décider sans se tromper.",
     date: "2026-08-08",
     updated: "2026-09-25",
     readMin: 9,
@@ -923,7 +923,7 @@ export const articles: Article[] = [
     title: "Disque à 100 % dans le Gestionnaire des tâches : pourquoi, et comment le calmer",
     seoTitle: "Disque à 100 % sous Windows : causes et solutions",
     excerpt:
-      "Le disque affiche 100 % et tout devient lent ? Ce n'est pas un disque plein, c'est un disque débordé. Les causes les plus fréquentes et comment trouver la vôtre.",
+      "Votre disque affiche 100 % et tout ralentit ? Ce n'est pas un disque plein mais débordé. Les causes les plus fréquentes et comment identifier la vôtre.",
     date: "2026-09-24",
     readMin: 8,
     blocks: [
@@ -1032,9 +1032,9 @@ export const articles: Article[] = [
     lang: "fr",
     traduction: "slow-pc-startup",
     title: "PC lent au démarrage : les vraies causes et comment les corriger",
-    seoTitle: "PC lent au démarrage : causes et solutions (Windows 10 et 11)",
+    seoTitle: "PC lent au démarrage : causes et solutions (Windows 10/11)",
     excerpt:
-      "Votre ordinateur met plusieurs minutes à devenir utilisable ? Les 7 causes d'un démarrage lent, comment mesurer le vôtre, et comment le corriger sans rien casser.",
+      "Votre PC met plusieurs minutes à démarrer ? Découvrez les 7 causes d'un démarrage lent, comment mesurer le vôtre et comment le corriger sans rien casser.",
     date: "2026-09-24",
     updated: "2026-09-25",
     readMin: 9,
@@ -1204,7 +1204,7 @@ export const articles: Article[] = [
     title: "Windows 11 lent après une mise à jour : que faire ?",
     seoTitle: "Windows 11 lent après une mise à jour : causes et solutions",
     excerpt:
-      "Tout allait bien, puis une mise à jour et plus rien ne répond ? Le plus souvent, Windows termine son travail. Comment savoir si c'est temporaire, et les solutions dans l'ordre.",
+      "PC ralenti après une mise à jour Windows 11 ? Souvent, le système finalise l'installation. Comment savoir si c'est temporaire et les solutions pas à pas.",
     date: "2026-09-24",
     updated: "2026-09-25",
     readMin: 9,
@@ -1622,7 +1622,7 @@ export const articles: Article[] = [
     title: "Windows 11 slow after an update: what to do",
     seoTitle: "Windows 11 slow after an update: causes and fixes",
     excerpt:
-      "Everything was fine, then an update and nothing responds? Most of the time, Windows is just finishing its work. How to tell if it's temporary, and the fixes in order.",
+      "PC slow after a Windows 11 update? Often Windows is just finishing its work. How to tell if it is temporary and the step-by-step fixes to resolve it.",
     date: "2026-09-24",
     updated: "2026-09-25",
     readMin: 9,

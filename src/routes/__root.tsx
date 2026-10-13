@@ -118,7 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       {
         src: "https://analytics.ahrefs.com/analytics.js",
-        "data-key": "BJg4pMnQwVJTxkZnhTvmig",
+        "data-key": "zZnPAoclpChlgDJlKieujA",
         async: true,
       },
     ],

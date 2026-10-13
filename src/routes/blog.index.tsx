@@ -79,6 +79,23 @@ function BlogIndex() {
           ))}
         </div>
       </div>
+
+      <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
+        <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-6 px-6">
+          <Link to="/" className="hover:text-foreground">
+            {t.back}
+          </Link>
+          <Link to="/terms" className="hover:text-foreground">
+            {lang === "fr" ? "CGU / CGV" : "Terms"}
+          </Link>
+          <Link to="/legal" className="hover:text-foreground">
+            {lang === "fr" ? "Mentions légales" : "Legal notice"}
+          </Link>
+          <Link to="/privacy" className="hover:text-foreground">
+            {lang === "fr" ? "Confidentialité" : "Privacy"}
+          </Link>
+        </div>
+      </footer>
     </main>
   );
 }

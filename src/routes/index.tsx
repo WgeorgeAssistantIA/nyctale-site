@@ -401,6 +401,7 @@ export const T = {
     ],
     footer: {
       tagline: "Nyctale — La Fabrik Numérique",
+      terms: "CGU / CGV",
       legal: "Mentions légales",
       privacy: "Confidentialité",
       madeBy: "Un logiciel La Fabrik Numérique",
@@ -618,6 +619,7 @@ export const T = {
     ],
     footer: {
       tagline: "Nyctale — La Fabrik Numérique",
+      terms: "Terms of Service",
       legal: "Legal notice",
       privacy: "Privacy",
       madeBy: "A La Fabrik Numérique software",
@@ -1138,6 +1140,9 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
           <div className="flex items-center gap-6">
             <Link to="/blog" className="hover:text-foreground transition-colors">
               {t.nav.blog}
+            </Link>
+            <Link to="/terms" className="hover:text-foreground transition-colors">
+              {t.footer.terms}
             </Link>
             <Link to="/legal" className="hover:text-foreground transition-colors">
               {t.footer.legal}

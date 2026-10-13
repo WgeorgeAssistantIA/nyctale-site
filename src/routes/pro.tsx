@@ -582,9 +582,18 @@ function PagePro() {
         </div>
       </section>
 
-      <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
+      <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground flex flex-wrap items-center justify-center gap-6">
         <Link to="/" className="hover:text-foreground">
           ← {t.retour}
+        </Link>
+        <Link to="/terms" className="hover:text-foreground">
+          CGU / CGV
+        </Link>
+        <Link to="/legal" className="hover:text-foreground">
+          Mentions légales
+        </Link>
+        <Link to="/privacy" className="hover:text-foreground">
+          Confidentialité
         </Link>
       </footer>
       <VideoDialog

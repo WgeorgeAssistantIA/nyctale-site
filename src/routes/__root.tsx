@@ -39,7 +39,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -115,10 +115,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
-    // Pas de Google Analytics pour l'instant -- l'ID GA d'InOneShot ne doit
-    // pas se retrouver ici (aurait melange le trafic des deux sites).
-    // Vercel Analytics (sans cookie) suffit au demarrage ; GA4 dedie a
-    // ajouter si besoin, meme demarche que pour VoxCut/InOneShot/VectorPop.
+    scripts: [
+      {
+        src: "https://analytics.ahrefs.com/analytics.js",
+        "data-key": "BJg4pMnQwVJTxkZnhTvmig",
+        async: true,
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

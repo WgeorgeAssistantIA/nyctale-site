@@ -167,6 +167,7 @@ export const seoFrArticles: Article[] = [
     seoTitle: "Disque dur qui va lâcher : signes, test SMART et que faire",
     excerpt:
       "Un disque dur prévient rarement avant de lâcher. Découvrez les signes d'alerte, comment tester l'état SMART gratuitement et quoi faire pour vos données.",
+    image: { src: "/images/blog/nyctale-disque-dur-signes-fr.jpg", alt: "Disque dur qui va lâcher : les signes à connaître : 7 signes qui doivent alerter — Ralentissements sans cause logicielle ; Bruits de clics ou de grincements ; Fichiers illisibles ou corrompus ; Écrans bleus, plantages au démarrage ; Une alerte SMART ; + 2 autres signes" },
     date: "2026-10-01",
     readMin: 9,
     blocks: [

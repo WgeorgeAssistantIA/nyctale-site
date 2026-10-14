@@ -167,6 +167,7 @@ export const seoEnArticles: Article[] = [
     seoTitle: "Failing hard drive: warning signs, SMART test and what to do",
     excerpt:
       "A drive rarely warns you before it dies, but it leaves clues. The signs to watch, how to read SMART health for free and what to do first: back up.",
+    image: { src: "/images/blog/nyctale-disque-dur-signes-en.jpg", alt: "Hard drive about to fail: the warning signs : 7 signs that should alert you — Slowdowns with no software cause ; Clicking or grinding noises ; Unreadable or corrupted files ; Blue screens, crashes at startup ; A SMART alert ; + 2 more signs" },
     date: "2026-10-01",
     readMin: 9,
     blocks: [

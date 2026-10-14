@@ -45,6 +45,7 @@ export const articles: Article[] = [
     seoTitle: "Ordinateur qui rame : causes et solutions (Windows 10 et 11)",
     excerpt:
       "Un PC qui rame a une cause précise, le plus souvent logicielle. Les 9 causes fréquentes, la méthode pour trouver la vôtre en 10 min et les solutions.",
+    image: { src: "/images/blog/nyctale-ordinateur-qui-rame-fr.jpg", alt: "Ordinateur qui rame : 9 causes fréquentes : les causes les plus courantes — Trop de programmes au démarrage ; Le navigateur et ses onglets ; La mémoire vive saturée ; Un disque presque plein ; Un disque dur mécanique ou en fin de vie ; + 4 autres causes" },
     date: "2026-08-08",
     updated: "2026-09-25",
     readMin: 10,
@@ -192,6 +193,7 @@ export const articles: Article[] = [
     seoTitle: "Slow computer? Causes and fixes for Windows 10 and 11",
     excerpt:
       "A slow PC always has a precise cause, usually software. The 9 most common causes, a 10-minute method to find yours, and how to fix each one.",
+    image: { src: "/images/blog/nyctale-ordinateur-qui-rame-en.jpg", alt: "Slow computer: 9 common causes : the most common causes — Too many programs at startup ; The browser and its tabs ; Memory (RAM) is full ; An almost full drive ; A mechanical or failing hard drive ; + 4 more causes" },
     date: "2026-08-08",
     updated: "2026-09-25",
     readMin: 10,
@@ -343,6 +345,7 @@ export const articles: Article[] = [
     seoTitle: "Ventilateur PC qui tourne à fond : causes et solutions",
     excerpt:
       "Un ventilateur qui souffle en continu n'est pas normal, mais rarement grave. Les 7 causes fréquentes, comment trouver la vôtre en 5 min et que faire.",
+    image: { src: "/images/blog/nyctale-ventilateur-fr.jpg", alt: "Ventilateur de PC qui tourne à fond : causes et solutions : 3 questions à se poser — Juste après l'allumage ou une mise à jour ? ; Un programme occupe le processeur ? ; Il souffle quand rien ne tourne ?" },
     date: "2026-08-08",
     updated: "2026-09-24",
     readMin: 9,
@@ -513,6 +516,7 @@ export const articles: Article[] = [
     seoTitle: "PC fan always running at full speed: causes and fixes",
     excerpt:
       "A fan that roars nonstop isn't normal, but it's rarely serious. The 7 most common causes, how to find yours in 5 minutes, and when you should actually worry.",
+    image: { src: "/images/blog/nyctale-ventilateur-en.jpg", alt: "PC fan always running at full speed: causes and fixes : 3 questions to ask — Right after startup or an update? ; Is a program using the processor? ; Loud even when nothing is running?" },
     date: "2026-08-08",
     updated: "2026-09-24",
     readMin: 9,
@@ -927,6 +931,7 @@ export const articles: Article[] = [
     seoTitle: "Disque à 100 % sous Windows 10 et 11 : 5 causes, 5 solutions",
     excerpt:
       "Disque à 100 % dans le Gestionnaire des tâches ? Ce n'est pas un disque plein. 5 causes (mises à jour, RAM, disque dur…) et comment trouver la vôtre.",
+    image: { src: "/images/blog/nyctale-disque-100-fr.jpg", alt: "Disque à 100 % sous Windows 10 et 11 : 5 causes fréquentes — Windows qui travaille après l'allumage ; Une mémoire vive trop petite ; Un disque dur mécanique ; Un disque en fin de vie ; La synchronisation de fichiers" },
     date: "2026-09-24",
     readMin: 8,
     blocks: [
@@ -1038,6 +1043,7 @@ export const articles: Article[] = [
     seoTitle: "PC lent au démarrage : causes et solutions (Windows 10/11)",
     excerpt:
       "Votre PC met plusieurs minutes à démarrer ? Découvrez les 7 causes d'un démarrage lent, comment mesurer le vôtre et comment le corriger sans rien casser.",
+    image: { src: "/images/blog/nyctale-pc-lent-demarrage-fr.jpg", alt: "PC lent au démarrage : les vraies causes : à faire d'abord — Un vrai « Redémarrer » ; Désactiver les programmes inutiles ; Garder 15 % d'espace libre ; Encore un disque dur mécanique ?" },
     date: "2026-09-24",
     updated: "2026-09-25",
     readMin: 9,
@@ -1208,6 +1214,7 @@ export const articles: Article[] = [
     seoTitle: "Windows 11 lent après une mise à jour : causes et solutions",
     excerpt:
       "PC ralenti après une mise à jour Windows 11 ? Souvent, le système finalise l'installation. Comment savoir si c'est temporaire et les solutions pas à pas.",
+    image: { src: "/images/blog/nyctale-windows-11-lent-fr.jpg", alt: "Windows 11 lent après une mise à jour : que faire ? : dans l'ordre — Laisser allumé et branché ; Choisir « Redémarrer » ; Installer les mises à jour restantes ; Encore lent après quelques jours ?" },
     date: "2026-09-24",
     updated: "2026-09-25",
     readMin: 9,
@@ -1353,6 +1360,7 @@ export const articles: Article[] = [
     seoTitle: "Disk at 100% on Windows 10 and 11: 5 causes, 5 fixes",
     excerpt:
       "Disk at 100% in Task Manager? That's not a full disk, it's an overwhelmed one. 5 causes (updates, low RAM, hard drive...) and how to find yours in 5 minutes.",
+    image: { src: "/images/blog/nyctale-disque-100-en.jpg", alt: "Disk at 100% on Windows 10 and 11 : 5 common causes — Windows working after startup ; Too little memory (RAM) ; A mechanical hard drive ; A disk near the end of its life ; File syncing (OneDrive, Dropbox...)" },
     date: "2026-09-24",
     readMin: 8,
     blocks: [
@@ -1460,6 +1468,7 @@ export const articles: Article[] = [
     seoTitle: "Slow PC startup: causes and fixes (Windows 10 and 11)",
     excerpt:
       "Your computer takes several minutes to become usable? The 7 causes of a slow startup, how to measure yours, and how to fix it without breaking anything.",
+    image: { src: "/images/blog/nyctale-pc-lent-demarrage-en.jpg", alt: "Slow PC startup: the real causes : do this first — A real “Restart” ; Disable unneeded startup programs ; Keep 15% free space ; Still on a mechanical hard drive?" },
     date: "2026-09-24",
     updated: "2026-09-25",
     readMin: 9,
@@ -1626,6 +1635,7 @@ export const articles: Article[] = [
     seoTitle: "Windows 11 slow after an update: causes and fixes",
     excerpt:
       "PC slow after a Windows 11 update? Often Windows is just finishing its work. How to tell if it is temporary and the step-by-step fixes to resolve it.",
+    image: { src: "/images/blog/nyctale-windows-11-lent-en.jpg", alt: "Windows 11 slow after an update: what to do : in this order — Leave it on and plugged in ; Choose “Restart” ; Install the remaining updates ; Still slow after a few days?" },
     date: "2026-09-24",
     updated: "2026-09-25",
     readMin: 9,

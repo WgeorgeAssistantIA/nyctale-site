@@ -15,6 +15,13 @@ export default defineConfig({
   nitro: {
     preset: "vercel",
     routeRules: {
+      // Installeurs hebergés sur GitHub Releases (le stockage de deploiement Vercel Hobby est limite a 10 Go).
+      "/downloads/Nyctale-Setup-1.0.3.exe": { redirect: { to: "https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.3/Nyctale-Setup-1.0.3.exe", statusCode: 302 } },
+      "/downloads/Nyctale-Portable-1.0.3.zip": { redirect: { to: "https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.3/Nyctale-Portable-1.0.3.zip", statusCode: 302 } },
+      "/downloads/Nyctale-Setup-1.0.0.exe": { redirect: { to: "https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.0/Nyctale-Setup-1.0.0.exe", statusCode: 302 } },
+      "/downloads/Nyctale-x86_64.AppImage": { redirect: { to: "https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.2/Nyctale-x86_64.AppImage", statusCode: 302 } },
+      "/downloads/Nyctale-1.0.2-linux-x86_64.tar.gz": { redirect: { to: "https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.2/Nyctale-1.0.2-linux-x86_64.tar.gz", statusCode: 302 } },
+      "/downloads/Nyctale-Setup-1.0.2.exe": { redirect: { to: "https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.3/Nyctale-Setup-1.0.3.exe", statusCode: 302 } },
       "/**": {
         headers: {
           "X-Content-Type-Options": "nosniff",

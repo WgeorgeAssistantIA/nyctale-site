@@ -27,7 +27,7 @@ import { suivre } from "@/lib/analytics";
 // l'accueil, voir index.tsx).
 const CHECKOUT_PRO =
   "https://checkout.lafabriknumerique.fr/checkout/buy/e8823d08-19d4-4c32-8c99-7bd315f800e7";
-const PORTABLE_URL = "/downloads/Nyctale-Portable-1.0.3.zip";
+const PORTABLE_URL = "https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.3/Nyctale-Portable-1.0.3.zip";
 
 // Chaque promesse de cette page correspond a une fonction reelle du palier
 // Pro dans l'app (licence.est_pro, export_rapport.exporter_pdf,

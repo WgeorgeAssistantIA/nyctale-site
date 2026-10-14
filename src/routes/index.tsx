@@ -1021,7 +1021,7 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
                 </Button>
               </a>
               <a
-                href="/downloads/Nyctale-Portable-1.0.3.zip"
+                href="https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.3/Nyctale-Portable-1.0.3.zip"
                 className="mt-2 block text-center text-xs text-muted-foreground underline hover:text-foreground"
                 onClick={trackPortableDownload}
               >
@@ -1090,14 +1090,14 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a
-              href="/downloads/Nyctale-x86_64.AppImage"
+              href="https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.2/Nyctale-x86_64.AppImage"
               onClick={() => trackDownload("section_telecharger_linux_appimage")}
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-5 py-2.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
             >
               <Terminal className="h-4 w-4" /> {t.telecharger.linuxAppImage}
             </a>
             <a
-              href="/downloads/Nyctale-1.0.2-linux-x86_64.tar.gz"
+              href="https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.2/Nyctale-1.0.2-linux-x86_64.tar.gz"
               onClick={() => trackDownload("section_telecharger_linux_tar")}
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-transparent px-5 py-2.5 text-sm font-semibold transition hover:border-primary/40 hover:bg-card"
             >

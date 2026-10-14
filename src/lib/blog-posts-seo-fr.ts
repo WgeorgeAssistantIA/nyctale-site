@@ -463,6 +463,7 @@ export const seoFrArticles: Article[] = [
     seoTitle: "Mon PC est-il compatible avec Windows 11 ? Comment le vérifier",
     excerpt:
       "Processeur, TPM, Secure Boot, mémoire, stockage : les exigences officielles de Windows 11 et la méthode pour vérifier votre PC en cinq minutes.",
+    image: { src: "/images/blog/nyctale-compatibilite-windows-11-fr.png", alt: "Les 5 points à vérifier avant de passer à Windows 11 : processeur, TPM 2.0, Secure Boot, mémoire et stockage, démarrage UEFI" },
     date: "2026-10-14",
     readMin: 4,
     blocks: [
@@ -551,6 +552,7 @@ export const seoFrArticles: Article[] = [
     seoTitle: "Windows 10 fin de support : que faire de son PC",
     excerpt:
       "Windows 10 n'est plus pris en charge depuis le 14 octobre 2025. Migrer, remplacer, passer à Linux ou rejoindre l'ESU jusqu'en octobre 2027 : comment décider.",
+    image: { src: "/images/blog/nyctale-windows-10-fin-de-support-fr.png", alt: "Frise : fin du support gratuit de Windows 10 le 14 octobre 2025, fin de l'ESU grand public le 12 octobre 2027, et quatre options : Windows 11, remplacer le PC, Linux ou ESU" },
     date: "2026-10-14",
     readMin: 4,
     blocks: [

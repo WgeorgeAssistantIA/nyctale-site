@@ -463,6 +463,7 @@ export const seoEnArticles: Article[] = [
     seoTitle: "Is My PC Compatible With Windows 11? How to Check",
     excerpt:
       "Processor, TPM, Secure Boot, memory, storage: the official Windows 11 requirements and a five-minute way to check your PC.",
+    image: { src: "/images/blog/nyctale-compatibilite-windows-11-en.png", alt: "The 5 things to check before moving to Windows 11: processor, TPM 2.0, Secure Boot, memory and storage, UEFI boot" },
     date: "2026-10-14",
     readMin: 3,
     blocks: [
@@ -551,6 +552,7 @@ export const seoEnArticles: Article[] = [
     seoTitle: "Windows 10 End of Support: What to Do With Your PC",
     excerpt:
       "Windows 10 has been out of support since 14 October 2025. Migrate, replace, switch to Linux or join ESU until October 2027: how to decide.",
+    image: { src: "/images/blog/nyctale-windows-10-fin-de-support-en.png", alt: "Timeline: free Windows 10 support ends on 14 October 2025, consumer ESU ends on 12 October 2027, and four options: Windows 11, replace the PC, Linux or ESU" },
     date: "2026-10-14",
     readMin: 4,
     blocks: [

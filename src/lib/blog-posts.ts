@@ -21,6 +21,9 @@ export type Article = {
   // Slug de la meme page dans l'autre langue : balises hreflang.
   traduction?: string;
   excerpt: string;
+  // Image de couverture : affichee en haut de l'article et utilisee comme
+  // image de partage (og:image) a la place de l'image generique du site.
+  image?: { src: string; alt: string };
   date: string;
   updated?: string;
   readMin: number;

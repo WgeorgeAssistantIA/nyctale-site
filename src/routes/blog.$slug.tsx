@@ -39,6 +39,13 @@ export const Route = createFileRoute("/blog/$slug")({
           { property: "og:title", content: loaderData.seoTitle ?? loaderData.title },
           { property: "og:description", content: loaderData.excerpt },
           { property: "og:url", content: `https://nyctale.fr/blog/${loaderData.slug}` },
+          ...(loaderData.image
+            ? [
+                { property: "og:image", content: `https://nyctale.fr${loaderData.image.src}` },
+                { property: "og:image:alt", content: loaderData.image.alt },
+                { name: "twitter:image", content: `https://nyctale.fr${loaderData.image.src}` },
+              ]
+            : []),
         ]
       : [],
     links: loaderData
@@ -85,7 +92,7 @@ export const Route = createFileRoute("/blog/$slug")({
               "@type": "Article",
               headline: loaderData.title,
               description: loaderData.excerpt,
-              image: "https://nyctale.fr/og-image.png",
+              image: loaderData.image ? `https://nyctale.fr${loaderData.image.src}` : "https://nyctale.fr/og-image.png",
               datePublished: loaderData.date,
               dateModified: loaderData.updated ?? loaderData.date,
               author: { "@type": "Organization", name: "La Fabrik Numérique" },
@@ -164,6 +171,16 @@ function BlogArticle() {
             {article.readMin} {article.lang === "fr" ? "min de lecture" : "min read"}
           </p>
         </header>
+
+        {article.image && (
+          <img
+            src={article.image.src}
+            alt={article.image.alt}
+            width={1200}
+            height={630}
+            className="mb-10 w-full rounded-xl border border-border"
+          />
+        )}
 
         <div className="space-y-5">
           {article.blocks.map((b, i) => {

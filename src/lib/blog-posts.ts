@@ -792,7 +792,7 @@ export const articles: Article[] = [
         r: "Un bon diagnostic nomme une cause précise et vérifiable (disque, batterie, surchauffe, programme), pas une impression générale. Demandez comment elle a été mesurée, et n'hésitez pas à obtenir un deuxième avis avant une dépense importante.",
       },
     ],
-    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11"],
+    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11", "windows-10-fin-de-support-que-faire-de-son-pc", "mon-pc-est-il-compatible-windows-11"],
   },
   {
     slug: "before-buying-a-new-pc",
@@ -910,7 +910,7 @@ export const articles: Article[] = [
         r: "A good diagnosis names a precise, verifiable cause (drive, battery, overheating, program), not a general impression. Ask how it was measured, and don't hesitate to get a second opinion before a significant expense.",
       },
     ],
-    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "windows-11-blue-screen-fix"],
+    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "windows-11-blue-screen-fix", "windows-10-end-of-support-what-to-do-with-your-pc", "is-my-pc-compatible-with-windows-11"],
   },
 
   // -------------------------------------------------------------------
@@ -1340,7 +1340,7 @@ export const articles: Article[] = [
         r: "Oui, pendant 10 jours après une mise à jour de fonctionnalités : Paramètres > Système > Récupération > « Revenir en arrière ». Pour une mise à jour mensuelle, utilisez « Désinstaller des mises à jour » dans Windows Update.",
       },
     ],
-    liens: ["pc-lent-au-demarrage", "pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ecran-bleu-windows-11", "meilleurs-logiciels-gratuits-diagnostic-pc"],
+    liens: ["pc-lent-au-demarrage", "pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ecran-bleu-windows-11", "meilleurs-logiciels-gratuits-diagnostic-pc", "mon-pc-est-il-compatible-windows-11"],
   },
   {
     slug: "disk-100-percent-windows",
@@ -1758,7 +1758,7 @@ export const articles: Article[] = [
         r: "Yes, for 10 days after a feature update: Settings > System > Recovery > 'Go back'. For a monthly update, use 'Uninstall updates' in Windows Update.",
       },
     ],
-    liens: ["slow-pc-startup", "slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-blue-screen-fix", "best-free-pc-diagnostic-tools"],
+    liens: ["slow-pc-startup", "slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-blue-screen-fix", "best-free-pc-diagnostic-tools", "is-my-pc-compatible-with-windows-11"],
   },
   ...seoFrArticles,
   ...seoEnArticles,

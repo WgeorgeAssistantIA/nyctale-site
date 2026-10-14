@@ -455,4 +455,198 @@ export const seoFrArticles: Article[] = [
     ],
     liens: ["ecran-bleu-windows-11", "disque-dur-va-lacher-signes", "pc-qui-rame-sans-raison"],
   },
+  {
+    slug: "mon-pc-est-il-compatible-windows-11",
+    lang: "fr",
+    traduction: "is-my-pc-compatible-with-windows-11",
+    title: "Mon PC est-il compatible avec Windows 11 ? Comment le vérifier",
+    seoTitle: "Mon PC est-il compatible avec Windows 11 ? Comment le vérifier",
+    excerpt:
+      "Processeur, TPM, Secure Boot, mémoire, stockage : les exigences officielles de Windows 11 et la méthode pour vérifier votre PC en cinq minutes.",
+    date: "2026-10-14",
+    readMin: 4,
+    blocks: [
+      {
+        type: "p",
+        text: "Pour savoir si votre PC est compatible avec Windows 11, comparez-le aux exigences officielles de Microsoft : processeur compatible, puce TPM 2.0, démarrage sécurisé (Secure Boot), mémoire et stockage suffisants. Microsoft propose un outil gratuit qui fait ce contrôle, et la page officielle des spécifications reste la référence, car les exigences précises sont à vérifier à la source.",
+      },
+      {
+        type: "p",
+        text: "Beaucoup de PC en parfait état se voient refuser la mise à niveau, souvent pour une raison simple à corriger, parfois pour une limite matérielle. Cet article explique ce que Windows 11 demande, comment tester votre machine et que faire selon le verdict. Les valeurs exactes se trouvent sur la [page des spécifications de Windows 11](https://www.microsoft.com/windows/windows-11-specifications), que nous vous invitons à consulter.",
+      },
+      { type: "h2", text: "Quelles sont les exigences à vérifier ?" },
+      {
+        type: "p",
+        text: "Les points qui bloquent le plus souvent :",
+      },
+      {
+        type: "ul",
+        items: [
+          "Le processeur : il doit figurer dans la liste de ceux que Microsoft prend en charge",
+          "Le TPM 2.0 : une puce de sécurité, parfois présente mais désactivée dans le BIOS",
+          "Le démarrage sécurisé (Secure Boot) : une option du micrologiciel, parfois désactivée",
+          "La mémoire vive et le stockage : des minimums à respecter",
+          "Le mode de démarrage UEFI : et non l'ancien mode hérité",
+        ],
+      },
+      { type: "h2", text: "Comment tester son PC ?" },
+      {
+        type: "ul",
+        items: [
+          "Utilisez l'application Contrôle d'intégrité du PC (PC Health Check), proposée par Microsoft : elle indique si le PC est compatible et, sinon, pourquoi",
+          "Regardez dans les paramètres de Windows, rubrique Windows Update : un message indique si la mise à niveau est proposée",
+          "Pour le détail, consultez les informations système (msinfo32), qui indiquent le mode BIOS et l'état du démarrage sécurisé",
+        ],
+      },
+      { type: "h2", text: "Que faire si le TPM ou Secure Boot est « absent » ?" },
+      {
+        type: "p",
+        text: "C'est souvent un réglage désactivé plutôt qu'une absence de matériel. Dans le BIOS ou l'UEFI de votre carte mère, cherchez les options TPM (parfois nommées PTT chez Intel ou fTPM chez AMD) et Secure Boot. Les noms varient selon les marques : consultez la documentation du fabricant, et notez vos réglages avant de modifier quoi que ce soit.",
+      },
+      { type: "h2", text: "Que faire si le processeur n'est pas pris en charge ?" },
+      {
+        type: "p",
+        text: "C'est la limite la plus ferme. Vous avez alors trois options : rester sur votre version actuelle de Windows aussi longtemps qu'elle est prise en charge (pour Windows 10, le support gratuit a pris fin le 14 octobre 2025 : voir [Windows 10 fin de support : que faire de son PC](/blog/windows-10-fin-de-support-que-faire-de-son-pc)), envisager un remplacement ou une évolution du matériel, ou, pour les profils avancés, étudier les contournements non officiels, qui comportent des risques et ne sont pas garantis. Notre article [avant d'acheter un PC neuf](/blog/avant-dacheter-un-pc-neuf) vous aide à décider.",
+      },
+      { type: "h2", text: "Avant de migrer : vérifier la santé du PC" },
+      {
+        type: "p",
+        text: "Une mise à niveau sur un PC fragile se passe mal. Contrôlez l'état de votre disque (voir [les signes d'un disque dur qui va lâcher](/blog/disque-dur-va-lacher-signes)), l'espace libre et les plantages récents. Une analyse Nyctale lit le journal Windows et la santé du disque : c'est un bon point de départ avant toute migration. Si Windows 11 devient ensuite lent, lisez [Windows 11 lent après une mise à jour](/blog/windows-11-lent-apres-mise-a-jour).",
+      },
+      { type: "h2", text: "Conclusion : vérifier avant, sauvegarder toujours" },
+      {
+        type: "p",
+        text: "Contrôlez la compatibilité avec l'outil officiel, corrigez ce qui n'est qu'un réglage et sauvegardez vos données avant toute mise à niveau. L'analyse de Nyctale est gratuite et vous donne un état de santé du PC en quelques minutes.",
+      },
+    ],
+    faq: [
+      {
+        q: "Comment savoir si mon PC peut passer à Windows 11 ?",
+        r: "Avec l'application officielle de Microsoft, ou dans les paramètres de Windows Update.",
+      },
+      {
+        q: "Mon PC a un TPM mais il est refusé, pourquoi ?",
+        r: "Il est peut-être désactivé dans le BIOS, ou le processeur n'est pas pris en charge.",
+      },
+      {
+        q: "Peut-on passer à Windows 11 sans TPM 2.0 ?",
+        r: "Officiellement non. Des contournements existent mais ne sont ni officiels ni garantis.",
+      },
+      {
+        q: "Faut-il sauvegarder avant la mise à niveau ?",
+        r: "Oui, toujours.",
+      },
+      {
+        q: "Windows 10 reste-t-il utilisable ?",
+        r: "Son support gratuit a pris fin le 14 octobre 2025. Un programme de mises à jour de sécurité étendues court jusqu'au 12 octobre 2027 pour le grand public : notre article sur la fin de support de Windows 10 détaille les options.",
+      },
+    ],
+    liens: ["avant-dacheter-un-pc-neuf", "disque-dur-va-lacher-signes", "windows-11-lent-apres-mise-a-jour", "windows-10-fin-de-support-que-faire-de-son-pc"],
+  },
+  {
+    slug: "windows-10-fin-de-support-que-faire-de-son-pc",
+    lang: "fr",
+    traduction: "windows-10-end-of-support-what-to-do-with-your-pc",
+    title: "Windows 10 fin de support : que faire de son PC",
+    seoTitle: "Windows 10 fin de support : que faire de son PC",
+    excerpt:
+      "Windows 10 n'est plus pris en charge depuis le 14 octobre 2025. Migrer, remplacer, passer à Linux ou rejoindre l'ESU jusqu'en octobre 2027 : comment décider.",
+    date: "2026-10-14",
+    readMin: 4,
+    blocks: [
+      {
+        type: "p",
+        text: "Windows 10 n'est plus pris en charge depuis le 14 octobre 2025 : il ne reçoit plus de correctifs de sécurité gratuits, et continuer à l'utiliser expose davantage votre PC. Vous avez quatre options : migrer vers Windows 11 si votre PC est compatible, remplacer le PC, passer à une distribution Linux, ou vous inscrire au programme de mises à jour de sécurité étendues (ESU) de Microsoft, qui court jusqu'au 12 octobre 2027 pour le grand public.",
+      },
+      {
+        type: "p",
+        text: "La question concerne des millions de PC en parfait état. Avant de jeter ou de remplacer quoi que ce soit, décidez en fonction de l'état réel de votre machine. Les conditions de l'ESU ont déjà évolué : relisez la [page officielle de Microsoft](https://www.microsoft.com/fr-fr/windows/extended-security-updates) avant de vous inscrire.",
+      },
+      { type: "h2", text: "Option 1 : migrer vers Windows 11" },
+      {
+        type: "p",
+        text: "Si votre PC est compatible, c'est la voie la plus simple et gratuite. Vérifiez la compatibilité : voir [mon PC est-il compatible avec Windows 11 ?](/blog/mon-pc-est-il-compatible-windows-11) et la [page officielle des spécifications](https://www.microsoft.com/windows/windows-11-specifications). Sauvegardez avant.",
+      },
+      { type: "h2", text: "Option 2 : renseigner les mises à jour de sécurité étendues" },
+      {
+        type: "p",
+        text: "Le programme ESU grand public donne accès aux correctifs de sécurité critiques et importants jusqu'au 12 octobre 2027, et vous pouvez vous inscrire à tout moment jusqu'à cette date. Il ne comprend ni nouveautés ni assistance technique. Pour un particulier de l'Espace économique européen, d'après la page de Microsoft consultée le 14 octobre 2026 :",
+      },
+      {
+        type: "ul",
+        items: [
+          "si vous êtes connecté à Windows avec un compte Microsoft, l'inscription est sans frais supplémentaires, à condition de rester connecté avec ce compte (sinon les mises à jour s'interrompent au bout de 60 jours au plus et il faut se réinscrire) ;",
+          "si vous préférez garder un compte local, un achat unique de 30 dollars américains (ou l'équivalent en monnaie locale, taxes en plus) permet de s'inscrire.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Il faut un PC sous Windows 10 version 22H2 (Famille ou Pro, notamment), à jour, et un compte administrateur. C'est un délai, pas une solution durable : l'ESU s'arrête en octobre 2027.",
+      },
+      { type: "h2", text: "Option 3 : remplacer le PC" },
+      {
+        type: "p",
+        text: "Si le PC est trop ancien pour Windows 11 et pour vos usages, un remplacement peut se justifier. Notre article [avant d'acheter un PC neuf](/blog/avant-dacheter-un-pc-neuf) aide à décider, et un diagnostic de l'état du PC évite de remplacer un appareil encore sain.",
+      },
+      { type: "h2", text: "Option 4 : passer à Linux" },
+      {
+        type: "p",
+        text: "Une distribution Linux grand public peut redonner une seconde vie à un PC ancien, pour la navigation, le courrier et la bureautique. Le changement d'habitudes est réel, et certains logiciels ou périphériques n'ont pas d'équivalent. Testez avec une clé USB avant de vous engager. Nyctale existe aussi en version Linux.",
+      },
+      { type: "h2", text: "Comment décider selon l'état du PC ?" },
+      {
+        type: "ul",
+        items: [
+          "PC sain et compatible : Windows 11",
+          "PC sain mais incompatible, usages simples : Linux ou, un temps, la solution étendue",
+          "PC fatigué (disque usé, surchauffe, lenteur) : remplacement",
+        ],
+      },
+      {
+        type: "p",
+        text: "Une analyse de l'état du PC aide à trancher : l'analyse de Nyctale est gratuite.",
+      },
+      { type: "h2", text: "Que faire en attendant ?" },
+      {
+        type: "p",
+        text: "Gardez Windows et vos logiciels à jour, utilisez un compte sans droits d'administrateur au quotidien, évitez les pièces jointes et sites douteux, et faites des sauvegardes régulières.",
+      },
+      { type: "h2", text: "Conclusion : décider selon l'état réel de la machine" },
+      {
+        type: "p",
+        text: "Ne remplacez pas un PC sain par réflexe, ne gardez pas indéfiniment un système non pris en charge. Vous avez jusqu'au 12 octobre 2027 pour préparer la suite, si vous vous inscrivez à l'ESU.",
+      },
+    ],
+    faq: [
+      {
+        q: "Que se passe-t-il quand Windows 10 n'est plus pris en charge ?",
+        r: "Il ne reçoit plus de correctifs de sécurité gratuits, ce qui expose davantage le PC.",
+      },
+      {
+        q: "Mon PC est-il obligé de passer à Windows 11 ?",
+        r: "Non, d'autres options existent, mais vérifiez d'abord sa compatibilité.",
+      },
+      {
+        q: "Linux est-il une bonne option ?",
+        r: "Pour des usages simples sur un PC ancien, souvent oui ; testez avant.",
+      },
+      {
+        q: "Faut-il sauvegarder ?",
+        r: "Oui, avant toute migration.",
+      },
+      {
+        q: "Jusqu'à quand puis-je rester sous Windows 10 en sécurité ?",
+        r: "Le support gratuit s'est arrêté le 14 octobre 2025. Avec l'ESU grand public, les correctifs de sécurité continuent jusqu'au 12 octobre 2027, après inscription.",
+      },
+      {
+        q: "L'ESU est-elle payante ?",
+        r: "Pas si vous restez connecté à Windows avec un compte Microsoft. Avec un compte local, c'est un achat unique de 30 dollars américains (ou équivalent, taxes en plus), selon la page de Microsoft consultée le 14 octobre 2026.",
+      },
+      {
+        q: "Où trouver les dates officielles ?",
+        r: "Sur la page ESU de Microsoft.",
+      },
+    ],
+    liens: ["mon-pc-est-il-compatible-windows-11", "avant-dacheter-un-pc-neuf", "disque-dur-va-lacher-signes"],
+  },
 ];

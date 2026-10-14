@@ -455,4 +455,198 @@ export const seoEnArticles: Article[] = [
     ],
     liens: ["windows-11-blue-screen-fix", "failing-hard-drive-signs", "slow-computer-no-obvious-reason"],
   },
+  {
+    slug: "is-my-pc-compatible-with-windows-11",
+    lang: "en",
+    traduction: "mon-pc-est-il-compatible-windows-11",
+    title: "Is My PC Compatible With Windows 11? How to Check",
+    seoTitle: "Is My PC Compatible With Windows 11? How to Check",
+    excerpt:
+      "Processor, TPM, Secure Boot, memory, storage: the official Windows 11 requirements and a five-minute way to check your PC.",
+    date: "2026-10-14",
+    readMin: 3,
+    blocks: [
+      {
+        type: "p",
+        text: "To find out whether your PC is compatible with Windows 11, compare it with Microsoft's official requirements: a supported processor, a TPM 2.0 chip, Secure Boot, and enough memory and storage. Microsoft offers a free tool that runs this check, and the official specifications page remains the reference, since exact requirements should be confirmed at the source.",
+      },
+      {
+        type: "p",
+        text: "Many perfectly healthy PCs are refused the upgrade, often for an easy-to-fix reason, sometimes because of a hardware limit. This article explains what Windows 11 asks for, how to test your machine and what to do with the verdict. Exact values are on the [Windows 11 specifications page](https://www.microsoft.com/windows/windows-11-specifications), which we invite you to read.",
+      },
+      { type: "h2", text: "Which requirements should you check?" },
+      {
+        type: "p",
+        text: "The points that block most often:",
+      },
+      {
+        type: "ul",
+        items: [
+          "The processor: it must be on Microsoft's list of supported ones",
+          "TPM 2.0: a security chip, sometimes present but switched off in the BIOS",
+          "Secure Boot: a firmware option, sometimes disabled",
+          "Memory and storage: minimums to meet",
+          "UEFI boot mode: rather than the legacy mode",
+        ],
+      },
+      { type: "h2", text: "How do you test your PC?" },
+      {
+        type: "ul",
+        items: [
+          "Use Microsoft's PC Health Check app: it says whether the PC is compatible and, if not, why",
+          "Look in Windows Settings under Windows Update: a message shows whether the upgrade is offered",
+          "For detail, open System Information (msinfo32), which shows the BIOS mode and the Secure Boot state",
+        ],
+      },
+      { type: "h2", text: "What if TPM or Secure Boot shows as \"absent\"?" },
+      {
+        type: "p",
+        text: "It is often a setting turned off rather than missing hardware. In your motherboard's BIOS or UEFI, look for the TPM options (sometimes called PTT on Intel or fTPM on AMD) and Secure Boot. Names vary by brand: check the manufacturer's documentation, and note your settings before changing anything.",
+      },
+      { type: "h2", text: "What if the processor is not supported?" },
+      {
+        type: "p",
+        text: "This is the firmest limit. You then have three options: stay on your current Windows version for as long as it is supported (for Windows 10, free support ended on 14 October 2025: see [Windows 10 end of support: what to do with your PC](/blog/windows-10-end-of-support-what-to-do-with-your-pc)), consider replacing or upgrading hardware, or, for advanced users, look at unofficial workarounds, which carry risks and are not guaranteed. Our article [before buying a new PC](/blog/before-buying-a-new-pc) helps you decide.",
+      },
+      { type: "h2", text: "Before migrating: check the PC's health" },
+      {
+        type: "p",
+        text: "An upgrade on a fragile PC goes badly. Check your disk (see [signs of a failing hard drive](/blog/failing-hard-drive-signs)), free space and recent crashes. A Nyctale analysis reads the Windows log and disk health: a good starting point before any migration. If Windows 11 later feels slow, read [Windows 11 slow after an update](/blog/windows-11-slow-after-update).",
+      },
+      { type: "h2", text: "Conclusion: check first, always back up" },
+      {
+        type: "p",
+        text: "Check compatibility with the official tool, fix what is only a setting and back up your data before any upgrade. Nyctale's analysis is free and gives you a health overview of the PC in a few minutes.",
+      },
+    ],
+    faq: [
+      {
+        q: "How do I know if my PC can run Windows 11?",
+        r: "With Microsoft's official app, or in Windows Update settings.",
+      },
+      {
+        q: "My PC has a TPM but is refused, why?",
+        r: "It may be disabled in the BIOS, or the processor is not supported.",
+      },
+      {
+        q: "Can you install Windows 11 without TPM 2.0?",
+        r: "Officially no. Workarounds exist but are neither official nor guaranteed.",
+      },
+      {
+        q: "Should I back up before upgrading?",
+        r: "Yes, always.",
+      },
+      {
+        q: "Is Windows 10 still usable?",
+        r: "Its free support ended on 14 October 2025. An Extended Security Updates programme runs until 12 October 2027 for consumers: our article on Windows 10 end of support covers the options.",
+      },
+    ],
+    liens: ["before-buying-a-new-pc", "failing-hard-drive-signs", "windows-11-slow-after-update", "windows-10-end-of-support-what-to-do-with-your-pc"],
+  },
+  {
+    slug: "windows-10-end-of-support-what-to-do-with-your-pc",
+    lang: "en",
+    traduction: "windows-10-fin-de-support-que-faire-de-son-pc",
+    title: "Windows 10 End of Support: What to Do With Your PC",
+    seoTitle: "Windows 10 End of Support: What to Do With Your PC",
+    excerpt:
+      "Windows 10 has been out of support since 14 October 2025. Migrate, replace, switch to Linux or join ESU until October 2027: how to decide.",
+    date: "2026-10-14",
+    readMin: 4,
+    blocks: [
+      {
+        type: "p",
+        text: "Windows 10 has not been supported since 14 October 2025: it no longer receives free security fixes, and continuing to use it exposes your PC more. You have four options: migrate to Windows 11 if your PC is compatible, replace the PC, switch to a Linux distribution, or enrol in Microsoft's Extended Security Updates (ESU) programme, which runs until 12 October 2027 for consumers.",
+      },
+      {
+        type: "p",
+        text: "The question concerns millions of perfectly good PCs. Before throwing out or replacing anything, decide based on your machine's real condition. The ESU terms have already changed once: read [Microsoft's official page](https://www.microsoft.com/windows/extended-security-updates) before enrolling.",
+      },
+      { type: "h2", text: "Option 1: migrate to Windows 11" },
+      {
+        type: "p",
+        text: "If your PC is compatible, it is the simplest and free route. Check compatibility: see [is my PC compatible with Windows 11?](/blog/is-my-pc-compatible-with-windows-11) and the [official specifications page](https://www.microsoft.com/windows/windows-11-specifications). Back up first.",
+      },
+      { type: "h2", text: "Option 2: look into extended security updates" },
+      {
+        type: "p",
+        text: "The consumer ESU programme gives access to critical and important security fixes until 12 October 2027, and you can enrol at any time until then. It includes no new features and no technical support. For an individual in the European Economic Area, according to Microsoft's page consulted on 14 October 2026:",
+      },
+      {
+        type: "ul",
+        items: [
+          "if you sign in to Windows with a Microsoft account, enrolment is at no extra cost, as long as you stay signed in with that account (otherwise updates stop after up to 60 days and you must re-enrol);",
+          "if you prefer to keep a local account, a one-time purchase of 30 US dollars (or the local-currency equivalent, plus tax) lets you enrol.",
+        ],
+      },
+      {
+        type: "p",
+        text: "You need a PC running Windows 10 version 22H2 (Home or Pro, among others), fully updated, and an administrator account. It is a delay, not a lasting solution: ESU stops in October 2027.",
+      },
+      { type: "h2", text: "Option 3: replace the PC" },
+      {
+        type: "p",
+        text: "If the PC is too old for Windows 11 and for your uses, replacement can be justified. Our article [before buying a new PC](/blog/before-buying-a-new-pc) helps decide, and a diagnosis of the PC's condition avoids replacing a machine that is still healthy.",
+      },
+      { type: "h2", text: "Option 4: switch to Linux" },
+      {
+        type: "p",
+        text: "A mainstream Linux distribution can give an old PC a second life for browsing, email and office work. The change of habits is real, and some software or devices have no equivalent. Try it from a USB stick before committing. Nyctale also exists in a Linux version.",
+      },
+      { type: "h2", text: "How do you decide according to the PC's condition?" },
+      {
+        type: "ul",
+        items: [
+          "Healthy and compatible PC: Windows 11",
+          "Healthy but incompatible PC, simple uses: Linux or, for a time, the extended option",
+          "Tired PC (worn disk, overheating, slowness): replacement",
+        ],
+      },
+      {
+        type: "p",
+        text: "An analysis of the PC's condition helps decide: Nyctale's analysis is free.",
+      },
+      { type: "h2", text: "What to do in the meantime?" },
+      {
+        type: "p",
+        text: "Keep Windows and your software up to date, use an account without administrator rights day to day, avoid dubious attachments and sites, and back up regularly.",
+      },
+      { type: "h2", text: "Conclusion: decide according to the machine's real condition" },
+      {
+        type: "p",
+        text: "Do not replace a healthy PC out of reflex, and do not keep an unsupported system indefinitely. If you enrol in ESU, you have until 12 October 2027 to prepare what comes next.",
+      },
+    ],
+    faq: [
+      {
+        q: "What happens when Windows 10 is no longer supported?",
+        r: "It no longer receives free security fixes, which exposes the PC more.",
+      },
+      {
+        q: "Must my PC move to Windows 11?",
+        r: "No, other options exist, but check compatibility first.",
+      },
+      {
+        q: "Is Linux a good option?",
+        r: "For simple uses on an older PC, often yes; test first.",
+      },
+      {
+        q: "Should I back up?",
+        r: "Yes, before any migration.",
+      },
+      {
+        q: "How long can I stay on Windows 10 safely?",
+        r: "Free support ended on 14 October 2025. With consumer ESU, security fixes continue until 12 October 2027, after enrolment.",
+      },
+      {
+        q: "Is ESU paid?",
+        r: "Not if you stay signed in to Windows with a Microsoft account. With a local account it is a one-time purchase of 30 US dollars (or equivalent, plus tax), according to Microsoft's page consulted on 14 October 2026.",
+      },
+      {
+        q: "Where can I find the official dates?",
+        r: "On Microsoft's ESU page.",
+      },
+    ],
+    liens: ["is-my-pc-compatible-with-windows-11", "before-buying-a-new-pc", "failing-hard-drive-signs"],
+  },
 ];

@@ -5,13 +5,20 @@ import { articleBySlug } from "@/lib/blog-posts";
 import { DiagnosticCta } from "@/components/diagnostic-cta";
 import type { ReactNode } from "react";
 
-// Liens internes : [ancre](/blog/slug) dans les paragraphes -> <a>.
+// Liens : [ancre](/blog/slug) (interne) ou [ancre](https://...) (externe,
+// ouvert dans un nouvel onglet) dans les paragraphes et les listes -> <a>.
 function renderInline(text: string): ReactNode[] {
-  return text.split(/(\[[^\]]+\]\(\/[^)]*\))/g).map((part, i) => {
-    const m = part.match(/^\[([^\]]+)\]\((\/[^)]*)\)$/);
+  return text.split(/(\[[^\]]+\]\((?:\/|https?:\/\/)[^)]*\))/g).map((part, i) => {
+    const m = part.match(/^\[([^\]]+)\]\(((?:\/|https?:\/\/)[^)]*)\)$/);
     if (!m) return part;
+    const externe = m[2].startsWith("http");
     return (
-      <a key={i} href={m[2]} className="text-primary underline underline-offset-4 hover:no-underline">
+      <a
+        key={i}
+        href={m[2]}
+        {...(externe ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        className="text-primary underline underline-offset-4 hover:no-underline"
+      >
         {m[1]}
       </a>
     );
@@ -192,7 +199,7 @@ function BlogArticle() {
                   }`}
                 >
                   {b.items.map((item, j) => (
-                    <li key={j}>{item}</li>
+                    <li key={j}>{renderInline(item)}</li>
                   ))}
                 </Liste>
               );

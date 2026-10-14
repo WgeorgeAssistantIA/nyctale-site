@@ -701,19 +701,12 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
       </header>
 
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/video/hero-poster.jpg"
-        >
-          <source src="/video/hero-loop.webm" type="video/webm" />
-          <source src="/video/hero-loop.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-background/55" />
+      {/* The dark looping background video was hard to read: the hero now shows the real
+          verdict screen instead (moved up from the "apercu" section, and shown larger). */}
+      <section
+        className="relative overflow-hidden"
+        style={{ background: "radial-gradient(ellipse at top, rgba(124, 63, 212, 0.18), transparent 60%)" }}
+      >
 
         <div className="relative mx-auto max-w-4xl px-6 pt-20 pb-16 text-center md:pt-28 md:pb-24">
           <div className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -770,27 +763,14 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
             </a>
           </div>
           <p className="mt-2 text-xs text-muted-foreground/80">{t.hero.note}</p>
-        </div>
-      </section>
-
-      {/* APERCU DU VERDICT */}
-      <section id="apercu" className="border-t border-border py-20">
-        <div className="mx-auto grid max-w-5xl items-center gap-10 px-6 md:grid-cols-5">
-          <div className="md:col-span-2">
-            <h2 className="text-3xl font-bold tracking-tight">{t.apercu.titre}</h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">{t.apercu.texte}</p>
-            <p className="mt-4 font-medium leading-relaxed text-foreground/90">
-              {t.apercu.franchise}
-            </p>
-          </div>
-          <figure className="md:col-span-3">
+          <figure className="mx-auto mt-12 max-w-4xl">
             <div className="group relative overflow-hidden rounded-xl border border-border shadow-2xl shadow-primary/20">
               <img
                 src={`/verdict-${lang}.webp`}
                 alt={t.apercu.alt}
                 width={lang === "fr" ? 1236 : 1140}
                 height={1050}
-                loading="lazy"
+                fetchPriority="high"
                 className="w-full transition-transform duration-300 group-hover:scale-[1.01]"
               />
               <button
@@ -812,6 +792,19 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
               {t.apercu.legende}
             </figcaption>
           </figure>
+        </div>
+      </section>
+
+      {/* APERCU DU VERDICT */}
+      <section id="apercu" className="border-t border-border py-20">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight">{t.apercu.titre}</h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">{t.apercu.texte}</p>
+            <p className="mt-4 font-medium leading-relaxed text-foreground/90">
+              {t.apercu.franchise}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -1114,7 +1107,7 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
             <img src="/nyctale_logo.png" alt="Nyctale" className="h-6 w-6 rounded" />
             <span>{t.footer.tagline}</span>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
             <Link to="/blog" className="hover:text-foreground transition-colors">
               {t.nav.blog}
             </Link>
@@ -1196,19 +1189,21 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
             VidScope
           </a>
         </div>
-        <a
-          href="https://fazier.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Fazier"
-        >
-          <img
-            src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light"
-            alt="Launched on Fazier"
-            className="h-10 w-auto"
-            loading="lazy"
-          />
-        </a>
+        <div className="mt-6 flex justify-center">
+          <a
+            href="https://fazier.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Fazier"
+          >
+            <img
+              src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light"
+              alt="Launched on Fazier"
+              className="h-10 w-auto"
+              loading="lazy"
+            />
+          </a>
+        </div>
       </footer>
       <SmartScreenDialog open={showSmartScreen} onOpenChange={setShowSmartScreen} lang={lang} />
       <VideoDialog

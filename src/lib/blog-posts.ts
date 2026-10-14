@@ -921,9 +921,9 @@ export const articles: Article[] = [
     lang: "fr",
     traduction: "disk-100-percent-windows",
     title: "Disque à 100 % dans le Gestionnaire des tâches : pourquoi, et comment le calmer",
-    seoTitle: "Disque à 100 % sous Windows : causes et solutions",
+    seoTitle: "Disque à 100 % sous Windows 10 et 11 : 5 causes, 5 solutions",
     excerpt:
-      "Votre disque affiche 100 % et tout ralentit ? Ce n'est pas un disque plein mais débordé. Les causes les plus fréquentes et comment identifier la vôtre.",
+      "Disque à 100 % dans le Gestionnaire des tâches ? Ce n'est pas un disque plein. 5 causes (mises à jour, RAM, disque dur…) et comment trouver la vôtre.",
     date: "2026-09-24",
     readMin: 8,
     blocks: [
@@ -1347,9 +1347,9 @@ export const articles: Article[] = [
     lang: "en",
     traduction: "disque-a-100-pourcent-windows",
     title: "Disk at 100% in Task Manager: why, and how to calm it down",
-    seoTitle: "Disk at 100% on Windows: causes and fixes",
+    seoTitle: "Disk at 100% on Windows 10 and 11: 5 causes, 5 fixes",
     excerpt:
-      "Your disk shows 100% and everything crawls? That's not a full disk, it's an overwhelmed one. The most common causes, and how to find yours.",
+      "Disk at 100% in Task Manager? That's not a full disk, it's an overwhelmed one. 5 causes (updates, low RAM, hard drive...) and how to find yours in 5 minutes.",
     date: "2026-09-24",
     readMin: 8,
     blocks: [

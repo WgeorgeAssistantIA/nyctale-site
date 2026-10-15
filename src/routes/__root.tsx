@@ -115,13 +115,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
-    scripts: [
-      {
-        src: "https://analytics.ahrefs.com/analytics.js",
-        "data-key": "zZnPAoclpChlgDJlKieujA",
-        async: true,
-      },
-    ],
+    // Pas de Google Analytics pour l'instant -- l'ID GA d'InOneShot ne doit
+    // pas se retrouver ici (aurait melange le trafic des deux sites).
+    // Vercel Analytics (sans cookie) suffit au demarrage ; GA4 dedie a
+    // ajouter si besoin, meme demarche que pour VoxCut/InOneShot/VectorPop.
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -144,6 +141,11 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang={lang}>
       <head>
         <HeadContent />
+        <script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="BJg4pMnQwVJTxkZnhTvmig"
+          async
+        />
       </head>
       <body>
         {children}

@@ -132,7 +132,7 @@ export const seoFrArticles: Article[] = [
       { type: "h2", text: "Ce que Nyctale vérifie en 19 secondes" },
       {
         type: "p",
-        text: "Nyctale relit à votre place le journal de Windows : combien d'arrêts brutaux et de plantages sont survenus sur les 30 derniers jours, et si l'état du disque est signalé en alerte. Il croise ces indices avec ce qui occupe l'ordinateur, puis nomme la cause probable. Quand le problème est matériel, il vous le dit franchement, plutôt que de vous faire courir après un réglage inutile.",
+        text: "Nyctale relit à votre place le journal de Windows : combien d'arrêts brutaux et de plantages sont survenus sur les 30 derniers jours, et si l'état du disque est signalé en alerte. Il croise ces indices avec ce qui occupe l'ordinateur, puis nomme la cause probable. Consultez notre analyseur dédié de [diagnostic de crash PC et Kernel-Power 41](/diagnostic-crash-pc) sans jargon. Quand le problème est matériel, il vous le dit franchement, plutôt que de vous faire courir après un réglage inutile.",
       },
     ],
     faq: [
@@ -429,7 +429,7 @@ export const seoFrArticles: Article[] = [
       { type: "h2", text: "Ce que fait Nyctale en 19 secondes" },
       {
         type: "p",
-        text: "Nyctale interroge les mêmes sources que ces outils (processus, journal de Windows, état des disques) et les croise pour nommer la cause probable, en français clair. L'analyse est offerte ; la version complète, qui guide la correction, coûte 24,99 € une fois, sans abonnement. Quand le problème est matériel, il vous le dit plutôt que de vous faire courir après un réglage.",
+        text: "Nyctale interroge les mêmes sources que ces outils (processus, journal de Windows, état des disques) et les croise pour nommer la cause probable, en français clair. Voir aussi notre outil de [diagnostic de crash PC et Kernel-Power 41](/diagnostic-crash-pc) en français. L'analyse est offerte ; la version complète, qui guide la correction, coûte 24,99 € une fois, sans abonnement. Quand le problème est matériel, il vous le dit plutôt que de vous faire courir après un réglage.",
       },
     ],
     faq: [

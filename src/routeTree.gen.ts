@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DiagnosticCrashPcRouteImport } from './routes/diagnostic-crash-pc'
 import { Route as EnRouteImport } from './routes/en'
 import { Route as LegalRouteImport } from './routes/legal'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -24,6 +25,11 @@ import { Route as ApiLicenseRefreshRouteImport } from './routes/api.license.refr
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiagnosticCrashPcRoute = DiagnosticCrashPcRouteImport.update({
+  id: '/diagnostic-crash-pc',
+  path: '/diagnostic-crash-pc',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EnRoute = EnRouteImport.update({
@@ -79,6 +85,7 @@ const ApiLicenseRefreshRoute = ApiLicenseRefreshRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/diagnostic-crash-pc': typeof DiagnosticCrashPcRoute
   '/en': typeof EnRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
@@ -92,6 +99,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/diagnostic-crash-pc': typeof DiagnosticCrashPcRoute
   '/en': typeof EnRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
@@ -106,6 +114,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/diagnostic-crash-pc': typeof DiagnosticCrashPcRoute
   '/en': typeof EnRoute
   '/legal': typeof LegalRoute
   '/privacy': typeof PrivacyRoute
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/diagnostic-crash-pc'
     | '/en'
     | '/legal'
     | '/privacy'
@@ -134,6 +144,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/diagnostic-crash-pc'
     | '/en'
     | '/legal'
     | '/privacy'
@@ -147,6 +158,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/diagnostic-crash-pc'
     | '/en'
     | '/legal'
     | '/privacy'
@@ -161,6 +173,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DiagnosticCrashPcRoute: typeof DiagnosticCrashPcRoute
   EnRoute: typeof EnRoute
   LegalRoute: typeof LegalRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -180,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diagnostic-crash-pc': {
+      id: '/diagnostic-crash-pc'
+      path: '/diagnostic-crash-pc'
+      fullPath: '/diagnostic-crash-pc'
+      preLoaderRoute: typeof DiagnosticCrashPcRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/en': {
@@ -257,6 +277,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DiagnosticCrashPcRoute: DiagnosticCrashPcRoute,
   EnRoute: EnRoute,
   LegalRoute: LegalRoute,
   PrivacyRoute: PrivacyRoute,

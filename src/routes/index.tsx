@@ -1115,6 +1115,12 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
             <span>{t.footer.tagline}</span>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link to="/pro" className="hover:text-foreground transition-colors">
+              Nyctale Pro
+            </Link>
+            <Link to="/diagnostic-crash-pc" className="hover:text-foreground transition-colors">
+              {lang === "fr" ? "Diagnostic Crash & Écran Bleu" : "PC Crash & BSOD Diagnostic"}
+            </Link>
             <Link to="/blog" className="hover:text-foreground transition-colors">
               {t.nav.blog}
             </Link>

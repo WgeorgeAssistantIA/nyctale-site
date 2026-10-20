@@ -132,7 +132,7 @@ export const seoEnArticles: Article[] = [
       { type: "h2", text: "What Nyctale checks in 19 seconds" },
       {
         type: "p",
-        text: "Nyctale reads the Windows log for you: how many sudden shutdowns and crashes occurred over the last 30 days, and whether a disk health warning is flagged. It cross-checks these clues with what is occupying the computer, then names the probable cause. When the problem is hardware, it tells you frankly rather than sending you chasing a useless setting.",
+        text: "Nyctale reads the Windows log for you: how many sudden shutdowns and crashes occurred over the last 30 days, and whether a disk health warning is flagged. It cross-checks these clues with what is occupying the computer, then names the probable cause. See our dedicated [Windows PC crash analyzer and Kernel-Power 41 diagnostic](/diagnostic-crash-pc) in plain English. When the problem is hardware, it tells you frankly rather than sending you chasing a useless setting.",
       },
     ],
     faq: [
@@ -429,7 +429,7 @@ export const seoEnArticles: Article[] = [
       { type: "h2", text: "What Nyctale does in 19 seconds" },
       {
         type: "p",
-        text: "Nyctale queries the same sources as these tools (processes, Windows log, drive health) and cross-checks them to name the probable cause in plain language. The analysis is free; the full version, which guides the fix, costs €24.99 once, with no subscription. When the problem is hardware, it tells you rather than sending you chasing a setting.",
+        text: "Nyctale queries the same sources as these tools (processes, Windows log, drive health) and cross-checks them to name the probable cause in plain language. See our dedicated [Windows PC crash analyzer and Kernel-Power 41 diagnostic](/diagnostic-crash-pc). The analysis is free; the full version, which guides the fix, costs €24.99 once, with no subscription. When the problem is hardware, it tells you rather than sending you chasing a setting.",
       },
     ],
     faq: [

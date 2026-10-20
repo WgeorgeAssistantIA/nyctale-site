@@ -586,6 +586,9 @@ function PagePro() {
         <Link to="/" className="hover:text-foreground">
           ← {t.retour}
         </Link>
+        <Link to="/diagnostic-crash-pc" className="hover:text-foreground">
+          {lang === "fr" ? "Diagnostic Crash PC & Kernel 41" : "PC Crash Diagnostic"}
+        </Link>
         <Link to="/terms" className="hover:text-foreground">
           CGU / CGV
         </Link>

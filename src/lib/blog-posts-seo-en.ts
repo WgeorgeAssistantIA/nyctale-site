@@ -652,4 +652,98 @@ export const seoEnArticles: Article[] = [
     ],
     liens: ["is-my-pc-compatible-with-windows-11", "before-buying-a-new-pc", "failing-hard-drive-signs"],
   },
+  {
+    slug: "startup-programs-which-ones-to-disable",
+    lang: "en",
+    traduction: "programmes-au-demarrage-lesquels-desactiver",
+    title: "Startup Programs: Which Ones to Disable Safely",
+    seoTitle: "Startup Programs: Which Ones to Disable Safely",
+    excerpt:
+      "Task Manager lists what launches with Windows. How to sort useful from useless, and what is best never disabled.",
+    image: { src: "/images/blog/nyctale-programmes-demarrage-en.jpg", alt: "Startup programs sorted by impact: disable game launchers, messaging apps, secondary updaters and manufacturer assistants; keep the antivirus and drivers; look up an unknown item before deciding" },
+    date: "2026-10-20",
+    readMin: 4,
+    blocks: [
+      {
+        type: "p",
+        text: "To speed up startup, disable startup programs you do not need straight away: game launchers, software updaters, messaging apps, manufacturer assistants. Leave the antivirus, drivers and anything you do not recognise in place until you have checked. Disabling is not uninstalling: you can go back.",
+      },
+      {
+        type: "p",
+        text: "The more programs at startup, the longer Windows takes to become usable. Each is sometimes justified, often superfluous. This article complements [a slow PC at startup](/blog/slow-pc-startup).",
+      },
+      { type: "h2", text: "Where do you see startup programs?" },
+      {
+        type: "p",
+        text: "Open Task Manager (Ctrl + Shift + Esc), then the 'Startup apps' tab ('Startup' on Windows 10). Each line shows the name, publisher, status and startup impact (high, medium, low). Sorting by impact brings out the heaviest.",
+      },
+      {
+        type: "p",
+        text: "The same list exists in Settings > Apps > Startup, with a toggle on each line. In Task Manager, right-clicking a line and choosing 'Disable' does the same thing.",
+      },
+      { type: "h2", text: "Which should you disable?" },
+      {
+        type: "ul",
+        items: [
+          "Game launchers and platforms you rarely open",
+          "Messaging and social apps you start yourself",
+          "Automatic updaters for secondary software",
+          "Manufacturer assistants and software whose features you do not use",
+          "Syncing you do not need from the start",
+        ],
+      },
+      { type: "h2", text: "Which should you leave?" },
+      {
+        type: "ul",
+        items: [
+          "The antivirus and security tools",
+          "Essential hardware drivers and utilities (sound, trackpad, graphics)",
+          "Anything you do not recognise: look up its name before deciding",
+        ],
+      },
+      { type: "h2", text: "What if I get it wrong?" },
+      {
+        type: "p",
+        text: "Nothing serious: disabling a startup program does not delete it. It will simply launch on demand, when you open it. If something is missing, re-enable it in the same list.",
+      },
+      { type: "h2", text: "How much time do you save?" },
+      {
+        type: "p",
+        text: "It varies enormously by machine and list. Measure it yourself: restart, note the time until the PC is really usable, disable three heavy items, then try again. Nyctale reports the number of programs that launch with Windows among its checks.",
+      },
+      { type: "h2", text: "What if the PC is still slow?" },
+      {
+        type: "p",
+        text: "Startup programs are only one cause among others: see [a slow computer with no obvious reason](/blog/slow-computer-no-obvious-reason). For official procedures, see [Microsoft support](https://support.microsoft.com).",
+      },
+      { type: "h2", text: "Conclusion: disable with method" },
+      {
+        type: "p",
+        text: "Sort by impact, disable what is not essential, keep security and drivers, measure the gain. Nyctale's free analysis counts your startup programs.",
+      },
+    ],
+    faq: [
+      {
+        q: "Can I disable all startup programs?",
+        r: "No: keep security and essential drivers.",
+      },
+      {
+        q: "Does disabling delete the program?",
+        r: "No, it simply no longer launches at startup.",
+      },
+      {
+        q: "How do I know if an item is useful?",
+        r: "Look up its name; if in doubt, leave it.",
+      },
+      {
+        q: "Is the gain guaranteed?",
+        r: "No: it depends on the machine. Measure before and after.",
+      },
+      {
+        q: "Does Nyctale look at this?",
+        r: "Yes, it is one of its diagnostic rules.",
+      },
+    ],
+    liens: ["slow-pc-startup", "slow-computer-no-obvious-reason", "windows-11-slow-after-update"],
+  },
 ];

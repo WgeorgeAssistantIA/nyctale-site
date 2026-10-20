@@ -183,7 +183,7 @@ export const articles: Article[] = [
         r: "Oui, c'est souvent la meilleure amélioration possible sur un PC de plus de cinq ans : démarrage et ouverture des programmes plusieurs fois plus rapides, pour environ 40 à 70 € de pièce.",
       },
     ],
-    liens: ["meilleurs-logiciels-gratuits-diagnostic-pc", "pc-lent-au-demarrage", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "avant-dacheter-un-pc-neuf", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11"],
+    liens: ["meilleurs-logiciels-gratuits-diagnostic-pc", "pc-lent-au-demarrage", "programmes-au-demarrage-lesquels-desactiver", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "avant-dacheter-un-pc-neuf", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11"],
   },
   {
     slug: "slow-computer-no-obvious-reason",
@@ -331,7 +331,7 @@ export const articles: Article[] = [
         r: "Yes, it's often the single best upgrade for a PC older than five years: startup and program launches several times faster, for about €40 to €70 in parts.",
       },
     ],
-    liens: ["best-free-pc-diagnostic-tools", "slow-pc-startup", "disk-100-percent-windows", "windows-11-slow-after-update", "before-buying-a-new-pc", "failing-hard-drive-signs", "windows-11-blue-screen-fix"],
+    liens: ["best-free-pc-diagnostic-tools", "slow-pc-startup", "startup-programs-which-ones-to-disable", "disk-100-percent-windows", "windows-11-slow-after-update", "before-buying-a-new-pc", "failing-hard-drive-signs", "windows-11-blue-screen-fix"],
   },
 
   // -------------------------------------------------------------------
@@ -1115,7 +1115,7 @@ export const articles: Article[] = [
       {
         type: "ol",
         items: [
-          "Ouvrez le Gestionnaire des tâches (Ctrl + Maj + Échap), puis l'onglet « Applications de démarrage » (« Démarrage » sur Windows 10).",
+          "Ouvrez le Gestionnaire des tâches (Ctrl + Maj + Échap), puis l'onglet « Applications de démarrage » (« Démarrage » sur Windows 10). Pour savoir quoi couper : [lesquels désactiver sans risque](/blog/programmes-au-demarrage-lesquels-desactiver).",
           "En haut à droite, « Dernier temps BIOS » indique la durée de la phase matérielle. Au-delà de 15 à 20 secondes, regardez du côté du BIOS ou des périphériques branchés plutôt que de Windows.",
           "La colonne « Impact du démarrage » classe chaque programme de « Faible » à « Élevé ». Commencez par ceux à impact élevé que vous n'utilisez pas tous les jours.",
           "Faites un clic droit puis « Désactiver ». Le programme reste installé et fonctionne normalement quand vous l'ouvrez vous-même : il ne se lance simplement plus tout seul.",
@@ -1200,7 +1200,7 @@ export const articles: Article[] = [
         r: "C'est la durée de la phase matérielle du démarrage, avant que Windows ne prenne la main. Quelques secondes sont normales ; au-delà de 15 à 20 secondes, un périphérique branché ou un réglage du BIOS est en cause, pas Windows.",
       },
     ],
-    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "disque-dur-va-lacher-signes", "meilleurs-logiciels-gratuits-diagnostic-pc", "ecran-bleu-windows-11"],
+    liens: ["programmes-au-demarrage-lesquels-desactiver", "pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "disque-dur-va-lacher-signes", "meilleurs-logiciels-gratuits-diagnostic-pc", "ecran-bleu-windows-11"],
   },
 
   // -------------------------------------------------------------------
@@ -1540,7 +1540,7 @@ export const articles: Article[] = [
       {
         type: "ol",
         items: [
-          "Open Task Manager (Ctrl + Shift + Esc), then the 'Startup apps' tab ('Startup' on Windows 10).",
+          "Open Task Manager (Ctrl + Shift + Esc), then the 'Startup apps' tab ('Startup' on Windows 10). To know what to turn off: [which ones to disable safely](/blog/startup-programs-which-ones-to-disable).",
           "At the top right, 'Last BIOS time' shows how long the hardware stage took. Beyond 15 to 20 seconds, look at the BIOS or connected devices rather than Windows.",
           "The 'Startup impact' column ranks each program from 'Low' to 'High'. Start with high-impact programs you don't use every day.",
           "Right-click and choose 'Disable'. The program stays installed and works normally when you open it yourself: it just no longer launches on its own.",
@@ -1625,7 +1625,7 @@ export const articles: Article[] = [
         r: "It's the duration of the hardware stage of startup, before Windows takes over. A few seconds is normal; beyond 15 to 20 seconds, a connected device or a BIOS setting is to blame, not Windows.",
       },
     ],
-    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-slow-after-update", "failing-hard-drive-signs", "best-free-pc-diagnostic-tools", "windows-11-blue-screen-fix"],
+    liens: ["startup-programs-which-ones-to-disable", "slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-slow-after-update", "failing-hard-drive-signs", "best-free-pc-diagnostic-tools", "windows-11-blue-screen-fix"],
   },
   {
     slug: "windows-11-slow-after-update",

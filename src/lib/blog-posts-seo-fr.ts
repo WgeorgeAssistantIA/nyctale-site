@@ -746,4 +746,126 @@ export const seoFrArticles: Article[] = [
     ],
     liens: ["pc-lent-au-demarrage", "pc-qui-rame-sans-raison", "windows-11-lent-apres-mise-a-jour"],
   },
+  {
+    slug: "memoire-ram-saturee-comment-la-lire",
+    lang: "fr",
+    traduction: "ram-full-how-to-read-memory-usage",
+    title: "Mémoire RAM saturée au repos sous Windows 11 et 10 : comment la lire et que faire",
+    seoTitle: "Mémoire RAM saturée au repos (Windows 11/10) : lire et agir",
+    excerpt:
+      "Mémoire RAM saturée au repos sous Windows 11 ou 10 ? Comment lire le Gestionnaire des tâches (utilisée, disponible, validée, en cache), ce qui est normal et que faire.",
+    image: { src: "/images/blog/nyctale-memoire-ram-fr.jpg", alt: "Lire la mémoire dans le Gestionnaire des tâches : utilisée (compressée), disponible, validée, en cache ; c'est la mémoire disponible et la lenteur qui comptent, pas le pourcentage" },
+    date: "2026-10-23",
+    readMin: 6,
+    blocks: [
+      {
+        type: "p",
+        text: "Une mémoire RAM qui paraît saturée au repos sous Windows 11 ou 10 n'est pas toujours un problème : Windows garde volontairement des données en cache dans la RAM libre et les rend dès qu'un programme en a besoin. Le vrai signal, c'est une mémoire disponible qui reste très basse alors que le PC devient lent. Pour le vérifier, ouvrez le Gestionnaire des tâches (Ctrl + Maj + Échap), onglet Performances, rubrique Mémoire, puis triez les processus par mémoire pour trouver les gros consommateurs.",
+      },
+      {
+        type: "p",
+        text: "La RAM est l'espace de travail de l'ordinateur. Quand elle manque vraiment, Windows compresse des données ou en déplace une partie sur le disque, bien plus lent : tout devient poussif, même si le processeur et le disque vont bien. Mais un pourcentage élevé ne veut pas dire à lui seul qu'elle manque. Cet article explique comment lire chaque chiffre, comment distinguer une mémoire bien utilisée d'une mémoire saturée, et quoi faire dans chaque cas. Si votre PC est lent sans cause évidente, voyez aussi [un PC qui rame sans raison](/blog/pc-qui-rame-sans-raison).",
+      },
+      { type: "h2", text: "Une mémoire « pleine » au repos, est-ce forcément un problème ?" },
+      {
+        type: "p",
+        text: "Non. Une RAM vide ne sert à rien : Windows s'en sert pour garder en mémoire des fichiers et des programmes que vous avez ouverts récemment ou que vous ouvrez souvent, pour les relancer plus vite. Cette mémoire « en cache » apparaît comme occupée, mais elle est libérée instantanément quand une application la réclame. C'est pour cela qu'un PC peut afficher 60 ou 70 % de mémoire occupée sans rien faire, et rester parfaitement fluide.",
+      },
+      {
+        type: "p",
+        text: "Le problème commence quand la mémoire réellement disponible devient très faible et que les ralentissements suivent : fenêtres qui mettent du temps à s'afficher, onglets qui se rechargent, disque qui travaille sans arrêt. C'est ce couple « peu de mémoire disponible + lenteur » qu'il faut chercher, pas un pourcentage isolé.",
+      },
+      { type: "h2", text: "Comment lire la mémoire dans le Gestionnaire des tâches ?" },
+      {
+        type: "ol",
+        items: [
+          "Ouvrez le Gestionnaire des tâches avec Ctrl + Maj + Échap (cliquez sur « Plus de détails » s'il s'ouvre en version réduite).",
+          "Allez dans l'onglet Performances, puis cliquez sur « Mémoire » : le graphique montre l'utilisation sur la dernière minute.",
+          "Sous le graphique, lisez les compteurs ci-dessous, de préférence après quelques minutes au repos, puis pendant votre usage normal.",
+          "Revenez à l'onglet Processus et cliquez sur l'en-tête de la colonne Mémoire pour trier du plus gourmand au moins gourmand.",
+        ],
+      },
+      {
+        type: "ul",
+        items: [
+          "En cours d'utilisation (compressée) : la mémoire occupée par les programmes et Windows. Le chiffre entre parenthèses est la part que Windows a compressée pour gagner de la place.",
+          "Disponible : ce que Windows peut donner immédiatement à un programme, cache compris. C'est le chiffre le plus parlant : s'il reste confortable, la mémoire n'est pas saturée.",
+          "Validée : deux nombres, par exemple 14/20 Go. Le premier est la mémoire que les programmes ont réservée, le second la limite (RAM plus fichier d'échange). Ce n'est pas de la mémoire réellement utilisée en ce moment.",
+          "En cache : la mémoire gardée en réserve pour accélérer Windows, libérée dès qu'il le faut.",
+        ],
+      },
+      { type: "h2", text: "La mémoire « validée » dépasse la RAM : le PC utilise-t-il le disque ?" },
+      {
+        type: "p",
+        text: "Pas forcément, et c'est une confusion très fréquente. Beaucoup de programmes réservent plus de mémoire qu'ils n'en utilisent vraiment. Le total « validé » peut donc dépasser la quantité de RAM installée sans que Windows soit en train d'écrire quoi que ce soit sur le disque. Il faut le croiser avec la mémoire disponible et avec l'activité du disque, toujours dans l'onglet Performances.",
+      },
+      {
+        type: "p",
+        text: "Nous avons fait l'erreur nous-mêmes : une première version de la règle mémoire de Nyctale lisait trop vite ce chiffre comme un manque de RAM. Sur une vraie machine, elle signalait un manque alors qu'il restait 24 % de mémoire disponible. Elle exige désormais que Windows relise réellement des données depuis le disque avant de conclure. Retenez qu'un chiffre isolé ne fait pas un diagnostic : c'est leur combinaison avec la lenteur ressentie qui compte.",
+      },
+      { type: "h2", text: "Qui consomme la mémoire quand on ne fait rien ?" },
+      {
+        type: "p",
+        text: "Le premier suspect est presque toujours le navigateur : chaque onglet, chaque extension et chaque application web ouverte en arrière-plan occupe sa part, et une vingtaine d'onglets peut mobiliser plusieurs gigaoctets. Viennent ensuite les messageries et outils de visioconférence restés ouverts, les logiciels de synchronisation de fichiers, les lanceurs de jeux et les utilitaires du fabricant qui se lancent avec Windows.",
+      },
+      {
+        type: "p",
+        text: "Beaucoup de ces programmes démarrent tout seuls avec l'ordinateur, ce qui explique une mémoire déjà bien remplie « au repos ». Faire le tri au démarrage règle souvent une bonne partie du problème : voyez [quels programmes de démarrage désactiver sans risque](/blog/programmes-au-demarrage-lesquels-desactiver).",
+      },
+      { type: "h2", text: "Que faire quand la mémoire sature vraiment ?" },
+      {
+        type: "ul",
+        items: [
+          "Fermez les onglets et les applications dont vous ne vous servez pas : c'est la seule action qui rend de la mémoire tout de suite.",
+          "Activez l'économie de mémoire du navigateur (l'économiseur de mémoire de Chrome, la mise en veille des onglets d'Edge) : les onglets inactifs libèrent leur mémoire.",
+          "Redémarrez : un PC resté allumé des jours, ou mis en veille sans jamais redémarrer, accumule des processus qui ne se ferment plus.",
+          "Désactivez les programmes inutiles au démarrage, voir [un PC lent au démarrage](/blog/pc-lent-au-demarrage).",
+          "Méfiez-vous des « nettoyeurs de RAM » : vider le cache de force oblige Windows à tout recharger et ralentit plus qu'il n'accélère.",
+          "Si la mémoire disponible reste très basse pendant votre usage normal, tous les jours, ajoutez de la mémoire si votre PC le permet.",
+        ],
+      },
+      { type: "h2", text: "Faut-il ajouter de la RAM ou changer de PC ?" },
+      {
+        type: "p",
+        text: "Ajouter de la mémoire est souvent la réparation la plus rentable quand la saturation est réelle et quotidienne. Ce n'est pas possible partout : sur beaucoup de portables fins, la mémoire est soudée à la carte mère. Avant de décider, vérifiez aussi le disque : un manque de RAM sur un disque dur mécanique se voit d'autant plus que le disque est lent, comme l'explique notre article sur [le disque à 100 % sous Windows](/blog/disque-a-100-pourcent-windows).",
+      },
+      {
+        type: "p",
+        text: "Changer de PC se justifie plutôt quand la mémoire est soudée et insuffisante, quand le processeur et le disque sont tout aussi anciens, ou quand l'addition des réparations dépasse l'intérêt. Notre article [avant d'acheter un PC neuf](/blog/avant-dacheter-un-pc-neuf) aide à trancher.",
+      },
+      { type: "h2", text: "Que vérifie Nyctale côté mémoire ?" },
+      {
+        type: "p",
+        text: "Nyctale distingue trois situations : une mémoire vive réellement saturée (il calcule la mémoire disponible en excluant le cache normal de Windows), un ordinateur qui compense sur le disque faute de mémoire vive, et une compression mémoire permanente, cause classique de chauffe quand on n'a « rien fait ». Une règle dédiée repère aussi le navigateur qui occupe une grande part de la mémoire, et vérifie si son économie de mémoire est déjà activée. Pour chaque cas, il explique la cause en clair et propose l'action adaptée.",
+      },
+      { type: "h2", text: "Conclusion : lire avant d'acheter" },
+      {
+        type: "p",
+        text: "Une mémoire bien remplie au repos est souvent le signe d'un Windows qui travaille bien. Regardez la mémoire disponible et la lenteur ressentie avant le pourcentage, fermez ce qui ne sert pas, faites le tri au démarrage, et n'ajoutez de la RAM que si la saturation est réelle et quotidienne. L'analyse gratuite de Nyctale lit l'état de la mémoire et vous dit si elle est vraiment en cause.",
+      },
+    ],
+    faq: [
+      {
+        q: "Est-ce normal que ma RAM soit à 70 % sans rien faire ?",
+        r: "Souvent oui : Windows garde des données en cache dans la mémoire libre et les libère dès qu'un programme en a besoin. Regardez plutôt la mémoire disponible et la fluidité du PC.",
+      },
+      {
+        q: "Comment voir ma RAM utilisée ?",
+        r: "Dans le Gestionnaire des tâches (Ctrl + Maj + Échap), onglet Performances, rubrique Mémoire ; l'onglet Processus, trié par la colonne Mémoire, montre les plus gourmands.",
+      },
+      {
+        q: "La mémoire validée est plus grande que ma RAM, est-ce grave ?",
+        r: "Pas forcément : c'est de la mémoire réservée, pas utilisée. Croisez-la avec la mémoire disponible et l'activité du disque.",
+      },
+      {
+        q: "Les nettoyeurs de RAM sont-ils utiles ?",
+        r: "Non : vider le cache de force oblige Windows à tout recharger. Fermer les programmes inutiles est plus efficace.",
+      },
+      {
+        q: "Combien de RAM faut-il ?",
+        r: "Cela dépend de vos usages : observez la mémoire disponible pendant une journée normale avant de décider d'en ajouter.",
+      },
+    ],
+    liens: ["pc-qui-rame-sans-raison", "programmes-au-demarrage-lesquels-desactiver", "pc-lent-au-demarrage", "disque-a-100-pourcent-windows", "avant-dacheter-un-pc-neuf"],
+  },
 ];

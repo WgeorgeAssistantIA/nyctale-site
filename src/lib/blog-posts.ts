@@ -86,7 +86,7 @@ export const articles: Article[] = [
       { type: "h3", text: "3. La mémoire vive saturée" },
       {
         type: "p",
-        text: "Quand la mémoire vive est pleine, Windows déplace une partie de son contenu sur le disque, beaucoup plus lent. Tout devient poussif : changer de fenêtre, ouvrir un fichier, taper un texte. En 2026, 8 Go suffisent pour un usage bureautique léger ; avec un navigateur chargé et quelques applications ouvertes, 16 Go deviennent confortables.",
+        text: "Quand la mémoire vive est pleine, Windows déplace une partie de son contenu sur le disque, beaucoup plus lent. Tout devient poussif : changer de fenêtre, ouvrir un fichier, taper un texte. En 2026, 8 Go suffisent pour un usage bureautique léger ; avec un navigateur chargé et quelques applications ouvertes, 16 Go deviennent confortables. Pour lire correctement ces chiffres, voyez [comment lire une mémoire RAM saturée au repos](/blog/memoire-ram-saturee-comment-la-lire).",
       },
       { type: "h3", text: "4. Un disque presque plein" },
       {
@@ -183,7 +183,7 @@ export const articles: Article[] = [
         r: "Oui, c'est souvent la meilleure amélioration possible sur un PC de plus de cinq ans : démarrage et ouverture des programmes plusieurs fois plus rapides, pour environ 40 à 70 € de pièce.",
       },
     ],
-    liens: ["meilleurs-logiciels-gratuits-diagnostic-pc", "pc-lent-au-demarrage", "programmes-au-demarrage-lesquels-desactiver", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "avant-dacheter-un-pc-neuf", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11"],
+    liens: ["meilleurs-logiciels-gratuits-diagnostic-pc", "pc-lent-au-demarrage", "programmes-au-demarrage-lesquels-desactiver", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "avant-dacheter-un-pc-neuf", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11", "memoire-ram-saturee-comment-la-lire"],
   },
   {
     slug: "slow-computer-no-obvious-reason",
@@ -234,7 +234,7 @@ export const articles: Article[] = [
       { type: "h3", text: "3. Memory (RAM) is full" },
       {
         type: "p",
-        text: "When memory is full, Windows moves part of its content to the disk, which is far slower. Everything becomes sluggish: switching windows, opening a file, typing. In 2026, 8 GB is enough for light office work; with a busy browser and a few apps open, 16 GB becomes comfortable.",
+        text: "When memory is full, Windows moves part of its content to the disk, which is far slower. Everything becomes sluggish: switching windows, opening a file, typing. In 2026, 8 GB is enough for light office work; with a busy browser and a few apps open, 16 GB becomes comfortable. To read these figures correctly, see [how to read RAM usage when memory looks full](/blog/ram-full-how-to-read-memory-usage).",
       },
       { type: "h3", text: "4. An almost full drive" },
       {
@@ -331,7 +331,7 @@ export const articles: Article[] = [
         r: "Yes, it's often the single best upgrade for a PC older than five years: startup and program launches several times faster, for about €40 to €70 in parts.",
       },
     ],
-    liens: ["best-free-pc-diagnostic-tools", "slow-pc-startup", "startup-programs-which-ones-to-disable", "disk-100-percent-windows", "windows-11-slow-after-update", "before-buying-a-new-pc", "failing-hard-drive-signs", "windows-11-blue-screen-fix"],
+    liens: ["best-free-pc-diagnostic-tools", "slow-pc-startup", "startup-programs-which-ones-to-disable", "disk-100-percent-windows", "windows-11-slow-after-update", "before-buying-a-new-pc", "failing-hard-drive-signs", "windows-11-blue-screen-fix", "ram-full-how-to-read-memory-usage"],
   },
 
   // -------------------------------------------------------------------
@@ -739,7 +739,7 @@ export const articles: Article[] = [
       { type: "h2", text: "4. A-t-il assez de mémoire vive ?" },
       {
         type: "p",
-        text: "Toujours dans « Performances », regardez « Mémoire ». Si elle dépasse régulièrement 85-90 % en usage normal, ajouter de la mémoire (passer de 8 à 16 Go) coûte environ 30 à 60 €. Attention : sur certains portables fins, la mémoire est soudée et ne peut pas être augmentée. Un réparateur ou la fiche technique du modèle vous le dira.",
+        text: "Toujours dans « Performances », regardez « Mémoire ». Si elle dépasse régulièrement 85-90 % en usage normal, ajouter de la mémoire (passer de 8 à 16 Go) coûte environ 30 à 60 €. Attention : sur certains portables fins, la mémoire est soudée et ne peut pas être augmentée. Un réparateur ou la fiche technique du modèle vous le dira. Pour lire correctement ces chiffres, voyez [comment lire une mémoire RAM saturée au repos](/blog/memoire-ram-saturee-comment-la-lire).",
       },
       { type: "h2", text: "5. La batterie tient-elle encore ?" },
       {
@@ -799,7 +799,7 @@ export const articles: Article[] = [
         r: "Un bon diagnostic nomme une cause précise et vérifiable (disque, batterie, surchauffe, programme), pas une impression générale. Demandez comment elle a été mesurée, et n'hésitez pas à obtenir un deuxième avis avant une dépense importante.",
       },
     ],
-    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11", "windows-10-fin-de-support-que-faire-de-son-pc", "mon-pc-est-il-compatible-windows-11"],
+    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11", "windows-10-fin-de-support-que-faire-de-son-pc", "mon-pc-est-il-compatible-windows-11", "memoire-ram-saturee-comment-la-lire"],
   },
   {
     slug: "before-buying-a-new-pc",
@@ -857,7 +857,7 @@ export const articles: Article[] = [
       { type: "h2", text: "4. Does it have enough memory?" },
       {
         type: "p",
-        text: "Still in 'Performance', look at 'Memory'. If it regularly goes above 85-90% during normal use, adding memory (from 8 to 16 GB) costs about €30 to €60. Note that on some thin laptops, memory is soldered and can't be upgraded. A repair shop or the model's spec sheet will tell you.",
+        text: "Still in 'Performance', look at 'Memory'. If it regularly goes above 85-90% during normal use, adding memory (from 8 to 16 GB) costs about €30 to €60. Note that on some thin laptops, memory is soldered and can't be upgraded. A repair shop or the model's spec sheet will tell you. To read these figures correctly, see [how to read RAM usage when memory looks full](/blog/ram-full-how-to-read-memory-usage).",
       },
       { type: "h2", text: "5. Does the battery still hold up?" },
       {
@@ -917,7 +917,7 @@ export const articles: Article[] = [
         r: "A good diagnosis names a precise, verifiable cause (drive, battery, overheating, program), not a general impression. Ask how it was measured, and don't hesitate to get a second opinion before a significant expense.",
       },
     ],
-    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "windows-11-blue-screen-fix", "windows-10-end-of-support-what-to-do-with-your-pc", "is-my-pc-compatible-with-windows-11"],
+    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "windows-11-blue-screen-fix", "windows-10-end-of-support-what-to-do-with-your-pc", "is-my-pc-compatible-with-windows-11", "ram-full-how-to-read-memory-usage"],
   },
 
   // -------------------------------------------------------------------
@@ -953,7 +953,7 @@ export const articles: Article[] = [
       { type: "h3", text: "2. Une mémoire vive trop petite, qui déborde sur le disque" },
       {
         type: "p",
-        text: "C'est la cause la plus sournoise. Quand les programmes ouverts réclament plus de mémoire que l'ordinateur n'en possède, Windows range le surplus sur le disque (fichier d'échange) et le relit en permanence. Le disque tourne alors à plein régime pour compenser le manque de mémoire. C'est typique d'un PC de 4 ou 8 Go avec un navigateur chargé d'onglets.",
+        text: "C'est la cause la plus sournoise. Quand les programmes ouverts réclament plus de mémoire que l'ordinateur n'en possède, Windows range le surplus sur le disque (fichier d'échange) et le relit en permanence. Le disque tourne alors à plein régime pour compenser le manque de mémoire. C'est typique d'un PC de 4 ou 8 Go avec un navigateur chargé d'onglets. Pour lire correctement ces chiffres, voyez [comment lire une mémoire RAM saturée au repos](/blog/memoire-ram-saturee-comment-la-lire).",
       },
       { type: "h3", text: "3. Un disque dur mécanique" },
       {
@@ -1029,7 +1029,7 @@ export const articles: Article[] = [
         r: "Ce n'est à tenter qu'en dernier recours, sur un disque dur mécanique, et en observant l'effet. SysMain accélère le lancement des programmes habituels ; le désactiver n'a d'intérêt que s'il sature réellement le disque de façon durable.",
       },
     ],
-    liens: ["disque-dur-va-lacher-signes", "pc-lent-au-demarrage", "ecran-bleu-windows-11", "meilleurs-logiciels-gratuits-diagnostic-pc"],
+    liens: ["disque-dur-va-lacher-signes", "pc-lent-au-demarrage", "ecran-bleu-windows-11", "meilleurs-logiciels-gratuits-diagnostic-pc", "memoire-ram-saturee-comment-la-lire"],
   },
 
   // -------------------------------------------------------------------
@@ -1382,7 +1382,7 @@ export const articles: Article[] = [
       { type: "h3", text: "2. Too little memory, spilling over onto the disk" },
       {
         type: "p",
-        text: "This is the sneakiest cause. When open programs need more memory than the computer has, Windows moves the excess to the disk (the page file) and reads it back constantly. The disk then runs flat out to make up for the missing memory. It's typical of a 4 or 8 GB PC with a browser full of tabs.",
+        text: "This is the sneakiest cause. When open programs need more memory than the computer has, Windows moves the excess to the disk (the page file) and reads it back constantly. The disk then runs flat out to make up for the missing memory. It's typical of a 4 or 8 GB PC with a browser full of tabs. To read these figures correctly, see [how to read RAM usage when memory looks full](/blog/ram-full-how-to-read-memory-usage).",
       },
       { type: "h3", text: "3. A mechanical hard drive" },
       {
@@ -1458,7 +1458,7 @@ export const articles: Article[] = [
         r: "Only as a last resort, on a mechanical hard drive, and while watching the effect. SysMain speeds up launching your usual programs; disabling it only helps if it really saturates the disk for long periods.",
       },
     ],
-    liens: ["failing-hard-drive-signs", "slow-pc-startup", "windows-11-blue-screen-fix", "best-free-pc-diagnostic-tools"],
+    liens: ["failing-hard-drive-signs", "slow-pc-startup", "windows-11-blue-screen-fix", "best-free-pc-diagnostic-tools", "ram-full-how-to-read-memory-usage"],
   },
   {
     slug: "slow-pc-startup",

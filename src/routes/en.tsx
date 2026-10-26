@@ -43,6 +43,7 @@ export const Route = createFileRoute("/en")({
           sameAs: [
             "https://www.wikidata.org/wiki/Q141656931",
             `https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}`,
+            "https://nyctale-pc-diagnostic-tool.en.uptodown.com/windows",
           ],
           image: "https://nyctale.fr/nyctale_logo.png",
           aggregateRating: {

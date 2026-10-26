@@ -102,6 +102,7 @@ export const Route = createFileRoute("/")({
           sameAs: [
             "https://www.wikidata.org/wiki/Q141656931",
             `https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}`,
+            "https://nyctale-pc-diagnostic-tool.en.uptodown.com/windows",
           ],
           image: "https://nyctale.fr/nyctale_logo.png",
           aggregateRating: {
@@ -347,6 +348,7 @@ export const T = {
       store:
         "Le Microsoft Store installe Nyctale sans avertissement de sécurité de Windows. L'installeur .exe reste disponible si vous préférez.",
       linuxTar: "Linux (.tar.gz)",
+      uptodown: "Aussi disponible sur Uptodown",
       linuxAppImage: "Linux (AppImage)",
     },
     faqTitle: "Questions fréquentes",
@@ -565,6 +567,7 @@ export const T = {
       store:
         "The Microsoft Store installs Nyctale with no Windows security warning. The .exe installer is still available if you prefer.",
       linuxTar: "Linux (.tar.gz)",
+      uptodown: "Also available on Uptodown",
       linuxAppImage: "Linux (AppImage)",
     },
     faqTitle: "Frequently asked questions",
@@ -1104,6 +1107,14 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
               <Package className="h-4 w-4" /> {t.telecharger.linuxTar}
             </a>
           </div>
+          <a
+            href="https://nyctale-pc-diagnostic-tool.en.uptodown.com/windows"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block text-xs text-muted-foreground underline hover:text-foreground"
+          >
+            {t.telecharger.uptodown}
+          </a>
         </div>
       </section>
 

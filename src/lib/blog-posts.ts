@@ -160,6 +160,10 @@ export const articles: Article[] = [
         type: "p",
         text: "Si le ralentissement s'accompagne de blocages ou de fichiers qui ne s'ouvrent plus, vérifiez aussi [l'état de votre disque dur](/blog/disque-dur-va-lacher-signes). Pour comparer plusieurs outils de mesure, consultez les [meilleurs logiciels gratuits de diagnostic PC](/blog/meilleurs-logiciels-gratuits-diagnostic-pc), et si des plantages s'ajoutent aux lenteurs, [l'écran bleu sous Windows 11](/blog/ecran-bleu-windows-11).",
       },
+      {
+        type: "p",
+        text: "Pour aller plus loin : avant d'en arriver à tout effacer, lisez [ce qu'une analyse peut vous éviter avant de formater son PC](/blog/avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter).",
+      },
     ],
     faq: [
       {
@@ -183,7 +187,7 @@ export const articles: Article[] = [
         r: "Oui, c'est souvent la meilleure amélioration possible sur un PC de plus de cinq ans : démarrage et ouverture des programmes plusieurs fois plus rapides, pour environ 40 à 70 € de pièce.",
       },
     ],
-    liens: ["meilleurs-logiciels-gratuits-diagnostic-pc", "pc-lent-au-demarrage", "programmes-au-demarrage-lesquels-desactiver", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "avant-dacheter-un-pc-neuf", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11", "memoire-ram-saturee-comment-la-lire"],
+    liens: ["meilleurs-logiciels-gratuits-diagnostic-pc", "pc-lent-au-demarrage", "programmes-au-demarrage-lesquels-desactiver", "disque-a-100-pourcent-windows", "windows-11-lent-apres-mise-a-jour", "avant-dacheter-un-pc-neuf", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11", "memoire-ram-saturee-comment-la-lire", "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter"],
   },
   {
     slug: "slow-computer-no-obvious-reason",
@@ -308,6 +312,10 @@ export const articles: Article[] = [
         type: "p",
         text: "If the slowdown comes with freezes or files that no longer open, also check [your drive's health](/blog/failing-hard-drive-signs). To compare measurement tools, see the [best free PC diagnostic tools](/blog/best-free-pc-diagnostic-tools), and if crashes join the slowness, read about the [Windows 11 blue screen](/blog/windows-11-blue-screen-fix).",
       },
+      {
+        type: "p",
+        text: "Going further: before wiping everything, read [what a diagnostic can save you before reformatting your PC](/blog/before-reformatting-your-pc-what-a-diagnostic-can-save-you).",
+      },
     ],
     faq: [
       {
@@ -331,7 +339,7 @@ export const articles: Article[] = [
         r: "Yes, it's often the single best upgrade for a PC older than five years: startup and program launches several times faster, for about €40 to €70 in parts.",
       },
     ],
-    liens: ["best-free-pc-diagnostic-tools", "slow-pc-startup", "startup-programs-which-ones-to-disable", "disk-100-percent-windows", "windows-11-slow-after-update", "before-buying-a-new-pc", "failing-hard-drive-signs", "windows-11-blue-screen-fix", "ram-full-how-to-read-memory-usage"],
+    liens: ["best-free-pc-diagnostic-tools", "slow-pc-startup", "startup-programs-which-ones-to-disable", "disk-100-percent-windows", "windows-11-slow-after-update", "before-buying-a-new-pc", "failing-hard-drive-signs", "windows-11-blue-screen-fix", "ram-full-how-to-read-memory-usage", "before-reformatting-your-pc-what-a-diagnostic-can-save-you"],
   },
 
   // -------------------------------------------------------------------
@@ -776,6 +784,10 @@ export const articles: Article[] = [
         type: "p",
         text: "Avant de remplacer votre ordinateur, vérifiez que le disque n'est pas en cause : connaître [les signes d'un disque dur qui va lâcher](/blog/disque-dur-va-lacher-signes) peut éviter un achat inutile. Un [écran bleu récurrent](/blog/ecran-bleu-windows-11) a lui aussi souvent une cause réparable.",
       },
+      {
+        type: "p",
+        text: "À lire aussi : si vous hésitez plutôt à réinstaller Windows, voyez [avant de formater son PC](/blog/avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter).",
+      },
     ],
     faq: [
       {
@@ -799,7 +811,7 @@ export const articles: Article[] = [
         r: "Un bon diagnostic nomme une cause précise et vérifiable (disque, batterie, surchauffe, programme), pas une impression générale. Demandez comment elle a été mesurée, et n'hésitez pas à obtenir un deuxième avis avant une dépense importante.",
       },
     ],
-    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11", "windows-10-fin-de-support-que-faire-de-son-pc", "mon-pc-est-il-compatible-windows-11", "memoire-ram-saturee-comment-la-lire"],
+    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11", "windows-10-fin-de-support-que-faire-de-son-pc", "mon-pc-est-il-compatible-windows-11", "memoire-ram-saturee-comment-la-lire", "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter"],
   },
   {
     slug: "before-buying-a-new-pc",
@@ -894,6 +906,10 @@ export const articles: Article[] = [
         type: "p",
         text: "Before replacing your computer, check the drive is not the culprit: knowing the [signs of a failing hard drive](/blog/failing-hard-drive-signs) can spare you a needless purchase. A [recurring blue screen](/blog/windows-11-blue-screen-fix) also often has a repairable cause.",
       },
+      {
+        type: "p",
+        text: "Related reading: if you are thinking about reinstalling Windows instead, see [before reformatting your PC](/blog/before-reformatting-your-pc-what-a-diagnostic-can-save-you).",
+      },
     ],
     faq: [
       {
@@ -917,7 +933,7 @@ export const articles: Article[] = [
         r: "A good diagnosis names a precise, verifiable cause (drive, battery, overheating, program), not a general impression. Ask how it was measured, and don't hesitate to get a second opinion before a significant expense.",
       },
     ],
-    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "windows-11-blue-screen-fix", "windows-10-end-of-support-what-to-do-with-your-pc", "is-my-pc-compatible-with-windows-11", "ram-full-how-to-read-memory-usage"],
+    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "windows-11-blue-screen-fix", "windows-10-end-of-support-what-to-do-with-your-pc", "is-my-pc-compatible-with-windows-11", "ram-full-how-to-read-memory-usage", "before-reformatting-your-pc-what-a-diagnostic-can-save-you"],
   },
 
   // -------------------------------------------------------------------

@@ -431,6 +431,10 @@ export const seoFrArticles: Article[] = [
         type: "p",
         text: "Nyctale interroge les mêmes sources que ces outils (processus, journal de Windows, état des disques) et les croise pour nommer la cause probable, en français clair. Voir aussi notre outil de [diagnostic de crash PC et Kernel-Power 41](/diagnostic-crash-pc) en français. L'analyse est offerte ; la version complète, qui guide la correction, coûte 24,99 € une fois, sans abonnement. Quand le problème est matériel, il vous le dit plutôt que de vous faire courir après un réglage.",
       },
+      {
+        type: "p",
+        text: "À lire aussi : [avant de formater son PC, ce qu'une analyse peut vous éviter](/blog/avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter).",
+      },
     ],
     faq: [
       {
@@ -454,7 +458,7 @@ export const seoFrArticles: Article[] = [
         r: "Il croise plusieurs sources (processus, journal Windows, état du disque) pour nommer une cause probable en français, au lieu de laisser interpréter chiffres et codes. L'analyse est offerte, la version complète coûte 24,99 € une fois.",
       },
     ],
-    liens: ["ecran-bleu-windows-11", "disque-dur-va-lacher-signes", "pc-qui-rame-sans-raison"],
+    liens: ["ecran-bleu-windows-11", "disque-dur-va-lacher-signes", "pc-qui-rame-sans-raison", "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter"],
   },
   {
     slug: "mon-pc-est-il-compatible-windows-11",
@@ -867,5 +871,128 @@ export const seoFrArticles: Article[] = [
       },
     ],
     liens: ["pc-qui-rame-sans-raison", "programmes-au-demarrage-lesquels-desactiver", "pc-lent-au-demarrage", "disque-a-100-pourcent-windows", "avant-dacheter-un-pc-neuf"],
+  },
+  {
+    slug: "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter",
+    lang: "fr",
+    traduction: "before-reformatting-your-pc-what-a-diagnostic-can-save-you",
+    title: "Avant de formater son PC : ce qu'une analyse peut vous éviter",
+    seoTitle: "Formater son PC lent ? Ce qu'il faut vérifier avant",
+    excerpt:
+      "Formater est le dernier recours, pas le premier. Les causes de lenteur qui se corrigent sans réinstaller, celles qu'un formatage ne règle pas, et comment décider en connaissance de cause.",
+    image: { src: "/images/blog/nyctale-avant-formater-fr.jpg", alt: "Deux colonnes : ce qui se corrige sans formater (programme bloqué, mémoire saturée, disque plein, démarrage chargé, navigateur, fichiers système) et ce qu'un formatage ne règle pas (disque usé, surchauffe, batterie usée, matériel trop juste)" },
+    date: "2026-10-27",
+    readMin: 7,
+    blocks: [
+      {
+        type: "p",
+        text: "Avant de formater un PC lent, vérifiez d'abord la cause : beaucoup de lenteurs viennent d'un programme qui s'emballe, d'une mémoire saturée, d'un disque presque plein, de trop de programmes au démarrage ou de fichiers système abîmés, et toutes se corrigent sans réinstaller Windows. À l'inverse, un disque en fin de vie, une surchauffe ou un matériel trop ancien reviendront après le formatage. Une analyse de quelques minutes suffit à savoir dans quel cas vous êtes.",
+      },
+      {
+        type: "p",
+        text: "Le formatage est tentant parce qu'il promet un PC « comme neuf ». Mais il a un coût : des documents à sauvegarder, des logiciels à réinstaller, des comptes à reconnecter, des réglages à refaire, souvent une soirée entière ou davantage. Et il ne répare rien de matériel. Cet article fait le tri entre ce qu'un formatage règle vraiment, ce qu'il ne règle pas, et ce qu'il faut contrôler avant de décider. Si votre PC ralentit sans raison apparente, commencez par [un PC qui rame sans raison](/blog/pc-qui-rame-sans-raison).",
+      },
+      { type: "h2", text: "Pourquoi le formatage donne-t-il l'impression de tout régler ?" },
+      {
+        type: "p",
+        text: "Parce qu'il remet tout à zéro d'un coup : plus de programmes au démarrage, plus d'extensions accumulées, plus de fichiers temporaires, un disque soudain très libre. Pendant quelques semaines, le PC paraît rapide. Mais si la vraie cause était l'une de ces accumulations, il suffisait de la corriger elle seule. Et si la cause était matérielle, elle revient avec le premier usage un peu lourd.",
+      },
+      {
+        type: "p",
+        text: "Il existe aussi un cas où la lenteur vient d'un faux redémarrage. Avec le « démarrage rapide » de Windows, le bouton Arrêter ne vide pas complètement la session du système : un PC éteint chaque soir peut ne pas avoir vraiment redémarré depuis des jours. Un vrai redémarrage (Démarrer > Marche/Arrêt > Redémarrer) règle parfois en une minute ce qu'on pensait régler en formatant.",
+      },
+      { type: "h2", text: "Quelles causes se corrigent sans formater ?" },
+      {
+        type: "ul",
+        items: [
+          "Un programme qui s'emballe : il monopolise le processeur ou la mémoire. Le Gestionnaire des tâches (Ctrl + Maj + Échap), trié par processeur puis par mémoire, le montre en quelques secondes.",
+          "Une mémoire saturée : souvent le navigateur ou des applications restées ouvertes ; voyez [comment lire une mémoire RAM saturée](/blog/memoire-ram-saturee-comment-la-lire).",
+          "Un disque presque plein : Windows a besoin de place libre pour travailler ; vider la corbeille, les fichiers temporaires et les anciennes mises à jour en rend souvent beaucoup.",
+          "Trop de programmes au démarrage : chacun ralentit l'ouverture de session et occupe de la mémoire ; voyez [quels programmes de démarrage désactiver](/blog/programmes-au-demarrage-lesquels-desactiver).",
+          "Un navigateur surchargé d'onglets et d'extensions, qui peut à lui seul occuper une grande part de la mémoire.",
+          "Des fichiers système abîmés, que Windows sait vérifier et réparer lui-même avec deux commandes (DISM puis sfc /scannow).",
+        ],
+      },
+      {
+        type: "p",
+        text: "Ce dernier cas mérite qu'on s'y arrête, parce qu'il est invisible. Sur le PC de travail qui a servi à concevoir Nyctale, la commande sfc /scannow a trouvé et réparé des fichiers système corrompus. Aucun message n'avait prévenu, seulement des lenteurs et des comportements erratiques : exactement le genre de symptôme qui pousse à formater, alors que Windows sait le réparer gratuitement en 10 à 20 minutes.",
+      },
+      { type: "h2", text: "Quelles causes un formatage ne règle-t-il pas ?" },
+      {
+        type: "ul",
+        items: [
+          "Un disque en fin de vie : formater ne le rajeunit pas, et réinstaller Windows sur un disque qui lâche, c'est risquer de tout perdre une deuxième fois ; voyez [les signes d'un disque dur qui va lâcher](/blog/disque-dur-va-lacher-signes).",
+          "Une surchauffe : la poussière dans les grilles d'aération ou une pâte thermique usée font chauffer le PC, qui se bride pour se protéger ; un PC encrassé chauffera de nouveau dès le premier jour. Voyez [un ventilateur qui ne s'arrête plus](/blog/ventilateur-qui-ne-sarrete-plus).",
+          "Une batterie usée sur un portable : elle se décharge vite, et aucun logiciel ne lui rend sa capacité.",
+          "Un matériel trop juste pour vos usages : peu de mémoire soudée, un disque dur mécanique, un processeur ancien ; voyez [avant d'acheter un PC neuf](/blog/avant-dacheter-un-pc-neuf).",
+        ],
+      },
+      {
+        type: "p",
+        text: "Formater ces PC-là, c'est perdre une journée pour retrouver le même problème. Pour la poussière, un dépoussiérage à la bombe d'air sec, appareil éteint et débranché, règle souvent l'essentiel ; un nettoyage complet avec pâte thermique neuve coûte en général 50 à 80 euros chez un réparateur. Pour un disque dur mécanique encore sain mais lent, le remplacer par un SSD change bien plus qu'une réinstallation.",
+      },
+      { type: "h2", text: "Que contrôler avant de décider ?" },
+      {
+        type: "ol",
+        items: [
+          "L'état du disque et l'espace libre : un disque signalé en mauvaise santé passe avant tout le reste (sauvegarde d'abord).",
+          "La charge du processeur et de la mémoire au repos : un programme qui tourne alors que vous ne faites rien est une piste immédiate.",
+          "Les programmes au démarrage : Paramètres > Applications > Démarrage, avec l'impact de chacun.",
+          "Les signes de surchauffe : un ventilateur qui souffle fort au repos, un processeur qui ralentit pour se protéger.",
+          "Les plantages et arrêts brutaux récents dans le journal Windows : ils orientent vers le matériel, l'alimentation ou un pilote.",
+          "Le dernier vrai redémarrage, démarrage rapide compris.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Faits à la main, ces contrôles demandent de passer par plusieurs outils. Une analyse les regroupe en une fois. Pour comparer les solutions gratuites, voyez [les meilleurs logiciels gratuits de diagnostic PC](/blog/meilleurs-logiciels-gratuits-diagnostic-pc).",
+      },
+      { type: "h2", text: "Et si le formatage reste nécessaire ?" },
+      {
+        type: "p",
+        text: "Il l'est parfois : système trop abîmé pour être réparé, infection sérieuse, ou envie de repartir de zéro avant de donner ou revendre le PC. Préparez-le : sauvegardez documents, photos et favoris sur un disque externe ou un espace en ligne, notez vos licences et vérifiez que vous connaissez vos mots de passe, gardez sous la main le site du fabricant pour les pilotes.",
+      },
+      {
+        type: "p",
+        text: "Avant le formatage complet, il existe une étape intermédiaire : la réinitialisation de Windows. Dans Paramètres > Système > Récupération > Réinitialiser ce PC, l'option « Conserver mes fichiers » réinstalle Windows en gardant vos documents personnels, mais retire les applications installées et remet les réglages par défaut. C'est moins lourd qu'un formatage, et cela règle les problèmes purement logiciels. Elle ne change rien, elle non plus, à un disque usé ou à une surchauffe.",
+      },
+      { type: "h2", text: "Que vérifie Nyctale avant que vous décidiez ?" },
+      {
+        type: "p",
+        text: "Nyctale passe en revue 11 règles de diagnostic qui couvrent les deux colonnes de cet article : programme bloqué ou gros consommateur, mémoire saturée ou compensée par le disque, faux redémarrage lié au démarrage rapide, bridage thermique, plantages récents dans le journal Windows, disque plein et état de santé du disque, batterie usée, programmes au démarrage, refroidissement encrassé, navigateur gourmand et fichiers système abîmés. Pour chaque constat, il dit en clair si la cause se corrige par logiciel ou si elle est matérielle, donc si un formatage servirait à quelque chose.",
+      },
+      {
+        type: "p",
+        text: "Il ne promet pas qu'une analyse évite toujours le formatage : elle vous dit seulement si la cause est ailleurs. Les réparations qui modifient le système, comme la vérification des fichiers système, ne se lancent qu'avec votre accord.",
+      },
+      { type: "h2", text: "Conclusion : diagnostiquer avant d'effacer" },
+      {
+        type: "p",
+        text: "Quelques minutes de diagnostic peuvent vous éviter une journée de réinstallation, ou vous éviter de réinstaller sur un disque qui va lâcher. Commencez par un vrai redémarrage, regardez ce qui consomme, faites le tri au démarrage, vérifiez le disque et la chauffe ; ne formatez qu'une fois ces causes écartées. L'[analyse de Nyctale](/) est gratuite ; la première réparation est offerte, et la version complète coûte 24,99 € en achat unique.",
+      },
+    ],
+    faq: [
+      {
+        q: "Faut-il formater un PC lent ?",
+        r: "Pas en premier : beaucoup de lenteurs viennent d'un programme, de la mémoire, du disque plein ou du démarrage, et se corrigent sans réinstaller.",
+      },
+      {
+        q: "Le formatage règle-t-il tout ?",
+        r: "Non. Il ne répare ni un disque usé, ni une surchauffe due à la poussière, ni une batterie fatiguée, ni un matériel trop ancien.",
+      },
+      {
+        q: "Que sauvegarder avant de formater ?",
+        r: "Documents, photos, favoris du navigateur, licences de logiciels, et vérifier que vous connaissez vos mots de passe.",
+      },
+      {
+        q: "Existe-t-il une option moins lourde ?",
+        r: "Oui : Réinitialiser ce PC avec l'option « Conserver mes fichiers », dans Paramètres > Système > Récupération. Les applications installées sont retirées, vos documents restent.",
+      },
+      {
+        q: "Nyctale coûte-t-il quelque chose ?",
+        r: "L'analyse est gratuite, la première réparation est offerte, puis la version complète coûte 24,99 € en achat unique, sans abonnement.",
+      },
+    ],
+    liens: ["pc-qui-rame-sans-raison", "memoire-ram-saturee-comment-la-lire", "disque-dur-va-lacher-signes", "avant-dacheter-un-pc-neuf", "meilleurs-logiciels-gratuits-diagnostic-pc"],
   },
 ];

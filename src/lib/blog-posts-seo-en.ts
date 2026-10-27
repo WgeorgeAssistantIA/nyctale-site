@@ -431,6 +431,10 @@ export const seoEnArticles: Article[] = [
         type: "p",
         text: "Nyctale queries the same sources as these tools (processes, Windows log, drive health) and cross-checks them to name the probable cause in plain language. See our dedicated [Windows PC crash analyzer and Kernel-Power 41 diagnostic](/diagnostic-crash-pc). The analysis is free; the full version, which guides the fix, costs €24.99 once, with no subscription. When the problem is hardware, it tells you rather than sending you chasing a setting.",
       },
+      {
+        type: "p",
+        text: "Related reading: [before reformatting your PC, what a diagnostic can save you](/blog/before-reformatting-your-pc-what-a-diagnostic-can-save-you).",
+      },
     ],
     faq: [
       {
@@ -454,7 +458,7 @@ export const seoEnArticles: Article[] = [
         r: "It cross-checks several sources (processes, Windows log, drive health) to name a probable cause in plain language, instead of leaving you to interpret numbers and codes. The analysis is free, the full version costs €24.99 once.",
       },
     ],
-    liens: ["windows-11-blue-screen-fix", "failing-hard-drive-signs", "slow-computer-no-obvious-reason"],
+    liens: ["windows-11-blue-screen-fix", "failing-hard-drive-signs", "slow-computer-no-obvious-reason", "before-reformatting-your-pc-what-a-diagnostic-can-save-you"],
   },
   {
     slug: "is-my-pc-compatible-with-windows-11",
@@ -867,5 +871,128 @@ export const seoEnArticles: Article[] = [
       },
     ],
     liens: ["slow-computer-no-obvious-reason", "startup-programs-which-ones-to-disable", "slow-pc-startup", "disk-100-percent-windows", "before-buying-a-new-pc"],
+  },
+  {
+    slug: "before-reformatting-your-pc-what-a-diagnostic-can-save-you",
+    lang: "en",
+    traduction: "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter",
+    title: "Before Reformatting Your PC: What a Diagnostic Can Save You",
+    seoTitle: "Reformat a Slow PC? What to Check Before You Do",
+    excerpt:
+      "Reformatting is the last resort, not the first. The causes of slowness you can fix without reinstalling, the ones a reformat will not fix, and how to decide knowingly.",
+    image: { src: "/images/blog/nyctale-avant-formater-en.jpg", alt: "Two columns: what you can fix without reformatting (stuck program, full memory, full disk, heavy startup, browser, system files) and what a reformat does not fix (worn disk, overheating, worn battery, hardware too limited)" },
+    date: "2026-10-27",
+    readMin: 7,
+    blocks: [
+      {
+        type: "p",
+        text: "Before reformatting a slow PC, check the cause first: many slowdowns come from a runaway program, full memory, a nearly full disk, too many startup programs or damaged system files, and all of them can be fixed without reinstalling Windows. Conversely, a failing disk, overheating or hardware that is too old will come back after the reformat. A few minutes of diagnosis is enough to know which case you are in.",
+      },
+      {
+        type: "p",
+        text: "Reformatting is tempting because it promises a 'like new' PC. But it has a cost: documents to back up, software to reinstall, accounts to sign back into, settings to redo, often a whole evening or more. And it repairs nothing physical. This article sorts out what a reformat really fixes, what it does not, and what to check before you decide. If your PC slows down for no visible reason, start with [a slow computer with no obvious reason](/blog/slow-computer-no-obvious-reason).",
+      },
+      { type: "h2", text: "Why does reformatting feel like it fixes everything?" },
+      {
+        type: "p",
+        text: "Because it resets everything at once: no more startup programs, no more piled-up extensions, no more temporary files, a suddenly very empty disk. For a few weeks, the PC feels fast. But if the real cause was one of those build-ups, fixing that one alone was enough. And if the cause was hardware, it comes back with the first heavier task.",
+      },
+      {
+        type: "p",
+        text: "There is also a case where slowness comes from a fake restart. With Windows 'Fast startup', the Shut down button does not fully clear the system session: a PC switched off every evening may not have truly restarted for days. A real restart (Start > Power > Restart) sometimes fixes in one minute what you expected to fix by reformatting.",
+      },
+      { type: "h2", text: "Which causes can you fix without reformatting?" },
+      {
+        type: "ul",
+        items: [
+          "A runaway program: it hogs the processor or memory. Task Manager (Ctrl + Shift + Esc), sorted by CPU then by memory, shows it in seconds.",
+          "Full memory: often the browser or apps left open; see [how to read full RAM](/blog/ram-full-how-to-read-memory-usage).",
+          "A nearly full disk: Windows needs free space to work; emptying the recycle bin, temporary files and old updates often frees a lot.",
+          "Too many startup programs: each one slows down sign-in and takes memory; see [which startup programs to disable](/blog/startup-programs-which-ones-to-disable).",
+          "A browser overloaded with tabs and extensions, which can take a large share of memory on its own.",
+          "Damaged system files, which Windows can check and repair by itself with two commands (DISM, then sfc /scannow).",
+        ],
+      },
+      {
+        type: "p",
+        text: "That last case deserves attention, because it is invisible. On the work PC used to build Nyctale, the sfc /scannow command found and repaired corrupted system files. No message had warned about it, only slowdowns and erratic behaviour: exactly the kind of symptom that pushes people to reformat, while Windows can repair it for free in 10 to 20 minutes.",
+      },
+      { type: "h2", text: "Which causes does a reformat not fix?" },
+      {
+        type: "ul",
+        items: [
+          "A disk at end of life: reformatting does not rejuvenate it, and reinstalling Windows on a failing disk means risking losing everything a second time; see [signs of a failing hard drive](/blog/failing-hard-drive-signs).",
+          "Overheating: dust in the air vents or worn thermal paste make the PC run hot, and it throttles itself to stay safe; a clogged PC will heat up again from day one. See [a fan that never stops spinning](/blog/fan-that-never-stops-spinning).",
+          "A worn battery on a laptop: it drains fast, and no software gives it its capacity back.",
+          "Hardware too limited for your uses: little soldered memory, a mechanical hard drive, an old processor; see [before buying a new PC](/blog/before-buying-a-new-pc).",
+        ],
+      },
+      {
+        type: "p",
+        text: "Reformatting those PCs means losing a day to find the same problem again. For dust, blowing out the vents with compressed air, device off and unplugged, often fixes most of it; a full clean with fresh thermal paste usually costs 50 to 80 euros at a repair shop. For a mechanical hard drive that is still healthy but slow, swapping it for an SSD changes far more than a reinstall.",
+      },
+      { type: "h2", text: "What should you check before deciding?" },
+      {
+        type: "ol",
+        items: [
+          "Disk health and free space: a disk reported as unhealthy comes before everything else (back up first).",
+          "Processor and memory load at idle: a program running while you do nothing is an immediate lead.",
+          "Startup programs: Settings > Apps > Startup, with the impact of each one.",
+          "Signs of overheating: a fan blowing hard at idle, a processor slowing down to protect itself.",
+          "Recent crashes and sudden shutdowns in the Windows log: they point to hardware, power or a driver.",
+          "The last real restart, Fast startup included.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Done by hand, these checks take several different tools. A diagnostic bundles them in one go. To compare free options, see [the best free PC diagnostic tools](/blog/best-free-pc-diagnostic-tools).",
+      },
+      { type: "h2", text: "What if reformatting is still necessary?" },
+      {
+        type: "p",
+        text: "Sometimes it is: a system too damaged to repair, a serious infection, or wanting a clean slate before giving away or selling the PC. Prepare it: back up documents, photos and bookmarks to an external drive or online storage, note your licences and make sure you know your passwords, keep the manufacturer's website at hand for drivers.",
+      },
+      {
+        type: "p",
+        text: "Before a full reformat, there is a middle step: resetting Windows. In Settings > System > Recovery > Reset this PC, the 'Keep my files' option reinstalls Windows while keeping your personal documents, but removes installed apps and restores default settings. It is lighter than a reformat, and it fixes purely software problems. It does not change anything about a worn disk or overheating either.",
+      },
+      { type: "h2", text: "What does Nyctale check before you decide?" },
+      {
+        type: "p",
+        text: "Nyctale runs 11 diagnostic rules that cover both columns of this article: stuck program or heavy consumer, full memory or memory made up for by the disk, fake restart caused by Fast startup, thermal throttling, recent crashes in the Windows log, full disk and disk health, worn battery, startup programs, clogged cooling, memory-hungry browser and damaged system files. For each finding, it says plainly whether the cause can be fixed by software or is hardware, and so whether a reformat would help at all.",
+      },
+      {
+        type: "p",
+        text: "It does not promise that a diagnostic always avoids a reformat: it only tells you whether the cause lies elsewhere. Repairs that change the system, such as the system file check, only run with your consent.",
+      },
+      { type: "h2", text: "Conclusion: diagnose before erasing" },
+      {
+        type: "p",
+        text: "A few minutes of diagnosis can save you a day of reinstalling, or save you from reinstalling onto a disk that is about to fail. Start with a real restart, look at what is consuming resources, trim startup, check the disk and the heat; only reformat once those causes are ruled out. [Nyctale's analysis](/en) is free; the first repair is offered, and the full version costs €24.99 as a one-time purchase.",
+      },
+    ],
+    faq: [
+      {
+        q: "Should I reformat a slow PC?",
+        r: "Not first: many slowdowns come from a program, memory, a full disk or startup, and can be fixed without reinstalling.",
+      },
+      {
+        q: "Does reformatting fix everything?",
+        r: "No. It does not repair a worn disk, overheating caused by dust, a tired battery or hardware that is too old.",
+      },
+      {
+        q: "What should I back up before reformatting?",
+        r: "Documents, photos, browser bookmarks, software licences, and make sure you know your passwords.",
+      },
+      {
+        q: "Is there a lighter option?",
+        r: "Yes: Reset this PC with the 'Keep my files' option, in Settings > System > Recovery. Installed apps are removed, your documents stay.",
+      },
+      {
+        q: "Does Nyctale cost anything?",
+        r: "The analysis is free, the first repair is offered, then the full version costs €24.99 as a one-time purchase, with no subscription.",
+      },
+    ],
+    liens: ["slow-computer-no-obvious-reason", "ram-full-how-to-read-memory-usage", "failing-hard-drive-signs", "before-buying-a-new-pc", "best-free-pc-diagnostic-tools"],
   },
 ];

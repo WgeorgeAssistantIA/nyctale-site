@@ -514,7 +514,7 @@ export const articles: Article[] = [
         r: "Nyctale trouve la cause et aide à la corriger quand elle est logicielle : fermer un programme bloqué, régler le navigateur, repasser en mode Équilibré. Quand la cause est physique, il vous le dit franchement : aucun logiciel ne remplace un dépoussiérage.",
       },
     ],
-    liens: ["ecran-bleu-windows-11", "pc-qui-rame-sans-raison", "meilleurs-logiciels-gratuits-diagnostic-pc", "avant-dacheter-un-pc-neuf"],
+    liens: ["ecran-bleu-windows-11", "pc-qui-rame-sans-raison", "meilleurs-logiciels-gratuits-diagnostic-pc", "avant-dacheter-un-pc-neuf", "pc-qui-redemarre-tout-seul"],
   },
   {
     slug: "fan-that-never-stops-spinning",
@@ -685,7 +685,7 @@ export const articles: Article[] = [
         r: "Nyctale finds the cause and helps fix it when it's software: closing a stuck program, adjusting the browser, switching back to Balanced mode. When the cause is physical, it tells you plainly: no software replaces a good dusting.",
       },
     ],
-    liens: ["windows-11-blue-screen-fix", "slow-computer-no-obvious-reason", "best-free-pc-diagnostic-tools", "before-buying-a-new-pc"],
+    liens: ["windows-11-blue-screen-fix", "slow-computer-no-obvious-reason", "best-free-pc-diagnostic-tools", "before-buying-a-new-pc", "pc-restarts-by-itself"],
   },
 
   // -------------------------------------------------------------------

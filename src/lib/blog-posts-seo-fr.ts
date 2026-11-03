@@ -314,7 +314,7 @@ export const seoFrArticles: Article[] = [
         r: "Un SSD de 500 Go se trouve généralement entre 40 et 70 €. Chez un réparateur, comptez en plus la pose et éventuellement le clonage ou la réinstallation de Windows.",
       },
     ],
-    liens: ["ecran-bleu-windows-11", "disque-a-100-pourcent-windows", "pc-lent-au-demarrage", "pc-qui-redemarre-tout-seul"],
+    liens: ["ecran-bleu-windows-11", "disque-a-100-pourcent-windows", "pc-lent-au-demarrage", "pc-qui-redemarre-tout-seul", "pc-qui-freeze-materiel-ou-logiciel"],
   },
   {
     slug: "meilleurs-logiciels-gratuits-diagnostic-pc",
@@ -1052,6 +1052,7 @@ export const seoFrArticles: Article[] = [
       },
       { type: "h2", text: "Quand faut-il consulter un professionnel ?" },
       { type: "p", text: "Faites appel à un réparateur si les arrêts brutaux se répètent sans cause trouvée après ces vérifications, si le PC s'éteint dès qu'il travaille un peu malgré un dépoussiérage, si le disque montre des signes de fatigue, ou si l'ordinateur ne redémarre plus du tout. Dans tous les cas, sauvegardez vos données d'abord : c'est la seule action qui ne peut jamais être regrettée. Et si vous hésitez à tout réinstaller, lisez avant [ce qu'une analyse peut éviter avant de formater](/blog/avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter) : un formatage ne règle ni une surchauffe, ni une alimentation fatiguée." },
+      { type: "p", text: "Si votre PC ne redémarre pas mais reste figé, image immobile et souris bloquée, la démarche est différente : voyez [comment savoir si un PC qui freeze a un problème matériel ou logiciel](/blog/pc-qui-freeze-materiel-ou-logiciel)." },
       { type: "h2", text: "Conclusion : lire les traces plutôt que deviner" },
       { type: "p", text: "Windows garde la trace de chaque arrêt anormal ; il suffit de savoir où regarder. L'[analyse de Nyctale](/) le fait pour vous : elle relit le journal système des trente derniers jours, compte les incidents distincts, et traite trois arrêts brutaux ou plus dans le mois comme le signe le plus sérieux de son rapport. Elle croise aussi ces arrêts avec les épisodes où le processeur a dû ralentir pour se protéger de la chaleur : quand les deux coïncident, sans programme bloqué pour l'expliquer, elle désigne le refroidissement plutôt qu'un logiciel. L'analyse est gratuite, la première réparation est offerte, et la version complète coûte 24,99 € en achat unique." },
     ],
@@ -1077,6 +1078,200 @@ export const seoFrArticles: Article[] = [
         r: "Son analyse gratuite lit les arrêts anormaux des trente derniers jours, l'état du disque et les signes de surchauffe, et indique en clair la cause la plus probable.",
       },
     ],
-    liens: ["ecran-bleu-windows-11", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter"],
+    liens: ["ecran-bleu-windows-11", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter", "pc-qui-freeze-materiel-ou-logiciel"],
+  },
+  {
+    slug: "pc-qui-freeze-materiel-ou-logiciel",
+    lang: "fr",
+    traduction: "pc-freezes-hardware-or-software",
+    title: "PC qui freeze : problème matériel ou logiciel ?",
+    seoTitle: "PC qui freeze : problème matériel ou logiciel ? (Windows 10 et 11)",
+    excerpt: "Écran figé, souris bloquée, plus de réponse : comment savoir si le PC est vraiment gelé, quand le gel arrive, où Windows en garde la trace, et comment séparer un logiciel en cause d'une panne matérielle.",
+    image: {
+      src: "/images/blog/nyctale-pc-freeze-fr.jpg",
+      alt: "Trois profils de gel : logiciel probable (toujours avec le même programme, jamais en mode sans échec), chaleur probable (après un moment ou sous charge, ventilateur fort) et matériel probable (au hasard, même au repos, aussi en mode sans échec)"
+    },
+    date: "2026-11-03",
+    readMin: 8,
+    blocks: [
+      {
+        type: "p",
+        text: "Un PC qui freeze souffre soit d'un logiciel qui monopolise le processeur, la mémoire ou le disque, soit d'un composant en difficulté : surchauffe, disque fatigué, mémoire défectueuse, pilote instable. Pour trancher, quatre indices suffisent la plupart du temps : le gel est-il total ou limité à une fenêtre, à quel moment arrive-t-il, que dit l'historique de Windows, et le PC fige-t-il encore en mode sans échec ? S'il ne fige jamais en mode sans échec, un programme ou un pilote est en cause ; s'il fige aussi, le matériel devient le suspect principal."
+      },
+      {
+        type: "p",
+        text: "Un freeze est plus déroutant qu'un plantage : pas d'écran bleu, pas de message, juste une image immobile et un bouton d'alimentation qu'on finit par maintenir enfoncé. Il laisse pourtant des indices, à condition de les noter au bon moment. Cet article donne une méthode par élimination, du test le plus simple au plus technique. Si votre PC n'est pas figé mais simplement lent, lisez plutôt [pourquoi un PC rame sans raison apparente](/blog/pc-qui-rame-sans-raison)."
+      },
+      {
+        type: "h2",
+        text: "Gel, plantage ou lenteur : de quoi parle-t-on ?"
+      },
+      {
+        type: "p",
+        text: "Trois situations se ressemblent mais n'ont pas les mêmes causes. Une lenteur, c'est un PC qui répond, mais en retard. Un plantage, c'est un arrêt : écran bleu, écran noir, redémarrage. Un gel, ou freeze, c'est un PC allumé qui ne répond plus du tout, image figée, parfois avec le son qui boucle."
+      },
+      {
+        type: "p",
+        text: "La distinction compte, car un gel que l'on interrompt en maintenant le bouton d'alimentation devient, aux yeux de Windows, un arrêt brutal : au démarrage suivant, le journal système enregistre un événement 41 (Kernel-Power). Si vous voyez ces événements s'accumuler, ce ne sont donc pas forcément des plantages, ce peuvent être vos propres redémarrages forcés après un gel. Notre article sur [le PC qui redémarre tout seul](/blog/pc-qui-redemarre-tout-seul) explique comment lire ces traces, et celui sur [l'écran bleu sous Windows 11](/blog/ecran-bleu-windows-11) couvre le cas où le gel se termine par une erreur système."
+      },
+      {
+        type: "h2",
+        text: "Le PC est-il vraiment figé, ou seulement très occupé ?"
+      },
+      {
+        type: "p",
+        text: "Avant de soupçonner une panne, vérifiez que le système est bien bloqué. Un PC saturé peut sembler gelé pendant une ou deux minutes puis repartir : c'est alors une surcharge, pas un gel. Quatre tests rapides, dans l'ordre :"
+      },
+      {
+        type: "ol",
+        items: [
+          "Attendez deux minutes sans rien toucher. Si le PC repart, il était occupé : un programme, une mise à jour ou un disque surchargé le retenait.",
+          "Appuyez sur Ctrl + Maj + Échap pour ouvrir le Gestionnaire des tâches. S'il s'ouvre, Windows tourne encore : regardez quel programme occupe le processeur, la mémoire ou le disque, et fermez-le.",
+          "Appuyez sur la touche Verr Num. Si son voyant s'allume et s'éteint, sur la plupart des claviers, le système répond encore au clavier : le blocage vient plutôt de l'affichage ou d'un programme.",
+          "Appuyez sur Windows + Ctrl + Maj + B. Ce raccourci relance le pilote graphique : un bip et un écran qui clignote puis revient signent un problème d'affichage, souvent lié au pilote de la carte graphique."
+        ]
+      },
+      {
+        type: "p",
+        text: "Si une seule application est figée et que le reste répond, le problème est presque toujours logiciel : le programme attend une ressource, boucle ou plante. Windows ajoute alors « Pas de réponse » dans la barre de titre. Si tout est figé, souris comprise, et qu'aucun de ces tests ne répond, la cause est plus profonde : système saturé, disque, mémoire, pilote ou matériel."
+      },
+      {
+        type: "h2",
+        text: "Quand le gel arrive-t-il ?"
+      },
+      {
+        type: "p",
+        text: "Le moment du gel est l'indice le plus utile, et il ne coûte rien : notez-le pendant une semaine, avec ce que vous faisiez à cet instant."
+      },
+      {
+        type: "h3",
+        text: "Toujours avec le même programme"
+      },
+      {
+        type: "p",
+        text: "Un jeu, un logiciel de montage, un navigateur précis : le coupable est ce programme, son extension ou le pilote qu'il sollicite le plus, en général celui de la carte graphique. Mettre à jour ou réinstaller le programme est le premier essai."
+      },
+      {
+        type: "h3",
+        text: "Après un moment d'utilisation ou sous forte charge"
+      },
+      {
+        type: "p",
+        text: "Un PC qui tient vingt minutes puis fige pendant un jeu ou un export vidéo désigne la chaleur, surtout si le ventilateur souffle fort. Le processeur commence par se ralentir pour se protéger, puis le système peut se bloquer ou se couper. Notre article sur [le ventilateur qui ne s'arrête plus](/blog/ventilateur-qui-ne-sarrete-plus) aide à faire la part des choses."
+      },
+      {
+        type: "h3",
+        text: "Quand beaucoup de choses sont ouvertes"
+      },
+      {
+        type: "p",
+        text: "Si les gels arrivent avec de nombreux onglets ou programmes ouverts, la mémoire vive est probablement pleine : Windows se rabat sur le disque, bien plus lent, et tout se fige par moments. Voyez [comment lire une mémoire RAM saturée](/blog/memoire-ram-saturee-comment-la-lire)."
+      },
+      {
+        type: "h3",
+        text: "Au hasard, même au repos"
+      },
+      {
+        type: "p",
+        text: "Un gel sans lien avec ce que vous faites, y compris PC inactif, oriente vers le matériel : disque en fin de vie, barrette de mémoire défectueuse, alimentation instable. C'est le cas le moins fréquent, mais celui qui mérite le plus d'attention, car vos données peuvent être en jeu."
+      },
+      {
+        type: "h3",
+        text: "Depuis une mise à jour précise"
+      },
+      {
+        type: "p",
+        text: "Si les gels ont commencé juste après une mise à jour de Windows, d'un pilote ou l'installation d'un logiciel, la coïncidence est un indice fort : revenez en arrière avant de chercher plus loin."
+      },
+      {
+        type: "h2",
+        text: "Où Windows garde-t-il la trace des gels ?"
+      },
+      {
+        type: "p",
+        text: "Un gel ne laisse pas de message à l'écran, mais il laisse souvent des traces dans les journaux, à condition de les lire juste après."
+      },
+      {
+        type: "ul",
+        items: [
+          "L'historique de fiabilité : tapez « fiabilité » dans la recherche Windows et ouvrez « Afficher l'historique de fiabilité ». Il affiche jour par jour les applications qui ont cessé de répondre, les arrêts incorrects et les pannes matérielles. Un même programme qui revient tous les jours est un suspect sérieux.",
+          "L'Observateur d'événements, journal Application : l'événement 1002 (« Application Hang ») nomme le programme qui ne répondait plus.",
+          "L'Observateur d'événements, journal Système : des avertissements répétés de la source « disk » (événement 153, opération d'entrée-sortie réessayée) ou du contrôleur de stockage (événement 129, réinitialisation) au moment des gels désignent le disque ou sa connexion.",
+          "Les événements 41 au redémarrage confirment seulement que le PC a été coupé sans arrêt propre, ce qui arrive aussi quand vous forcez l'extinction après un gel."
+        ]
+      },
+      {
+        type: "p",
+        text: "Comparez les heures de ces événements avec vos notes. Un programme qui apparaît à chaque gel oriente vers le logiciel ; des erreurs de disque à chaque gel orientent vers le matériel ; aucune trace du tout, avec des gels au hasard, fait plutôt penser à la mémoire ou à l'alimentation."
+      },
+      {
+        type: "h2",
+        text: "Comment isoler la cause : logiciel ou matériel ?"
+      },
+      {
+        type: "p",
+        text: "Si les indices ne suffisent pas, procédez par élimination, du plus simple au plus technique."
+      },
+      {
+        type: "ol",
+        items: [
+          "Démarrez en mode sans échec : Paramètres > Système > Récupération > Démarrage avancé > Redémarrer maintenant, puis Dépannage > Options avancées > Paramètres > Redémarrer, et touche 4. Windows ne charge alors que l'essentiel. Utilisez le PC ainsi aussi longtemps qu'il le faut pour qu'un gel se produise normalement.",
+          "Si le PC ne fige jamais en mode sans échec, le fautif est un pilote ou un programme chargé au démarrage. Faites un démarrage minimal : tapez msconfig, onglet Services, cochez « Masquer tous les services Microsoft », puis « Désactiver tout », et désactivez les programmes de l'onglet Démarrage du Gestionnaire des tâches. Réactivez-les ensuite par petits groupes pour trouver le coupable. Notre guide des [programmes au démarrage à désactiver](/blog/programmes-au-demarrage-lesquels-desactiver) aide à trier.",
+          "Si le PC fige aussi en mode sans échec, le matériel devient le suspect principal. Testez la mémoire avec l'outil Diagnostic de mémoire Windows (tapez mdsched dans la recherche) : il redémarre le PC et vérifie la mémoire avant Windows.",
+          "Vérifiez la santé du disque et sauvegardez vos fichiers avant tout autre test : voir [les signes d'un disque dur qui va lâcher](/blog/disque-dur-va-lacher-signes).",
+          "Débranchez le matériel ajouté récemment (clé USB, disque externe, carte) et, sur un PC fixe, branchez-le directement au mur, sans multiprise."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Que faire selon la réponse ?"
+      },
+      {
+        type: "ul",
+        items: [
+          "Programme en cause : mettez-le à jour ou réinstallez-le, désactivez ses extensions, et limitez les programmes lancés au démarrage.",
+          "Pilote en cause : si le problème a commencé après une mise à jour, Gestionnaire de périphériques, clic droit sur le matériel > Propriétés > Pilote > « Restaurer le pilote ». Sinon, installez la version du fabricant.",
+          "Mémoire vive saturée : fermez les onglets et programmes inutiles ; si cela revient sans cesse, ajouter de la mémoire règle le problème durablement.",
+          "Chaleur : dépoussiérez les grilles d'aération avec une bombe à air sec, appareil éteint et débranché, et ne posez pas un portable sur un lit ou un canapé. Si la chauffe persiste, un nettoyage avec changement de pâte thermique chez un réparateur coûte en général 50 à 80 euros. Aucun logiciel ne corrige de la poussière.",
+          "Disque ou mémoire défectueux : sauvegardez immédiatement, puis faites remplacer la pièce. Avant de tout réinstaller, lisez [ce qu'une analyse peut éviter avant de formater](/blog/avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter) : un formatage ne répare ni un disque fatigué, ni une surchauffe."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Conclusion : un gel se diagnostique par élimination"
+      },
+      {
+        type: "p",
+        text: "Un freeze ne donne pas sa cause, mais le moment où il arrive, les journaux de Windows et le test du mode sans échec suffisent presque toujours à choisir entre logiciel, chaleur et matériel. L'[analyse de Nyctale](/) ne voit pas le gel lui-même, puisqu'elle ne tourne pas pendant qu'il se produit ; elle lit en revanche la liste des suspects : programmes qui occupent un cœur du processeur sans raison, mémoire vive saturée ou compensée sur le disque, épisodes où le processeur a dû se ralentir à cause de la chaleur ces deux dernières semaines, arrêts brutaux du dernier mois, disque presque plein ou signalé en mauvaise santé par Windows. L'analyse est gratuite, la première réparation est offerte, et la version complète coûte 24,99 € en achat unique."
+      }
+    ],
+    faq: [
+      {
+        q: "Pourquoi mon PC freeze-t-il ?",
+        r: "Le plus souvent à cause d'un programme ou d'un pilote qui bloque le système, d'une mémoire vive saturée ou d'une surchauffe, plus rarement d'un disque, d'une barrette de mémoire ou d'une alimentation en défaut."
+      },
+      {
+        q: "Comment savoir si le problème est matériel ?",
+        r: "Si le PC fige aussi en mode sans échec, ou au hasard même au repos, le matériel devient le suspect principal. Testez alors la mémoire avec mdsched et vérifiez la santé du disque."
+      },
+      {
+        q: "Un disque peut-il figer tout l'ordinateur ?",
+        r: "Oui. Un disque qui peine à lire ou à écrire bloque Windows en attendant ses réponses. Des avertissements de la source « disk » dans le journal Système au moment des gels le confirment."
+      },
+      {
+        q: "Faut-il forcer l'extinction quand le PC est figé ?",
+        r: "Seulement en dernier recours, après avoir attendu deux minutes et essayé Ctrl + Maj + Échap. Une extinction forcée peut faire perdre le travail en cours et apparaît ensuite comme un arrêt brutal (événement 41)."
+      },
+      {
+        q: "Que lit Nyctale ?",
+        r: "Son analyse gratuite lit les programmes qui s'emballent, la mémoire vive, le bridage thermique, les arrêts brutaux et la santé du disque, puis indique en clair la cause la plus probable."
+      }
+    ],
+    liens: [
+      "pc-qui-redemarre-tout-seul",
+      "memoire-ram-saturee-comment-la-lire",
+      "disque-dur-va-lacher-signes",
+      "ventilateur-qui-ne-sarrete-plus"
+    ]
   },
 ];

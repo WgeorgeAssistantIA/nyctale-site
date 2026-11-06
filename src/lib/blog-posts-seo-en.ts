@@ -1018,6 +1018,7 @@ export const seoEnArticles: Article[] = [
       { type: "p", text: "This is the most mundane cause and the easiest to check. Windows Update restarts outside the “active hours” you have set; if they do not match your real schedule, the restart comes at the wrong time. Nothing serious: it is an intended restart, not a fault." },
       { type: "h3", text: "2. Overheating" },
       { type: "p", text: "When the processor reaches a dangerous temperature, it first slows down to protect itself, then the PC cuts out if that is not enough. The typical sign: a shutdown during a game, a video export or a long session, and a fan that blows hard even at idle. On a PC more than three or four years old, dust in the vents and worn thermal paste are the most common cause." },
+      { type: "p", text: "To find out whether your PC is affected, measure it: our guide to [normal CPU and GPU temperatures](/blog/normal-cpu-gpu-temperatures) explains how, and where to find your model's limit." },
       { type: "h3", text: "3. A weakening power supply or battery" },
       { type: "p", text: "On a desktop, a tired or undersized power supply gives out when power demand rises, typically under graphics load. On a laptop, a worn battery can cut the machine off well before it shows 0%. A faulty power strip or a power cut leave exactly the same traces as a fault: that is why an abrupt shutdown on its own does not prove overheating." },
       { type: "h3", text: "4. An unstable driver or program" },
@@ -1078,7 +1079,7 @@ export const seoEnArticles: Article[] = [
         r: "Its free analysis reads the abnormal shutdowns of the last thirty days, disk health and signs of overheating, and states the most likely cause in plain language.",
       },
     ],
-    liens: ["windows-11-blue-screen-fix", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "before-reformatting-your-pc-what-a-diagnostic-can-save-you", "pc-freezes-hardware-or-software"],
+    liens: ["normal-cpu-gpu-temperatures", "windows-11-blue-screen-fix", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "before-reformatting-your-pc-what-a-diagnostic-can-save-you", "pc-freezes-hardware-or-software"],
   },
   {
     slug: "pc-freezes-hardware-or-software",
@@ -1243,7 +1244,8 @@ export const seoEnArticles: Article[] = [
       {
         type: "p",
         text: "A freeze does not reveal its cause, but when it happens, the Windows logs and the Safe Mode test are almost always enough to choose between software, heat and hardware. [Nyctale's analysis](/en) does not see the freeze itself, since it is not running while the freeze happens; what it does read is the list of suspects: programs using a processor core for no reason, working memory that is full or spilling onto the disk, episodes over the past two weeks where the processor had to slow down because of heat, abrupt shutdowns in the past month, and a disk that is nearly full or reported unhealthy by Windows. The analysis is free, the first repair is on the house, and the full version costs €24.99 as a one-time purchase."
-      }
+      },
+      { type: "p", text: "If the freeze comes after a while in use, check the heat: [how to tell if your PC runs too hot](/blog/normal-cpu-gpu-temperatures) gives the measuring method, at idle and then under load." }
     ],
     faq: [
       {
@@ -1268,10 +1270,193 @@ export const seoEnArticles: Article[] = [
       }
     ],
     liens: [
+      "normal-cpu-gpu-temperatures",
       "pc-restarts-by-itself",
       "ram-full-how-to-read-memory-usage",
       "failing-hard-drive-signs",
       "fan-that-never-stops-spinning"
+    ]
+  },
+  {
+    slug: "normal-cpu-gpu-temperatures",
+    lang: "en",
+    traduction: "temperature-normale-processeur-carte-graphique",
+    title: "How to Tell If Your PC Runs Too Hot: Normal CPU and GPU Temperatures",
+    seoTitle: "Normal CPU and GPU Temperatures: Is Your PC Running Too Hot?",
+    excerpt: "There is no universal normal temperature. How to measure at idle and under load, where to find your model's limit, how to spot thermal throttling and what to do when your PC heats up.",
+    image: {
+      src: "/images/blog/nyctale-pc-temperature-en.jpg",
+      alt: "Three levels: normal (fan rises under load then settles), keep an eye on it (loud fan at idle, PC slows under load) and act (shutdowns under load, artefacts on screen)"
+    },
+    date: "2026-11-06",
+    readMin: 8,
+    blocks: [
+      {
+        type: "p",
+        text: "There is no universal normal temperature: it depends on the processor or graphics card model, the load and the ventilation. To know whether your PC runs too hot, measure at idle and then under load, compare with the limit the manufacturer gives for your exact model, and watch how the machine behaves: fan at full speed at idle, slowdowns under load, sudden shutdowns."
+      },
+      {
+        type: "p",
+        text: "The charts online give precise ranges, but they do not agree from one site to the next, and what is ordinary for a thin laptop would be abnormal in a well-ventilated tower. Rather than a number to remember, here is a method, and how to read what it tells you."
+      },
+      {
+        type: "h2",
+        text: "Is there a normal temperature for a PC?"
+      },
+      {
+        type: "p",
+        text: "No, not a single one. A processor goes from a calm temperature to a high one within seconds as soon as it is asked to work: that is ordinary behaviour, and the fan is there to keep up. The value you read also depends on the room, the case, the age of the machine and how the manufacturer tuned the cooling."
+      },
+      {
+        type: "p",
+        text: "The only solid reference is the manufacturer's limit, and that varies too. Intel, for example, says the maximum junction temperature differs by product and is usually [between 100°C and 110°C](https://www.intel.com/content/www/us/en/support/articles/000005597/processors.html). Be careful what that figure means: it is the point where protections kick in, not a cruising temperature to aim for, nor proof that a value just below it is healthy."
+      },
+      {
+        type: "p",
+        text: "So the right question is not 'how many degrees?' but 'when, and what is the machine doing at that moment?'. A high temperature during a video render that falls afterwards has nothing in common with a high temperature while nothing is running."
+      },
+      {
+        type: "h2",
+        text: "How do you measure CPU and GPU temperature?"
+      },
+      {
+        type: "p",
+        text: "You need a utility that reads the sensors. HWiNFO, covered in our [selection of free diagnostic tools](/blog/best-free-pc-diagnostic-tools), shows both the processor and the graphics card. For the graphics card alone, Task Manager (Performance tab, GPU section) also shows the temperature on many PCs with a dedicated card. Measuring carries no risk: these tools only read."
+      },
+      {
+        type: "ol",
+        items: [
+          "Wait five to ten minutes after startup: Windows often works in the background right after boot, which would skew the reading.",
+          "Close your programs and note the idle temperature, along with the fan noise.",
+          "Run what you normally do when the PC struggles: a game, a video export, a long work session. Let it go for at least fifteen minutes, because heat builds up.",
+          "Note the settled value rather than a one-second peak, and look at the processor frequency: if it drops while the task continues, that is an important clue.",
+          "Stop the task and watch: the temperature should fall and the fan should calm down within a few minutes."
+        ]
+      },
+      {
+        type: "p",
+        text: "Repeat the measurement with the PC in its usual spot. A laptop tested on a desk and then used on a sofa gives very different numbers."
+      },
+      {
+        type: "h2",
+        text: "How do you know whether the reading is worrying?"
+      },
+      {
+        type: "p",
+        text: "First find the exact name of your component, shown by your utility or in Task Manager, then its page on the manufacturer's site: Intel or AMD for the processor, the chip or card maker for graphics. The term to look for is the maximum operating temperature, sometimes written Tjunction or Tjmax. Then compare your reading with that limit, and read it together with the behaviour:"
+      },
+      {
+        type: "ul",
+        items: [
+          "Well below the limit under load, then calm again afterwards: all is fine, even if the number looks high to you.",
+          "Close to the limit under load, but with no loss of speed: keep an eye on it. Some recent processors and thin laptops are tuned to run hot, and this does not prove a fault.",
+          "Close to the limit with a collapsing frequency: the PC is throttling. You lose performance, and the cooling cannot keep up.",
+          "Temperature that stays high at idle, fan blowing while nothing is running: this is the most telling sign, whatever the exact number."
+        ]
+      },
+      {
+        type: "h2",
+        text: "What is thermal throttling?"
+      },
+      {
+        type: "p",
+        text: "A processor has [two protections, according to Intel](https://www.intel.com/content/www/us/en/support/articles/000005597/processors.html): throttling, then automatic shutdown. When the chip gets too hot, it first reduces its power to stay at a safe temperature: the PC slows down, with no error message at all. That is why a machine can turn slow under load without anything appearing to crash. If throttling is not enough, the PC cuts out."
+      },
+      {
+        type: "p",
+        text: "Windows keeps a record of these episodes: event 37 from the Kernel-Processor-Power source, in the System log. But do not read it too quickly. It only says the processor was limited, and heat is not the only possible reason: a power limit, the battery or a manufacturer profile produce the same event."
+      },
+      {
+        type: "p",
+        text: "We fell for this ourselves. On the PC used to calibrate Nyctale, the first version of the rule concluded it was dust. Looking closely at the 12 events in the period, 8 fell within ten minutes of a startup, and the other 4 reported a continuous limit lasting 33 to 48 hours, in other words a permanent power cap. Not one was a heat spike."
+      },
+      {
+        type: "h2",
+        text: "What can Nyctale check, and what can it not see?"
+      },
+      {
+        type: "p",
+        text: "To be clear: Nyctale does not read any temperature. It uses no sensor and no driver. Its free analysis reads the Windows log over 14 days and discards what misleads: limits at startup, limits on battery, where throttling is intended, and permanent caps lasting an hour or more. It then needs at least three real episodes before reporting that the PC is slowing itself down to avoid overheating."
+      },
+      {
+        type: "p",
+        text: "It cross-checks that result with what is running at the time. If the machine throttles while lightly loaded and no stuck program explains the heat, Nyctale concludes the problem is most likely the cooling, and says no software can fix it. If a program is to blame, it points you there first. It also flags a processor running below 60% of its normal speed, which can come from heat or from an overly strict power-saving mode."
+      },
+      {
+        type: "p",
+        text: "Its limit: this reading covers the processor. For the graphics card, only a measurement with a utility will tell you."
+      },
+      {
+        type: "h2",
+        text: "What do you do when the temperature climbs?"
+      },
+      {
+        type: "p",
+        text: "Go from the simplest to the most expensive, measuring again after each step:"
+      },
+      {
+        type: "ol",
+        items: [
+          "Look for a runaway program: in Task Manager, sort by processor. It is the quickest cause to fix, as our guide to [a slow computer with no obvious reason](/blog/slow-computer-no-obvious-reason) explains.",
+          "Free up the airflow: a laptop on a bed, sofa or cushion has its air intakes blocked. Put it on a hard surface.",
+          "Dust the vents with a can of compressed air, with the device off and unplugged, preferably outdoors. Also check that the fan spins: our article on [a fan that never stops](/blog/fan-that-never-stops-spinning) goes through the causes.",
+          "Check the power mode: Balanced is enough for everyday use and runs cooler than maximum performance modes.",
+          "In games, cap the frame rate: the graphics card stops working harder than it needs to.",
+          "If the heat persists on a machine several years old, the thermal paste is probably worn. A full clean with fresh paste at a repair shop usually costs 50 to 80 euros."
+        ]
+      },
+      {
+        type: "p",
+        text: "Be wary of any program that promises to cool your PC: if the cause is dust or thermal paste, no software will change anything."
+      },
+      {
+        type: "h2",
+        text: "When should you really worry?"
+      },
+      {
+        type: "p",
+        text: "Three signs call for action right away. The PC shuts down or [restarts by itself](/blog/pc-restarts-by-itself) during heavy work: the final protection has probably kicked in, especially if the fan was blowing hard just before. It [freezes](/blog/pc-freezes-hardware-or-software) after a while in use. Or artefacts appear on screen under load (blotches, coloured shapes, lines), which points to the graphics card."
+      },
+      {
+        type: "p",
+        text: "In those cases, stop heavy tasks, back up your important files and have the machine checked if the steps above change nothing. Keep in mind that a sudden shutdown alone does not prove overheating: a power cut, a held button or an empty battery give the same result. What counts is the combination with throttling or load."
+      },
+      {
+        type: "h2",
+        text: "Conclusion: a method rather than a number"
+      },
+      {
+        type: "p",
+        text: "Measure at idle and under load, compare with your model's page, watch what the machine does. If you want to know, without a technical tool, whether your processor has throttled over the past two weeks, [Nyctale's free analysis](/en) reads those episodes in the Windows log and tells you whether the cooling is to blame."
+      }
+    ],
+    faq: [
+      {
+        q: "What is a normal processor temperature?",
+        r: "There is no single value: it depends on the model, the load and the cooling. Compare your reading with the maximum temperature on your model's page, and above all check that the temperature falls after the effort."
+      },
+      {
+        q: "Why does my PC slow down when it heats up?",
+        r: "The chip reduces its power to stay at a safe temperature: that is thermal throttling. The PC turns slow without showing any error."
+      },
+      {
+        q: "How do I measure my PC's temperature safely?",
+        r: "With a sensor-reading utility such as HWiNFO, at idle and then after at least fifteen minutes under load. These tools change nothing."
+      },
+      {
+        q: "Should I replace the thermal paste?",
+        r: "Only if the PC still runs hot after a good dusting, most often on a machine several years old. A repair shop usually does it for 50 to 80 euros along with a full clean."
+      },
+      {
+        q: "Does Nyctale show the PC's temperature?",
+        r: "No. It does not read temperature sensors. It reads the episodes where the processor was limited in the Windows log, discards false signals and cross-checks the result with the machine's load."
+      }
+    ],
+    liens: [
+      "fan-that-never-stops-spinning",
+      "pc-restarts-by-itself",
+      "pc-freezes-hardware-or-software",
+      "slow-computer-no-obvious-reason"
     ]
   },
 ];

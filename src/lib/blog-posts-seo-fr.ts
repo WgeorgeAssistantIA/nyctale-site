@@ -1018,6 +1018,7 @@ export const seoFrArticles: Article[] = [
       { type: "p", text: "C'est la cause la plus banale et la plus facile à vérifier. Windows Update redémarre en dehors des « heures d'activité » que vous avez définies ; si elles ne correspondent pas à vos horaires réels, le redémarrage tombe au mauvais moment. Rien de grave : c'est un redémarrage voulu, pas une panne." },
       { type: "h3", text: "2. Une surchauffe" },
       { type: "p", text: "Quand le processeur atteint une température dangereuse, il ralentit d'abord pour se protéger, puis le PC se coupe net si cela ne suffit pas. Le signe typique : un arrêt pendant un jeu, un export vidéo ou une longue session, et un ventilateur qui souffle fort même au repos. Sur un PC de plus de trois ou quatre ans, la poussière dans les grilles et une pâte thermique usée en sont la cause la plus courante." },
+      { type: "p", text: "Pour savoir si votre PC est concerné, mesurez-le : notre guide sur [les températures normales du processeur et de la carte graphique](/blog/temperature-normale-processeur-carte-graphique) explique comment, et où trouver la limite de votre modèle." },
       { type: "h3", text: "3. Une alimentation ou une batterie qui faiblit" },
       { type: "p", text: "Sur un PC fixe, une alimentation fatiguée ou trop juste lâche quand la demande d'énergie monte, typiquement sous charge graphique. Sur un portable, une batterie usée peut couper la machine bien avant d'afficher 0 %. Une multiprise défaillante ou une coupure de courant produisent exactement les mêmes traces qu'une panne : c'est pourquoi un arrêt brutal seul ne prouve pas une surchauffe." },
       { type: "h3", text: "4. Un pilote ou un logiciel instable" },
@@ -1078,7 +1079,7 @@ export const seoFrArticles: Article[] = [
         r: "Son analyse gratuite lit les arrêts anormaux des trente derniers jours, l'état du disque et les signes de surchauffe, et indique en clair la cause la plus probable.",
       },
     ],
-    liens: ["ecran-bleu-windows-11", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter", "pc-qui-freeze-materiel-ou-logiciel"],
+    liens: ["temperature-normale-processeur-carte-graphique", "ecran-bleu-windows-11", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter", "pc-qui-freeze-materiel-ou-logiciel"],
   },
   {
     slug: "pc-qui-freeze-materiel-ou-logiciel",
@@ -1243,7 +1244,8 @@ export const seoFrArticles: Article[] = [
       {
         type: "p",
         text: "Un freeze ne donne pas sa cause, mais le moment où il arrive, les journaux de Windows et le test du mode sans échec suffisent presque toujours à choisir entre logiciel, chaleur et matériel. L'[analyse de Nyctale](/) ne voit pas le gel lui-même, puisqu'elle ne tourne pas pendant qu'il se produit ; elle lit en revanche la liste des suspects : programmes qui occupent un cœur du processeur sans raison, mémoire vive saturée ou compensée sur le disque, épisodes où le processeur a dû se ralentir à cause de la chaleur ces deux dernières semaines, arrêts brutaux du dernier mois, disque presque plein ou signalé en mauvaise santé par Windows. L'analyse est gratuite, la première réparation est offerte, et la version complète coûte 24,99 € en achat unique."
-      }
+      },
+      { type: "p", text: "Si le gel arrive après un moment d'utilisation, vérifiez la chaleur : [comment savoir si son PC chauffe trop](/blog/temperature-normale-processeur-carte-graphique) donne la méthode de mesure, au repos puis en charge." }
     ],
     faq: [
       {
@@ -1268,10 +1270,193 @@ export const seoFrArticles: Article[] = [
       }
     ],
     liens: [
+      "temperature-normale-processeur-carte-graphique",
       "pc-qui-redemarre-tout-seul",
       "memoire-ram-saturee-comment-la-lire",
       "disque-dur-va-lacher-signes",
       "ventilateur-qui-ne-sarrete-plus"
+    ]
+  },
+  {
+    slug: "temperature-normale-processeur-carte-graphique",
+    lang: "fr",
+    traduction: "normal-cpu-gpu-temperatures",
+    title: "Comment savoir si son PC chauffe trop : températures normales du processeur et de la carte graphique",
+    seoTitle: "Température normale CPU et GPU : votre PC chauffe-t-il trop ?",
+    excerpt: "Il n'existe pas de température normale universelle. Comment mesurer au repos et en charge, où trouver la limite de votre modèle, reconnaître le bridage thermique et quoi faire quand ça chauffe.",
+    image: {
+      src: "/images/blog/nyctale-temperature-pc-fr.jpg",
+      alt: "Trois niveaux : normal (ventilateur qui monte sous charge puis redescend), à surveiller (ventilateur fort au repos, PC qui ralentit sous charge) et à traiter (extinctions sous charge, artefacts à l'écran)"
+    },
+    date: "2026-11-06",
+    readMin: 8,
+    blocks: [
+      {
+        type: "p",
+        text: "Il n'existe pas de température normale universelle : elle dépend du modèle de processeur ou de carte graphique, de la charge et de la ventilation. Pour savoir si votre PC chauffe trop, mesurez au repos puis en charge, comparez à la limite indiquée par le fabricant pour votre modèle exact, et surveillez le comportement de la machine : ventilateur à fond au repos, ralentissements sous charge, arrêts brutaux."
+      },
+      {
+        type: "p",
+        text: "Les tableaux qui circulent sur Internet donnent des fourchettes précises, mais elles ne se recoupent pas d'un site à l'autre, et ce qui est banal pour un portable fin serait anormal dans une tour bien ventilée. Plutôt qu'un chiffre à retenir, voici une méthode, et la façon de lire ce qu'elle vous donne."
+      },
+      {
+        type: "h2",
+        text: "Existe-t-il une température normale pour un PC ?"
+      },
+      {
+        type: "p",
+        text: "Non, pas une seule. Un processeur passe en quelques secondes d'une température tranquille à une température élevée dès qu'on lui demande un effort : c'est son fonctionnement ordinaire, et le ventilateur est là pour suivre. La valeur que vous lisez dépend aussi de la pièce où vous êtes, du boîtier, de l'âge de la machine et de la façon dont le fabricant a réglé le refroidissement."
+      },
+      {
+        type: "p",
+        text: "Le seul repère solide est la limite du fabricant, et elle varie elle aussi. Intel indique par exemple que la température de jonction maximale change selon le produit et se situe en général [entre 100 et 110 °C](https://www.intel.com/content/www/us/en/support/articles/000005597/processors.html). Attention à ce que ce chiffre signifie : c'est le seuil où les protections se déclenchent, pas une température de croisière à viser, ni la preuve qu'une valeur un peu en dessous est saine."
+      },
+      {
+        type: "p",
+        text: "La bonne question n'est donc pas « combien de degrés ? », mais « à quel moment, et que fait la machine à ce moment-là ? ». Une température haute pendant un rendu vidéo qui redescend ensuite n'a rien à voir avec une température haute alors que rien ne tourne."
+      },
+      {
+        type: "h2",
+        text: "Comment mesurer la température du processeur et de la carte graphique ?"
+      },
+      {
+        type: "p",
+        text: "Il vous faut un utilitaire qui lit les capteurs. HWiNFO, présenté dans notre [sélection de logiciels de diagnostic gratuits](/blog/meilleurs-logiciels-gratuits-diagnostic-pc), affiche le processeur et la carte graphique. Pour la carte graphique seule, le Gestionnaire des tâches (onglet Performance, rubrique GPU) indique aussi la température sur beaucoup de PC équipés d'une carte dédiée. La mesure ne présente aucun risque : ces outils se contentent de lire."
+      },
+      {
+        type: "ol",
+        items: [
+          "Attendez cinq à dix minutes après le démarrage : Windows travaille souvent en arrière-plan juste après l'allumage, et la mesure serait faussée.",
+          "Fermez vos programmes et notez la température au repos, avec le bruit du ventilateur.",
+          "Lancez ce que vous faites d'habitude quand le PC peine : un jeu, un export vidéo, une longue session de travail. Laissez tourner au moins un quart d'heure, car la chaleur s'accumule.",
+          "Notez la valeur stabilisée plutôt qu'un pic d'une seconde, et regardez la fréquence du processeur : si elle chute alors que la tâche continue, c'est un indice important.",
+          "Arrêtez la tâche et observez : la température doit redescendre et le ventilateur doit se calmer en quelques minutes."
+        ]
+      },
+      {
+        type: "p",
+        text: "Refaites la mesure sur le PC posé à sa place habituelle. Un portable testé sur un bureau puis utilisé sur un canapé ne donne pas du tout les mêmes chiffres."
+      },
+      {
+        type: "h2",
+        text: "Comment savoir si la valeur mesurée est inquiétante ?"
+      },
+      {
+        type: "p",
+        text: "Cherchez d'abord le nom exact de votre composant, affiché par votre utilitaire ou dans le Gestionnaire des tâches, puis sa fiche sur le site du fabricant : Intel ou AMD pour le processeur, le fabricant de la puce ou de la carte pour le graphique. Le terme à repérer est la température maximale de fonctionnement, parfois notée Tjunction ou Tjmax. Comparez ensuite votre mesure à cette limite, et lisez-la avec le comportement :"
+      },
+      {
+        type: "ul",
+        items: [
+          "Nettement sous la limite en charge, et retour au calme ensuite : tout va bien, même si le chiffre vous semble élevé.",
+          "Proche de la limite en charge, mais sans perte de vitesse : à surveiller. Certains processeurs récents et les portables fins sont réglés pour monter haut, et cela ne prouve pas une panne.",
+          "Proche de la limite avec une fréquence qui s'effondre : le PC se bride. Vous perdez des performances, et le refroidissement ne suit pas.",
+          "Température qui reste haute au repos, ventilateur qui souffle alors que rien ne tourne : c'est le signe le plus parlant, quel que soit le chiffre exact."
+        ]
+      },
+      {
+        type: "h2",
+        text: "Qu'est-ce que le bridage thermique ?"
+      },
+      {
+        type: "p",
+        text: "Un processeur dispose de [deux protections, selon Intel](https://www.intel.com/content/www/us/en/support/articles/000005597/processors.html) : le bridage, puis l'arrêt automatique. Quand la puce chauffe trop, elle réduit d'abord sa puissance pour rester à une température sûre : le PC ralentit, sans le moindre message d'erreur. C'est pour cela qu'une machine peut devenir lente sous charge sans que rien ne semble « planter ». Si le bridage ne suffit pas, le PC se coupe net."
+      },
+      {
+        type: "p",
+        text: "Windows garde une trace de ces épisodes : l'événement 37 de la source Kernel-Processor-Power, dans le journal Système. Mais il ne faut pas le lire trop vite. Il dit seulement que le processeur a été limité, et la chaleur n'est pas la seule raison possible : une limite de puissance, la batterie ou un profil du fabricant produisent le même événement."
+      },
+      {
+        type: "p",
+        text: "Nous nous sommes fait avoir. Sur le PC qui a servi à calibrer Nyctale, la première version de la règle concluait à de la poussière. En regardant de près les 12 événements de la période, 8 tombaient dans les dix minutes suivant un démarrage, et les 4 autres signalaient une limite continue de 33 à 48 heures, autrement dit un plafond de puissance permanent. Aucun n'était un coup de chaleur."
+      },
+      {
+        type: "h2",
+        text: "Que peut vérifier Nyctale, et que ne voit-il pas ?"
+      },
+      {
+        type: "p",
+        text: "Soyons clairs : Nyctale ne lit aucune température. Il n'utilise ni capteur ni pilote. Son analyse gratuite lit le journal de Windows sur 14 jours et écarte ce qui trompe : les limitations au démarrage, celles sur batterie, où brider est voulu, et les plafonds permanents d'une heure ou plus. Il lui faut ensuite au moins trois vrais épisodes pour signaler que le PC se ralentit afin de ne pas surchauffer."
+      },
+      {
+        type: "p",
+        text: "Il croise ce résultat avec ce qui tourne au même moment. Si la machine se bride alors qu'elle est peu chargée et qu'aucun programme bloqué n'explique la chaleur, Nyctale conclut que le problème vient très probablement du refroidissement, et dit qu'aucun logiciel ne pourra le corriger. Si un programme est en cause, il vous envoie d'abord vers lui. Il relève aussi un processeur qui tourne sous 60 % de sa vitesse normale, ce qui peut venir de la chaleur ou d'un mode d'économie d'énergie trop strict."
+      },
+      {
+        type: "p",
+        text: "Sa limite : cette lecture concerne le processeur. Pour la carte graphique, seule une mesure avec un utilitaire vous renseignera."
+      },
+      {
+        type: "h2",
+        text: "Que faire quand la température monte ?"
+      },
+      {
+        type: "p",
+        text: "Allez du plus simple au plus coûteux, en remesurant après chaque étape :"
+      },
+      {
+        type: "ol",
+        items: [
+          "Cherchez un programme qui s'emballe : dans le Gestionnaire des tâches, triez par processeur. C'est la cause la plus rapide à régler, comme l'explique notre guide sur [un PC qui rame sans raison](/blog/pc-qui-rame-sans-raison).",
+          "Dégagez l'aération : un portable posé sur un lit, un canapé ou un coussin a ses entrées d'air bouchées. Mettez-le sur une surface dure.",
+          "Dépoussiérez les grilles avec une bombe à air sec, appareil éteint et débranché, de préférence à l'extérieur. Vérifiez aussi que le ventilateur tourne : notre article sur [un ventilateur qui ne s'arrête plus](/blog/ventilateur-qui-ne-sarrete-plus) détaille les causes.",
+          "Vérifiez le mode d'alimentation : Équilibré suffit au quotidien et chauffe moins que les modes de performance maximale.",
+          "En jeu, limitez le nombre d'images par seconde : la carte graphique cesse de travailler plus que nécessaire.",
+          "Si la chauffe persiste sur une machine de plusieurs années, la pâte thermique est probablement usée. Un nettoyage complet avec changement de pâte chez un réparateur coûte généralement 50 à 80 €."
+        ]
+      },
+      {
+        type: "p",
+        text: "Méfiez-vous de tout programme qui promet de refroidir votre PC : si la cause est la poussière ou la pâte thermique, aucun logiciel n'y changera rien."
+      },
+      {
+        type: "h2",
+        text: "Quand faut-il s'inquiéter vraiment ?"
+      },
+      {
+        type: "p",
+        text: "Trois signes demandent d'agir sans attendre. Le PC s'éteint ou [redémarre tout seul](/blog/pc-qui-redemarre-tout-seul) pendant un effort : la protection finale s'est sans doute déclenchée, surtout si le ventilateur soufflait fort juste avant. Il [se fige](/blog/pc-qui-freeze-materiel-ou-logiciel) au bout d'un moment d'utilisation. Ou des artefacts apparaissent à l'écran sous charge (taches, formes colorées, lignes), ce qui oriente vers la carte graphique."
+      },
+      {
+        type: "p",
+        text: "Dans ces cas, arrêtez les tâches lourdes, sauvegardez vos fichiers importants et faites vérifier la machine si les gestes ci-dessus n'y changent rien. Gardez en tête qu'un arrêt brutal seul ne prouve pas une surchauffe : une coupure de courant, un bouton maintenu ou une batterie vide donnent le même résultat. C'est l'association avec le bridage ou la charge qui compte."
+      },
+      {
+        type: "h2",
+        text: "Conclusion : une méthode plutôt qu'un chiffre"
+      },
+      {
+        type: "p",
+        text: "Mesurez au repos et en charge, comparez à la fiche de votre modèle, observez ce que fait la machine. Si vous voulez savoir sans outil technique si votre processeur s'est bridé ces deux dernières semaines, l'[analyse gratuite de Nyctale](/) lit ces épisodes dans le journal de Windows et vous dit si le refroidissement est en cause."
+      }
+    ],
+    faq: [
+      {
+        q: "Quelle est la température normale d'un processeur ?",
+        r: "Il n'y a pas de valeur unique : elle dépend du modèle, de la charge et du refroidissement. Comparez votre mesure à la température maximale indiquée sur la fiche de votre modèle, et regardez surtout si la température redescend après l'effort."
+      },
+      {
+        q: "Pourquoi mon PC ralentit-il quand il chauffe ?",
+        r: "La puce réduit sa puissance pour rester à une température sûre : c'est le bridage thermique. Le PC devient lent sans afficher d'erreur."
+      },
+      {
+        q: "Comment mesurer la température de son PC sans risque ?",
+        r: "Avec un utilitaire de lecture des capteurs comme HWiNFO, au repos puis après au moins un quart d'heure de charge. Ces outils ne modifient rien."
+      },
+      {
+        q: "Faut-il changer la pâte thermique ?",
+        r: "Seulement si le PC chauffe encore après un bon dépoussiérage, le plus souvent sur une machine de plusieurs années. Un réparateur le fait généralement pour 50 à 80 € avec le nettoyage complet."
+      },
+      {
+        q: "Nyctale affiche-t-il la température du PC ?",
+        r: "Non. Il ne lit pas les capteurs de température. Il lit dans le journal de Windows les épisodes où le processeur a été limité, écarte les faux signaux et croise le résultat avec la charge de la machine."
+      }
+    ],
+    liens: [
+      "ventilateur-qui-ne-sarrete-plus",
+      "pc-qui-redemarre-tout-seul",
+      "pc-qui-freeze-materiel-ou-logiciel",
+      "pc-qui-rame-sans-raison"
     ]
   },
 ];

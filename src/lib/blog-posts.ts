@@ -491,6 +491,7 @@ export const articles: Article[] = [
         type: "p",
         text: "Une surchauffe répétée peut provoquer des plantages. Si votre ordinateur s'éteint ou affiche un écran bleu, lisez notre guide sur [l'écran bleu sous Windows 11](/blog/ecran-bleu-windows-11). Pour contrôler vos températures, voyez aussi notre sélection de [logiciels gratuits de diagnostic PC](/blog/meilleurs-logiciels-gratuits-diagnostic-pc).",
       },
+      { type: "p", text: "Pour aller plus loin : [comment savoir si son PC chauffe trop](/blog/temperature-normale-processeur-carte-graphique), avec la méthode pour mesurer le processeur et la carte graphique au repos et en charge." },
     ],
     faq: [
       {
@@ -514,7 +515,7 @@ export const articles: Article[] = [
         r: "Nyctale trouve la cause et aide à la corriger quand elle est logicielle : fermer un programme bloqué, régler le navigateur, repasser en mode Équilibré. Quand la cause est physique, il vous le dit franchement : aucun logiciel ne remplace un dépoussiérage.",
       },
     ],
-    liens: ["ecran-bleu-windows-11", "pc-qui-rame-sans-raison", "meilleurs-logiciels-gratuits-diagnostic-pc", "avant-dacheter-un-pc-neuf", "pc-qui-redemarre-tout-seul", "pc-qui-freeze-materiel-ou-logiciel"],
+    liens: ["temperature-normale-processeur-carte-graphique", "ecran-bleu-windows-11", "pc-qui-rame-sans-raison", "meilleurs-logiciels-gratuits-diagnostic-pc", "avant-dacheter-un-pc-neuf", "pc-qui-redemarre-tout-seul", "pc-qui-freeze-materiel-ou-logiciel"],
   },
   {
     slug: "fan-that-never-stops-spinning",
@@ -662,6 +663,7 @@ export const articles: Article[] = [
         type: "p",
         text: "Repeated overheating can cause crashes. If your computer shuts down or shows a blue screen, read our guide to the [Windows 11 blue screen](/blog/windows-11-blue-screen-fix). To keep an eye on temperatures, see our selection of [free PC diagnostic tools](/blog/best-free-pc-diagnostic-tools).",
       },
+      { type: "p", text: "Going further: [how to tell if your PC runs too hot](/blog/normal-cpu-gpu-temperatures), with the method for measuring the processor and graphics card at idle and under load." },
     ],
     faq: [
       {
@@ -685,7 +687,7 @@ export const articles: Article[] = [
         r: "Nyctale finds the cause and helps fix it when it's software: closing a stuck program, adjusting the browser, switching back to Balanced mode. When the cause is physical, it tells you plainly: no software replaces a good dusting.",
       },
     ],
-    liens: ["windows-11-blue-screen-fix", "slow-computer-no-obvious-reason", "best-free-pc-diagnostic-tools", "before-buying-a-new-pc", "pc-restarts-by-itself", "pc-freezes-hardware-or-software"],
+    liens: ["normal-cpu-gpu-temperatures", "windows-11-blue-screen-fix", "slow-computer-no-obvious-reason", "best-free-pc-diagnostic-tools", "before-buying-a-new-pc", "pc-restarts-by-itself", "pc-freezes-hardware-or-software"],
   },
 
   // -------------------------------------------------------------------

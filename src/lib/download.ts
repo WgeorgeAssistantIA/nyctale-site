@@ -4,9 +4,9 @@ import { suivre } from "./analytics";
 // SmartScreen que declenche l'installeur .exe non signe. `mode=direct` ouvre
 // directement l'appli Store sous Windows (meme comportement que le badge
 // officiel en window-mode="direct").
-export const MICROSOFT_STORE_ID = "XPFP6ZVQDT5MSH";
+export const MICROSOFT_STORE_ID = "9PG18WR5SSLT";
 export const STORE_URL = `https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}?mode=direct`;
-export const EXE_URL = "https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.4/Nyctale-Setup-1.0.4.exe";
+export const EXE_URL = "https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.6/Nyctale-Setup-1.0.6.exe";
 
 export function trackStoreDownload(origine: string) {
   suivre("store_download", { origine });

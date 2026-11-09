@@ -1024,7 +1024,7 @@ export function Home({ forceLang }: { forceLang?: Lang } = {}) {
                 </Button>
               </a>
               <a
-                href="https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.6/Nyctale-Portable-1.0.6.zip"
+                href="https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.7/Nyctale-Portable-1.0.7.zip"
                 className="mt-2 block text-center text-xs text-muted-foreground underline hover:text-foreground"
                 onClick={trackPortableDownload}
               >

@@ -28,7 +28,10 @@ export const Route = createFileRoute("/api/license/refresh")({
           return Response.json(resultat, { status: resultat.succes ? 200 : 400 });
         } catch (erreur) {
           console.error("license/refresh:", erreur);
-          return Response.json({ succes: false, erreur: "erreur serveur" }, { status: 500 });
+          return Response.json(
+            { succes: false, erreur: "Le service de licence ne répond pas, réessayez dans un instant." },
+            { status: 503 },
+          );
         }
       },
     },

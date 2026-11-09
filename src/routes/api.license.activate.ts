@@ -33,7 +33,10 @@ export const Route = createFileRoute("/api/license/activate")({
           return Response.json(resultat, { status: resultat.succes ? 200 : 400 });
         } catch (erreur) {
           console.error("license/activate:", erreur);
-          return Response.json({ succes: false, erreur: "erreur serveur" }, { status: 500 });
+          return Response.json(
+            { succes: false, erreur: "Le service de licence ne répond pas, réessayez dans un instant." },
+            { status: 503 },
+          );
         }
       },
     },

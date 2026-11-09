@@ -137,7 +137,7 @@ export const Route = createFileRoute("/diagnostic-crash-pc")({
 });
 
 const STORE_URL = `https://apps.microsoft.com/detail/${MICROSOFT_STORE_ID}?mode=direct`;
-const DOWNLOAD_EXE = "https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.6/Nyctale-Setup-1.0.6.exe";
+const DOWNLOAD_EXE = "https://github.com/WgeorgeAssistantIA/nyctale-downloads/releases/download/v1.0.7/Nyctale-Setup-1.0.7.exe";
 
 function DiagnosticCrashPc() {
   const [lang, setLang] = useState<Lang>("fr");

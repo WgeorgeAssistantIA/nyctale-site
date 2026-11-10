@@ -164,11 +164,12 @@ export const seoFrArticles: Article[] = [
     lang: "fr",
     traduction: "failing-hard-drive-signs",
     title: "Comment savoir si votre disque dur va lâcher : les signes et le test SMART",
-    seoTitle: "Disque dur qui va lâcher : signes, test SMART et que faire",
+    seoTitle: "Disque dur ou SSD qui va lâcher : 7 signes d'alerte et test SMART",
     excerpt:
-      "Un disque dur prévient rarement avant de lâcher. Découvrez les signes d'alerte, comment tester l'état SMART gratuitement et quoi faire pour vos données.",
+      "Un disque dur ou SSD prévient rarement avant la panne : les 7 signes d'alerte, comment tester l'état SMART gratuitement et sauvegarder vos données.",
     image: { src: "/images/blog/nyctale-disque-dur-signes-fr.jpg", alt: "Disque dur qui va lâcher : les signes à connaître : 7 signes qui doivent alerter — Ralentissements sans cause logicielle ; Bruits de clics ou de grincements ; Fichiers illisibles ou corrompus ; Écrans bleus, plantages au démarrage ; Une alerte SMART ; + 2 autres signes" },
     date: "2026-10-01",
+    updated: "2026-11-10",
     readMin: 9,
     blocks: [
       {
@@ -192,7 +193,7 @@ export const seoFrArticles: Article[] = [
       { type: "h3", text: "1. Des ralentissements sans cause logicielle" },
       {
         type: "p",
-        text: "Le disque est lent à répondre, l'ordinateur se fige quelques secondes en ouvrant un dossier, l'indicateur de disque du Gestionnaire des tâches reste à 100 % sans programme gourmand. Ce symptôme a de nombreuses causes, mais un disque qui peine à lire ses données en fait partie.",
+        text: "Le disque est lent à répondre, l'ordinateur se fige quelques secondes en ouvrant un dossier, [l'indicateur de disque du Gestionnaire des tâches reste à 100 %](/blog/disque-a-100-pourcent-windows) sans programme gourmand. Ce symptôme a de nombreuses causes, mais un disque qui peine à lire ses données en fait partie.",
       },
       { type: "h3", text: "2. Des bruits de clics, de grincements ou de ronronnements anormaux" },
       {
@@ -207,7 +208,7 @@ export const seoFrArticles: Article[] = [
       { type: "h3", text: "4. Des écrans bleus ou des plantages au démarrage" },
       {
         type: "p",
-        text: "Des écrans bleus récurrents, surtout au démarrage, peuvent venir d'un disque en difficulté. Notre article sur l'écran bleu sous Windows 11 explique comment distinguer ce cas d'un simple pilote défectueux.",
+        text: "Des écrans bleus récurrents, surtout au démarrage, peuvent venir d'un disque en difficulté. Notre article sur [l'écran bleu sous Windows 11](/blog/ecran-bleu-windows-11) explique comment distinguer ce cas d'un simple pilote défectueux.",
       },
       { type: "h3", text: "5. Un démarrage très long ou un disque qui disparaît" },
       {
@@ -660,13 +661,14 @@ export const seoFrArticles: Article[] = [
     slug: "programmes-au-demarrage-lesquels-desactiver",
     lang: "fr",
     traduction: "startup-programs-which-ones-to-disable",
-    title: "Programmes au démarrage : lesquels désactiver sans risque",
-    seoTitle: "Programmes au démarrage : lesquels désactiver sans risque",
+    title: "Programmes au démarrage Windows 10 et 11 : lesquels désactiver sans risque",
+    seoTitle: "Programmes au démarrage Windows 10/11 : lesquels désactiver ?",
     excerpt:
-      "Le Gestionnaire des tâches liste ce qui se lance avec Windows. Comment trier l'utile de l'inutile, et ce qu'il vaut mieux ne jamais désactiver.",
+      "Quels programmes au démarrage désactiver sous Windows 10 et 11 sans risque ? Liste complète de ce qu'on peut couper dans le Gestionnaire des tâches.",
     image: { src: "/images/blog/nyctale-programmes-demarrage-fr.jpg", alt: "Programmes au démarrage triés par impact : désactiver les lanceurs de jeux, messageries, mises à jour secondaires et assistants du fabricant ; garder l'antivirus et les pilotes ; chercher le nom d'un élément inconnu avant de décider" },
     date: "2026-10-20",
-    readMin: 4,
+    updated: "2026-11-10",
+    readMin: 5,
     blocks: [
       {
         type: "p",
@@ -685,24 +687,24 @@ export const seoFrArticles: Article[] = [
         type: "p",
         text: "La même liste existe dans Paramètres > Applications > Démarrage, avec un interrupteur par ligne. Dans le Gestionnaire des tâches, un clic droit sur une ligne puis « Désactiver » fait la même chose.",
       },
-      { type: "h2", text: "Lesquels désactiver ?" },
+      { type: "h2", text: "Lesquels désactiver sans risque ?" },
       {
         type: "ul",
         items: [
-          "Les lanceurs de jeux et plateformes que vous ouvrez rarement",
-          "Les applications de messagerie et de réseaux que vous lancez vous-même",
-          "Les mises à jour automatiques de logiciels secondaires",
-          "Les assistants et logiciels du fabricant dont vous n'utilisez pas les fonctions",
-          "Les synchronisations dont vous n'avez pas besoin dès le démarrage",
+          "Les lanceurs de jeux et plateformes que vous ouvrez rarement (Steam, Epic Games Launcher, EA App, Battle.net, Ubisoft Connect) : ils pèsent lourd au démarrage et fonctionnent très bien quand vous les lancez à la main.",
+          "Les applications de messagerie, musique et visio que vous lancez vous-même (Spotify, Discord, Microsoft Teams, Skype, Zoom, WhatsApp).",
+          "Les mises à jour automatiques et assistants de logiciels secondaires (Adobe Acrobat Synchronizer, Creative Cloud, Java Update Scheduler, Google Update, CCleaner).",
+          "Les assistants et logiciels du fabricant dont vous n'utilisez pas les fonctions au quotidien (HP Support Assistant, Lenovo Vantage, Dell SupportAssist, MyASUS).",
+          "Les synchronisations cloud dont vous n'avez pas besoin dès la première seconde (OneDrive, Dropbox, Google Drive) si vous préférez les ouvrir à la demande.",
         ],
       },
-      { type: "h2", text: "Lesquels laisser ?" },
+      { type: "h2", text: "Lesquels laisser activés ?" },
       {
         type: "ul",
         items: [
-          "L'antivirus et les outils de sécurité",
-          "Les pilotes et utilitaires de matériel essentiels (son, trackpad, graphique)",
-          "Tout élément que vous ne reconnaissez pas : cherchez son nom avant de décider",
+          "L'antivirus et les outils de sécurité (Windows Security notification icon / SecurityHealthSystray).",
+          "Les pilotes et utilitaires de matériel essentiels : son (Realtek HD Audio Universal Service), pavé tactile (Synaptics, ELAN), carte graphique (Intel, AMD, NVIDIA).",
+          "Tout élément système que vous ne reconnaissez pas : vérifiez toujours la colonne « Éditeur » (Microsoft Corporation, Intel, Realtek) ou cherchez son nom avant de décider.",
         ],
       },
       { type: "h2", text: "Que se passe-t-il si je me trompe ?" },
@@ -755,11 +757,12 @@ export const seoFrArticles: Article[] = [
     lang: "fr",
     traduction: "ram-full-how-to-read-memory-usage",
     title: "Mémoire RAM saturée au repos sous Windows 11 et 10 : comment la lire et que faire",
-    seoTitle: "Mémoire RAM saturée au repos (Windows 11/10) : lire et agir",
+    seoTitle: "Mémoire RAM saturée sans raison (Windows 10/11) : causes et solutions",
     excerpt:
-      "Mémoire RAM saturée au repos sous Windows 11 ou 10 ? Comment lire le Gestionnaire des tâches (utilisée, disponible, validée, en cache), ce qui est normal et que faire.",
+      "Mémoire RAM saturée à 70-90 % au repos sur Windows 10 ou 11 ? Comment lire le Gestionnaire des tâches (cache, validée) et libérer la mémoire vive.",
     image: { src: "/images/blog/nyctale-memoire-ram-fr.jpg", alt: "Lire la mémoire dans le Gestionnaire des tâches : utilisée (compressée), disponible, validée, en cache ; c'est la mémoire disponible et la lenteur qui comptent, pas le pourcentage" },
     date: "2026-10-23",
+    updated: "2026-11-10",
     readMin: 6,
     blocks: [
       {
@@ -877,11 +880,12 @@ export const seoFrArticles: Article[] = [
     lang: "fr",
     traduction: "before-reformatting-your-pc-what-a-diagnostic-can-save-you",
     title: "Avant de formater son PC : ce qu'une analyse peut vous éviter",
-    seoTitle: "Formater son PC lent ? Ce qu'il faut vérifier avant",
+    seoTitle: "Formater son PC lent ? Ce qu'il faut vérifier avant (Windows 10/11)",
     excerpt:
-      "Formater est le dernier recours, pas le premier. Les causes de lenteur qui se corrigent sans réinstaller, celles qu'un formatage ne règle pas, et comment décider en connaissance de cause.",
+      "Faut-il formater un PC lent ? Les causes de lenteur qui se corrigent sans réinstaller Windows, celles qu'un formatage ne règle pas et comment décider.",
     image: { src: "/images/blog/nyctale-avant-formater-fr.jpg", alt: "Deux colonnes : ce qui se corrige sans formater (programme bloqué, mémoire saturée, disque plein, démarrage chargé, navigateur, fichiers système) et ce qu'un formatage ne règle pas (disque usé, surchauffe, batterie usée, matériel trop juste)" },
     date: "2026-10-27",
+    updated: "2026-11-10",
     readMin: 7,
     blocks: [
       {
@@ -999,12 +1003,13 @@ export const seoFrArticles: Article[] = [
     slug: "pc-qui-redemarre-tout-seul",
     lang: "fr",
     traduction: "pc-restarts-by-itself",
-    title: "PC qui redémarre tout seul : causes et vérifications",
-    seoTitle: "PC qui redémarre tout seul : causes et vérifications (Windows 10 et 11)",
+    title: "PC qui redémarre tout seul sans prévenir : 5 causes et vérifications",
+    seoTitle: "PC qui redémarre tout seul sans prévenir : 5 causes et solutions",
     excerpt:
-      "Mise à jour, surchauffe, alimentation, pilote ou disque : comment savoir si votre PC redémarre volontairement ou s'éteint brutalement, où lire les traces que Windows garde, et quoi faire selon la cause.",
+      "Votre PC s'éteint ou redémarre tout seul sous Windows 10/11 ? Comment lire la trace du crash en 2 min (Kernel-Power 41, surchauffe) et corriger la cause.",
     image: { src: "/images/blog/nyctale-pc-redemarre-fr.jpg", alt: "Trois cas à distinguer : redémarrage voulu (mise à jour, message de Windows), arrêt brutal (écran noir, événements 41, 6008 et 1001 dans le journal) et écran bleu masqué par le redémarrage automatique" },
     date: "2026-10-30",
+    updated: "2026-11-10",
     readMin: 7,
     blocks: [
       { type: "p", text: "Un PC qui redémarre tout seul a presque toujours une cause identifiable : une mise à jour Windows qui s'installe, une surchauffe, une alimentation ou une batterie qui faiblit, un pilote instable, ou plus rarement un disque ou une mémoire en défaut. La méthode tient en deux temps : savoir d'abord si le redémarrage est voulu par Windows ou s'il s'agit d'un arrêt brutal, puis lire les traces que Windows enregistre à chaque arrêt anormal. Ces traces existent sur tous les PC sous Windows 10 et 11, et elles évitent de changer une pièce au hasard." },
@@ -1086,8 +1091,8 @@ export const seoFrArticles: Article[] = [
     lang: "fr",
     traduction: "pc-freezes-hardware-or-software",
     title: "PC qui freeze : problème matériel ou logiciel ?",
-    seoTitle: "PC qui freeze : problème matériel ou logiciel ? (Windows 10 et 11)",
-    excerpt: "Écran figé, souris bloquée, plus de réponse : comment savoir si le PC est vraiment gelé, quand le gel arrive, où Windows en garde la trace, et comment séparer un logiciel en cause d'une panne matérielle.",
+    seoTitle: "PC qui freeze ou se fige (Windows 10/11) : matériel ou logiciel ?",
+    excerpt: "Écran figé, souris bloquée : comment savoir si votre PC freeze à cause d'un logiciel ou d'une panne matérielle (RAM, disque, chauffe) et le débloquer.",
     image: {
       src: "/images/blog/nyctale-pc-freeze-fr.jpg",
       alt: "Trois profils de gel : logiciel probable (toujours avec le même programme, jamais en mode sans échec), chaleur probable (après un moment ou sous charge, ventilateur fort) et matériel probable (au hasard, même au repos, aussi en mode sans échec)"
@@ -1283,7 +1288,7 @@ export const seoFrArticles: Article[] = [
     traduction: "normal-cpu-gpu-temperatures",
     title: "Comment savoir si son PC chauffe trop : températures normales du processeur et de la carte graphique",
     seoTitle: "Température normale CPU et GPU : votre PC chauffe-t-il trop ?",
-    excerpt: "Il n'existe pas de température normale universelle. Comment mesurer au repos et en charge, où trouver la limite de votre modèle, reconnaître le bridage thermique et quoi faire quand ça chauffe.",
+    excerpt: "Votre PC chauffe-t-il trop ? Comment mesurer la température CPU et GPU au repos et en charge, repérer le bridage thermique et refroidir l'ordinateur.",
     image: {
       src: "/images/blog/nyctale-temperature-pc-fr.jpg",
       alt: "Trois niveaux : normal (ventilateur qui monte sous charge puis redescend), à surveiller (ventilateur fort au repos, PC qui ralentit sous charge) et à traiter (extinctions sous charge, artefacts à l'écran)"

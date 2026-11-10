@@ -42,12 +42,12 @@ export const articles: Article[] = [
     lang: "fr",
     traduction: "slow-computer-no-obvious-reason",
     title: "Ordinateur qui rame : 9 causes fréquentes et comment trouver la vôtre",
-    seoTitle: "Ordinateur qui rame : causes et solutions (Windows 10 et 11)",
+    seoTitle: "Ordinateur qui rame (PC fixe ou portable) : 9 causes & solutions",
     excerpt:
-      "Un PC qui rame a une cause précise, le plus souvent logicielle. Les 9 causes fréquentes, la méthode pour trouver la vôtre en 10 min et les solutions.",
+      "Pourquoi mon ordinateur rame ou ralentit sans raison ? Les 9 causes fréquentes sur Windows 10 et 11, le test en 10 min et les solutions gratuites.",
     image: { src: "/images/blog/nyctale-ordinateur-qui-rame-fr.jpg", alt: "Ordinateur qui rame : 9 causes fréquentes : les causes les plus courantes — Trop de programmes au démarrage ; Le navigateur et ses onglets ; La mémoire vive saturée ; Un disque presque plein ; Un disque dur mécanique ou en fin de vie ; + 4 autres causes" },
     date: "2026-08-08",
-    updated: "2026-09-25",
+    updated: "2026-11-10",
     readMin: 10,
     blocks: [
       {
@@ -349,18 +349,18 @@ export const articles: Article[] = [
     slug: "ventilateur-qui-ne-sarrete-plus",
     lang: "fr",
     traduction: "fan-that-never-stops-spinning",
-    title: "Ventilateur de PC qui tourne à fond en permanence : causes et solutions",
-    seoTitle: "Ventilateur PC qui tourne à fond : causes et solutions",
+    title: "Ventilateur de PC qui tourne en permanence ou sans raison : causes et solutions",
+    seoTitle: "Ventilateur PC qui tourne en permanence ou sans raison : 7 solutions",
     excerpt:
-      "Un ventilateur qui souffle en continu n'est pas normal, mais rarement grave. Les 7 causes fréquentes, comment trouver la vôtre en 5 min et que faire.",
+      "Pourquoi le ventilateur de votre ordinateur (ou PC portable) tourne en permanence ou part sans raison ? Les 7 causes, le test en 5 min et les solutions.",
     image: { src: "/images/blog/nyctale-ventilateur-fr.jpg", alt: "Ventilateur de PC qui tourne à fond : causes et solutions : 3 questions à se poser — Juste après l'allumage ou une mise à jour ? ; Un programme occupe le processeur ? ; Il souffle quand rien ne tourne ?" },
     date: "2026-08-08",
-    updated: "2026-09-24",
+    updated: "2026-11-10",
     readMin: 9,
     blocks: [
       {
         type: "p",
-        text: "Un ventilateur de PC qui tourne à fond en permanence signale presque toujours un processeur sollicité en continu : par un programme dans la majorité des cas, par de la poussière ou une aération bouchée sinon. Dans les deux cas, la solution coûte beaucoup moins cher qu'un ordinateur neuf.",
+        text: "Un ventilateur de PC qui tourne en permanence ou part à fond sans raison signale presque toujours un processeur sollicité en continu : par un programme dans la majorité des cas, par de la poussière ou une aération bouchée sinon. Dans les deux cas, la solution coûte beaucoup moins cher qu'un ordinateur neuf.",
       },
       {
         type: "p",
@@ -375,7 +375,7 @@ export const articles: Article[] = [
           "Le ventilateur souffle-t-il même quand rien ne tourne ? Alors la cause est physique : poussière, aération bouchée ou pâte thermique usée.",
         ],
       },
-      { type: "h2", text: "Pourquoi un ventilateur de PC se met-il à tourner à fond ?" },
+      { type: "h2", text: "Pourquoi le ventilateur de mon ordinateur tourne en permanence (ou part sans raison) ?" },
       {
         type: "p",
         text: "Un ventilateur n'accélère que pour une raison : la température monte. Le vrai sujet n'est donc pas le ventilateur, mais ce qui fait chauffer le processeur. Il n'existe que deux familles de causes : un composant qui travaille trop (cause logicielle), ou une chaleur qui s'évacue mal (cause physique). Voici les sept situations qu'on rencontre le plus souvent.",
@@ -489,18 +489,18 @@ export const articles: Article[] = [
       { type: "h2", text: "Pour aller plus loin" },
       {
         type: "p",
-        text: "Une surchauffe répétée peut provoquer des plantages. Si votre ordinateur s'éteint ou affiche un écran bleu, lisez notre guide sur [l'écran bleu sous Windows 11](/blog/ecran-bleu-windows-11). Pour contrôler vos températures, voyez aussi notre sélection de [logiciels gratuits de diagnostic PC](/blog/meilleurs-logiciels-gratuits-diagnostic-pc).",
+        text: "Une surchauffe répétée peut provoquer des coupures ou des plantages. Si votre ordinateur s'éteint tout seul ou affiche un écran bleu, consultez notre page sur [l'erreur critique Kernel-Power 41 et les crashs PC](/diagnostic-crash-pc) ainsi que notre guide sur [l'écran bleu sous Windows 11](/blog/ecran-bleu-windows-11). Pour contrôler vos températures, voyez aussi notre sélection de [logiciels gratuits de diagnostic PC](/blog/meilleurs-logiciels-gratuits-diagnostic-pc).",
       },
       { type: "p", text: "Pour aller plus loin : [comment savoir si son PC chauffe trop](/blog/temperature-normale-processeur-carte-graphique), avec la méthode pour mesurer le processeur et la carte graphique au repos et en charge." },
     ],
     faq: [
       {
-        q: "Est-ce grave si le ventilateur de mon PC tourne tout le temps ?",
-        r: "Rarement. C'est un symptôme, pas une panne : le processeur chauffe parce qu'un programme le sollicite ou parce que la chaleur s'évacue mal. Il faut trouver la cause, mais dans la grande majorité des cas elle se règle sans racheter d'ordinateur.",
+        q: "Pourquoi le ventilateur de mon ordinateur tourne en permanence ?",
+        r: "Rarement à cause d'une panne du ventilateur lui-même : il accélère parce que le processeur chauffe. Soit un programme ou une tâche Windows le sollicite en continu, soit la chaleur s'évacue mal (poussière, aération bouchée, pâte thermique sèche).",
       },
       {
-        q: "Pourquoi le ventilateur de mon portable tourne à fond alors que je ne fais rien ?",
-        r: "Soit un programme travaille en arrière-plan sans fenêtre visible (mise à jour, antivirus, programme bloqué), soit la chaleur s'évacue mal (poussière, portable posé sur un tissu). Le Gestionnaire des tâches, ouvert avec Ctrl + Maj + Échap, permet de trancher en quelques secondes.",
+        q: "Pourquoi les ventilateurs de mon PC portable partent sans raison alors que je ne fais rien ?",
+        r: "Soit un programme travaille en arrière-plan sans fenêtre visible (mise à jour Windows Update, analyse antivirus, processus bloqué comme TextInputHost), soit l'air circule mal (poussière dans le radiateur, portable posé sur un lit ou un canapé). Le Gestionnaire des tâches (Ctrl + Maj + Échap) permet de trancher en dix secondes.",
       },
       {
         q: "Combien coûte un nettoyage de PC chez un réparateur ?",
@@ -521,13 +521,13 @@ export const articles: Article[] = [
     slug: "fan-that-never-stops-spinning",
     lang: "en",
     traduction: "ventilateur-qui-ne-sarrete-plus",
-    title: "PC fan always running at full speed: causes and fixes",
-    seoTitle: "PC fan always running at full speed: causes and fixes",
+    title: "PC fan keeps running constantly (or at full speed for no reason): causes and fixes",
+    seoTitle: "PC Fan Keeps Running Constantly or Full Speed for No Reason: 7 Fixes",
     excerpt:
-      "A fan that roars nonstop isn't normal, but it's rarely serious. The 7 most common causes, how to find yours in 5 minutes, and when you should actually worry.",
+      "Why does your PC or laptop fan keep running constantly at full speed for no reason? The 7 common causes, a 5-minute check to find yours, and how to fix it.",
     image: { src: "/images/blog/nyctale-ventilateur-en.jpg", alt: "PC fan always running at full speed: causes and fixes : 3 questions to ask — Right after startup or an update? ; Is a program using the processor? ; Loud even when nothing is running?" },
     date: "2026-08-08",
-    updated: "2026-09-24",
+    updated: "2026-11-10",
     readMin: 9,
     blocks: [
       {
@@ -547,7 +547,7 @@ export const articles: Article[] = [
           "Does the fan roar even when nothing is running? Then the cause is physical: dust, a blocked vent or worn thermal paste.",
         ],
       },
-      { type: "h2", text: "Why does a PC fan spin up to full speed?" },
+      { type: "h2", text: "Why does my computer fan keep running constantly (or spin up for no reason)?" },
       {
         type: "p",
         text: "A fan speeds up for one reason only: the temperature is rising. So the real question isn't the fan, it's what is heating up the processor. There are just two families of causes: a component working too hard (software), or heat that can't escape (physical). Here are the seven situations you'll run into most often.",
@@ -945,22 +945,23 @@ export const articles: Article[] = [
     slug: "disque-a-100-pourcent-windows",
     lang: "fr",
     traduction: "disk-100-percent-windows",
-    title: "Disque à 100 % dans le Gestionnaire des tâches : pourquoi, et comment le calmer",
-    seoTitle: "Disque à 100 % sous Windows 10 et 11 : 5 causes, 5 solutions",
+    title: "Disque à 100 % dans le Gestionnaire des tâches : 6 causes et comment le calmer",
+    seoTitle: "Disque à 100 % (Windows 10 et 11) : 6 causes et solutions rapides",
     excerpt:
-      "Disque à 100 % dans le Gestionnaire des tâches ? Ce n'est pas un disque plein. 5 causes (mises à jour, RAM, disque dur…) et comment trouver la vôtre.",
+      "Disque à 100 % (ou plein sans raison) dans le Gestionnaire des tâches sous Windows 10 et 11 ? Les 6 vraies causes, le test en 5 min et les solutions.",
     image: { src: "/images/blog/nyctale-disque-100-fr.jpg", alt: "Disque à 100 % sous Windows 10 et 11 : 5 causes fréquentes — Windows qui travaille après l'allumage ; Une mémoire vive trop petite ; Un disque dur mécanique ; Un disque en fin de vie ; La synchronisation de fichiers" },
     date: "2026-09-24",
-    readMin: 8,
+    updated: "2026-11-10",
+    readMin: 10,
     blocks: [
       {
         type: "p",
         text: "Un disque à 100 % dans le Gestionnaire des tâches signifie que le disque travaille sans arrêt, pas qu'il est plein. Tant qu'il est saturé, chaque action attend son tour : ouvrir un dossier, lancer un programme, afficher une page. Sur un vieil ordinateur équipé d'un disque dur mécanique, c'est la cause la plus fréquente d'un PC qui « rame » alors que le processeur ne fait presque rien.",
       },
-      { type: "h2", text: "100 % d'activité ou disque plein : ne pas confondre" },
+      { type: "h2", text: "100 % d'activité ou disque dur plein sans raison : ne pas confondre" },
       {
         type: "p",
-        text: "Deux problèmes différents se cachent derrière la même impression de lenteur. Le pourcentage affiché dans la colonne « Disque » du Gestionnaire des tâches mesure l'activité : la part du temps pendant laquelle le disque est occupé à lire ou écrire. Un disque presque vide peut être à 100 %. À l'inverse, un disque plein à 95 % peut être très calme ; il pose alors un autre problème, celui du manque de place pour Windows.",
+        text: "Deux problèmes différents se cachent derrière la même impression de lenteur. Le pourcentage affiché dans la colonne « Disque » du Gestionnaire des tâches mesure l'activité (« Temps d'activité ») : la part du temps pendant laquelle le disque est occupé à lire ou écrire. Un disque presque vide peut être à 100 % d'activité. À l'inverse, si c'est l'espace de stockage de votre disque C: qui est plein à 95 ou 100 % sans raison dans l'Explorateur de fichiers, le problème vient souvent d'un dossier Windows.old (15 à 30 Go après une mise à jour), de fichiers temporaires accumulés ou du fichier de veille prolongée.",
       },
       { type: "h2", text: "Pourquoi le disque est-il à 100 % ?" },
       { type: "h3", text: "1. Windows qui travaille après l'allumage" },
@@ -987,6 +988,16 @@ export const articles: Article[] = [
       {
         type: "p",
         text: "OneDrive, Dropbox ou Google Drive qui rattrapent des milliers de fichiers, par exemple après une réinstallation ou un nouveau dossier photos, peuvent occuper le disque pendant des heures.",
+      },
+      { type: "h3", text: "6. Un pilote de stockage (AHCI / NVMe) ou des fichiers système abîmés" },
+      {
+        type: "p",
+        text: "Sur certains SSD et contrôleurs SATA (pilote générique StorAHCI de Windows), une mauvaise gestion des interruptions matérielles bloque la file d'attente du disque à 100 % alors qu'aucun programme n'écrit rien. De même, des fichiers système corrompus après une coupure de courant relancent en boucle des vérifications en arrière-plan.",
+      },
+      { type: "h2", text: "Temps d'activité à 100 % mais 0 Mo/s (ou quelques Ko/s) : que signifie ce cas ?" },
+      {
+        type: "p",
+        text: "C'est la question la plus fréquente : le Gestionnaire des tâches affiche « Disque : 100 % », mais toutes les lignes de programmes indiquent 0,1 Mo/s. Cela arrive dans trois cas : soit le disque multiplie de minuscules lectures dispersées (son temps d'attente grimpe alors à plus de 50 ou 100 millisecondes dans l'onglet Performances), soit un pilote de stockage attend une réponse du disque qui ne vient pas, soit le disque a du mal à relire un secteur abîmé. Regardez la ligne « Temps de réponse moyen » dans Performances > Disque : au-delà de 20 ms sur un SSD ou 50 ms sur un disque dur, le disque lui-même peine à répondre.",
       },
       { type: "h2", text: "Comment trouver le coupable en 5 minutes ?" },
       {
@@ -1046,6 +1057,10 @@ export const articles: Article[] = [
         q: "Faut-il désactiver le service SysMain ?",
         r: "Ce n'est à tenter qu'en dernier recours, sur un disque dur mécanique, et en observant l'effet. SysMain accélère le lancement des programmes habituels ; le désactiver n'a d'intérêt que s'il sature réellement le disque de façon durable.",
       },
+      {
+        q: "Pourquoi mon disque est à 100 % alors qu'aucun programme ne dépasse 0,1 Mo/s ?",
+        r: "Parce que le pourcentage mesure le temps d'occupation (temps d'attente des lectures/écritures), pas le débit en Mo/s. Mille minuscules fichiers lus sur un disque dur mécanique, un secteur difficile à relire ou un pilote de stockage bloqué suffisent à afficher 100 % d'activité avec un débit quasi nul.",
+      },
     ],
     liens: ["disque-dur-va-lacher-signes", "pc-lent-au-demarrage", "ecran-bleu-windows-11", "meilleurs-logiciels-gratuits-diagnostic-pc", "memoire-ram-saturee-comment-la-lire"],
   },
@@ -1058,12 +1073,12 @@ export const articles: Article[] = [
     lang: "fr",
     traduction: "slow-pc-startup",
     title: "PC lent au démarrage : les vraies causes et comment les corriger",
-    seoTitle: "PC lent au démarrage : causes et solutions (Windows 10/11)",
+    seoTitle: "PC très lent au démarrage (Windows 10/11) : 7 causes et solutions",
     excerpt:
-      "Votre PC met plusieurs minutes à démarrer ? Découvrez les 7 causes d'un démarrage lent, comment mesurer le vôtre et comment le corriger sans rien casser.",
+      "Votre PC met plusieurs minutes à démarrer sous Windows 10 ou 11 ? Les 7 vraies causes, comment mesurer le temps de démarrage et l'accélérer sans risque.",
     image: { src: "/images/blog/nyctale-pc-lent-demarrage-fr.jpg", alt: "PC lent au démarrage : les vraies causes : à faire d'abord — Un vrai « Redémarrer » ; Désactiver les programmes inutiles ; Garder 15 % d'espace libre ; Encore un disque dur mécanique ?" },
     date: "2026-09-24",
-    updated: "2026-09-25",
+    updated: "2026-11-10",
     readMin: 9,
     blocks: [
       {
@@ -1228,18 +1243,18 @@ export const articles: Article[] = [
     slug: "windows-11-lent-apres-mise-a-jour",
     lang: "fr",
     traduction: "windows-11-slow-after-update",
-    title: "Windows 11 lent après une mise à jour : que faire ?",
-    seoTitle: "Windows 11 lent après une mise à jour : causes et solutions",
+    title: "Mise à jour Windows 11 très longue ou PC lent après : causes et solutions",
+    seoTitle: "Mise à jour Windows 11 très longue ou PC lent après : que faire ?",
     excerpt:
-      "PC ralenti après une mise à jour Windows 11 ? Souvent, le système finalise l'installation. Comment savoir si c'est temporaire et les solutions pas à pas.",
+      "Mise à jour Windows 11 très longue ou ordinateur lent après l'installation ? Durée normale, comment savoir si elle est bloquée et 9 solutions pas à pas.",
     image: { src: "/images/blog/nyctale-windows-11-lent-fr.jpg", alt: "Windows 11 lent après une mise à jour : que faire ? : dans l'ordre — Laisser allumé et branché ; Choisir « Redémarrer » ; Installer les mises à jour restantes ; Encore lent après quelques jours ?" },
     date: "2026-09-24",
-    updated: "2026-09-25",
-    readMin: 9,
+    updated: "2026-11-10",
+    readMin: 10,
     blocks: [
       {
         type: "p",
-        text: "Un Windows 11 lent juste après une mise à jour est le plus souvent un ralentissement temporaire : Windows termine en arrière-plan le travail commencé par la mise à jour. Il faut s'en inquiéter si la lenteur dure plusieurs jours, et dans ce cas les causes se vérifient une par une.",
+        text: "Une mise à jour Windows 11 très longue, ou un ordinateur qui devient lent juste après son installation, s'explique le plus souvent par le travail de finalisation que Windows poursuit en arrière-plan. Tant que le disque travaille, la mise à jour n'est pas bloquée. En revanche, si l'attente dépasse quelques heures sur un SSD ou si la lenteur dure plusieurs jours après le redémarrage, les causes se vérifient une par une.",
       },
       { type: "h2", text: "En bref : que faire tout de suite ?" },
       {
@@ -1255,6 +1270,20 @@ export const articles: Article[] = [
       {
         type: "p",
         text: "Windows 11 reçoit deux types de mises à jour. Les mises à jour cumulatives, publiées chaque mois (le deuxième mardi), corrigent des failles et des bugs : elles sont rapides à installer et ralentissent rarement l'ordinateur plus de quelques heures. Les mises à jour de fonctionnalités, une fois par an (par exemple 24H2 puis 25H2), réinstallent une grande partie du système : c'est après elles que les lenteurs sont les plus fréquentes et les plus longues. Pour savoir laquelle vous avez reçue, ouvrez Paramètres > Windows Update > Historique des mises à jour.",
+      },
+      { type: "h2", text: "Pourquoi les mises à jour Windows 11 sont-elles si longues (et quelle durée est normale) ?" },
+      {
+        type: "p",
+        text: "Une mise à jour de Windows ne se contente pas de télécharger un fichier : elle vérifie les composants existants, décompresse des milliers de petits fichiers, sauvegarde l'ancienne version (pour pouvoir revenir en arrière en cas de pépin), applique les changements au redémarrage, puis réindexe le système. Voici les durées normales selon votre matériel :",
+      },
+      {
+        type: "ul",
+        items: [
+          "Mise à jour mensuelle sur un PC avec SSD : 5 à 15 minutes au total (dont 2 à 5 minutes de redémarrage).",
+          "Mise à jour annuelle de fonctionnalités (24H2, 25H2) sur un SSD : 25 à 60 minutes.",
+          "Sur un disque dur mécanique (HDD) ou un PC avec seulement 4 à 8 Go de mémoire : de 1 à 3 heures, car les milliers de petites écritures saturent le disque à 100 %.",
+          "Quand s'inquiéter ? Si le pourcentage reste figé au même chiffre pendant plus de 2 heures sans aucune activité du voyant disque, un vrai redémarrage forcé permet à Windows d'annuler proprement l'étape bloquée.",
+        ],
       },
       { type: "h2", text: "Pourquoi Windows est-il lent après une mise à jour ?" },
       { type: "h3", text: "1. Le travail d'après mise à jour" },
@@ -1348,6 +1377,10 @@ export const articles: Article[] = [
     ],
     faq: [
       {
+        q: "Pourquoi les mises à jour Windows 11 sont-elles si longues ?",
+        r: "Parce que Windows décompresse des milliers de fichiers, sauvegarde l'ancienne version (Windows.old) et vérifie l'intégrité du système. Sur un SSD, comptez 5 à 15 min pour une mise à jour mensuelle et 30 à 60 min pour une mise à jour annuelle ; sur un disque dur mécanique (HDD), cela peut prendre 1 à 3 heures.",
+      },
+      {
         q: "Combien de temps Windows reste-t-il lent après une mise à jour ?",
         r: "En général de 30 minutes à quelques heures, le temps de terminer l'installation, l'optimisation et la réindexation. Sur un disque dur mécanique, jusqu'à une journée après une mise à jour de fonctionnalités. Au-delà de quelques jours, il y a une autre cause à chercher.",
       },
@@ -1374,13 +1407,14 @@ export const articles: Article[] = [
     slug: "disk-100-percent-windows",
     lang: "en",
     traduction: "disque-a-100-pourcent-windows",
-    title: "Disk at 100% in Task Manager: why, and how to calm it down",
-    seoTitle: "Disk at 100% on Windows 10 and 11: 5 causes, 5 fixes",
+    title: "100% Disk Usage in Task Manager (Active Time 100%): 6 Causes & Fixes",
+    seoTitle: "100% Disk Usage in Task Manager (Windows 10/11): 6 Causes & Fixes",
     excerpt:
-      "Disk at 100% in Task Manager? That's not a full disk, it's an overwhelmed one. 5 causes (updates, low RAM, hard drive...) and how to find yours in 5 minutes.",
+      "Disk at 100% (or Active Time 100%) in Task Manager on Windows 10 & 11? The 6 real causes, how to find the culprit in 5 minutes, and step-by-step fixes.",
     image: { src: "/images/blog/nyctale-disque-100-en.jpg", alt: "Disk at 100% on Windows 10 and 11 : 5 common causes — Windows working after startup ; Too little memory (RAM) ; A mechanical hard drive ; A disk near the end of its life ; File syncing (OneDrive, Dropbox...)" },
     date: "2026-09-24",
-    readMin: 8,
+    updated: "2026-11-10",
+    readMin: 10,
     blocks: [
       {
         type: "p",
@@ -1389,7 +1423,7 @@ export const articles: Article[] = [
       { type: "h2", text: "100% activity vs. a full disk: don't mix them up" },
       {
         type: "p",
-        text: "Two different problems hide behind the same feeling of slowness. The percentage in Task Manager's \"Disk\" column measures activity: the share of time the disk is busy reading or writing. An almost empty disk can sit at 100%. Conversely, a disk that is 95% full can be completely idle; it then has a different problem, not enough room for Windows to work.",
+        text: "Two different problems hide behind the same feeling of slowness. The percentage in Task Manager's \"Disk\" column measures activity (\"Active time\"): the share of time the disk is busy reading or writing. An almost empty disk can sit at 100% active time. Conversely, a disk that is 95% full in File Explorer can be completely idle; it then has a different problem, not enough room for Windows to work.",
       },
       { type: "h2", text: "Why is the disk at 100%?" },
       { type: "h3", text: "1. Windows working after you switch on" },
@@ -1416,6 +1450,16 @@ export const articles: Article[] = [
       {
         type: "p",
         text: "OneDrive, Dropbox or Google Drive catching up on thousands of files, after a reinstall or a new photo folder for example, can keep the disk busy for hours.",
+      },
+      { type: "h3", text: "6. A storage driver (StorAHCI / NVMe) or corrupted system files" },
+      {
+        type: "p",
+        text: "On some SSDs and SATA controllers using the generic Windows StorAHCI driver, a message-signalled interrupt (MSI) quirk locks the disk queue at 100% active time with almost zero transfer speed. Likewise, corrupted Windows system files after a forced shutdown can trigger endless background checks.",
+      },
+      { type: "h2", text: "100% Active Time with 0 MB/s transfer speed: what does it mean?" },
+      {
+        type: "p",
+        text: "This is one of the most common questions: Task Manager shows \"Disk: 100%\", yet every process sits at 0.1 MB/s. It happens in three situations: either the drive is handling hundreds of tiny scattered reads (check \"Average response time\" in Performance > Disk: above 20 ms on an SSD or 50 ms on an HDD means the drive is struggling), a storage driver is waiting on a timed-out request, or the drive is repeatedly retrying a bad sector.",
       },
       { type: "h2", text: "How to find the culprit in 5 minutes" },
       {
@@ -1475,6 +1519,10 @@ export const articles: Article[] = [
         q: "Should I disable the SysMain service?",
         r: "Only as a last resort, on a mechanical hard drive, and while watching the effect. SysMain speeds up launching your usual programs; disabling it only helps if it really saturates the disk for long periods.",
       },
+      {
+        q: "Why is my disk Active Time at 100% with 0 MB/s transfer speed?",
+        r: "Because the percentage measures active busy time (queue wait time), not transfer speed in MB/s. Hundreds of tiny random reads on an HDD, a bad sector being retried, or a stuck storage driver can hold Active Time at 100% with nearly 0 MB/s throughput.",
+      },
     ],
     liens: ["failing-hard-drive-signs", "slow-pc-startup", "windows-11-blue-screen-fix", "best-free-pc-diagnostic-tools", "ram-full-how-to-read-memory-usage"],
   },
@@ -1483,12 +1531,12 @@ export const articles: Article[] = [
     lang: "en",
     traduction: "pc-lent-au-demarrage",
     title: "Slow PC startup: the real causes and how to fix them",
-    seoTitle: "Slow PC startup: causes and fixes (Windows 10 and 11)",
+    seoTitle: "Slow PC Startup on Windows 10 & 11: 7 Causes and How to Speed It Up",
     excerpt:
-      "Your computer takes several minutes to become usable? The 7 causes of a slow startup, how to measure yours, and how to fix it without breaking anything.",
+      "PC taking minutes to start up on Windows 10 or 11? The 7 real causes of a slow boot, how to measure yours in Task Manager, and how to speed it up safely.",
     image: { src: "/images/blog/nyctale-pc-lent-demarrage-en.jpg", alt: "Slow PC startup: the real causes : do this first — A real “Restart” ; Disable unneeded startup programs ; Keep 15% free space ; Still on a mechanical hard drive?" },
     date: "2026-09-24",
-    updated: "2026-09-25",
+    updated: "2026-11-10",
     readMin: 9,
     blocks: [
       {
@@ -1649,18 +1697,18 @@ export const articles: Article[] = [
     slug: "windows-11-slow-after-update",
     lang: "en",
     traduction: "windows-11-lent-apres-mise-a-jour",
-    title: "Windows 11 slow after an update: what to do",
-    seoTitle: "Windows 11 slow after an update: causes and fixes",
+    title: "Windows 11 slow after an update (or update taking forever): what to do",
+    seoTitle: "Windows 11 Update Very Slow or PC Slow After Update: Causes & Fixes",
     excerpt:
-      "PC slow after a Windows 11 update? Often Windows is just finishing its work. How to tell if it is temporary and the step-by-step fixes to resolve it.",
+      "Windows 11 update taking forever or PC slow after updating? Normal update duration, how to tell if it's stuck, and 9 step-by-step fixes that work.",
     image: { src: "/images/blog/nyctale-windows-11-lent-en.jpg", alt: "Windows 11 slow after an update: what to do : in this order — Leave it on and plugged in ; Choose “Restart” ; Install the remaining updates ; Still slow after a few days?" },
     date: "2026-09-24",
-    updated: "2026-09-25",
-    readMin: 9,
+    updated: "2026-11-10",
+    readMin: 10,
     blocks: [
       {
         type: "p",
-        text: "Windows 11 running slowly right after an update is usually a temporary slowdown: Windows is finishing, in the background, the work started by the update. It's worth worrying about if the slowness lasts several days, and in that case the causes can be checked one by one.",
+        text: "A Windows 11 update taking a very long time, or a PC running slowly right after an update, is usually caused by Windows finishing background tasks started by the installer. As long as the disk is active, the update isn't frozen. However, if the slowness lasts several days after restarting, the causes can be checked one by one.",
       },
       { type: "h2", text: "In short: what to do right now" },
       {
@@ -1676,6 +1724,20 @@ export const articles: Article[] = [
       {
         type: "p",
         text: "Windows 11 gets two kinds of updates. Cumulative updates, released every month (on the second Tuesday), fix security holes and bugs: they install quickly and rarely slow the computer for more than a few hours. Feature updates, once a year (for example 24H2 then 25H2), reinstall a large part of the system: slowdowns after them are the most common and the longest. To see which one you received, open Settings > Windows Update > Update history.",
+      },
+      { type: "h2", text: "Why are Windows 11 updates so slow (and how long do they normally take)?" },
+      {
+        type: "p",
+        text: "A Windows 11 update doesn't just download a file: it verifies existing system components, unpacks thousands of small files, backs up the previous version into Windows.old, applies changes during restart, and re-indexes your drive. Normal durations depend on your hardware:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Monthly cumulative update on an SSD: 5 to 15 minutes total (including 2 to 5 minutes of reboot).",
+          "Annual feature update (24H2, 25H2) on an SSD: 25 to 60 minutes.",
+          "On a mechanical hard drive (HDD) or a PC with 4 to 8 GB of RAM: 1 to 3 hours, because thousands of small writes saturate the drive at 100%.",
+          "When is it genuinely stuck? If the percentage hasn't moved for over 2 hours with zero disk activity light, a clean restart lets Windows roll back the stuck step safely.",
+        ],
       },
       { type: "h2", text: "Why is Windows slow after an update?" },
       { type: "h3", text: "1. Post-update work" },
@@ -1768,6 +1830,10 @@ export const articles: Article[] = [
       },
     ],
     faq: [
+      {
+        q: "Why are Windows 11 updates taking so long?",
+        r: "Because Windows unpacks thousands of files, backs up the previous version into Windows.old, and verifies system integrity. Expect 5 to 15 min on an SSD for a monthly update (25 to 60 min for an annual feature update), and 1 to 3 hours on a mechanical hard drive (HDD).",
+      },
       {
         q: "How long does Windows stay slow after an update?",
         r: "Usually from 30 minutes to a few hours, the time needed to finish installation, optimisation and re-indexing. On a mechanical hard drive, up to a day after a feature update. Beyond a few days, there's another cause to find.",

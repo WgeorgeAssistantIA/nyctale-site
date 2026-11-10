@@ -163,12 +163,13 @@ export const seoEnArticles: Article[] = [
     slug: "failing-hard-drive-signs",
     lang: "en",
     traduction: "disque-dur-va-lacher-signes",
-    title: "How to Tell If Your Hard Drive Is Failing: Warning Signs and the SMART Test",
-    seoTitle: "Failing hard drive: warning signs, SMART test and what to do",
+    title: "Hard Drive Failure Symptoms: 7 Warning Signs and the Free SMART Test",
+    seoTitle: "Hard Drive Failure Symptoms: 7 Warning Signs & Free SMART Health Test",
     excerpt:
-      "A drive rarely warns you before it dies, but it leaves clues. The signs to watch, how to read SMART health for free and what to do first: back up.",
+      "Hard drive or SSD failing? The 7 early warning signs of hard drive failure, how to run a free SMART wear & health test, and how to save your data.",
     image: { src: "/images/blog/nyctale-disque-dur-signes-en.jpg", alt: "Hard drive about to fail: the warning signs : 7 signs that should alert you — Slowdowns with no software cause ; Clicking or grinding noises ; Unreadable or corrupted files ; Blue screens, crashes at startup ; A SMART alert ; + 2 more signs" },
     date: "2026-10-01",
+    updated: "2026-11-10",
     readMin: 9,
     blocks: [
       {
@@ -192,7 +193,7 @@ export const seoEnArticles: Article[] = [
       { type: "h3", text: "1. Slowdowns with no software cause" },
       {
         type: "p",
-        text: "The disk is slow to respond, the computer freezes for a few seconds when opening a folder, the disk indicator in Task Manager stays at 100% with no demanding program. This symptom has many causes, but a drive struggling to read its data is one of them.",
+        text: "The disk is slow to respond, the computer freezes for a few seconds when opening a folder, [the disk indicator in Task Manager stays at 100%](/blog/disk-100-percent-windows) with no demanding program. This symptom has many causes, but a drive struggling to read its data is one of them.",
       },
       { type: "h3", text: "2. Clicking, grinding or odd whirring noises" },
       {
@@ -207,7 +208,7 @@ export const seoEnArticles: Article[] = [
       { type: "h3", text: "4. Blue screens or crashes at startup" },
       {
         type: "p",
-        text: "Recurring blue screens, especially at startup, can come from a struggling disk. Our article on the Windows 11 blue screen explains how to tell this case from a simple faulty driver.",
+        text: "Recurring blue screens, especially at startup, can come from a struggling disk. Our article on [the Windows 11 blue screen](/blog/windows-11-blue-screen-fix) explains how to tell this case from a simple faulty driver.",
       },
       { type: "h3", text: "5. A very slow boot or a disappearing disk" },
       {
@@ -660,13 +661,14 @@ export const seoEnArticles: Article[] = [
     slug: "startup-programs-which-ones-to-disable",
     lang: "en",
     traduction: "programmes-au-demarrage-lesquels-desactiver",
-    title: "Startup Programs: Which Ones to Disable Safely",
-    seoTitle: "Startup Programs: Which Ones to Disable Safely",
+    title: "Windows 10 & 11 Startup Programs: Which Ones to Disable Safely",
+    seoTitle: "Startup Programs in Windows 10/11: Which Ones Are Safe to Disable?",
     excerpt:
-      "Task Manager lists what launches with Windows. How to sort useful from useless, and what is best never disabled.",
+      "Which startup programs can you safely disable in Windows 10 & 11? Complete Task Manager list of what to turn off (Steam, Spotify, updaters) vs keep.",
     image: { src: "/images/blog/nyctale-programmes-demarrage-en.jpg", alt: "Startup programs sorted by impact: disable game launchers, messaging apps, secondary updaters and manufacturer assistants; keep the antivirus and drivers; look up an unknown item before deciding" },
     date: "2026-10-20",
-    readMin: 4,
+    updated: "2026-11-10",
+    readMin: 5,
     blocks: [
       {
         type: "p",
@@ -685,24 +687,24 @@ export const seoEnArticles: Article[] = [
         type: "p",
         text: "The same list exists in Settings > Apps > Startup, with a toggle on each line. In Task Manager, right-clicking a line and choosing 'Disable' does the same thing.",
       },
-      { type: "h2", text: "Which should you disable?" },
+      { type: "h2", text: "Which startup programs are safe to disable?" },
       {
         type: "ul",
         items: [
-          "Game launchers and platforms you rarely open",
-          "Messaging and social apps you start yourself",
-          "Automatic updaters for secondary software",
-          "Manufacturer assistants and software whose features you do not use",
-          "Syncing you do not need from the start",
+          "Game launchers and platforms you do not use every time you turn on the PC (Steam, Epic Games Launcher, EA App, Battle.net, Ubisoft Connect): they are heavy at boot and launch fine when you click them.",
+          "Messaging, music and video apps you prefer to open yourself (Spotify, Discord, Microsoft Teams, Skype, Zoom, WhatsApp).",
+          "Automatic updaters and helpers for secondary software (Adobe Acrobat Synchronizer, Creative Cloud, Java Update Scheduler, Google Update, CCleaner).",
+          "Manufacturer assistants and utilities whose background features you do not use (HP Support Assistant, Lenovo Vantage, Dell SupportAssist, MyASUS).",
+          "Cloud sync tools you do not need from the very first second (OneDrive, Dropbox, Google Drive) if you prefer launching them on demand.",
         ],
       },
-      { type: "h2", text: "Which should you leave?" },
+      { type: "h2", text: "Which should you leave enabled?" },
       {
         type: "ul",
         items: [
-          "The antivirus and security tools",
-          "Essential hardware drivers and utilities (sound, trackpad, graphics)",
-          "Anything you do not recognise: look up its name before deciding",
+          "Your antivirus and security tools (Windows Security notification icon / SecurityHealthSystray).",
+          "Essential hardware drivers and utilities: audio (Realtek HD Audio Universal Service), touchpad (Synaptics, ELAN), graphics (Intel, AMD, NVIDIA).",
+          "Any system entry you do not recognise: check the 'Publisher' column (Microsoft Corporation, Intel, Realtek) or look up its name before deciding.",
         ],
       },
       { type: "h2", text: "What if I get it wrong?" },
@@ -755,11 +757,12 @@ export const seoEnArticles: Article[] = [
     lang: "en",
     traduction: "memoire-ram-saturee-comment-la-lire",
     title: "RAM Full at Idle on Windows 11 & 10: How to Read Memory Usage and What to Do",
-    seoTitle: "RAM Full at Idle on Windows 11/10: How to Read It and Fix It",
+    seoTitle: "High RAM Usage at Idle (Windows 11/10): Why Memory Is Full & Fixes",
     excerpt:
-      "RAM looks full at idle on Windows 11 or 10? How to read Task Manager (in use, available, committed, cached), what is normal and what to do about it.",
+      "High RAM usage (70-90%) at idle on Windows 11 or 10? How to read Task Manager (cached, committed, available memory) and fix real memory saturation.",
     image: { src: "/images/blog/nyctale-memoire-ram-en.jpg", alt: "Reading memory in Task Manager: in use (compressed), available, committed, cached; what matters is available memory and slowness, not the percentage" },
     date: "2026-10-23",
+    updated: "2026-11-10",
     readMin: 6,
     blocks: [
       {
@@ -877,11 +880,12 @@ export const seoEnArticles: Article[] = [
     lang: "en",
     traduction: "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter",
     title: "Before Reformatting Your PC: What a Diagnostic Can Save You",
-    seoTitle: "Reformat a Slow PC? What to Check Before You Do",
+    seoTitle: "Reformat a Slow PC? What to Check Before You Do (Windows 10/11)",
     excerpt:
-      "Reformatting is the last resort, not the first. The causes of slowness you can fix without reinstalling, the ones a reformat will not fix, and how to decide knowingly.",
+      "Should you reformat a slow PC? The causes of slowness you can fix without reinstalling Windows, what a reformat won't fix, and how to decide first.",
     image: { src: "/images/blog/nyctale-avant-formater-en.jpg", alt: "Two columns: what you can fix without reformatting (stuck program, full memory, full disk, heavy startup, browser, system files) and what a reformat does not fix (worn disk, overheating, worn battery, hardware too limited)" },
     date: "2026-10-27",
+    updated: "2026-11-10",
     readMin: 7,
     blocks: [
       {
@@ -999,12 +1003,13 @@ export const seoEnArticles: Article[] = [
     slug: "pc-restarts-by-itself",
     lang: "en",
     traduction: "pc-qui-redemarre-tout-seul",
-    title: "PC restarts by itself: causes and checks",
-    seoTitle: "PC restarts by itself: causes and checks (Windows 10 and 11)",
+    title: "PC Restarts on Its Own (or Randomly): 5 Causes and How to Check Why",
+    seoTitle: "PC Keeps Restarting on Its Own or Randomly? 5 Causes & How to Check",
     excerpt:
-      "Update, overheating, power supply, driver or disk: how to tell whether your PC is restarting on purpose or shutting down abruptly, where to read the traces Windows keeps, and what to do for each cause.",
+      "Why did your PC restart on its own? How to check Windows Event Viewer logs (Event 41, 1001) in 2 minutes, find the exact cause, and fix random reboots.",
     image: { src: "/images/blog/nyctale-pc-redemarre-en.jpg", alt: "Three cases to tell apart: intended restart (update, Windows message), abrupt shutdown (black screen, events 41, 6008 and 1001 in the log) and a blue screen hidden by automatic restart" },
     date: "2026-10-30",
+    updated: "2026-11-10",
     readMin: 7,
     blocks: [
       { type: "p", text: "A PC that restarts by itself almost always has an identifiable cause: a Windows update installing, overheating, a weakening power supply or battery, an unstable driver, or more rarely a faulty disk or memory. The method has two steps: first find out whether the restart was intended by Windows or was an abrupt shutdown, then read the traces Windows records after every abnormal shutdown. Those traces exist on every Windows 10 and 11 PC, and they save you from replacing parts at random." },
@@ -1025,7 +1030,7 @@ export const seoEnArticles: Article[] = [
       { type: "p", text: "A faulty graphics, Wi-Fi or storage driver causes blue screens, and therefore restarts. Suspicion grows when the problems started right after a driver update or after installing software that adds drivers (antivirus, monitoring tools, peripheral software)." },
       { type: "h3", text: "5. A faulty disk or memory" },
       { type: "p", text: "A faulty memory module or a disk near the end of its life cause random crashes, unrelated to load or updates. It is the least frequent cause, but the most important one to catch, because it puts your data at risk." },
-      { type: "h2", text: "How do you find the cause, step by step?" },
+      { type: "h2", text: "How to check why your PC restarted on its own (step by step)" },
       { type: "p", text: "Work in this order, from simplest to most technical. Most of the time, the cause shows up within the first three steps." },
       {
         type: "ol",
@@ -1086,8 +1091,8 @@ export const seoEnArticles: Article[] = [
     lang: "en",
     traduction: "pc-qui-freeze-materiel-ou-logiciel",
     title: "PC freezes: hardware or software problem?",
-    seoTitle: "PC freezes: hardware or software problem? (Windows 10 and 11)",
-    excerpt: "Frozen screen, stuck mouse, no response: how to tell whether the PC is really frozen, when the freeze happens, where Windows keeps a record of it, and how to separate a software culprit from a hardware fault.",
+    seoTitle: "PC Keeps Freezing Randomly (Windows 10/11): Hardware or Software?",
+    excerpt: "Screen frozen, mouse stuck? How to tell whether your Windows 10/11 PC freezes because of software or a hardware fault (RAM, disk, heat) and fix it.",
     image: {
       src: "/images/blog/nyctale-pc-freeze-en.jpg",
       alt: "Three freeze profiles: likely software (always with the same program, never in Safe Mode), likely heat (after a while or under load, fan blowing hard) and likely hardware (at random, even at idle, in Safe Mode too)"
@@ -1283,7 +1288,7 @@ export const seoEnArticles: Article[] = [
     traduction: "temperature-normale-processeur-carte-graphique",
     title: "How to Tell If Your PC Runs Too Hot: Normal CPU and GPU Temperatures",
     seoTitle: "Normal CPU and GPU Temperatures: Is Your PC Running Too Hot?",
-    excerpt: "There is no universal normal temperature. How to measure at idle and under load, where to find your model's limit, how to spot thermal throttling and what to do when your PC heats up.",
+    excerpt: "Is your PC running too hot? How to measure CPU and GPU temperatures at idle and under load, spot thermal throttling, and cool your computer down.",
     image: {
       src: "/images/blog/nyctale-pc-temperature-en.jpg",
       alt: "Three levels: normal (fan rises under load then settles), keep an eye on it (loud fan at idle, PC slows under load) and act (shutdowns under load, artefacts on screen)"

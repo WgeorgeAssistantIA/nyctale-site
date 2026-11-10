@@ -36,9 +36,13 @@ export const Route = createFileRoute("/blog/$slug")({
       ? [
           { title: loaderData.seoTitle ?? `${loaderData.title} — Nyctale` },
           { name: "description", content: loaderData.excerpt },
+          { property: "og:type", content: "article" },
           { property: "og:title", content: loaderData.seoTitle ?? loaderData.title },
           { property: "og:description", content: loaderData.excerpt },
           { property: "og:url", content: `https://nyctale.fr/blog/${loaderData.slug}` },
+          { name: "twitter:card", content: "summary_large_image" },
+          { name: "twitter:title", content: loaderData.seoTitle ?? loaderData.title },
+          { name: "twitter:description", content: loaderData.excerpt },
           ...(loaderData.image
             ? [
                 { property: "og:image", content: `https://nyctale.fr${loaderData.image.src}` },
@@ -69,6 +73,33 @@ export const Route = createFileRoute("/blog/$slug")({
       : [],
     scripts: loaderData
       ? [
+          {
+            type: "application/ld+json",
+            children: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Nyctale",
+                  item: loaderData.lang === "en" ? "https://nyctale.fr/en" : "https://nyctale.fr/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Blog",
+                  item: "https://nyctale.fr/blog",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: loaderData.title,
+                  item: `https://nyctale.fr/blog/${loaderData.slug}`,
+                },
+              ],
+            }),
+          },
           ...(loaderData.faq
             ? [
                 {
@@ -92,6 +123,7 @@ export const Route = createFileRoute("/blog/$slug")({
               "@type": "Article",
               headline: loaderData.title,
               description: loaderData.excerpt,
+              inLanguage: loaderData.lang === "fr" ? "fr-FR" : "en-US",
               image: loaderData.image ? `https://nyctale.fr${loaderData.image.src}` : "https://nyctale.fr/og-image.png",
               datePublished: loaderData.date,
               dateModified: loaderData.updated ?? loaderData.date,
@@ -115,8 +147,20 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 const TEXTES = {
-  fr: { back: "Retour au blog", majLe: "mis à jour le", faq: "Questions fréquentes", aLire: "À lire aussi" },
-  en: { back: "Back to blog", majLe: "updated", faq: "Frequently asked questions", aLire: "Read next" },
+  fr: {
+    back: "Retour au blog",
+    majLe: "mis à jour le",
+    faq: "Questions fréquentes",
+    aLire: "À lire aussi",
+    headerCta: "Diagnostic PC gratuit (19s)",
+  },
+  en: {
+    back: "Back to blog",
+    majLe: "updated",
+    faq: "Frequently asked questions",
+    aLire: "Read next",
+    headerCta: "Free PC scan (19s)",
+  },
 };
 
 function dateLisible(iso: string, lang: "fr" | "en") {
@@ -129,31 +173,47 @@ function dateLisible(iso: string, lang: "fr" | "en") {
 
 function BlogArticle() {
   const article = Route.useLoaderData();
-  const [lang, setLang] = useLang();
+  const [, setLang] = useLang();
   const t = TEXTES[article.lang];
   const intertitres = article.blocks.flatMap((b, i) => (b.type === "h2" ? [i] : []));
   const indexMilieu = intertitres[1] ?? -1;
+  const frSlug = article.lang === "fr" ? article.slug : (article.traduction ?? article.slug);
+  const enSlug = article.lang === "en" ? article.slug : (article.traduction ?? article.slug);
 
   return (
     <main className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-4 px-6 py-4">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to={article.lang === "en" ? "/en" : "/"} className="flex items-center gap-2">
             <img src="/nyctale_logo.png" alt="Nyctale" className="h-9 w-9 rounded-lg" />
             <span className="text-lg font-semibold tracking-tight">Nyctale</span>
           </Link>
-          <div className="inline-flex items-center rounded-full border border-border bg-secondary p-0.5 text-xs font-medium">
-            {(["fr", "en"] as const).map((l) => (
-              <button
-                key={l}
-                onClick={() => setLang(l)}
-                className={`cursor-pointer rounded-full px-3 py-1 transition ${
-                  lang === l ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {l.toUpperCase()}
-              </button>
-            ))}
+          <div className="flex items-center gap-3">
+            <Link
+              to={article.lang === "en" ? "/en" : "/"}
+              className="hidden rounded-full border border-primary/40 bg-primary/10 px-3.5 py-1.5 text-xs font-medium text-primary transition hover:bg-primary hover:text-primary-foreground sm:inline-flex"
+            >
+              {t.headerCta}
+            </Link>
+            <div className="inline-flex items-center rounded-full border border-border bg-secondary p-0.5 text-xs font-medium">
+              {(["fr", "en"] as const).map((l) => {
+                const targetSlug = l === "fr" ? frSlug : enSlug;
+                const active = article.lang === l;
+                return (
+                  <Link
+                    key={l}
+                    to="/blog/$slug"
+                    params={{ slug: targetSlug }}
+                    onClick={() => setLang(l)}
+                    className={`cursor-pointer rounded-full px-3 py-1 transition ${
+                      active ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {l.toUpperCase()}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       </header>

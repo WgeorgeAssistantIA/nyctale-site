@@ -25,20 +25,20 @@ type Lang = "fr" | "en";
 export const Route = createFileRoute("/diagnostic-crash-pc")({
   head: () => ({
     meta: [
-      { title: "Diagnostic Crash PC & Kernel-Power 41 — Nyctale" },
+      { title: "Erreur Critique Kernel-Power 41 (Windows 10/11) : Causes & Solutions" },
       {
         name: "description",
         content:
-          "Identifiez la vraie cause des redémarrages brusques (Kernel-Power 41, écran bleu, disque lent) sur Windows en 19 secondes, en français sans jargon.",
+          "Erreur critique Kernel-Power 41 (ID 41, 6008, 1001) ou PC qui s'éteint tout seul ? Comprenez les vraies causes et diagnostiquez votre PC en 19 secondes.",
       },
       {
         property: "og:title",
-        content: "Diagnostic Crash PC & Kernel-Power 41 — Nyctale",
+        content: "Erreur Critique Kernel-Power 41 (Windows 10/11) : Causes & Solutions",
       },
       {
         property: "og:description",
         content:
-          "Identifiez la vraie cause des redémarrages brusques (Kernel-Power 41, écran bleu, disque lent) sur Windows en 19 secondes, en français sans jargon.",
+          "Erreur critique Kernel-Power 41 (ID 41, 6008, 1001) ou PC qui s'éteint tout seul ? Comprenez les vraies causes et diagnostiquez votre PC en 19 secondes.",
       },
       { property: "og:type", content: "website" },
       {

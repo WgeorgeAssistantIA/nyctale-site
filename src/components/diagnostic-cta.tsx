@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EXE_URL, STORE_URL, trackDownload, trackStoreDownload } from "@/lib/download";
+import { CTA_ARTICLES } from "@/lib/blog-cta";
 import type { Lang } from "@/lib/lang";
 
 const TEXTES = {
@@ -36,17 +37,19 @@ export function DiagnosticCta({ lang, variante, slug, avecCapture = true }: Prop
   const t = TEXTES[lang];
   const origine = `blog_${variante}_${slug}`;
   const fin = variante === "fin";
+  // Encart du milieu : texte propre à l'article quand il existe.
+  const propre = fin ? undefined : CTA_ARTICLES[slug];
+  const titre = propre?.titre ?? (fin ? t.finTitre : t.milieuTitre);
+  const texte = propre?.texte ?? (fin ? t.finTexte : t.milieuTexte);
 
   return (
     <aside
       className={`not-prose rounded-xl border border-primary/40 bg-card p-6 ${fin ? "md:p-8" : ""}`}
     >
       <p className={`font-semibold tracking-tight ${fin ? "text-2xl" : "text-lg"}`}>
-        {fin ? t.finTitre : t.milieuTitre}
+        {titre}
       </p>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        {fin ? t.finTexte : t.milieuTexte}
-      </p>
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{texte}</p>
       {fin && avecCapture && (
         <img
           src={`/verdict-${lang}.webp`}

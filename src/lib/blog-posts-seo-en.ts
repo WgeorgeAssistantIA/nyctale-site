@@ -292,6 +292,10 @@ export const seoEnArticles: Article[] = [
         type: "p",
         text: "Nyctale asks Windows for the health state of your drives and clearly flags if one is in warning. It cross-checks this with recent crashes and disk activity, to tell a simple software slowdown from a real hardware problem. If the drive is at fault, it tells you frankly: no software repairs a wearing drive, you need to back up and replace it.",
       },
+      {
+        type: "p",
+        text: "Going further: a click or a scratch does not always come from the disk. To tell a hard drive noise from a fan noise or an electronic whine, read [what each PC noise means](/blog/pc-noises-what-each-sound-means).",
+      },
     ],
     faq: [
       {
@@ -315,7 +319,7 @@ export const seoEnArticles: Article[] = [
         r: "A 500 GB SSD generally costs between €40 and €70. At a repair shop, add fitting and possibly cloning or a Windows reinstall.",
       },
     ],
-    liens: ["windows-11-blue-screen-fix", "disk-100-percent-windows", "slow-pc-startup", "pc-restarts-by-itself", "pc-freezes-hardware-or-software"],
+    liens: ["pc-noises-what-each-sound-means", "windows-11-blue-screen-fix", "disk-100-percent-windows", "slow-pc-startup", "pc-restarts-by-itself", "pc-freezes-hardware-or-software"],
   },
   {
     slug: "best-free-pc-diagnostic-tools",
@@ -1275,6 +1279,7 @@ export const seoEnArticles: Article[] = [
       }
     ],
     liens: [
+      "pc-noises-what-each-sound-means",
       "normal-cpu-gpu-temperatures",
       "pc-restarts-by-itself",
       "ram-full-how-to-read-memory-usage",
@@ -1458,10 +1463,90 @@ export const seoEnArticles: Article[] = [
       }
     ],
     liens: [
+      "pc-noises-what-each-sound-means",
       "fan-that-never-stops-spinning",
       "pc-restarts-by-itself",
       "pc-freezes-hardware-or-software",
       "slow-computer-no-obvious-reason"
     ]
+  },
+  {
+    slug: "pc-noises-what-each-sound-means",
+    lang: "en",
+    traduction: "bruits-du-pc-ce-que-signifie-chaque-bruit",
+    title: "PC Noises: What Each Sound Means (Disk, Fan, Coil Whine)",
+    seoTitle: "Strange PC Noise: Clicking, Whirring or Whining, What to Do?",
+    excerpt: "Clicking, whirring, grinding, high-pitched whine or beeps: identify which component is making noise, judge how serious it is and know when to back up urgently.",
+    image: {
+      src: "/images/blog/nyctale-pc-noises-en.jpg",
+      alt: "Three levels of PC noise severity: normal (fan rising under load, soft hard drive scratching while reading), keep an eye on it (loud fan at idle, fan rubbing or ticking, high-pitched whine in games) and act now (repeated hard drive clicks, electrical crack or burning smell, beeps and a PC that will not start)"
+    },
+    date: "2026-11-10",
+    readMin: 8,
+    blocks: [
+      { type: "p", text: "Repeated clicking from the hard drive is the most serious noise: back up your data right away. A whoosh that rises and falls with activity is normal; if it stays loud at idle, a program or dust is making the machine hot. A high-pitched whine that changes with load, especially in games, is usually coil whine: annoying, rarely dangerous. Before you worry, locate the source and note when the noise appears." },
+      { type: "p", text: "A computer is never completely silent, and a new noise is all the more worrying when you do not know where it comes from. This guide helps you sort it out: how to locate a noise, what each family of sounds means (disk, fan, whine, vibration, beeps), which ones call for immediate action, and what diagnostic software can or cannot confirm. For a fan that never calms down, see also [the guide to a PC fan that never stops spinning](/blog/fan-that-never-stops-spinning)." },
+      { type: "h2", text: "How do you locate a computer noise?" },
+      { type: "p", text: "The same noise can come from several components. Two questions are often enough: where is it, and when does it appear?" },
+      { type: "ol", items: [
+        "Listen at idle, a few minutes after startup, then during a heavy task (a game, a video export, copying large files). A noise that follows the load comes from a fan or an electronic whine; a noise that follows file reads comes from the disk.",
+        "Bring your ear close to each area of the case: the front and drive bays for the hard drive, the top and back for the processor and case fans, the graphics card in the middle, the power supply at the top or bottom at the back. On a laptop, listen near the air vents.",
+        "Open Task Manager (Ctrl + Shift + Esc), Processes tab, and watch the CPU and Disk columns when the noise appears: a spike at the same moment is an excellent clue.",
+        "Note the exact moment: only at startup, when going to sleep, in games, all the time. If you can, record the noise with your phone; a repair shop will identify it faster.",
+      ] },
+      { type: "p", text: "Never stop a fan with your finger or an object to “test” it: you could break a blade or let the machine overheat. Switching the computer off and checking for a cable or dust in a fan is safer." },
+      { type: "h2", text: "Is a clicking or grinding hard drive serious?" },
+      { type: "p", text: "It depends on the kind of click. A mechanical hard drive has spinning platters and a read head that moves. Soft, discreet scratching while it reads or writes is normal: that is the head positioning itself. A slightly louder click when the PC shuts down or goes to sleep, as the heads park, is normal too. The manufacturer Seagate describes these sounds on its page about [identifying hard drive sounds](https://www.seagate.com/support/kb/identifying-hard-drive-sounds-and-determining-what-they-mean/)." },
+      { type: "p", text: "What should alarm you is a new, regular noise: a sharp click repeating every few seconds, a metallic grinding or scraping, or a drive that spins up, stops and spins up again in a loop, sometimes while the PC freezes. These symptoms often signal a mechanical failure in progress." },
+      { type: "ul", items: [
+        "Back up your important files immediately to another device (external drive, USB stick, cloud storage), starting with what cannot be replaced: photos, documents.",
+        "Then use the drive as little as possible: no defragmentation, no repeated checks, no unnecessary large transfers.",
+        "If the data is precious and the drive no longer reads, switch it off and take it to a data recovery service rather than insisting.",
+      ] },
+      { type: "p", text: "An SSD has no moving parts: it makes no noise, even at the end of its life. A click on a PC with only an SSD therefore comes from somewhere else, most often a fan. Silence does not prove an SSD is healthy either: to know a drive's real condition, read [the signs of a failing hard drive and the SMART test](/blog/failing-hard-drive-signs)." },
+      { type: "h2", text: "Whooshing, droning or rubbing: what is the fan telling you?" },
+      { type: "p", text: "A fan produces several different noises, and they do not mean the same thing." },
+      { type: "h3", text: "A whoosh that rises then falls" },
+      { type: "p", text: "This is normal: the processor or graphics card heats up during an effort, the fan speeds up, then slows down when the load drops. Nothing to do." },
+      { type: "h3", text: "A loud fan at idle" },
+      { type: "p", text: "If the fan blows hard while you are doing nothing, the processor is still getting hot. Two causes dominate: a program looping in the background, or heat that is not being removed well (dust in the vents, a laptop resting on a bed or sofa, worn thermal paste on a machine several years old). Task Manager settles it in seconds. If no program explains the heat, a clean-out is needed; at a repair shop, a full clean with fresh thermal paste usually costs 50 to 80 euros. To go further, see [how to tell if your PC is running too hot](/blog/normal-cpu-gpu-temperatures)." },
+      { type: "h3", text: "Rubbing, rhythmic ticking or an irregular noise" },
+      { type: "p", text: "A fan that rubs, ticks with every turn or makes a noise that varies regardless of load has a mechanical problem: a cable touching the blades, built-up dust, a worn bearing. Switch off, unplug, look: moving a cable aside or removing dust often fixes it. A worn bearing, recognisable by a low drone or a squeak at startup that fades as it warms up, is fixed by replacing the fan, an inexpensive part on a desktop PC. Do not wait too long: a fan that slows down or stops lets the machine overheat." },
+      { type: "h2", text: "A high-pitched whine or buzz: should you worry?" },
+      { type: "p", text: "A high-pitched whine, sometimes close to a buzz, whose pitch changes with activity is usually coil whine. It comes from the coils in the power circuits, most often on the graphics card or in the power supply, which vibrate slightly depending on the current flowing through them. It is typical of games and game menus, where the graphics card renders hundreds of frames per second." },
+      { type: "p", text: "This noise is annoying but is generally not a sign of failure. Its intensity varies from one unit to another of the same model. To reduce it, cap the frame rate (vertical sync or a frame limiter in the game or graphics driver): the whine often drops sharply in menus. If it is unbearable on a new product, the seller's warranty is the only real solution." },
+      { type: "p", text: "Important exception: a sharp electrical crack, a buzz with a smell of burning or hot plastic, or smoke is not coil whine. Switch the computer off, unplug it and do not turn it back on until it has been checked, especially the power supply." },
+      { type: "h2", text: "Humming, vibration or beeps: how do you sort the rest?" },
+      { type: "h3", text: "A low hum or vibration" },
+      { type: "p", text: "It often comes from a part that vibrates rather than a failing component: a loose screw, a badly fixed side panel, a hard drive not screwed into its bay, a spinning optical drive, or a case standing on a surface that resonates. Press gently on the panel while the noise is there: if it stops, tighten the screws or put the PC on a more stable surface." },
+      { type: "h3", text: "Beeps at startup" },
+      { type: "p", text: "Beeps from the motherboard at startup are error codes: they report a problem detected before Windows even starts, often the memory or the graphics card. Their meaning depends on the motherboard or computer manufacturer: count the beeps (long and short) and look them up in your model's documentation. A single short beep followed by a normal startup is, on some machines, the usual signal that all is well." },
+      { type: "h3", text: "Which noise calls for immediate action?" },
+      { type: "ul", items: [
+        "Repeated clicks, grinding or looping spin-ups from the hard drive: back up immediately.",
+        "Electrical cracking, burning smell or smoke: switch off and unplug.",
+        "Beeps at startup with a PC that will not start: motherboard documentation or a repair shop.",
+        "A fan that rubs, slows down or stops: deal with it quickly, before the heat causes slowdowns or shutdowns.",
+      ] },
+      { type: "p", text: "The rest, a loud fan at idle, a whine in games or a vibration, can wait for a clean-out or a setting change, as long as you check that things do not get worse." },
+      { type: "h2", text: "What software can check, and what it cannot" },
+      { type: "p", text: "No software can hear your PC. Nyctale cannot either: it does not use the microphone and does not read any temperature sensor. It can, however, confirm or rule out the causes behind a noise, using what Windows already records:" },
+      { type: "ul", items: [
+        "For the disk: it reads the health status Windows reports for each drive and flags it if it turns to “Warning” or “Unhealthy”. An “Unknown” status, common on USB enclosures, is not treated as a failure.",
+        "For a fan at idle: it spots a Windows component or a program keeping the processor busy in a loop, the most common cause of a fan that never calms down.",
+        "For heat: it counts, in the Windows log, the episodes over the past 14 days when the processor had to slow itself down for protection, and cross-checks them with sudden shutdowns. If no program explains the heat, it concludes there is a cooling problem and tells you plainly: no software replaces a clean-out.",
+      ] },
+      { type: "p", text: "A clicking hard drive whose health status still reads “Healthy” remains a warning sign: the health status does not always warn before a failure. When in doubt, back up first and analyse second. If the noise comes with freezes or restarts, read also [PC freezes: hardware or software?](/blog/pc-freezes-hardware-or-software) and [PC restarts by itself](/blog/pc-restarts-by-itself)." },
+      { type: "h2", text: "Conclusion: listen, locate, sort" },
+      { type: "p", text: "A PC noise is judged by its source and by when it appears. A clicking hard drive comes before everything else: back up first. The fan almost always tells a story about heat, software or physical. A high-pitched whine is usually a nuisance, not a failure, and vibrations are fixed with a screwdriver. To check in a few seconds the state of your drives and what is heating up your machine, [Nyctale's free analysis](/en) reads these signals without changing anything." },
+    ],
+    faq: [
+      { q: "My hard drive is clicking, what should I do?", r: "If the clicks are regular and new, or if there is grinding, back up your important files immediately, then use the drive as little as possible. Soft scratching during reads is normal." },
+      { q: "Why is my fan loud when I am not doing anything?", r: "Because the processor is still getting hot: a program is looping in the background, or heat is not removed well because of dust or a blocked vent. Task Manager tells the two apart." },
+      { q: "What is coil whine?", r: "A high-pitched whine produced by the coils in power circuits, mainly on the graphics card or power supply, which varies with load. Annoying but generally harmless; capping the frame rate often reduces it." },
+      { q: "Does an SSD make noise before it fails?", r: "No. An SSD has no moving parts and stays silent, even at the end of its life. You need to read its health status to know whether it is weakening." },
+      { q: "What do beeps at startup mean?", r: "They are motherboard error codes, often related to the memory or graphics card. Their meaning depends on the manufacturer: check your model's documentation." },
+    ],
+    liens: ["failing-hard-drive-signs", "fan-that-never-stops-spinning", "normal-cpu-gpu-temperatures", "pc-freezes-hardware-or-software"]
   },
 ];

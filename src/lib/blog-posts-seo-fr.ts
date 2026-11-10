@@ -292,6 +292,10 @@ export const seoFrArticles: Article[] = [
         type: "p",
         text: "Nyctale interroge Windows sur l'état de santé de vos disques et vous signale clairement si l'un d'eux est en alerte. Il le croise avec les plantages récents et l'activité du disque, pour distinguer un simple ralentissement logiciel d'un vrai problème matériel. Si le disque est en cause, il vous le dit franchement : aucun logiciel ne répare un disque qui s'use, il faut sauvegarder et le remplacer.",
       },
+      {
+        type: "p",
+        text: "Pour aller plus loin : un clic ou un grattement ne vient pas toujours du disque. Pour reconnaître un bruit de disque dur d'un bruit de ventilateur ou d'un sifflement électronique, lisez [ce que signifie chaque bruit du PC](/blog/bruits-du-pc-ce-que-signifie-chaque-bruit).",
+      },
     ],
     faq: [
       {
@@ -315,7 +319,7 @@ export const seoFrArticles: Article[] = [
         r: "Un SSD de 500 Go se trouve généralement entre 40 et 70 €. Chez un réparateur, comptez en plus la pose et éventuellement le clonage ou la réinstallation de Windows.",
       },
     ],
-    liens: ["ecran-bleu-windows-11", "disque-a-100-pourcent-windows", "pc-lent-au-demarrage", "pc-qui-redemarre-tout-seul", "pc-qui-freeze-materiel-ou-logiciel"],
+    liens: ["bruits-du-pc-ce-que-signifie-chaque-bruit", "ecran-bleu-windows-11", "disque-a-100-pourcent-windows", "pc-lent-au-demarrage", "pc-qui-redemarre-tout-seul", "pc-qui-freeze-materiel-ou-logiciel"],
   },
   {
     slug: "meilleurs-logiciels-gratuits-diagnostic-pc",
@@ -1275,6 +1279,7 @@ export const seoFrArticles: Article[] = [
       }
     ],
     liens: [
+      "bruits-du-pc-ce-que-signifie-chaque-bruit",
       "temperature-normale-processeur-carte-graphique",
       "pc-qui-redemarre-tout-seul",
       "memoire-ram-saturee-comment-la-lire",
@@ -1458,10 +1463,90 @@ export const seoFrArticles: Article[] = [
       }
     ],
     liens: [
+      "bruits-du-pc-ce-que-signifie-chaque-bruit",
       "ventilateur-qui-ne-sarrete-plus",
       "pc-qui-redemarre-tout-seul",
       "pc-qui-freeze-materiel-ou-logiciel",
       "pc-qui-rame-sans-raison"
     ]
+  },
+  {
+    slug: "bruits-du-pc-ce-que-signifie-chaque-bruit",
+    lang: "fr",
+    traduction: "pc-noises-what-each-sound-means",
+    title: "Bruits du PC : ce que signifie chaque bruit (disque, ventilateur, coil whine)",
+    seoTitle: "Bruit bizarre du PC : clic, souffle, sifflement, que faire ?",
+    excerpt: "Cliquetis, souffle, frottement, sifflement aigu ou bips : identifier le composant qui fait du bruit, juger la gravité et savoir quand sauvegarder en urgence.",
+    image: {
+      src: "/images/blog/nyctale-bruits-pc-fr.jpg",
+      alt: "Trois niveaux de gravité des bruits du PC : normal (souffle qui monte sous charge, petits grattements du disque dur pendant une lecture), à surveiller (souffle fort au repos, frottement ou cliquetis du ventilateur, sifflement aigu en jeu) et à traiter tout de suite (clics répétés du disque, claquement ou odeur de brûlé, bips et PC qui ne démarre pas)"
+    },
+    date: "2026-11-10",
+    readMin: 9,
+    blocks: [
+      { type: "p", text: "Des clics répétés qui viennent du disque dur sont le bruit le plus grave : sauvegardez vos données tout de suite. Un souffle qui monte puis redescend avec l'activité est normal ; s'il reste fort au repos, un programme ou la poussière fait chauffer la machine. Un sifflement aigu qui change avec la charge, surtout en jeu, est le plus souvent du « coil whine » : gênant, rarement dangereux. Avant de vous inquiéter, localisez la source et notez quand le bruit apparaît." },
+      { type: "p", text: "Un ordinateur n'est jamais tout à fait silencieux, et un bruit nouveau inquiète d'autant plus qu'on ne sait pas d'où il vient. Ce guide vous aide à trier : comment localiser un bruit, ce que signifie chaque famille de sons (disque, ventilateur, sifflement, vibration, bips), lesquels exigent d'agir immédiatement, et ce qu'un logiciel de diagnostic peut confirmer ou non. Pour un ventilateur qui ne se calme jamais, voyez aussi [le guide du ventilateur de PC qui tourne en permanence](/blog/ventilateur-qui-ne-sarrete-plus)." },
+      { type: "h2", text: "Comment localiser un bruit d'ordinateur ?" },
+      { type: "p", text: "Un même bruit peut venir de plusieurs composants. Deux questions suffisent souvent à trancher : où est-il, et quand apparaît-il ?" },
+      { type: "ol", items: [
+        "Écoutez au repos, quelques minutes après le démarrage, puis pendant une tâche lourde (jeu, export vidéo, copie de gros fichiers). Un bruit qui suit la charge vient d'un ventilateur ou d'un sifflement électronique ; un bruit qui suit les lectures de fichiers vient du disque.",
+        "Approchez l'oreille des zones du boîtier : la façade et les baies pour le disque dur, le dessus et l'arrière pour les ventilateurs du processeur et du boîtier, la carte graphique au milieu, l'alimentation en haut ou en bas à l'arrière. Sur un portable, écoutez près des grilles d'aération.",
+        "Ouvrez le Gestionnaire des tâches (Ctrl + Maj + Échap), onglet Processus, et regardez les colonnes Processeur et Disque au moment où le bruit apparaît : un pic qui coïncide est un excellent indice.",
+        "Notez le moment exact : au démarrage seulement, à la mise en veille, en jeu, en permanence. Si possible, enregistrez le bruit avec votre téléphone ; un réparateur l'identifiera plus vite.",
+      ] },
+      { type: "p", text: "Ne bloquez jamais un ventilateur avec le doigt ou un objet pour « tester » : vous risquez de casser une pale ou de faire chauffer la machine. Éteindre l'ordinateur et regarder s'il y a un câble ou de la poussière dans un ventilateur est plus sûr." },
+      { type: "h2", text: "Le disque dur fait des clics ou gratte : est-ce grave ?" },
+      { type: "p", text: "Tout dépend du type de clic. Un disque dur mécanique contient des plateaux qui tournent et une tête de lecture qui se déplace. Des petits grattements discrets pendant qu'il lit ou écrit sont normaux : c'est la tête qui se positionne. Un clic un peu plus net à l'extinction ou à la mise en veille, quand la tête se range, l'est aussi. Le fabricant Seagate détaille ces bruits sur sa page [d'identification des bruits de disque dur](https://www.seagate.com/fr/fr/support/kb/identifying-hard-drive-sounds-and-determining-what-they-mean/)." },
+      { type: "p", text: "Ce qui doit alerter, c'est un bruit nouveau et régulier : un clic sec qui se répète toutes les quelques secondes, un grincement ou un frottement métallique, un disque qui démarre, s'arrête et redémarre en boucle, parfois avec un PC qui se fige au même moment. Ces symptômes signalent souvent une défaillance mécanique en cours." },
+      { type: "ul", items: [
+        "Sauvegardez immédiatement vos fichiers importants sur un autre support (disque externe, clé, stockage en ligne), en commençant par ce qui est irremplaçable : photos, documents.",
+        "Utilisez le disque le moins possible ensuite : pas de défragmentation, pas de vérifications répétées, pas de gros transferts inutiles.",
+        "Si les données sont précieuses et que le disque ne se lit plus, éteignez-le et confiez-le à un service de récupération plutôt que d'insister.",
+      ] },
+      { type: "p", text: "Un SSD, lui, n'a aucune pièce mobile : il ne fait pas de bruit, même quand il est en fin de vie. Un clic sur un PC équipé uniquement d'un SSD vient donc d'ailleurs, le plus souvent d'un ventilateur. L'absence de bruit ne prouve pas non plus qu'un SSD va bien : pour connaître l'état réel d'un disque, lisez [les signes d'un disque dur qui va lâcher et le test SMART](/blog/disque-dur-va-lacher-signes)." },
+      { type: "h2", text: "Souffle, ronflement ou frottement : que dit le ventilateur ?" },
+      { type: "p", text: "Le ventilateur produit plusieurs bruits différents, qui n'ont pas la même signification." },
+      { type: "h3", text: "Un souffle qui monte puis redescend" },
+      { type: "p", text: "C'est le fonctionnement normal : le processeur ou la carte graphique chauffe pendant un effort, le ventilateur accélère, puis ralentit quand la charge baisse. Rien à faire." },
+      { type: "h3", text: "Un souffle fort au repos" },
+      { type: "p", text: "Si le ventilateur souffle fort alors que vous ne faites rien, le processeur chauffe quand même. Deux causes dominent : un programme qui tourne en boucle en arrière-plan, ou une évacuation de la chaleur qui se fait mal (poussière dans les grilles, portable posé sur un lit ou un canapé, pâte thermique usée sur une machine de plusieurs années). Le Gestionnaire des tâches permet de trancher en quelques secondes. Si aucun programme n'explique la chaleur, un dépoussiérage s'impose ; chez un réparateur, un nettoyage complet avec changement de pâte thermique coûte généralement 50 à 80 euros. Pour aller plus loin, voyez [comment savoir si votre PC chauffe trop](/blog/temperature-normale-processeur-carte-graphique)." },
+      { type: "h3", text: "Un frottement, un cliquetis rythmique ou un bruit irrégulier" },
+      { type: "p", text: "Un ventilateur qui frotte, claque à chaque tour ou fait un bruit qui varie sans lien avec la charge a un problème mécanique : un câble qui touche les pales, de la poussière accumulée, un roulement usé. Éteignez, débranchez, regardez : écarter un câble ou dépoussiérer règle souvent le problème. Un roulement usé, reconnaissable à un ronflement grave ou à un grincement au démarrage qui s'atténue en chauffant, se règle par le remplacement du ventilateur, une pièce peu coûteuse sur un PC fixe. Ne tardez pas : un ventilateur qui ralentit ou s'arrête laisse la machine chauffer." },
+      { type: "h2", text: "Un sifflement aigu ou un grésillement : faut-il s'inquiéter ?" },
+      { type: "p", text: "Un sifflement aigu, parfois proche d'un grésillement, dont la hauteur change avec l'activité est en général du « coil whine ». Il vient des bobines des circuits d'alimentation, le plus souvent sur la carte graphique ou dans le bloc d'alimentation, qui vibrent légèrement selon le courant qui les traverse. Il est typique des jeux et des menus de jeu, où la carte graphique calcule des centaines d'images par seconde." },
+      { type: "p", text: "Ce bruit est gênant mais n'est généralement pas le signe d'une panne. Son intensité varie d'un exemplaire à l'autre du même modèle. Pour le réduire, limitez la fréquence d'images (synchronisation verticale ou limiteur d'images dans le jeu ou le pilote graphique) : le sifflement baisse souvent nettement dans les menus. S'il est insupportable sur un produit neuf, la garantie du vendeur est la seule vraie solution." },
+      { type: "p", text: "Exception importante : un claquement électrique sec, un grésillement accompagné d'une odeur de brûlé ou de plastique chaud, ou de la fumée ne sont pas du coil whine. Éteignez l'ordinateur, débranchez-le et ne le rallumez pas avant une vérification, en particulier du bloc d'alimentation." },
+      { type: "h2", text: "Bourdonnement, vibration ou bips : comment trier le reste ?" },
+      { type: "h3", text: "Un bourdonnement grave ou une vibration" },
+      { type: "p", text: "Il vient souvent d'une pièce qui vibre plutôt que d'un composant malade : une vis desserrée, un panneau latéral mal fixé, un disque dur mal vissé dans sa baie, un lecteur optique qui tourne, ou un boîtier posé sur une surface qui résonne. Appuyez doucement sur le panneau pendant que le bruit est là : s'il s'arrête, resserrez les vis ou posez le PC sur une surface plus stable." },
+      { type: "h3", text: "Des bips au démarrage" },
+      { type: "p", text: "Des bips émis par la carte mère au démarrage sont des codes d'erreur : ils signalent un problème détecté avant même le lancement de Windows, souvent la mémoire vive ou la carte graphique. Leur signification dépend du fabricant de la carte mère ou de l'ordinateur : comptez les bips (longs et courts) et cherchez-les dans la documentation de votre modèle. Un bip unique et bref, suivi d'un démarrage normal, est en revanche le signal habituel que tout va bien sur certaines machines." },
+      { type: "h3", text: "Quel bruit justifie une action immédiate ?" },
+      { type: "ul", items: [
+        "Clics répétés, grincement ou démarrages en boucle du disque dur : sauvegarde immédiate.",
+        "Claquement électrique, odeur de brûlé ou fumée : éteindre et débrancher.",
+        "Bips au démarrage avec un PC qui ne démarre pas : documentation de la carte mère ou réparateur.",
+        "Ventilateur qui frotte, ralentit ou s'arrête : à traiter rapidement, avant que la chaleur ne provoque des ralentissements ou des arrêts.",
+      ] },
+      { type: "p", text: "Le reste, souffle au repos, sifflement en jeu ou vibration, peut attendre un nettoyage ou un réglage, à condition de surveiller que la situation ne s'aggrave pas." },
+      { type: "h2", text: "Ce qu'un logiciel peut vérifier, et ce qu'il ne peut pas" },
+      { type: "p", text: "Aucun logiciel n'entend votre PC. Nyctale non plus : il n'utilise pas le micro et ne lit aucun capteur de température. Il peut en revanche confirmer ou écarter les causes qui se cachent derrière un bruit, à partir de ce que Windows enregistre déjà :" },
+      { type: "ul", items: [
+        "Pour le disque : il lit l'état de santé que Windows rapporte pour chaque disque et le signale s'il passe en « Avertissement » ou « Défectueux ». Un état « Inconnu », fréquent sur les boîtiers USB, n'est pas traité comme une panne.",
+        "Pour le ventilateur au repos : il repère un composant de Windows ou un programme qui occupe le processeur en boucle, la cause la plus fréquente d'un souffle permanent.",
+        "Pour la chaleur : il compte, dans le journal de Windows, les épisodes où le processeur a dû se ralentir pour se protéger sur les 14 derniers jours, et les croise avec les arrêts brutaux. Si aucun programme n'explique cette chauffe, il conclut à un problème de refroidissement et vous le dit franchement : aucun logiciel ne remplace un dépoussiérage.",
+      ] },
+      { type: "p", text: "Un clic de disque dur avec un état de santé encore « Correct » reste un signal à prendre au sérieux : l'état de santé ne prévient pas toujours avant la panne. Dans le doute, sauvegardez d'abord, analysez ensuite. Si le bruit s'accompagne de gels ou de redémarrages, lisez aussi [PC qui freeze : matériel ou logiciel ?](/blog/pc-qui-freeze-materiel-ou-logiciel) et [PC qui redémarre tout seul](/blog/pc-qui-redemarre-tout-seul)." },
+      { type: "h2", text: "Conclusion : écouter, localiser, trier" },
+      { type: "p", text: "Un bruit de PC se juge à sa source et à son moment d'apparition. Le disque dur qui clique passe avant tout le reste : sauvegarde d'abord. Le ventilateur raconte presque toujours une histoire de chaleur, logicielle ou physique. Le sifflement aigu est le plus souvent une gêne, pas une panne, et les vibrations se règlent avec un tournevis. Pour vérifier en quelques secondes l'état de vos disques et ce qui fait chauffer votre machine, [l'analyse gratuite de Nyctale](/) lit ces signaux sans rien modifier." },
+    ],
+    faq: [
+      { q: "Mon disque dur fait des clics, que faire ?", r: "Si ce sont des clics réguliers, nouveaux, ou un grincement, sauvegardez immédiatement vos fichiers importants puis utilisez le disque le moins possible. Les petits grattements discrets pendant une lecture sont normaux." },
+      { q: "Pourquoi mon ventilateur souffle fort alors que je ne fais rien ?", r: "Parce que le processeur chauffe quand même : un programme tourne en boucle en arrière-plan, ou la chaleur s'évacue mal à cause de la poussière ou d'une aération bouchée. Le Gestionnaire des tâches permet de faire la différence." },
+      { q: "Qu'est-ce que le coil whine ?", r: "Un sifflement aigu produit par les bobines des circuits d'alimentation, surtout sur la carte graphique ou l'alimentation, qui varie avec la charge. Gênant mais généralement sans danger ; limiter la fréquence d'images le réduit souvent." },
+      { q: "Un SSD fait-il du bruit avant de tomber en panne ?", r: "Non. Un SSD n'a pas de pièce mobile et reste silencieux, même en fin de vie. Il faut lire son état de santé pour savoir s'il faiblit." },
+      { q: "Que signifient les bips au démarrage ?", r: "Ce sont des codes d'erreur de la carte mère, souvent liés à la mémoire vive ou à la carte graphique. Leur signification dépend du fabricant : consultez la documentation de votre modèle." },
+    ],
+    liens: ["disque-dur-va-lacher-signes", "ventilateur-qui-ne-sarrete-plus", "temperature-normale-processeur-carte-graphique", "pc-qui-freeze-materiel-ou-logiciel"]
   },
 ];

@@ -70,6 +70,12 @@ export const CTA_ARTICLES: Record<string, CtaArticle> = {
       "Nyctale retrouve en 19 secondes les plantages enregistrés par Windows, y compris les écrans bleus que le redémarrage automatique vous a cachés, et vérifie le disque et la surchauffe.",
   },
 
+  "batterie-de-portable-qui-se-vide-vite": {
+    titre: "Batterie usée ou réglage à corriger ?",
+    texte:
+      "Nyctale calcule en 19 secondes l'usure de la batterie de votre portable et vous dit en clair si elle est usée. Il repère aussi un programme qui occupe le processeur en continu ou trop de programmes au démarrage.",
+  },
+
   // --- EN ---
   "fan-that-never-stops-spinning": {
     titre: "Dust or a program running in the background?",
@@ -130,5 +136,10 @@ export const CTA_ARTICLES: Record<string, CtaArticle> = {
     titre: "Did your blue screen leave traces?",
     texte:
       "Nyctale finds the crashes Windows recorded in 19 seconds, including blue screens hidden by automatic restart, and checks the disk and overheating.",
+  },
+  "laptop-battery-draining-fast": {
+    titre: "Worn battery or a setting to fix?",
+    texte:
+      "Nyctale computes your laptop battery's wear in 19 seconds and tells you plainly whether it is worn. It also spots a program keeping the processor busy or too many startup programs.",
   },
 };

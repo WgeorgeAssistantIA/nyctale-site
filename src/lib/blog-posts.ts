@@ -813,7 +813,7 @@ export const articles: Article[] = [
         r: "Un bon diagnostic nomme une cause précise et vérifiable (disque, batterie, surchauffe, programme), pas une impression générale. Demandez comment elle a été mesurée, et n'hésitez pas à obtenir un deuxième avis avant une dépense importante.",
       },
     ],
-    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11", "windows-10-fin-de-support-que-faire-de-son-pc", "mon-pc-est-il-compatible-windows-11", "memoire-ram-saturee-comment-la-lire", "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter"],
+    liens: ["pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "ecran-bleu-windows-11", "windows-10-fin-de-support-que-faire-de-son-pc", "mon-pc-est-il-compatible-windows-11", "memoire-ram-saturee-comment-la-lire", "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter", "batterie-de-portable-qui-se-vide-vite"],
   },
   {
     slug: "before-buying-a-new-pc",
@@ -935,7 +935,7 @@ export const articles: Article[] = [
         r: "A good diagnosis names a precise, verifiable cause (drive, battery, overheating, program), not a general impression. Ask how it was measured, and don't hesitate to get a second opinion before a significant expense.",
       },
     ],
-    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "windows-11-blue-screen-fix", "windows-10-end-of-support-what-to-do-with-your-pc", "is-my-pc-compatible-with-windows-11", "ram-full-how-to-read-memory-usage", "before-reformatting-your-pc-what-a-diagnostic-can-save-you"],
+    liens: ["slow-computer-no-obvious-reason", "disk-100-percent-windows", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "windows-11-blue-screen-fix", "windows-10-end-of-support-what-to-do-with-your-pc", "is-my-pc-compatible-with-windows-11", "ram-full-how-to-read-memory-usage", "before-reformatting-your-pc-what-a-diagnostic-can-save-you", "laptop-battery-draining-fast"],
   },
 
   // -------------------------------------------------------------------

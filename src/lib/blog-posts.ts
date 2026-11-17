@@ -1401,7 +1401,7 @@ export const articles: Article[] = [
         r: "Oui, pendant 10 jours après une mise à jour de fonctionnalités : Paramètres > Système > Récupération > « Revenir en arrière ». Pour une mise à jour mensuelle, utilisez « Désinstaller des mises à jour » dans Windows Update.",
       },
     ],
-    liens: ["pc-lent-au-demarrage", "pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ecran-bleu-windows-11", "meilleurs-logiciels-gratuits-diagnostic-pc", "mon-pc-est-il-compatible-windows-11"],
+    liens: ["pc-lent-au-demarrage", "pc-qui-rame-sans-raison", "disque-a-100-pourcent-windows", "ecran-bleu-windows-11", "meilleurs-logiciels-gratuits-diagnostic-pc", "mon-pc-est-il-compatible-windows-11", "mises-a-jour-windows-qui-bloquent-ou-echouent"],
   },
   {
     slug: "disk-100-percent-windows",
@@ -1855,7 +1855,7 @@ export const articles: Article[] = [
         r: "Yes, for 10 days after a feature update: Settings > System > Recovery > 'Go back'. For a monthly update, use 'Uninstall updates' in Windows Update.",
       },
     ],
-    liens: ["slow-pc-startup", "slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-blue-screen-fix", "best-free-pc-diagnostic-tools", "is-my-pc-compatible-with-windows-11"],
+    liens: ["slow-pc-startup", "slow-computer-no-obvious-reason", "disk-100-percent-windows", "windows-11-blue-screen-fix", "best-free-pc-diagnostic-tools", "is-my-pc-compatible-with-windows-11", "windows-updates-stuck-or-failing"],
   },
   ...seoFrArticles,
   ...seoEnArticles,

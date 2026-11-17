@@ -76,6 +76,12 @@ export const CTA_ARTICLES: Record<string, CtaArticle> = {
       "Nyctale calcule en 19 secondes l'usure de la batterie de votre portable et vous dit en clair si elle est usée. Il repère aussi un programme qui occupe le processeur en continu ou trop de programmes au démarrage.",
   },
 
+  "mises-a-jour-windows-qui-bloquent-ou-echouent": {
+    titre: "Disque trop plein ou fichiers système abîmés ?",
+    texte:
+      "Nyctale contrôle l'espace libre de votre disque et, en mode administrateur, l'état des fichiers système de Windows, deux causes fréquentes d'une mise à jour qui échoue. Il ne lit pas l'historique de Windows Update.",
+  },
+
   // --- EN ---
   "fan-that-never-stops-spinning": {
     titre: "Dust or a program running in the background?",
@@ -141,5 +147,10 @@ export const CTA_ARTICLES: Record<string, CtaArticle> = {
     titre: "Worn battery or a setting to fix?",
     texte:
       "Nyctale computes your laptop battery's wear in 19 seconds and tells you plainly whether it is worn. It also spots a program keeping the processor busy or too many startup programs.",
+  },
+  "windows-updates-stuck-or-failing": {
+    titre: "Drive too full or damaged system files?",
+    texte:
+      "Nyctale checks your drive's free space and, in administrator mode, the state of Windows system files, two common causes of a failing update. It does not read the Windows Update history.",
   },
 };

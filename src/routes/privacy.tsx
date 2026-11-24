@@ -29,7 +29,7 @@ const CONTACT = "contact@nyctale.fr";
 const pp: Record<Lang, { title: string; updated: string; back: string; intro: string; sections: Section[] }> = {
   fr: {
     title: "Politique de confidentialité",
-    updated: "Dernière mise à jour : 24 septembre 2026",
+    updated: "Dernière mise à jour : 24 novembre 2026",
     back: "Retour à l'accueil",
     intro:
       "Nyctale est un logiciel de diagnostic PC conçu pour fonctionner intégralement en local sur votre ordinateur. Le respect de votre vie privée est au cœur de sa conception. Cette politique explique quelles données sont — ou ne sont pas — traitées lorsque vous utilisez l'application Nyctale et le site nyctale.fr.",
@@ -52,7 +52,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
         blocks: [
           {
             type: "p",
-            text: "Nyctale lit les informations techniques de votre ordinateur (processeur, mémoire, disque, programmes en cours, historique d'arrêts) directement sur votre machine, pour produire son diagnostic. Ces informations ne sont jamais envoyées vers un serveur, un cloud ou un tiers : elles ne quittent pas votre ordinateur.",
+            text: "Nyctale lit les informations techniques de votre ordinateur (processeur, mémoire, disque, batterie, programmes en cours et lancés au démarrage, journaux Windows, réglage d'économie de mémoire du navigateur) directement sur votre machine, pour produire son diagnostic. Il n'ouvre ni vos documents, ni votre historique de navigation. Ces informations ne sont jamais envoyées vers un serveur, un cloud ou un tiers : elles ne quittent pas votre ordinateur.",
           },
           {
             type: "ul",
@@ -64,7 +64,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
           },
           {
             type: "p",
-            text: "L'application enregistre quelques fichiers techniques localement dans le dossier de données utilisateur de votre ordinateur (sous Windows : %APPDATA%\\Nyctale) — clé de licence, compteur d'usage, préférences. Ces fichiers restent sur votre machine et ne nous sont jamais transmis.",
+            text: "L'application enregistre quelques fichiers sur votre ordinateur : rapports d'analyse, clé de licence, compteur d'usage, préférences. Sous Windows, ils se trouvent dans %LOCALAPPDATA%\\Nyctale. Avec la version portable, la licence et les réglages sont rangés à côté du programme, mais les rapports restent dans %LOCALAPPDATA%\\Nyctale. Si vous activez la surveillance continue, elle utilise aussi C:\\ProgramData\\Nyctale. Ces fichiers ne nous sont pas transmis, à l'exception des données de licence décrites au point 3. Vous pouvez supprimer les rapports à tout moment.",
           },
         ],
       },
@@ -73,15 +73,15 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
         blocks: [
           {
             type: "p",
-            text: "Le diagnostic complet est gratuit et illimité : aucune donnée de paiement n'est nécessaire pour l'utiliser. Les fonctionnalités payantes optionnelles (réparation, surveillance, palier Pro) sont achetées comme produits intégrés depuis le Microsoft Store.",
+            text: "Le diagnostic complet est gratuit et illimité : aucune donnée de paiement n'est nécessaire pour l'utiliser. Les fonctionnalités payantes optionnelles (réparation, surveillance, palier Pro) sont vendues sur nyctale.fr par l'intermédiaire de Lemon Squeezy.",
           },
           {
             type: "p",
-            text: "Ces achats sont entièrement gérés par Microsoft : la transaction, vos informations de paiement et de facturation sont traitées par Microsoft, conformément à sa propre politique de confidentialité. Nous n'avons jamais accès à votre numéro de carte bancaire.",
+            text: "Lemon Squeezy traite la commande, le paiement et la facturation, conformément à sa propre politique de confidentialité. Nous avons accès aux informations de la commande (nom, adresse email, produit, montant) pour assurer le suivi et le support, mais jamais à votre numéro de carte bancaire.",
           },
           {
             type: "p",
-            text: "L'application enregistre localement, dans le dossier de données utilisateur de votre ordinateur, l'état de votre licence (palier actif, compteur d'usage). Ces informations restent sur votre machine et ne nous sont jamais transmises.",
+            text: "Si vous saisissez une clé de licence, l'application l'envoie à nyctale.fr avec le nom de votre ordinateur, pour l'activer ; nyctale.fr les transmet à Lemon Squeezy, qui vérifie la clé et compte les ordinateurs activés. Pour renouveler la licence, l'application envoie ensuite la clé et l'identifiant de cette activation. Aucune information de diagnostic n'est jointe. Sans clé de licence, l'application n'envoie rien.",
           },
         ],
       },
@@ -120,7 +120,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
           },
           {
             type: "p",
-            text: `Pour exercer ces droits, écrivez-nous à ${CONTACT}. Pour les données traitées dans le cadre d'un achat via le Microsoft Store, vous pouvez également vous adresser directement à Microsoft. Vous avez par ailleurs le droit d'introduire une réclamation auprès de la CNIL (www.cnil.fr).`,
+            text: `Pour exercer ces droits, écrivez-nous à ${CONTACT}. Pour les données traitées dans le cadre d'un achat, vous pouvez également vous adresser directement à Lemon Squeezy. Vous avez par ailleurs le droit d'introduire une réclamation auprès de la CNIL (www.cnil.fr).`,
           },
         ],
       },
@@ -129,7 +129,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
         blocks: [
           {
             type: "p",
-            text: "Nous ne tenons pas de base de données d'utilisateurs. Les données liées à un achat effectué via le Microsoft Store sont conservées par Microsoft, conformément à sa propre politique.",
+            text: "Nous ne tenons pas de base de données d'utilisateurs de l'application. Les données liées à un achat et aux activations de licence sont conservées par Lemon Squeezy, conformément à sa propre politique. Si vous installez Nyctale depuis le Microsoft Store, Microsoft traite les données de cette installation selon sa propre politique.",
           },
         ],
       },
@@ -138,7 +138,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
         blocks: [
           {
             type: "p",
-            text: "Certains de nos prestataires (Microsoft, Vercel) peuvent être établis en dehors de l'Union européenne, notamment aux États-Unis. Le cas échéant, ces transferts sont encadrés par les garanties prévues par le RGPD (clauses contractuelles types ou mécanismes équivalents).",
+            text: "Certains de nos prestataires (Lemon Squeezy, Microsoft, Vercel) peuvent être établis en dehors de l'Union européenne, notamment aux États-Unis. Le cas échéant, ces transferts sont encadrés par les garanties prévues par le RGPD (clauses contractuelles types ou mécanismes équivalents).",
           },
         ],
       },
@@ -164,10 +164,10 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
   },
   en: {
     title: "Privacy Policy",
-    updated: "Last updated: September 24, 2026",
+    updated: "Last updated: November 24, 2026",
     back: "Back to home",
     intro:
-      "Nyctale is a PDF mail merge tool designed to run entirely locally on your computer. Respect for your privacy is built into its design. This policy explains what data is — and is not — processed when you use the Nyctale application and the nyctale.fr website.",
+      "Nyctale is a PC diagnostic tool designed to run entirely locally on your computer. Respect for your privacy is built into its design. This policy explains what data is — and is not — processed when you use the Nyctale application and the nyctale.fr website.",
     sections: [
       {
         h: "1. Publisher and data controller",
@@ -187,7 +187,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
         blocks: [
           {
             type: "p",
-            text: "Nyctale reads your computer's technical information (processor, memory, disk, running programs, shutdown history) directly on your machine to produce its diagnostic. This information is never sent to a server, the cloud, or any third party: it never leaves your computer.",
+            text: "Nyctale reads your computer's technical information (processor, memory, disk, battery, running and startup programs, Windows logs, the browser's memory-saving setting) directly on your machine to produce its diagnostic. It opens neither your documents nor your browsing history. This information is never sent to a server, the cloud, or any third party: it never leaves your computer.",
           },
           {
             type: "ul",
@@ -199,7 +199,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
           },
           {
             type: "p",
-            text: "The application stores a few technical files locally in your computer's user data folder (on Windows: %APPDATA%\\Nyctale) — license status, usage counter, preferences. These files stay on your machine and are never transmitted to us.",
+            text: "The application stores a few files on your computer: analysis reports, license key, usage counter, preferences. On Windows, they are in %LOCALAPPDATA%\\Nyctale. With the portable version, the license and settings are kept next to the program, but reports stay in %LOCALAPPDATA%\\Nyctale. If you turn on continuous monitoring, it also uses C:\\ProgramData\\Nyctale. These files are not transmitted to us, except for the license data described in section 3. You can delete the reports at any time.",
           },
         ],
       },
@@ -208,15 +208,15 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
         blocks: [
           {
             type: "p",
-            text: "The full diagnostic is free and unlimited: no payment data is required to use it. Optional paid features (repair, monitoring, Pro tier) are purchased as in-app products through the Microsoft Store.",
+            text: "The full diagnostic is free and unlimited: no payment data is required to use it. Optional paid features (repair, monitoring, Pro tier) are sold on nyctale.fr through Lemon Squeezy.",
           },
           {
             type: "p",
-            text: "These purchases are entirely handled by Microsoft: the transaction and your payment and billing information are processed by Microsoft, in accordance with its own privacy policy. We never have access to your card number.",
+            text: "Lemon Squeezy processes the order, payment and billing, in accordance with its own privacy policy. We can see the order details (name, email address, product, amount) for follow-up and support, but never your card number.",
           },
           {
             type: "p",
-            text: "The application stores your license status (active tier, usage counter) locally in your computer's user data folder. This information stays on your machine and is never transmitted to us.",
+            text: "If you enter a license key, the application sends it to nyctale.fr together with your computer's name in order to activate it; nyctale.fr passes them on to Lemon Squeezy, which checks the key and counts the activated computers. To renew the license, the application then sends the key and the identifier of that activation. No diagnostic information is included. Without a license key, the application sends nothing.",
           },
         ],
       },
@@ -255,7 +255,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
           },
           {
             type: "p",
-            text: `To exercise these rights, write to us at ${CONTACT}. For data processed as part of a Microsoft Store purchase, you may also contact Microsoft directly. You also have the right to lodge a complaint with your local data protection authority (in France, the CNIL — www.cnil.fr).`,
+            text: `To exercise these rights, write to us at ${CONTACT}. For data processed as part of a purchase, you may also contact Lemon Squeezy directly. You also have the right to lodge a complaint with your local data protection authority (in France, the CNIL — www.cnil.fr).`,
           },
         ],
       },
@@ -264,7 +264,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
         blocks: [
           {
             type: "p",
-            text: "We do not maintain a user database. Data related to a Microsoft Store purchase is retained by Microsoft, in accordance with its own policy.",
+            text: "We do not maintain a user database for the application. Data related to a purchase and to license activations is retained by Lemon Squeezy, in accordance with its own policy. If you install Nyctale from the Microsoft Store, Microsoft processes the data of that installation under its own policy.",
           },
         ],
       },
@@ -273,7 +273,7 @@ const pp: Record<Lang, { title: string; updated: string; back: string; intro: st
         blocks: [
           {
             type: "p",
-            text: "Some of our providers (Microsoft, Vercel) may be established outside the European Union, in particular in the United States. Where applicable, such transfers are governed by the safeguards provided for by the GDPR (standard contractual clauses or equivalent mechanisms).",
+            text: "Some of our providers (Lemon Squeezy, Microsoft, Vercel) may be established outside the European Union, in particular in the United States. Where applicable, such transfers are governed by the safeguards provided for by the GDPR (standard contractual clauses or equivalent mechanisms).",
           },
         ],
       },

@@ -70,7 +70,7 @@ const T = {
     ],
     exempleTitre: "Exemple de rapport remis au client",
     exempleLegende:
-      "Généré avec l'app : 3 points avant l'intervention, 1 après. Le refroidissement reste signalé, parce qu'aucun logiciel ne le règle, et le rapport le dit.",
+      "Exemple avec des données fictives, mis en page par l'app : 3 points avant l'intervention, 1 après. Le refroidissement reste signalé, parce qu'aucun logiciel ne peut enlever la poussière, et le rapport le dit.",
     exempleAlt:
       "Rapport PDF Nyctale Pro : en-tête de l'atelier, nom du client, bilan avant/après l'intervention",
     deroulementTitre: "Comment ça se passe chez le client",
@@ -90,7 +90,7 @@ const T = {
       {
         icon: HardDrive,
         texte:
-          "Votre licence et vos réglages (nom, logo) restent sur la clé : rien de personnel ne reste chez le client.",
+          "Votre licence et vos réglages (nom, logo) restent sur la clé. Les rapports d'analyse et quelques préférences restent sur le PC du client (%LOCALAPPDATA%\\Nyctale), faciles à supprimer.",
       },
       {
         icon: FileText,
@@ -123,7 +123,7 @@ const T = {
       },
       {
         q: "Est-ce que quelque chose reste installé chez le client ?",
-        r: "Non : la version portable ne s'installe pas, et votre licence comme vos réglages restent sur votre clé. Seule exception : si vous activez la surveillance continue sur le PC d'un client, Nyctale demande une confirmation explicite, car elle reste active après votre départ.",
+        r: "Non : la version portable ne s'installe pas, et votre licence comme vos réglages restent sur votre clé. Les rapports d'analyse et quelques préférences sont enregistrés sur le PC du client, dans %LOCALAPPDATA%\\Nyctale : supprimez ce dossier en partant si vous le souhaitez. Autre cas : si vous activez la surveillance continue sur le PC d'un client, Nyctale demande une confirmation explicite, car elle reste active après votre départ.",
       },
       {
         q: "Que contient le rapport PDF ?",
@@ -176,7 +176,7 @@ const T = {
     ],
     exempleTitre: "Example of a report handed to the client",
     exempleLegende:
-      "Generated with the app: 3 issues before the intervention, 1 after. The cooling issue is still flagged, because no software can fix it, and the report says so.",
+      "Example with made-up data, laid out by the app: 3 issues before the intervention, 1 after. The cooling issue is still flagged, because no software can remove dust, and the report says so.",
     exempleAlt:
       "Nyctale Pro PDF report: workshop header, client name, before/after summary of the intervention",
     deroulementTitre: "How it goes at the client's",
@@ -196,7 +196,7 @@ const T = {
       {
         icon: HardDrive,
         texte:
-          "Your license and settings (name, logo) stay on the drive: nothing personal is left on the client's machine.",
+          "Your license and settings (name, logo) stay on the drive. The scan reports and a few preferences remain on the client's PC (%LOCALAPPDATA%\\Nyctale), easy to delete.",
       },
       {
         icon: FileText,
@@ -229,7 +229,7 @@ const T = {
       },
       {
         q: "Is anything left installed on the client's PC?",
-        r: "No: the portable version doesn't install, and your license and settings stay on your drive. One exception: if you turn on ongoing monitoring on a client's PC, Nyctale asks for explicit confirmation, because it stays active after you leave.",
+        r: "No: the portable version doesn't install, and your license and settings stay on your drive. The scan reports and a few preferences are saved on the client's PC, in %LOCALAPPDATA%\\Nyctale: delete that folder when you leave if you wish. One more case: if you turn on ongoing monitoring on a client's PC, Nyctale asks for explicit confirmation, because it stays active after you leave.",
       },
       {
         q: "What does the PDF report contain?",
@@ -282,13 +282,6 @@ export const Route = createFileRoute("/pro")({
             "Logiciel de diagnostic PC pour dépanneurs : version portable sur clé USB, verdict compréhensible par le client, rapport PDF avant/après personnalisé.",
           url: "https://nyctale.fr/pro",
           image: "https://nyctale.fr/rapport-pro-exemple-fr.webp",
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            ratingCount: "34",
-            bestRating: "5",
-            worstRating: "1",
-          },
           offers: {
             "@type": "Offer",
             price: "29.99",
@@ -491,7 +484,7 @@ function PagePro() {
               src={`/rapport-pro-exemple-${lang}.webp`}
               alt={t.exempleAlt}
               width={1160}
-              height={lang === "fr" ? 1055 : 1028}
+              height={lang === "fr" ? 1227 : 1200}
               loading="lazy"
               className="w-full rounded-xl border border-border bg-white shadow-2xl shadow-primary/20"
             />

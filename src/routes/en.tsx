@@ -46,13 +46,6 @@ export const Route = createFileRoute("/en")({
             "https://nyctale-pc-diagnostic-tool.en.uptodown.com/windows",
           ],
           image: "https://nyctale.fr/nyctale_logo.png",
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            ratingCount: "34",
-            bestRating: "5",
-            worstRating: "1",
-          },
           offers: {
             "@type": "Offer",
             price: "0",

@@ -116,7 +116,7 @@ export const articles: Article[] = [
       { type: "h3", text: "9. Des fichiers système abîmés ou des logiciels indésirables" },
       {
         type: "p",
-        text: "Une mise à jour interrompue ou une coupure de courant peuvent abîmer des fichiers de Windows et provoquer lenteurs et plantages. Les « optimiseurs », « nettoyeurs » et barres d'outils installés au passage font souvent plus de mal que de bien, tout comme deux antivirus actifs en même temps.",
+        text: "Une mise à jour interrompue ou une coupure de courant peuvent abîmer des fichiers de Windows et provoquer lenteurs et plantages. Les « optimiseurs », « nettoyeurs » et barres d'outils installés au passage font souvent plus de mal que de bien, tout comme [deux antivirus actifs en même temps](/blog/un-antivirus-ralentit-il-vraiment-un-pc).",
       },
       { type: "h2", text: "Comment trouver la cause vous-même en 10 minutes ?" },
       {
@@ -268,7 +268,7 @@ export const articles: Article[] = [
       { type: "h3", text: "9. Damaged system files or unwanted software" },
       {
         type: "p",
-        text: "An interrupted update or a power cut can damage Windows files and cause slowdowns and crashes. 'Optimizers', 'cleaners' and toolbars installed along the way often do more harm than good, as do two antivirus programs running at the same time.",
+        text: "An interrupted update or a power cut can damage Windows files and cause slowdowns and crashes. 'Optimizers', 'cleaners' and toolbars installed along the way often do more harm than good, as do [two antivirus programs running at the same time](/blog/does-antivirus-really-slow-down-a-pc).",
       },
       { type: "h2", text: "How can you find the cause yourself in 10 minutes?" },
       {
@@ -1062,7 +1062,7 @@ export const articles: Article[] = [
         r: "Parce que le pourcentage mesure le temps d'occupation (temps d'attente des lectures/écritures), pas le débit en Mo/s. Mille minuscules fichiers lus sur un disque dur mécanique, un secteur difficile à relire ou un pilote de stockage bloqué suffisent à afficher 100 % d'activité avec un débit quasi nul.",
       },
     ],
-    liens: ["disque-dur-va-lacher-signes", "pc-lent-au-demarrage", "ecran-bleu-windows-11", "meilleurs-logiciels-gratuits-diagnostic-pc", "memoire-ram-saturee-comment-la-lire"],
+    liens: ["disque-dur-va-lacher-signes", "pc-lent-au-demarrage", "ecran-bleu-windows-11", "meilleurs-logiciels-gratuits-diagnostic-pc", "memoire-ram-saturee-comment-la-lire", "un-antivirus-ralentit-il-vraiment-un-pc"],
   },
 
   // -------------------------------------------------------------------
@@ -1137,7 +1137,7 @@ export const articles: Article[] = [
       { type: "h3", text: "6. Un antivirus lourd, ou deux antivirus" },
       {
         type: "p",
-        text: "Un antivirus analyse les fichiers au moment où ils sont ouverts, donc massivement au démarrage. Certains antivirus tiers sont nettement plus lourds que Microsoft Defender, intégré et suffisant pour un usage courant. Deux antivirus actifs en même temps se gênent mutuellement et ralentissent fortement l'allumage.",
+        text: "Un antivirus analyse les fichiers au moment où ils sont ouverts, donc massivement au démarrage. Certains antivirus tiers sont nettement plus lourds que Microsoft Defender, intégré et suffisant pour un usage courant. Deux antivirus actifs en même temps se gênent mutuellement et ralentissent fortement l'allumage. Pour vérifier, voyez [si l'antivirus ralentit vraiment votre PC](/blog/un-antivirus-ralentit-il-vraiment-un-pc).",
       },
       { type: "h3", text: "7. Un périphérique ou une connexion qui se fait attendre" },
       {
@@ -1524,7 +1524,7 @@ export const articles: Article[] = [
         r: "Because the percentage measures active busy time (queue wait time), not transfer speed in MB/s. Hundreds of tiny random reads on an HDD, a bad sector being retried, or a stuck storage driver can hold Active Time at 100% with nearly 0 MB/s throughput.",
       },
     ],
-    liens: ["failing-hard-drive-signs", "slow-pc-startup", "windows-11-blue-screen-fix", "best-free-pc-diagnostic-tools", "ram-full-how-to-read-memory-usage"],
+    liens: ["failing-hard-drive-signs", "slow-pc-startup", "windows-11-blue-screen-fix", "best-free-pc-diagnostic-tools", "ram-full-how-to-read-memory-usage", "does-antivirus-really-slow-down-a-pc"],
   },
   {
     slug: "slow-pc-startup",
@@ -1595,7 +1595,7 @@ export const articles: Article[] = [
       { type: "h3", text: "6. A heavy antivirus, or two antiviruses" },
       {
         type: "p",
-        text: "An antivirus scans files as they're opened, so massively at startup. Some third-party antiviruses are much heavier than Microsoft Defender, which is built in and sufficient for everyday use. Two antiviruses running at the same time get in each other's way and slow startup down considerably.",
+        text: "An antivirus scans files as they're opened, so massively at startup. Some third-party antiviruses are much heavier than Microsoft Defender, which is built in and sufficient for everyday use. Two antiviruses running at the same time get in each other's way and slow startup down considerably. To check, see [whether antivirus really slows down your PC](/blog/does-antivirus-really-slow-down-a-pc).",
       },
       { type: "h3", text: "7. A device or connection that keeps Windows waiting" },
       {

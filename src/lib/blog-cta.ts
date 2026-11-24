@@ -76,6 +76,11 @@ export const CTA_ARTICLES: Record<string, CtaArticle> = {
       "Nyctale calcule en 19 secondes l'usure de la batterie de votre portable et vous dit en clair si elle est usée. Il repère aussi un programme qui occupe le processeur en continu ou trop de programmes au démarrage.",
   },
 
+  "un-antivirus-ralentit-il-vraiment-un-pc": {
+    titre: "Et si ce n'était pas l'antivirus ?",
+    texte:
+      "Nyctale vérifie en 19 secondes les autres suspects : mémoire saturée, disque presque plein ou fatigué, surchauffe, trop de programmes au démarrage. Vous savez où chercher avant de toucher à votre protection.",
+  },
   "wifi-lent-sur-pc-est-ce-le-pc-ou-la-box": {
     titre: "Et si c'était le PC, pas la box ?",
     texte:
@@ -162,5 +167,10 @@ export const CTA_ARTICLES: Record<string, CtaArticle> = {
     titre: "Drive too full or damaged system files?",
     texte:
       "Nyctale checks your drive's free space and, in administrator mode, the state of Windows system files, two common causes of a failing update. It does not read the Windows Update history.",
+  },
+  "does-antivirus-really-slow-down-a-pc": {
+    titre: "What if it isn't the antivirus?",
+    texte:
+      "Nyctale checks the other suspects in 19 seconds: saturated memory, a nearly full or tired disk, overheating, too many startup programs. You know where to look before touching your protection.",
   },
 };

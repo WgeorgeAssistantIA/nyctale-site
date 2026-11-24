@@ -21,6 +21,8 @@ export const VARIANT_VERS_PALIER: Record<string, Palier> = {
   "1996576": "surveillance_annuelle",
   "1996579": "surveillance_mensuelle",
   "1996583": "pro",
+  // « Nyctale Pro : accès testeur » : gratuit, cle de 30 jours, lien envoye a la main.
+  "2388968": "pro",
 };
 
 function base64UrlEncode(buf: Buffer): string {

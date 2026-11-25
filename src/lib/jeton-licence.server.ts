@@ -38,14 +38,15 @@ function clePriveeDepuisEnv(): crypto.KeyObject {
   if (d.length !== 32) {
     throw new Error(`LICENSE_SIGNING_PRIVATE_KEY invalide : ${d.length} octets au lieu de 32`);
   }
-  // Node exige un champ 'x' (partie publique) dans le JWK mais ignore sa
-  // valeur pour la signature -- il derive la vraie cle publique depuis 'd'.
-  // Verifie empiriquement le 08/08/2026 : un 'x' bidon produit la meme
-  // signature qu'un 'x' correct. Evite de stocker/deriver la partie
-  // publique separement.
+  // PKCS8 DER d'une cle privee Ed25519 = prefixe fixe de 16 octets + les 32
+  // octets bruts. Pas besoin de partie publique. (Ancienne version : JWK avec
+  // un 'x' bidon, accepte par Node 22 mais refuse par Node 24 -> "Invalid JWK
+  // OKP key", activations en 503 le 25/11/2026.)
+  const prefixePkcs8 = Buffer.from("302e020100300506032b657004220420", "hex");
   return crypto.createPrivateKey({
-    key: { kty: "OKP", crv: "Ed25519", d: base64UrlEncode(d), x: base64UrlEncode(Buffer.alloc(32)) },
-    format: "jwk",
+    key: Buffer.concat([prefixePkcs8, d]),
+    format: "der",
+    type: "pkcs8",
   });
 }
 

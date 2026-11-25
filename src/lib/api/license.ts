@@ -56,7 +56,20 @@ export async function activerLicence(cle: string, nomInstance: string) {
     return { succes: false as const, erreur: "cette clé ne correspond à aucun palier Nyctale" };
   }
 
-  const jeton = signerJeton(palier as Parameters<typeof signerJeton>[0], resultat.instance.id);
+  let jeton: string;
+  try {
+    jeton = signerJeton(palier as Parameters<typeof signerJeton>[0], resultat.instance.id);
+  } catch (erreur) {
+    // L'activation Lemon Squeezy a deja consomme un emplacement : sans cette
+    // liberation, chaque echec de signature (25/11/2026) brulait 1 des 5 postes.
+    await fetch(`${LS_API}/deactivate`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ license_key: cle.trim(), instance_id: resultat.instance.id }),
+      signal: AbortSignal.timeout(5000),
+    }).catch(() => {});
+    throw erreur;
+  }
   return { succes: true as const, jeton, instanceId: resultat.instance.id };
 }
 

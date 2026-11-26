@@ -157,7 +157,7 @@ export const seoEnArticles: Article[] = [
         r: "Nyctale spots the signs in the Windows log and names the probable cause. When it is software, it guides you through the fix; when it is hardware, it says so, because no software replaces a memory module or a disk.",
       },
     ],
-    liens: ["failing-hard-drive-signs", "slow-computer-no-obvious-reason", "fan-that-never-stops-spinning", "pc-restarts-by-itself"],
+    liens: ["failing-hard-drive-signs", "slow-computer-no-obvious-reason", "fan-that-never-stops-spinning", "pc-restarts-by-itself", "windows-11-crashes-at-startup"],
   },
   {
     slug: "failing-hard-drive-signs",
@@ -319,7 +319,7 @@ export const seoEnArticles: Article[] = [
         r: "A 500 GB SSD generally costs between €40 and €70. At a repair shop, add fitting and possibly cloning or a Windows reinstall.",
       },
     ],
-    liens: ["pc-noises-what-each-sound-means", "windows-11-blue-screen-fix", "disk-100-percent-windows", "slow-pc-startup", "pc-restarts-by-itself", "pc-freezes-hardware-or-software", "windows-updates-stuck-or-failing"],
+    liens: ["pc-noises-what-each-sound-means", "windows-11-blue-screen-fix", "disk-100-percent-windows", "slow-pc-startup", "pc-restarts-by-itself", "pc-freezes-hardware-or-software", "windows-updates-stuck-or-failing", "windows-11-crashes-at-startup"],
   },
   {
     slug: "best-free-pc-diagnostic-tools",
@@ -1089,7 +1089,7 @@ export const seoEnArticles: Article[] = [
         r: "Its free analysis reads the abnormal shutdowns of the last thirty days, disk health and signs of overheating, and states the most likely cause in plain language.",
       },
     ],
-    liens: ["normal-cpu-gpu-temperatures", "windows-11-blue-screen-fix", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "before-reformatting-your-pc-what-a-diagnostic-can-save-you", "pc-freezes-hardware-or-software"],
+    liens: ["normal-cpu-gpu-temperatures", "windows-11-blue-screen-fix", "fan-that-never-stops-spinning", "failing-hard-drive-signs", "before-reformatting-your-pc-what-a-diagnostic-can-save-you", "pc-freezes-hardware-or-software", "windows-11-crashes-at-startup"],
   },
   {
     slug: "pc-freezes-hardware-or-software",

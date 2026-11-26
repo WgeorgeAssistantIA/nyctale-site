@@ -157,7 +157,7 @@ export const seoFrArticles: Article[] = [
         r: "Nyctale repère les signes dans le journal de Windows et nomme la cause probable. Quand elle est logicielle, il vous guide pour la corriger ; quand elle est matérielle, il vous le dit, car aucun logiciel ne remplace une barrette ou un disque.",
       },
     ],
-    liens: ["disque-dur-va-lacher-signes", "pc-qui-rame-sans-raison", "ventilateur-qui-ne-sarrete-plus", "pc-qui-redemarre-tout-seul"],
+    liens: ["disque-dur-va-lacher-signes", "pc-qui-rame-sans-raison", "ventilateur-qui-ne-sarrete-plus", "pc-qui-redemarre-tout-seul", "windows-11-plante-au-demarrage"],
   },
   {
     slug: "disque-dur-va-lacher-signes",
@@ -319,7 +319,7 @@ export const seoFrArticles: Article[] = [
         r: "Un SSD de 500 Go se trouve généralement entre 40 et 70 €. Chez un réparateur, comptez en plus la pose et éventuellement le clonage ou la réinstallation de Windows.",
       },
     ],
-    liens: ["bruits-du-pc-ce-que-signifie-chaque-bruit", "ecran-bleu-windows-11", "disque-a-100-pourcent-windows", "pc-lent-au-demarrage", "pc-qui-redemarre-tout-seul", "pc-qui-freeze-materiel-ou-logiciel", "mises-a-jour-windows-qui-bloquent-ou-echouent"],
+    liens: ["bruits-du-pc-ce-que-signifie-chaque-bruit", "ecran-bleu-windows-11", "disque-a-100-pourcent-windows", "pc-lent-au-demarrage", "pc-qui-redemarre-tout-seul", "pc-qui-freeze-materiel-ou-logiciel", "mises-a-jour-windows-qui-bloquent-ou-echouent", "windows-11-plante-au-demarrage"],
   },
   {
     slug: "meilleurs-logiciels-gratuits-diagnostic-pc",
@@ -1088,7 +1088,7 @@ export const seoFrArticles: Article[] = [
         r: "Son analyse gratuite lit les arrêts anormaux des trente derniers jours, l'état du disque et les signes de surchauffe, et indique en clair la cause la plus probable.",
       },
     ],
-    liens: ["temperature-normale-processeur-carte-graphique", "ecran-bleu-windows-11", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter", "pc-qui-freeze-materiel-ou-logiciel"],
+    liens: ["temperature-normale-processeur-carte-graphique", "ecran-bleu-windows-11", "ventilateur-qui-ne-sarrete-plus", "disque-dur-va-lacher-signes", "avant-de-formater-son-pc-ce-qu-une-analyse-peut-eviter", "pc-qui-freeze-materiel-ou-logiciel", "windows-11-plante-au-demarrage"],
   },
   {
     slug: "pc-qui-freeze-materiel-ou-logiciel",

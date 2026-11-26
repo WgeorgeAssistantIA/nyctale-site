@@ -6,133 +6,134 @@ export const seoFrArticles: Article[] = [
     slug: "ecran-bleu-windows-11",
     lang: "fr",
     traduction: "windows-11-blue-screen-fix",
-    title: "Écran bleu sous Windows 11 : comprendre le code d'erreur et corriger la cause",
-    seoTitle: "Écran bleu Windows 11 : causes, code d'erreur et solutions",
+    title: "Écran bleu Windows 11 : lire le code d'arrêt et trouver la cause (DPC Watchdog, Page Fault, IRQL…)",
+    seoTitle: "Écran bleu Windows 11 : retrouver le code d'arrêt et trouver la cause",
     excerpt:
-      "Écran bleu sous Windows 11 : comment lire le code d'erreur, comprendre les 6 causes fréquentes et appliquer la bonne méthode pour dépanner votre PC.",
+      "Écran bleu Windows 11 : comment retrouver le code d'arrêt même après le redémarrage, ce que signifient les codes les plus fréquents (DPC Watchdog, Page Fault, IRQL…) et le premier geste pour chacun.",
     date: "2026-10-01",
-    readMin: 9,
+    updated: "2026-11-26",
+    readMin: 10,
     blocks: [
       {
         type: "p",
-        text: "Un écran bleu sous Windows 11 est une mesure de protection : Windows s'arrête volontairement parce qu'il a détecté une erreur qu'il ne sait pas corriger sans risque pour vos fichiers. Dans la majorité des cas, la cause est un pilote défectueux, un fichier système abîmé ou une mémoire qui déraille, et elle se règle sans remplacer l'ordinateur.",
+        text: "Pour trouver la cause d'un écran bleu, il faut d'abord le code d'arrêt, et vous pouvez le retrouver après coup même si le PC a redémarré tout seul : Observateur d'événements, événement 1001 de la source BugCheck. Ce code oriente vers la famille de cause (pilote, mémoire, disque, chaleur) ; le reste de cette page dit, code par code, quoi vérifier en premier.",
       },
       {
         type: "p",
-        text: "Le scénario est toujours le même : tout fonctionne, puis l'écran passe au bleu avec un smiley triste, un code d'erreur incompréhensible, et l'ordinateur redémarre. Le plus gênant est l'incertitude : est-ce un accident isolé, ou le début d'une panne ? Selon la version de Windows 11, l'écran peut d'ailleurs s'afficher en noir plutôt qu'en bleu : il s'agit du même mécanisme.",
+        text: "Un écran bleu est une mesure de protection : Windows s'arrête volontairement parce qu'il a rencontré une erreur qu'il ne sait pas corriger sans risque pour vos fichiers. Dans la majorité des cas la cause est un pilote, un fichier système abîmé ou une mémoire défaillante, et elle se règle sans remplacer l'ordinateur. Selon la version de Windows 11, l'écran peut aussi s'afficher en noir : c'est le même mécanisme.",
       },
       { type: "h2", text: "En bref : les 3 questions à se poser" },
       {
         type: "ol",
         items: [
           "Est-ce arrivé une seule fois ? Un écran bleu isolé n'a rien d'alarmant : redémarrez, laissez Windows se mettre à jour et surveillez.",
-          "Est-ce arrivé juste après une mise à jour, une installation de pilote ou de logiciel ? Alors la cause est presque certaine : annulez ce changement.",
-          "Se répète-t-il, même sans rien de nouveau ? Notez le code d'erreur et suivez la méthode ci-dessous : la cause est probablement matérielle (mémoire, disque, chauffe).",
+          "Est-ce arrivé juste après une mise à jour, un pilote ou un logiciel ? Alors la cause est presque certaine : annulez ce changement.",
+          "Se répète-t-il sans rien de nouveau ? Relevez le code d'arrêt (ci-dessous) : la cause est probablement matérielle (mémoire, disque, chauffe).",
         ],
       },
-      { type: "h2", text: "Que signifie un écran bleu, et que dit le code d'erreur ?" },
+      { type: "h2", text: "Retrouver le code d'arrêt, même si le PC a redémarré" },
       {
         type: "p",
-        text: "Quand le cœur de Windows rencontre une situation qu'il ne peut pas gérer, par exemple un pilote qui écrit au mauvais endroit en mémoire, il préfère tout arrêter plutôt que de risquer d'abîmer vos données. Il affiche alors un code d'arrêt, en majuscules, et redémarre. Ce code est votre meilleure piste : il oriente vers la famille de cause.",
+        text: "Windows 11 redémarre seul après un écran bleu, ce qui vous empêche de lire le code. Quatre moyens de le récupérer :",
       },
-      {
-        type: "ul",
-        items: [
-          "DRIVER_IRQL_NOT_LESS_OR_EQUAL, SYSTEM_SERVICE_EXCEPTION, KERNEL_SECURITY_CHECK_FAILURE : un pilote ou un logiciel système fautif. Pensez à ce qui a été installé ou mis à jour récemment.",
-          "MEMORY_MANAGEMENT, PAGE_FAULT_IN_NONPAGED_AREA : la mémoire vive (barrette défectueuse) ou un pilote qui l'utilise mal.",
-          "CRITICAL_PROCESS_DIED, INACCESSIBLE_BOOT_DEVICE, NTFS_FILE_SYSTEM : fichiers système abîmés ou disque en difficulté.",
-          "DPC_WATCHDOG_VIOLATION, CLOCK_WATCHDOG_TIMEOUT : un composant ne répond plus à temps, souvent un pilote de stockage ou de carte graphique.",
-        ],
-      },
-      {
-        type: "p",
-        text: "Le code seul ne fait pas le diagnostic : un même code peut avoir plusieurs origines. Mais il évite de partir dans toutes les directions. Si vous n'avez pas eu le temps de le lire, Windows le garde en mémoire, comme nous le verrons plus bas.",
-      },
-      {
-        type: "p",
-        text: "Sous Windows 11, l'écran affiche un message du type « Votre appareil a rencontré un problème » avec un pourcentage qui monte, un code QR et le code d'arrêt en bas. Le redémarrage est automatique, ce qui est pratique mais vous empêche parfois de lire le code. Pour le garder à l'écran, ouvrez Paramètres système avancés > Démarrage et récupération, puis décochez « Redémarrer automatiquement ». Au prochain plantage, l'écran restera affiché et vous aurez le temps de noter le code ou de le photographier.",
-      },
-      {
-        type: "p",
-        text: "Le code QR renvoie vers une page d'aide générale de Microsoft. Il est rarement plus utile que le code d'arrêt lui-même : c'est ce dernier que vous chercherez dans un moteur de recherche, en y ajoutant le modèle de votre ordinateur.",
-      },
-      { type: "h2", text: "Les 6 causes les plus fréquentes d'un écran bleu" },
-      { type: "h3", text: "1. Un pilote défectueux ou incompatible" },
-      {
-        type: "p",
-        text: "C'est la cause numéro un. Un pilote est un petit programme qui fait dialoguer Windows avec un composant (carte graphique, Wi-Fi, stockage). Un pilote mal écrit, trop ancien ou installé de travers fait planter tout le système. Les pilotes de cartes graphiques et de cartes réseau sont les plus souvent en cause après une mise à jour.",
-      },
-      { type: "h3", text: "2. Une mise à jour de Windows mal passée" },
-      {
-        type: "p",
-        text: "Une mise à jour peut remplacer un pilote sans prévenir ou laisser des fichiers à moitié installés. Si les écrans bleus commencent le jour d'une mise à jour, désinstaller cette dernière (Paramètres > Windows Update > Historique des mises à jour > Désinstaller les mises à jour) est la première chose à tester.",
-      },
-      { type: "h3", text: "3. Une mémoire vive défaillante" },
-      {
-        type: "p",
-        text: "Une barrette de mémoire qui commet des erreurs provoque des écrans bleus apparemment aléatoires, avec des codes différents à chaque fois. C'est le signe classique : si les codes changent d'un plantage à l'autre, pensez à la mémoire. Windows intègre un outil de test (Diagnostic de mémoire Windows, à lancer en tapant mdsched dans la recherche).",
-      },
-      { type: "h3", text: "4. Des fichiers système abîmés" },
-      {
-        type: "p",
-        text: "Après une coupure de courant, un arrêt forcé ou un disque en difficulté, des fichiers de Windows peuvent être corrompus. Deux commandes, lancées dans une invite de commandes en administrateur, les réparent dans la plupart des cas : sfc /scannow, puis DISM /Online /Cleanup-Image /RestoreHealth.",
-      },
-      { type: "h3", text: "5. Un disque en fin de vie" },
-      {
-        type: "p",
-        text: "Un disque qui a du mal à lire ses données fait planter Windows, surtout au démarrage. Si l'écran bleu apparaît pendant l'allumage, ou s'accompagne de ralentissements et de blocages, vérifiez l'état du disque avant toute autre chose. Notre guide sur les signes d'un disque dur qui va lâcher détaille la marche à suivre.",
-      },
-      { type: "h3", text: "6. La chaleur" },
-      {
-        type: "p",
-        text: "Un processeur ou une carte graphique qui surchauffe peut provoquer des plantages, souvent sous charge (jeu, montage vidéo, grosse mise à jour). Si le ventilateur s'emballe juste avant l'écran bleu, la piste du refroidissement est sérieuse : poussière, pâte thermique usée ou aération bouchée.",
-      },
-      {
-        type: "p",
-        text: "Un mot sur les pilotes, qui sont la première piste. Pour la carte graphique, téléchargez le pilote directement sur le site de son fabricant (NVIDIA, AMD ou Intel) plutôt que par un logiciel tiers. Pour le reste, Windows Update propose parfois des « mises à jour facultatives » (Paramètres > Windows Update > Options avancées) qui contiennent des pilotes plus récents. Méfiez-vous en revanche des programmes qui promettent de mettre à jour tous vos pilotes en un clic : ils installent régulièrement le mauvais, et c'est une bonne façon de créer un écran bleu plutôt que d'en réparer un.",
-      },
-      {
-        type: "p",
-        text: "Si vous soupçonnez la mémoire et que l'ordinateur contient plusieurs barrettes, retirez-en une et testez avec l'autre, puis inversez. Une barrette fautive provoque les plantages, l'autre non. Éteignez et débranchez toujours l'ordinateur avant d'ouvrir le boîtier, et touchez une pièce métallique pour vous décharger de l'électricité statique.",
-      },
-      { type: "h2", text: "Comment trouver la cause vous-même, étape par étape" },
       {
         type: "ol",
         items: [
-          "Notez le code d'arrêt, avec une photo de l'écran au prochain plantage, ou retrouvez-le dans l'Observateur d'événements (Journaux Windows > Système, événement 1001 ou 41).",
-          "Repensez au dernier changement : mise à jour, nouveau pilote, nouveau logiciel, nouveau périphérique branché. Débranchez les périphériques inutiles (clé USB, imprimante, disque externe).",
-          "Désinstallez la mise à jour ou le pilote récent, ou utilisez la Restauration du système pour revenir quelques jours en arrière.",
-          "Lancez sfc /scannow puis DISM /Online /Cleanup-Image /RestoreHealth pour réparer les fichiers système.",
-          "Testez la mémoire avec le Diagnostic de mémoire Windows, puis vérifiez l'état du disque.",
-          "Si le plantage empêche de démarrer, passez par le mode sans échec (maintenez Maj en cliquant sur Redémarrer) pour effectuer ces vérifications.",
+          "Observateur d'événements (tapez « observateur d'événements » dans la recherche) > Journaux Windows > Système. Cherchez l'événement 1001, source BugCheck : le texte indique « La vérification de bogue était : 0x… », suivi du code en hexadécimal.",
+          "Dans le même journal, ouvrez l'événement 41 (Kernel-Power) et l'onglet Détails : le champ BugcheckCode contient le code en décimal. S'il vaut 0, ce n'était pas un écran bleu mais une coupure ou un redémarrage forcé (alimentation, chauffe, bouton) : la piste est différente, voir plus bas.",
+          "Le dossier C:\\Windows\\Minidump contient en général un petit fichier par plantage (date dans le nom). Il sert aux outils de lecture présentés plus bas.",
+          "Pour le prochain plantage : Paramètres système avancés > Démarrage et récupération, puis décochez « Redémarrer automatiquement ». L'écran restera affiché et vous pourrez le photographier.",
         ],
       },
       {
         type: "p",
-        text: "Windows enregistre aussi un fichier de vidage à chaque plantage, dans C:\\Windows\\Minidump. Des outils gratuits savent le lire et désignent souvent le pilote fautif par son nom. C'est une aide précieuse quand le code d'arrêt est trop vague.",
+        text: "Le code QR affiché sur l'écran renvoie vers une page d'aide générale de Microsoft. Il est rarement plus utile que le code d'arrêt lui-même, que vous chercherez avec le modèle de votre PC.",
       },
+      { type: "h2", text: "Les codes d'arrêt les plus fréquents et le premier geste" },
       {
         type: "p",
-        text: "Pour éviter de revivre la situation, deux habitudes valent la peine. La première est de laisser Windows créer des points de restauration avant les mises à jour importantes, ce qui permet de revenir en arrière en quelques minutes. La seconde est de sauvegarder vos fichiers régulièrement : un écran bleu est rarement dangereux pour les données, mais un disque qui lâche l'est toujours.",
+        text: "Un même code peut avoir plusieurs origines : voyez ces lignes comme des pistes à tester dans l'ordre, pas comme des verdicts.",
       },
-      { type: "h2", text: "Quand faut-il s'inquiéter, et quand réinstaller Windows ?" },
+      { type: "h3", text: "DPC_WATCHDOG_VIOLATION (0x133) et CLOCK_WATCHDOG_TIMEOUT (0x101)" },
+      {
+        type: "p",
+        text: "Un composant ou un pilote n'a pas répondu à temps. Le suspect habituel est le pilote de stockage (SSD NVMe) ou de la carte graphique, parfois le micrologiciel (firmware) du SSD. Premier geste : mettez à jour les pilotes du chipset et de la carte graphique depuis le site du fabricant, puis le firmware du SSD si un correctif existe. Les installations de pilotes génériques récentes sont à retirer en premier.",
+      },
+      { type: "h3", text: "PAGE_FAULT_IN_NONPAGED_AREA (0x50) et MEMORY_MANAGEMENT (0x1A)" },
+      {
+        type: "p",
+        text: "Windows a cherché des données en mémoire là où elles ne devaient pas manquer. C'est un pilote qui écrit au mauvais endroit, ou une barrette de mémoire défaillante. Premier geste : lancez le Diagnostic de mémoire Windows (mdsched), puis, si l'ordinateur a plusieurs barrettes, testez-les une par une. Si les codes changent d'un plantage à l'autre, la mémoire devient la première suspecte.",
+      },
+      { type: "h3", text: "DRIVER_IRQL_NOT_LESS_OR_EQUAL (0xD1) et IRQL_NOT_LESS_OR_EQUAL (0xA)" },
+      {
+        type: "p",
+        text: "Un pilote a touché une zone de mémoire qu'il n'avait pas le droit d'utiliser. Le nom du fichier .sys cité sur l'écran, ou relevé dans le minidump, désigne souvent le coupable (réseau, Wi-Fi, carte graphique, antivirus). Premier geste : mettez à jour ou désinstallez le pilote cité, ou revenez à la version précédente dans le Gestionnaire de périphériques.",
+      },
+      { type: "h3", text: "SYSTEM_SERVICE_EXCEPTION (0x3B) et SYSTEM_THREAD_EXCEPTION_NOT_HANDLED (0x7E)" },
+      {
+        type: "p",
+        text: "Une erreur dans un pilote ou un service système. Le fichier mentionné à côté du code (nvlddmkm.sys pour NVIDIA, atikmdag.sys ou amdkmdag.sys pour AMD, par exemple) pointe la bonne famille de pilote. Premier geste : réinstallation propre du pilote graphique, puis sfc /scannow et DISM /Online /Cleanup-Image /RestoreHealth.",
+      },
+      { type: "h3", text: "KERNEL_SECURITY_CHECK_FAILURE (0x139)" },
+      {
+        type: "p",
+        text: "Windows a détecté une donnée système corrompue. Cela vient d'un pilote défectueux, de fichiers système abîmés, parfois de la mémoire ou d'un logiciel de sécurité tiers. Premier geste : sfc /scannow et DISM, puis test mémoire si le code revient.",
+      },
+      { type: "h3", text: "CRITICAL_PROCESS_DIED (0xEF), INACCESSIBLE_BOOT_DEVICE (0x7B) et NTFS_FILE_SYSTEM (0x24)" },
+      {
+        type: "p",
+        text: "Famille « fichiers système et disque » : un processus essentiel s'est arrêté, ou Windows n'arrive plus à lire son disque de démarrage. Après une mise à jour, c'est souvent logiciel ; sans changement récent, l'état du disque est la première chose à vérifier (test SMART). Si l'écran bleu survient à chaque démarrage, sauvegardez vos fichiers avant tout autre essai.",
+      },
+      { type: "h3", text: "WHEA_UNCORRECTABLE_ERROR (0x124)" },
+      {
+        type: "p",
+        text: "Le processeur ou la carte mère a signalé une erreur matérielle qu'il ne sait pas corriger. C'est le code qui oriente le plus vers du matériel : chauffe, alimentation, processeur poussé au-delà de ses réglages (overclocking), ou composant en fin de vie. Premier geste : revenez aux réglages d'origine du BIOS et contrôlez les températures sous charge.",
+      },
+      { type: "h3", text: "VIDEO_TDR_FAILURE (0x116) et VIDEO_SCHEDULER_INTERNAL_ERROR (0x119)" },
+      {
+        type: "p",
+        text: "La carte graphique n'a pas répondu et Windows n'a pas pu la relancer. Cela survient surtout en jeu ou en montage vidéo. Premier geste : réinstallation propre du pilote graphique, puis contrôle des températures et de l'alimentation de la carte.",
+      },
+      { type: "h2", text: "Lire un minidump pour désigner le pilote fautif" },
+      {
+        type: "p",
+        text: "Quand le code d'arrêt est trop vague, le fichier de C:\\Windows\\Minidump va plus loin. BlueScreenView (outil gratuit de NirSoft) liste les plantages et surligne le pilote en cause. Pour une lecture plus fine, WinDbg (Microsoft Store) ouvre le fichier, et la commande !analyze -v affiche le module probable. Gardez une réserve : si le nom cité est ntoskrnl.exe, il s'agit du noyau de Windows, ce qui ne désigne rien de précis. Un fichier tiers (.sys) est en revanche un bon indice.",
+      },
+      { type: "h2", text: "Écran bleu ou simple coupure ? Ne pas confondre" },
+      {
+        type: "p",
+        text: "Si votre PC s'éteint ou redémarre sans afficher d'écran bleu, l'événement 41 Kernel-Power apparaît avec un BugcheckCode à 0 : Windows n'a pas eu le temps de réagir. Les suspects sont alors l'alimentation, la surchauffe ou un bouton enfoncé, pas un pilote. Notre page sur le [diagnostic de crash PC et Kernel-Power 41](/diagnostic-crash-pc) détaille cette piste, et l'article [PC qui redémarre tout seul](/blog/pc-qui-redemarre-tout-seul) aussi.",
+      },
+      { type: "h2", text: "La méthode, dans l'ordre, quand le code ne suffit pas" },
+      {
+        type: "ol",
+        items: [
+          "Repensez au dernier changement (mise à jour, pilote, logiciel, périphérique) et annulez-le : désinstallation de la mise à jour, pilote précédent, ou Restauration du système.",
+          "Débranchez les périphériques inutiles (clé USB, imprimante, disque externe) et regardez si le plantage disparaît.",
+          "Lancez sfc /scannow puis DISM /Online /Cleanup-Image /RestoreHealth dans une invite de commandes en administrateur.",
+          "Testez la mémoire (mdsched), puis l'état du disque. Notre guide sur les [signes d'un disque dur qui va lâcher](/blog/disque-dur-va-lacher-signes) explique le test SMART.",
+          "Si le plantage empêche de démarrer, passez par le mode sans échec (maintenez Maj en cliquant sur Redémarrer), ou voyez [Windows 11 ne démarre plus](/blog/windows-11-plante-au-demarrage).",
+          "Méfiez-vous des programmes qui promettent de mettre à jour tous vos pilotes en un clic : ils installent régulièrement le mauvais et créent des écrans bleus au lieu d'en réparer.",
+        ],
+      },
+      { type: "h2", text: "Quand s'inquiéter, et quand réinstaller Windows ?" },
       {
         type: "ul",
         items: [
-          "Un seul écran bleu, puis plus rien pendant des semaines : ne faites rien de particulier, mettez simplement Windows et les pilotes à jour.",
-          "Plusieurs écrans bleus par semaine, avec des codes différents : testez la mémoire et le disque, c'est le profil d'un problème matériel.",
+          "Un seul écran bleu, puis plus rien pendant des semaines : mettez Windows et les pilotes à jour, sans rien faire de particulier.",
+          "Plusieurs écrans bleus par semaine avec des codes différents : testez la mémoire et le disque, c'est le profil d'un problème matériel.",
           "Écrans bleus à chaque démarrage : sauvegardez vos fichiers sans attendre, le disque peut être en cause.",
-          "Réinitialiser Windows (Paramètres > Système > Récupération) est la solution la plus lourde : elle règle un problème logiciel, mais ne change rien à une barrette ou à un disque défaillant.",
+          "Réinitialiser Windows règle un problème logiciel, mais ne change rien à une barrette ou à un disque défaillant : cela ne vaut donc la peine qu'après les tests ci-dessus.",
         ],
       },
       {
         type: "p",
-        text: "Dans presque aucun de ces cas l'ordinateur n'est « bon à jeter » : une barrette de mémoire se remplace pour quelques dizaines d'euros, un disque aussi, et la majorité des écrans bleus viennent d'un pilote.",
+        text: "Dans presque aucun de ces cas l'ordinateur n'est « bon à jeter » : une barrette ou un disque se remplace pour quelques dizaines d'euros, et la majorité des écrans bleus viennent d'un pilote.",
       },
       { type: "h2", text: "Ce que Nyctale vérifie en 19 secondes" },
       {
         type: "p",
-        text: "Nyctale relit à votre place le journal de Windows : combien d'arrêts brutaux et de plantages sont survenus sur les 30 derniers jours, et si l'état du disque est signalé en alerte. Il croise ces indices avec ce qui occupe l'ordinateur, puis nomme la cause probable. Consultez notre analyseur dédié de [diagnostic de crash PC et Kernel-Power 41](/diagnostic-crash-pc) sans jargon. Quand le problème est matériel, il vous le dit franchement, plutôt que de vous faire courir après un réglage inutile.",
+        text: "Nyctale relit à votre place le journal de Windows : combien d'arrêts brutaux et de plantages sont survenus sur les 30 derniers jours, et si l'état du disque est signalé en alerte. Il croise ces indices avec ce qui occupe l'ordinateur, puis nomme la cause probable. Il ne remplace pas la lecture d'un minidump pour désigner un pilote précis, mais il vous dit si les plantages sont réels, fréquents, et s'ils pointent plutôt vers le disque, la chaleur ou le logiciel. Quand le problème est matériel, il vous le dit franchement, plutôt que de vous faire courir après un réglage inutile.",
       },
     ],
     faq: [
@@ -141,16 +142,24 @@ export const seoFrArticles: Article[] = [
         r: "Non. C'est une protection : Windows s'arrête pour ne pas abîmer vos fichiers. La plupart des écrans bleus viennent d'un pilote ou d'une mise à jour et se corrigent sans remplacer l'ordinateur.",
       },
       {
+        q: "Où retrouver le code d'un écran bleu passé ?",
+        r: "Dans l'Observateur d'événements, Journaux Windows > Système : l'événement 1001 (source BugCheck) indique le code d'arrêt en hexadécimal. L'événement 41 (Kernel-Power) signale le redémarrage inattendu, avec un champ BugcheckCode.",
+      },
+      {
+        q: "Que veut dire BugcheckCode 0 dans l'événement 41 ?",
+        r: "Que ce n'était pas un écran bleu : le PC a perdu son alimentation ou a été redémarré de force avant que Windows puisse réagir. Pensez à l'alimentation, à la surchauffe ou à un bouton enfoncé.",
+      },
+      {
         q: "Pourquoi ai-je un écran bleu sans raison apparente ?",
         r: "Sans changement récent, les suspects sont la mémoire vive, le disque et la chaleur. Si les codes d'erreur varient d'un plantage à l'autre, la mémoire est la première piste.",
       },
       {
-        q: "Peut-on perdre ses fichiers à cause d'un écran bleu ?",
-        r: "Rarement : le principe même de l'écran bleu est de protéger les données. Le risque réel concerne un disque défaillant, d'où l'intérêt de sauvegarder dès que les plantages se répètent.",
+        q: "Que faire face à DPC_WATCHDOG_VIOLATION ?",
+        r: "Mettez à jour les pilotes de stockage (chipset, SSD NVMe) et de la carte graphique depuis le site du fabricant, puis le firmware du SSD s'il existe. Retirez en premier tout pilote installé juste avant les plantages.",
       },
       {
-        q: "Où retrouver le code d'un écran bleu passé ?",
-        r: "Dans l'Observateur d'événements, Journaux Windows > Système : l'événement 1001 (BugCheck) indique le code d'arrêt, et l'événement 41 (Kernel-Power) signale le redémarrage inattendu.",
+        q: "Peut-on perdre ses fichiers à cause d'un écran bleu ?",
+        r: "Rarement : le principe même de l'écran bleu est de protéger les données. Le risque réel concerne un disque défaillant, d'où l'intérêt de sauvegarder dès que les plantages se répètent.",
       },
       {
         q: "Nyctale peut-il corriger un écran bleu ?",

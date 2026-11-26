@@ -1308,7 +1308,8 @@ export const seoFrArticles: Article[] = [
       alt: "Trois niveaux : normal (ventilateur qui monte sous charge puis redescend), à surveiller (ventilateur fort au repos, PC qui ralentit sous charge) et à traiter (extinctions sous charge, artefacts à l'écran)"
     },
     date: "2026-11-06",
-    readMin: 8,
+    updated: "2026-11-26",
+    readMin: 9,
     blocks: [
       {
         type: "p",
@@ -1333,6 +1334,24 @@ export const seoFrArticles: Article[] = [
       {
         type: "p",
         text: "La bonne question n'est donc pas « combien de degrés ? », mais « à quel moment, et que fait la machine à ce moment-là ? ». Une température haute pendant un rendu vidéo qui redescend ensuite n'a rien à voir avec une température haute alors que rien ne tourne."
+      },
+      {
+        type: "h2",
+        text: "Quelles températures rencontre-t-on en général ?"
+      },
+      {
+        type: "p",
+        text: "Pour vous repérer, voici des ordres de grandeur couramment observés sur des PC en bon état. Ce sont des repères indicatifs, pas des garanties : ils ne remplacent pas la limite de votre modèle exact, et un portable fin monte plus haut qu'une tour bien ventilée."
+      },
+      {
+        type: "ul",
+        items: [
+          "Processeur au repos : souvent entre 30 et 50 °C, parfois un peu plus sur un portable.",
+          "Processeur en charge (jeu, export vidéo) : couramment entre 60 et 85 °C. Une température qui reste au-dessus de 90 °C pendant de longues minutes mérite qu'on regarde le refroidissement, même si la limite du fabricant est plus haute.",
+          "Carte graphique au repos : souvent entre 30 et 50 °C.",
+          "Carte graphique en jeu : couramment entre 65 et 85 °C selon le modèle et le boîtier.",
+          "Quel que soit le chiffre : une température qui retombe après l'effort et un ventilateur qui se calme sont bon signe ; une chaleur qui reste haute au repos ne l'est pas."
+        ]
       },
       {
         type: "h2",
@@ -1453,6 +1472,14 @@ export const seoFrArticles: Article[] = [
       {
         q: "Quelle est la température normale d'un processeur ?",
         r: "Il n'y a pas de valeur unique : elle dépend du modèle, de la charge et du refroidissement. Comparez votre mesure à la température maximale indiquée sur la fiche de votre modèle, et regardez surtout si la température redescend après l'effort."
+      },
+      {
+        q: "Quelle température est normale en jeu ?",
+        r: "Couramment 60 à 85 °C pour le processeur et 65 à 85 °C pour la carte graphique, selon le modèle et le boîtier. C'est un repère indicatif : regardez surtout si la température se stabilise et si la fréquence reste stable."
+      },
+      {
+        q: "Quelle température est normale au repos ?",
+        r: "Souvent 30 à 50 °C pour le processeur comme pour la carte graphique, un peu plus sur un portable. Une chaleur qui reste haute au repos, avec un ventilateur qui souffle, est le signe à prendre au sérieux."
       },
       {
         q: "Pourquoi mon PC ralentit-il quand il chauffe ?",

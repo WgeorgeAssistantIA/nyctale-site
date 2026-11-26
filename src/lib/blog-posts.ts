@@ -47,8 +47,8 @@ export const articles: Article[] = [
       "Pourquoi mon ordinateur rame ou ralentit sans raison ? Les 9 causes fréquentes sur Windows 10 et 11, le test en 10 min et les solutions gratuites.",
     image: { src: "/images/blog/nyctale-ordinateur-qui-rame-fr.jpg", alt: "Ordinateur qui rame : 9 causes fréquentes : les causes les plus courantes — Trop de programmes au démarrage ; Le navigateur et ses onglets ; La mémoire vive saturée ; Un disque presque plein ; Un disque dur mécanique ou en fin de vie ; + 4 autres causes" },
     date: "2026-08-08",
-    updated: "2026-11-10",
-    readMin: 10,
+    updated: "2026-11-26",
+    readMin: 11,
     blocks: [
       {
         type: "p",
@@ -66,6 +66,22 @@ export const articles: Article[] = [
           "Ouvrez le Gestionnaire des tâches (Ctrl + Maj + Échap) et regardez ce qui occupe le processeur, la mémoire et le disque.",
           "Vérifiez qu'il reste au moins 15 % d'espace libre sur le disque C:.",
           "Si rien ne ressort, regardez le type de disque (SSD ou disque dur) et son état : un vieux disque dur est souvent le vrai frein.",
+        ],
+      },
+      { type: "h2", text: "Quand votre PC rame-t-il ? Le moment oriente la cause" },
+      {
+        type: "p",
+        text: "Avant de parcourir les neuf causes, observez à quel moment la lenteur apparaît. C'est l'indice le plus rapide pour savoir où regarder :",
+      },
+      {
+        type: "ul",
+        items: [
+          "Il rame au démarrage, puis se calme au bout de quelques minutes : programmes lancés avec Windows ou disque dur mécanique. Voir [PC très lent au démarrage](/blog/pc-lent-au-demarrage) et [les programmes à désactiver au démarrage](/blog/programmes-au-demarrage-lesquels-desactiver).",
+          "Il rame sur Internet ou dans le navigateur seulement : onglets et extensions trop nombreux, ou connexion en cause. Un autre appareil sur le même Wi-Fi permet de trancher, comme l'explique l'article [Wi-Fi lent : le PC ou la box ?](/blog/wifi-lent-sur-pc-est-ce-le-pc-ou-la-box).",
+          "Il rame en jeu ou en montage vidéo, avec un ventilateur qui s'emballe : chauffe et bridage du processeur ou de la carte graphique. Voir [la température normale d'un PC](/blog/temperature-normale-processeur-carte-graphique).",
+          "Il rame depuis une mise à jour de Windows : mise à jour inachevée ou pilote remplacé. Voir [Windows 11 lent après une mise à jour](/blog/windows-11-lent-apres-mise-a-jour).",
+          "Il rame par à-coups, avec une souris qui saccade ou un écran qui se fige : disque à 100 %, mémoire saturée ou début de panne matérielle. Voir [disque à 100 %](/blog/disque-a-100-pourcent-windows) et [PC qui freeze : matériel ou logiciel](/blog/pc-qui-freeze-materiel-ou-logiciel).",
+          "Il rame de plus en plus, sans moment précis, sur une machine de plus de cinq ans : disque dur mécanique ou mémoire insuffisante, causes 3 et 5 ci-dessous.",
         ],
       },
       { type: "h2", text: "Pourquoi un ordinateur se met-il à ramer ?" },
@@ -166,6 +182,14 @@ export const articles: Article[] = [
       },
     ],
     faq: [
+      {
+        q: "Pourquoi mon PC rame au démarrage ?",
+        r: "Le plus souvent à cause des programmes lancés avec Windows, d'une mise à jour qui travaille en arrière-plan ou d'un disque dur mécanique. Si la lenteur disparaît au bout de 20 à 40 minutes, c'est Windows qui rattrape son retard ; si elle revient à chaque allumage, désactivez les programmes de démarrage inutiles.",
+      },
+      {
+        q: "Pourquoi mon PC rame seulement sur Internet ?",
+        r: "Les onglets et extensions du navigateur consomment beaucoup de mémoire, et la connexion peut aussi être en cause. Testez un autre appareil sur le même Wi-Fi : s'il est rapide, le problème vient du PC ; sinon, de la box ou du réseau.",
+      },
       {
         q: "Pourquoi mon ordinateur rame alors qu'il est récent ?",
         r: "Sur un PC récent, la cause est presque toujours logicielle : programmes au démarrage, navigateur chargé, mise à jour en cours ou programme bloqué. Le Gestionnaire des tâches (Ctrl + Maj + Échap) montre en quelques secondes ce qui occupe le processeur, la mémoire ou le disque.",
